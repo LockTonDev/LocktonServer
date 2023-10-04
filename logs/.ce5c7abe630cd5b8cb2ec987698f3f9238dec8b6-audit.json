@@ -1,0 +1,50 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 10000
+    },
+    "auditLog": "D:\\Dev\\lockton\\backend_nodejs\\logs\\.ce5c7abe630cd5b8cb2ec987698f3f9238dec8b6-audit.json",
+    "files": [
+        {
+            "date": 1694230797193,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\2023-09-09.log",
+            "hash": "c44e4ca2e8af2d00763b16f25865d916f2c31dda9078931f05c6ba345cbf3d5b"
+        },
+        {
+            "date": 1694316155353,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\2023-09-10.log",
+            "hash": "5c6b7964778afa8b578b96fbe6b4afe878aaf43a78df321aa0cb0158d82cd452"
+        },
+        {
+            "date": 1695372175289,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\2023-09-22.log",
+            "hash": "55211afac0ce18fb0534d3f6be074e6a8a0a9791822df227e918aac72877ef12"
+        },
+        {
+            "date": 1695434975110,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\2023-09-23.log",
+            "hash": "26b15e30a12b903c8b12eac02cf8e43e5be6fa0ff3d423acbf91c0aff5084e7a"
+        },
+        {
+            "date": 1695537491445,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\2023-09-24.log",
+            "hash": "16a39c26752182ca070220bffc5e5eec5bc9fb744f74444ba89dad7d884ebb23"
+        },
+        {
+            "date": 1695599053333,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\2023-09-25.log",
+            "hash": "6367df474179461051f65860dbc6b969fde95d9f808c86071edfb53558640b2e"
+        },
+        {
+            "date": 1695654590032,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\2023-09-26.log",
+            "hash": "331485f6ad0b3fec8d94c04b7d97345462e2ac503d40160d2db9786fdbfc3653"
+        },
+        {
+            "date": 1695791228574,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\2023-09-27.log",
+            "hash": "af803f0f08c501f58a520ffff571a2272e8d590379a4c067189ccacbd893f523"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,76 @@
+2023-09-22 18:12:18 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:12:18 [error] : >> 
+2023-09-22 18:12:24 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:12:24 [error] : >> 
+2023-09-22 18:26:31 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:31 [error] : >> 
+2023-09-22 18:26:33 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:33 [error] : >> 
+2023-09-22 18:26:34 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:34 [error] : >> 
+2023-09-22 18:26:35 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:35 [error] : >> 
+2023-09-22 18:26:35 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:35 [error] : >> 
+2023-09-22 18:26:36 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:36 [error] : >> 
+2023-09-22 18:26:41 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:41 [error] : >> 
+2023-09-22 18:26:43 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:43 [error] : >> 
+2023-09-22 18:26:44 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:44 [error] : >> 
+2023-09-22 18:26:45 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:45 [error] : >> 
+2023-09-22 18:26:45 [error] : PASSPORT localVerify Error :  connect ETIMEDOUT
+2023-09-22 18:26:45 [error] : >> 
+2023-09-22 18:32:59 [error] : PASSPORT localVerify Error :  connect ECONNREFUSED ::1:3306
+2023-09-22 18:32:59 [error] : >> 
+2023-09-22 18:33:01 [error] : PASSPORT localVerify Error :  connect ECONNREFUSED ::1:3306
+2023-09-22 18:33:01 [error] : >> 
+2023-09-22 18:33:01 [error] : PASSPORT localVerify Error :  connect ECONNREFUSED ::1:3306
+2023-09-22 18:33:01 [error] : >> 
+2023-09-22 19:12:09 [error] : PASSPORT localVerify Error1 :  connect ECONNREFUSED ::1:3306
+2023-09-22 19:12:09 [error] : >> 
+2023-09-22 19:15:54 [error] : PASSPORT localVerify Error1 :  Access denied for user 'lockton'@'localhost' (using password: YES)
+2023-09-22 19:15:54 [error] : >> 
+2023-09-22 19:19:00 [error] : passport isAuth  : true
+2023-09-22 19:19:32 [error] : passport isAuth  : true
+2023-09-22 19:20:15 [error] : passport isAuth  : true
+2023-09-22 19:22:18 [error] : passport isAuth  : true
+2023-09-22 19:24:52 [error] : passport isAuth  : true
+2023-09-22 19:30:50 [error] : passport isAuth  : true
+2023-09-22 20:03:16 [error] : passport isAuth  : true
+2023-09-22 20:03:56 [error] : >> 
+2023-09-22 20:03:59 [error] : >> 
+2023-09-22 20:04:22 [error] : >> 
+2023-09-22 20:04:24 [error] : >> 
+2023-09-22 20:04:24 [error] : >> 
+2023-09-22 20:04:25 [error] : >> 
+2023-09-22 20:04:59 [error] : >> 
+2023-09-22 20:05:00 [error] : >> 
+2023-09-22 20:05:01 [error] : >> 
+2023-09-22 20:05:01 [error] : >> 
+2023-09-22 20:05:01 [error] : >> 
+2023-09-22 20:05:02 [error] : >> 
+2023-09-22 20:05:02 [error] : >> 
+2023-09-22 20:05:02 [error] : >> 
+2023-09-22 20:05:02 [error] : >> 
+2023-09-22 20:05:03 [error] : >> 
+2023-09-22 20:05:03 [error] : >> 
+2023-09-22 20:05:03 [error] : >> 
+2023-09-22 20:05:04 [error] : >> 
+2023-09-22 20:05:04 [error] : >> 
+2023-09-22 20:05:04 [error] : >> 
+2023-09-22 20:05:04 [error] : >> 
+2023-09-22 20:05:05 [error] : >> 
+2023-09-22 20:05:05 [error] : >> 
+2023-09-22 20:05:05 [error] : >> 
+2023-09-22 20:05:27 [error] : >> 
+2023-09-22 20:05:28 [error] : >> 
+2023-09-22 20:05:29 [error] : >> 
+2023-09-22 20:05:37 [error] : >> 
+2023-09-22 20:05:38 [error] : >> 
+2023-09-22 20:05:52 [error] : >> 
+2023-09-22 20:06:18 [error] : >> 
+2023-09-22 20:06:43 [error] : >> 

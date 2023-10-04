@@ -1,0 +1,50 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 10000
+    },
+    "auditLog": "D:\\Dev\\lockton\\backend_nodejs\\logs\\error\\.5cf5e1fa3ca1eddc8375b84e8d1e21d3d88d01fd-audit.json",
+    "files": [
+        {
+            "date": 1694230797195,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\error\\2023-09-09_error.log",
+            "hash": "dfb92603142f6324ae4e8298caee53fbb314a06b46cd38604201c0828f64b740"
+        },
+        {
+            "date": 1694316155357,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\error\\2023-09-10_error.log",
+            "hash": "b01b97324488f76867ef7e0c0d73c8cf49b25e553aca666d5079fae49f53f615"
+        },
+        {
+            "date": 1695372175291,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\error\\2023-09-22_error.log",
+            "hash": "df3f9ce3100d741411e01ec0c4d6eeaae64e0ded8a501958cc133858b65647b2"
+        },
+        {
+            "date": 1695434979858,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\error\\2023-09-23_error.log",
+            "hash": "c40573f3c2f3255140d254552b7c75c8cd5f4008d0bf4537dc8daeb103dec877"
+        },
+        {
+            "date": 1695537491510,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\error\\2023-09-24_error.log",
+            "hash": "3694e0789fabea84bd97551da7b580e626cfd9a3503490d82cacf0eb259bac95"
+        },
+        {
+            "date": 1695599053409,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\error\\2023-09-25_error.log",
+            "hash": "5f2999eb7176ff86ed691141f021b0a4518ee1ee7fc37826b7c158d0ba7f05c5"
+        },
+        {
+            "date": 1695654590034,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\error\\2023-09-26_error.log",
+            "hash": "8f5e3059abac8b011058f3e4391cbb79410e656cb4c28bbe4aa81a2c897c46ba"
+        },
+        {
+            "date": 1695791233318,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\logs\\error\\2023-09-27_error.log",
+            "hash": "a6440713663f0663c67aba57e747fd48cbd6a7f693b4629fa93f1031cd96441f"
+        }
+    ],
+    "hashType": "sha256"
+}

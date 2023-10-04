@@ -1,0 +1,52 @@
+2023-09-25 08:44:13 [error] : passport isAuth  : false
+2023-09-25 09:10:57 [error] : passport isAuth  : true
+2023-09-25 09:14:36 [error] : passport isAuth  : true
+2023-09-25 09:34:14 [error] : passport isAuth  : true
+2023-09-25 09:34:31 [error] : >> 
+2023-09-25 09:34:33 [error] : >> 
+2023-09-25 09:34:34 [error] : >> 
+2023-09-25 09:34:35 [error] : >> 
+2023-09-25 09:35:24 [error] : >> 
+2023-09-25 09:35:27 [error] : >> 
+2023-09-25 09:49:19 [error] : passport isAuth  : true
+2023-09-25 09:49:30 [error] : >> 
+2023-09-25 09:49:32 [error] : >> 
+2023-09-25 10:03:01 [error] : passport isAuth  : true
+2023-09-25 10:03:13 [error] : >> 
+2023-09-25 10:12:15 [error] : >> 
+2023-09-25 10:13:03 [error] : >> 
+2023-09-25 10:13:07 [error] : >> 
+2023-09-25 10:13:08 [error] : >> 
+2023-09-25 10:13:09 [error] : >> 
+2023-09-25 10:13:31 [error] : >> 
+2023-09-25 10:15:16 [error] : >> 
+2023-09-25 10:18:16 [error] : >> 
+2023-09-25 11:34:33 [error] : passport isAuth  : true
+2023-09-25 11:47:01 [error] : passport isAuth  : false
+2023-09-25 11:48:41 [error] : passport isAuth  : false
+2023-09-25 12:57:56 [error] : passport isAuth  : true
+2023-09-25 12:58:22 [error] : >> 
+2023-09-25 12:58:23 [error] : >> 
+2023-09-25 12:58:33 [error] : >> 
+2023-09-25 14:02:40 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-25 14:02:40 [error] : >> 
+2023-09-25 14:54:10 [error] : passport isAuth  : true
+2023-09-25 16:23:08 [error] : passport isAuth  : true
+2023-09-25 16:23:14 [error] : >> 
+2023-09-25 16:23:15 [error] : >> 
+2023-09-25 16:23:33 [error] : >> 
+2023-09-25 18:13:56 [error] : passport isAuth  : true
+2023-09-25 18:14:28 [error] : >> 
+2023-09-25 18:14:29 [error] : >> 
+2023-09-25 18:14:31 [error] : >> 
+2023-09-25 18:14:58 [error] : passport isAuth  : true
+2023-09-25 18:15:05 [error] : >> 
+2023-09-25 18:55:07 [error] : passport isAuth  : true
+2023-09-25 18:57:51 [error] : passport isAuth  : true
+2023-09-25 18:59:02 [error] : passport isAuth  : true
+2023-09-25 19:21:26 [error] : passport isAuth  : true
+2023-09-25 19:22:28 [error] : passport isAuth  : true
+2023-09-25 19:22:52 [error] : passport isAuth  : true
+2023-09-25 19:23:06 [error] : passport isAuth  : true
+2023-09-25 20:02:11 [error] : passport isAuth  : true
+2023-09-25 21:53:11 [error] : passport isAuth  : true

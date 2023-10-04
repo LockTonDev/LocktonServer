@@ -1,0 +1,584 @@
+2023-09-27 14:07:08 [info] : Server off
+2023-09-27 14:07:17 [info] : Server on port 3000 | run
+2023-09-27 14:07:24 [debug] : ---------------------------------S query
+2023-09-27 14:07:24 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:07:24 [debug] : ROWS : 
+2023-09-27 14:07:24 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:07:24 [error] : passport isAuth  : true
+2023-09-27 14:07:24 [debug] : ---------------------------------S query
+2023-09-27 14:07:24 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:07:24 [debug] : ROWS : 
+2023-09-27 14:07:24 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:07:24 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$JZxCSe5dcgswbcS5Niv9t.TlzX1xBosqySRNGN3cVzm7qcsKZd76.",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 0,
+   "login_block_yn": "N"
+}
+2023-09-27 14:07:24 [info] : ::1 - - [27/Sep/2023:05:07:24 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 14:07:34 [debug] : ---------------------------------S query
+2023-09-27 14:07:34 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:07:34 [debug] : ROWS : 
+2023-09-27 14:07:34 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:07:34 [error] : passport isAuth  : false
+2023-09-27 14:07:34 [debug] : ---------------------------------S query
+2023-09-27 14:07:34 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:07:34 [debug] : ROWS : 
+2023-09-27 14:07:34 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:07:34 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$JZxCSe5dcgswbcS5Niv9t.TlzX1xBosqySRNGN3cVzm7qcsKZd76.",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 0,
+   "login_block_yn": "N"
+}
+2023-09-27 14:07:34 [info] : ::1 - - [27/Sep/2023:05:07:34 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 14:11:49 [debug] : ---------------------------------S query
+2023-09-27 14:11:49 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:11:49 [debug] : ROWS : 
+2023-09-27 14:11:49 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:11:49 [error] : passport isAuth  : false
+2023-09-27 14:11:49 [debug] : ---------------------------------S query
+2023-09-27 14:11:49 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:11:49 [debug] : ROWS : 
+2023-09-27 14:11:49 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:11:49 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$JZxCSe5dcgswbcS5Niv9t.TlzX1xBosqySRNGN3cVzm7qcsKZd76.",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 0,
+   "login_block_yn": "N"
+}
+2023-09-27 14:11:49 [info] : ::1 - - [27/Sep/2023:05:11:49 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 14:18:33 [info] : Server off
+2023-09-27 14:18:35 [info] : Server on port 3000 | run
+2023-09-27 14:19:04 [debug] : ---------------------------------S query
+2023-09-27 14:19:04 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:19:04 [debug] : ROWS : 
+2023-09-27 14:19:04 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:19:04 [error] : passport isAuth1  : true
+2023-09-27 14:19:04 [debug] : ---------------------------------S query
+2023-09-27 14:19:04 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:19:04 [debug] : ROWS : 
+2023-09-27 14:19:04 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:19:04 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$JZxCSe5dcgswbcS5Niv9t.TlzX1xBosqySRNGN3cVzm7qcsKZd76.",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 0,
+   "login_block_yn": "N"
+}
+2023-09-27 14:19:04 [info] : ::1 - - [27/Sep/2023:05:19:04 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 14:23:10 [debug] : ---------------------------------S query
+2023-09-27 14:23:10 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:23:10 [debug] : ROWS : 
+2023-09-27 14:23:10 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:23:10 [error] : passport isAuth1  : true
+2023-09-27 14:23:10 [debug] : ---------------------------------S query
+2023-09-27 14:23:10 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:23:10 [debug] : ROWS : 
+2023-09-27 14:23:10 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:23:10 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$JZxCSe5dcgswbcS5Niv9t.TlzX1xBosqySRNGN3cVzm7qcsKZd76.",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 0,
+   "login_block_yn": "N"
+}
+2023-09-27 14:23:10 [info] : ::1 - - [27/Sep/2023:05:23:10 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 14:23:43 [info] : Server off
+2023-09-27 14:23:45 [info] : Server on port 3000 | run
+2023-09-27 14:33:24 [debug] : ---------------------------------S query
+2023-09-27 14:33:24 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:33:24 [debug] : ROWS : 
+2023-09-27 14:33:24 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:33:24 [error] : passport isAuth1  : false
+2023-09-27 14:33:24 [debug] : ---------------------------------S query
+2023-09-27 14:33:24 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = login_fail_cnt + 1
+                                            , login_block_yn = CASE WHEN login_fail_cnt >= 5 THEN 'Y' ELSE 'N' END
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 14:33:24 [debug] : ROWS : 
+2023-09-27 14:33:24 [debug] : 1---------------------------------E query
+
+
+2023-09-27 14:33:24 [info] : ::1 - - [27/Sep/2023:05:33:24 +0000] "POST /auth/signin HTTP/1.1" 401 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:20:05 [debug] : ---------------------------------S query
+2023-09-27 15:20:05 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:20:05 [debug] : ROWS : 
+2023-09-27 15:20:05 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:20:05 [error] : passport isAuth1  : true
+2023-09-27 15:20:05 [debug] : ---------------------------------S query
+2023-09-27 15:20:05 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:20:05 [debug] : ROWS : 
+2023-09-27 15:20:05 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:20:05 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$JZxCSe5dcgswbcS5Niv9t.TlzX1xBosqySRNGN3cVzm7qcsKZd76.",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 1,
+   "login_block_yn": "N"
+}
+2023-09-27 15:20:05 [info] : ::1 - - [27/Sep/2023:06:20:05 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:20:12 [debug] : ---------------------------------S query
+2023-09-27 15:20:12 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:20:12 [debug] : ROWS : 
+2023-09-27 15:20:12 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:20:12 [error] : passport isAuth1  : false
+2023-09-27 15:20:12 [debug] : ---------------------------------S query
+2023-09-27 15:20:12 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = login_fail_cnt + 1
+                                            , login_block_yn = CASE WHEN login_fail_cnt >= 5 THEN 'Y' ELSE 'N' END
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:20:12 [debug] : ROWS : 
+2023-09-27 15:20:12 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:20:12 [info] : ::1 - - [27/Sep/2023:06:20:12 +0000] "POST /auth/signin HTTP/1.1" 401 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:20:41 [debug] : ---------------------------------S query
+2023-09-27 15:20:41 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:20:41 [debug] : ROWS : 
+2023-09-27 15:20:41 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:20:41 [error] : passport isAuth1  : false
+2023-09-27 15:20:41 [debug] : ---------------------------------S query
+2023-09-27 15:20:41 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = login_fail_cnt + 1
+                                            , login_block_yn = CASE WHEN login_fail_cnt >= 5 THEN 'Y' ELSE 'N' END
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:20:41 [debug] : ROWS : 
+2023-09-27 15:20:41 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:20:41 [info] : ::1 - - [27/Sep/2023:06:20:41 +0000] "POST /auth/signin HTTP/1.1" 401 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:20:54 [debug] : ---------------------------------S query
+2023-09-27 15:20:54 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:20:54 [debug] : ROWS : 
+2023-09-27 15:20:54 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:20:54 [error] : passport isAuth1  : true
+2023-09-27 15:20:54 [debug] : ---------------------------------S query
+2023-09-27 15:20:54 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:20:54 [debug] : ROWS : 
+2023-09-27 15:20:54 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:20:54 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$JZxCSe5dcgswbcS5Niv9t.TlzX1xBosqySRNGN3cVzm7qcsKZd76.",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 2,
+   "login_block_yn": "N"
+}
+2023-09-27 15:20:54 [info] : ::1 - - [27/Sep/2023:06:20:54 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:21:20 [debug] : ---------------------------------S query
+2023-09-27 15:21:20 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:21:20 [debug] : ROWS : 
+2023-09-27 15:21:20 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:21:20 [error] : passport isAuth1  : false
+2023-09-27 15:21:20 [debug] : ---------------------------------S query
+2023-09-27 15:21:20 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = login_fail_cnt + 1
+                                            , login_block_yn = CASE WHEN login_fail_cnt >= 5 THEN 'Y' ELSE 'N' END
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:21:20 [debug] : ROWS : 
+2023-09-27 15:21:20 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:21:20 [info] : ::1 - - [27/Sep/2023:06:21:20 +0000] "POST /auth/signin HTTP/1.1" 401 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:24:56 [debug] : ---------------------------------S query
+2023-09-27 15:24:56 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:24:56 [debug] : ROWS : 
+2023-09-27 15:24:56 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:24:56 [error] : passport isAuth1  : false
+2023-09-27 15:24:56 [debug] : ---------------------------------S query
+2023-09-27 15:24:56 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = login_fail_cnt + 1
+                                            , login_block_yn = CASE WHEN login_fail_cnt >= 5 THEN 'Y' ELSE 'N' END
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:24:56 [debug] : ROWS : 
+2023-09-27 15:24:56 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:24:56 [info] : ::1 - - [27/Sep/2023:06:24:56 +0000] "POST /auth/signin HTTP/1.1" 401 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:25:02 [debug] : ---------------------------------S query
+2023-09-27 15:25:02 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:25:02 [debug] : ROWS : 
+2023-09-27 15:25:02 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:25:02 [error] : passport isAuth1  : true
+2023-09-27 15:25:02 [debug] : ---------------------------------S query
+2023-09-27 15:25:02 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:25:02 [debug] : ROWS : 
+2023-09-27 15:25:02 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:25:02 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$JZxCSe5dcgswbcS5Niv9t.TlzX1xBosqySRNGN3cVzm7qcsKZd76.",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 2,
+   "login_block_yn": "N"
+}
+2023-09-27 15:25:02 [info] : ::1 - - [27/Sep/2023:06:25:02 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:25:15 [debug] : ---------------------------------S query
+2023-09-27 15:25:15 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:25:15 [debug] : ROWS : 
+2023-09-27 15:25:15 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:25:15 [error] : passport isAuth1  : false
+2023-09-27 15:25:15 [debug] : ---------------------------------S query
+2023-09-27 15:25:15 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = login_fail_cnt + 1
+                                            , login_block_yn = CASE WHEN login_fail_cnt >= 5 THEN 'Y' ELSE 'N' END
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:25:15 [debug] : ROWS : 
+2023-09-27 15:25:15 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:25:15 [info] : ::1 - - [27/Sep/2023:06:25:15 +0000] "POST /auth/signin HTTP/1.1" 401 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:26:09 [debug] : ---------------------------------S query
+2023-09-27 15:26:09 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:26:09 [debug] : ROWS : 
+2023-09-27 15:26:09 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:26:09 [error] : passport isAuth1  : false
+2023-09-27 15:26:09 [debug] : ---------------------------------S query
+2023-09-27 15:26:09 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = login_fail_cnt + 1
+                                            , login_block_yn = CASE WHEN login_fail_cnt >= 5 THEN 'Y' ELSE 'N' END
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:26:09 [debug] : ROWS : 
+2023-09-27 15:26:09 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:26:09 [info] : ::1 - - [27/Sep/2023:06:26:09 +0000] "POST /auth/signin HTTP/1.1" 401 - "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:26:20 [debug] : ---------------------------------S query
+2023-09-27 15:26:20 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:26:20 [debug] : ROWS : 
+2023-09-27 15:26:20 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:26:20 [error] : passport isAuth1  : true
+2023-09-27 15:26:20 [debug] : ---------------------------------S query
+2023-09-27 15:26:20 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-09-27 15:26:20 [debug] : ROWS : 
+2023-09-27 15:26:20 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:26:20 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$4VQTzhLPrwBcs77YcdzOCuM3csguBBeuZgWfGVtP4Ro3cBevEeW36",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 2,
+   "login_block_yn": "N"
+}
+2023-09-27 15:26:20 [info] : ::1 - - [27/Sep/2023:06:26:20 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:03 [debug] : ---------------------------------S query
+2023-09-27 15:43:03 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:03 [debug] : ROWS : 
+2023-09-27 15:43:03 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:03 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:03 [error] : >> 
+2023-09-27 15:43:03 [info] : ::1 - - [27/Sep/2023:06:43:03 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:13 [debug] : ---------------------------------S query
+2023-09-27 15:43:13 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:13 [debug] : ROWS : 
+2023-09-27 15:43:13 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:13 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:13 [error] : >> 
+2023-09-27 15:43:13 [info] : ::1 - - [27/Sep/2023:06:43:13 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:14 [debug] : ---------------------------------S query
+2023-09-27 15:43:14 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:14 [debug] : ROWS : 
+2023-09-27 15:43:14 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:14 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:14 [error] : >> 
+2023-09-27 15:43:14 [info] : ::1 - - [27/Sep/2023:06:43:14 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:15 [debug] : ---------------------------------S query
+2023-09-27 15:43:15 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:15 [debug] : ROWS : 
+2023-09-27 15:43:15 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:15 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:15 [error] : >> 
+2023-09-27 15:43:15 [info] : ::1 - - [27/Sep/2023:06:43:15 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:15 [debug] : ---------------------------------S query
+2023-09-27 15:43:15 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:15 [debug] : ROWS : 
+2023-09-27 15:43:15 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:15 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:15 [error] : >> 
+2023-09-27 15:43:15 [info] : ::1 - - [27/Sep/2023:06:43:15 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:15 [debug] : ---------------------------------S query
+2023-09-27 15:43:15 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:15 [debug] : ROWS : 
+2023-09-27 15:43:15 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:15 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:15 [error] : >> 
+2023-09-27 15:43:15 [info] : ::1 - - [27/Sep/2023:06:43:15 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:15 [debug] : ---------------------------------S query
+2023-09-27 15:43:15 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:15 [debug] : ROWS : 
+2023-09-27 15:43:15 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:15 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:15 [error] : >> 
+2023-09-27 15:43:15 [info] : ::1 - - [27/Sep/2023:06:43:15 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:15 [debug] : ---------------------------------S query
+2023-09-27 15:43:15 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:15 [debug] : ROWS : 
+2023-09-27 15:43:15 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:15 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:15 [error] : >> 
+2023-09-27 15:43:15 [info] : ::1 - - [27/Sep/2023:06:43:15 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:16 [debug] : ---------------------------------S query
+2023-09-27 15:43:16 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:16 [debug] : ROWS : 
+2023-09-27 15:43:16 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:16 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:16 [error] : >> 
+2023-09-27 15:43:16 [info] : ::1 - - [27/Sep/2023:06:43:16 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:16 [debug] : ---------------------------------S query
+2023-09-27 15:43:16 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:16 [debug] : ROWS : 
+2023-09-27 15:43:16 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:16 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:16 [error] : >> 
+2023-09-27 15:43:16 [info] : ::1 - - [27/Sep/2023:06:43:16 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:16 [debug] : ---------------------------------S query
+2023-09-27 15:43:16 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:16 [debug] : ROWS : 
+2023-09-27 15:43:16 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:16 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:16 [error] : >> 
+2023-09-27 15:43:16 [info] : ::1 - - [27/Sep/2023:06:43:16 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:17 [debug] : ---------------------------------S query
+2023-09-27 15:43:17 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:17 [debug] : ROWS : 
+2023-09-27 15:43:17 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:17 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:17 [error] : >> 
+2023-09-27 15:43:17 [info] : ::1 - - [27/Sep/2023:06:43:17 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:17 [debug] : ---------------------------------S query
+2023-09-27 15:43:17 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:17 [debug] : ROWS : 
+2023-09-27 15:43:17 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:17 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:17 [error] : >> 
+2023-09-27 15:43:17 [info] : ::1 - - [27/Sep/2023:06:43:17 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:17 [debug] : ---------------------------------S query
+2023-09-27 15:43:17 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:17 [debug] : ROWS : 
+2023-09-27 15:43:17 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:17 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:17 [error] : >> 
+2023-09-27 15:43:17 [info] : ::1 - - [27/Sep/2023:06:43:17 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:17 [debug] : ---------------------------------S query
+2023-09-27 15:43:17 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:17 [debug] : ROWS : 
+2023-09-27 15:43:17 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:17 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:17 [error] : >> 
+2023-09-27 15:43:17 [info] : ::1 - - [27/Sep/2023:06:43:17 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:18 [debug] : ---------------------------------S query
+2023-09-27 15:43:18 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:18 [debug] : ROWS : 
+2023-09-27 15:43:18 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:18 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:18 [error] : >> 
+2023-09-27 15:43:18 [info] : ::1 - - [27/Sep/2023:06:43:18 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:18 [debug] : ---------------------------------S query
+2023-09-27 15:43:18 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:18 [debug] : ROWS : 
+2023-09-27 15:43:18 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:18 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:18 [error] : >> 
+2023-09-27 15:43:18 [info] : ::1 - - [27/Sep/2023:06:43:18 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
+2023-09-27 15:43:18 [debug] : ---------------------------------S query
+2023-09-27 15:43:18 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf01g' and status_cd not in ('90')
+2023-09-27 15:43:18 [debug] : ROWS : 
+2023-09-27 15:43:18 [debug] : 1---------------------------------E query
+
+
+2023-09-27 15:43:18 [error] : PASSPORT localVerify Error1 :  Cannot read properties of undefined (reading 'user_pwd')
+2023-09-27 15:43:18 [error] : >> 
+2023-09-27 15:43:18 [info] : ::1 - - [27/Sep/2023:06:43:18 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36"
+
