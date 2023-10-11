@@ -68,7 +68,7 @@ app.use(handleErrors);
 
 /** 에러페이지 및 에러 핸들링 */
 app.use((req, res, next) => {
-  //logger.debug(res);
+  logger.debug(res);
   throw new NotFound(StatusMessage.RequestWithIntentionalInvalidUrl);
 });
 

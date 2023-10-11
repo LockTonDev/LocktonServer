@@ -60,7 +60,7 @@ async function localVerify(req, user_id, user_pwd, done) {
     return done(null, userInfo);
     // return done(null, null);
   } catch (e) {
-    logger.error('PASSPORT localVerify Error1 : ', e);
+    logger.error('PASSPORT localVerify Error : ', e);
     return done(e);
   }
 }
