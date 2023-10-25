@@ -353,6 +353,18 @@ module.exports = {
     try {
       const result = await M_ADMIN.getTAXExcel(req);
 
+      result.map(row => {
+        row.user_birth = parseFloat(row.user_birth)
+        row.user_regno = parseFloat(row.user_regno)
+        row.insr_amt = parseFloat(row.insr_amt)
+        row.insr_tot_amt = parseFloat(row.insr_tot_amt)
+        row.insr_tot_paid_amt = parseFloat(row.insr_tot_paid_amt)
+        row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
+        row.insr_base_amt = parseFloat(row.insr_base_amt)
+        row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+      })
+
+
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
