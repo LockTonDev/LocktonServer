@@ -47,3 +47,5 @@
 }
 2023-11-02 10:42:03 [info] : ::1 - - [02/Nov/2023:01:42:03 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
 
+2023-11-02 10:46:03 [info] : ::1 - - [02/Nov/2023:01:46:03 +0000] "POST /auth/refresh HTTP/1.1" 200 466 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+
