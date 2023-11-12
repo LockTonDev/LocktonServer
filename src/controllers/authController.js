@@ -199,7 +199,7 @@ module.exports = {
         throw new BadRequest(StatusMessage.BadRequestMeg);
       }
 
-      const isValidate = await User.validateEmail(req);1
+      const isValidate = await User.validateEmail(req);
       if (isValidate.success && isValidate.isActive) {
         const verificationCode = sendMailForCertified(req.body.email);
         logger.info(StatusMessage.sendMailForCertifiedNumber);
