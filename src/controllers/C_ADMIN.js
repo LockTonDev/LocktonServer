@@ -444,8 +444,6 @@ module.exports = {
   getRenewals: async function (req, res, next) {
     try {
       const result = await M_ADMIN.getRenewals(req);
-      console.log("========================")
-      console.log(result)
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,

@@ -75,7 +75,7 @@ module.exports = {
         uuid: userInfo.user_uuid,
         role: 'user'
       };
-
+      console.log("userInfo :",userInfo)
       const accessToken = jwt.sign(payload, process.env.JWT_SECRET_KEY, {
         algorithm: 'HS256',
         expiresIn: expiresInMinutes * 60 // expiresIn은 초 단위로 설정해야 함
@@ -163,22 +163,29 @@ module.exports = {
 
   refreshSignIn: async function (req, res, next) {
     try {
+
       const userInfo = req.body.params;
       const payload = {
-        uuid: userInfo.user_uuid,
+        uuid: userInfo.userUuid,
         role: 'user'
       };
-
+      console.log("userInfo :",userInfo)
       const accessToken = jwt.sign(payload, process.env.JWT_SECRET_KEY, {
         algorithm: 'HS256',
         expiresIn: expiresInMinutes * 60 // expiresIn은 초 단위로 설정해야 함
+      });
+
+      const refreshToken = jwt.sign(payload, process.env.JWT_SECRET_KEY, {
+        algorithm: 'HS256',
+        expiresIn: '1d' // 일
       });
 
       return res.status(StatusCode.OK).json({
         success: true,
         message: StatusMessage.loginSuccess,
         data: {
-          accessToken: accessToken
+          accessToken: accessToken,
+          refreshToken: refreshToken
         }
       });
     } catch (err) {
@@ -192,7 +199,7 @@ module.exports = {
         throw new BadRequest(StatusMessage.BadRequestMeg);
       }
 
-      const isValidate = await User.validateEmail(req);
+      const isValidate = await User.validateEmail(req);1
       if (isValidate.success && isValidate.isActive) {
         const verificationCode = sendMailForCertified(req.body.email);
         logger.info(StatusMessage.sendMailForCertifiedNumber);
