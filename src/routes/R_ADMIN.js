@@ -9,6 +9,7 @@ const { verifyToken } = require('../middleware/auth');
 
 router.post('/SYSTEM/get', verifyToken, C_ADMIN.getSystemInfo);
 router.post('/COM/setUsersTemp', verifyToken, C_ADMIN.setUsersTemp);
+router.post('/COM/getStockStartDtInfo', verifyToken, C_ADMIN.getStockStartDtInfo);
 
 router.post('/USER_REG_NO/set', verifyToken, C_ADMIN.setUserRegNo);
 router.post('/USER_REG_NO/gets', verifyToken, C_ADMIN.getUserRegNo);
@@ -23,6 +24,7 @@ router.post('/USER/setUserLoginBlockReset', verifyToken, C_ADMIN.setUserLoginBlo
 router.post('/USER/get', verifyToken, C_ADMIN.getUserInfo);
 router.post('/USER/gets', verifyToken, C_ADMIN.getUserList);
 router.post('/USER/set', verifyToken, C_ADMIN.setUserInfo);
+router.post('/USER/setUserPassword', verifyToken, C_ADMIN.setUserPassword);
 
 router.post('/TAX/EXCEL/get', verifyToken, C_ADMIN.getTAXExcel);
 

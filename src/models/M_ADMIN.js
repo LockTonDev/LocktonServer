@@ -203,6 +203,37 @@ module.exports = {
     return true;
   },
 
+  setUser: async function (params) {
+    let transaction;
+    try {
+      transaction = await knexDB.transaction();
+      for (const param of params) {
+        if (param.mode === 'C') await transaction.raw(AdminUserMapper.INSERT_USER, param);
+        else if (param.mode === 'U') await transaction.raw(AdminMapper.UPDATE_USER, param);
+        else if (param.mode === 'D') await transaction.raw(AdminMapper.DELETE_USER, param);
+      }
+
+      await transaction.commit();
+    } catch (error) {
+      if (transaction) {
+        await transaction.rollback();
+      }
+      logger.error(error);
+      throw new NotFound(StatusMessage.INSERT_FAILED);
+    }
+    return true;
+  },
+  /**
+   *
+   * @param {*} req
+   * @returns
+   */
+    setUserPassword: async function (params) {
+      //const { params } = req.body;
+      const resultData = await knexDB.raw(AdminUserMapper.UPDATE_USER_PASSWORD, params);
+      logger.error(resultData);
+      return true;
+    },
   /**
    *
    * @param {*} req
@@ -617,5 +648,15 @@ module.exports = {
   setACCSRenewal: async function (req) {
     req.body.params.renewal = 'Y';
     return this.insertACC(req.body.params);
-  }
+  } , 
+  /**
+  *
+  * @param {*} req
+  * @returns
+  */
+  getStockStartDtInfo: async function (req) {
+   const { params } = req.body;
+   const resultData = await knexDB.raw(AdminMapper.SELECT_STOCK_START_DT_LIST, params);
+   return resultData[0];
+ }
 };

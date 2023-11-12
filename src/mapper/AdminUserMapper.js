@@ -231,6 +231,13 @@ ORDER BY  business_cd, user_cd, created_at DESC
   /**
    * [회원DB] 입력
    */
+  UPDATE_USER_PASSWORD: `
+      /* AdminUserMapper.UPDATE_USER_PASSWORD */
+      UPDATE tcom0110a SET user_pwd = :user_pwd  WHERE user_uuid = :user_uuid
+  `,
+  /**
+   * [회원DB] 입력
+   */
   DELETE_USER: `
       /* AdminUserMapper.DELETE_USER */
       DELETE FROM tcom0110a WHERE user_uuid = :user_uuid

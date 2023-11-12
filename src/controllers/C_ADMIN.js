@@ -85,7 +85,25 @@ module.exports = {
       next(err);
     }
   },
+  setUserPassword: async function (req, res, next) {
+    try {
+      const params = req.body.params;
+      const hash_password = bcrypt.hashSync(params.rmk, 10);
+      params.user_pwd = hash_password;
+      console.log("params", params)
+      const result = await M_ADMIN.setUserPassword(params);
 
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
   getBoardInfo: async function (req, res, next) {
     try {
       const result = await M_ADMIN.getBoardInfo(req);
@@ -508,6 +526,7 @@ module.exports = {
   },
   setACCSRenewal: async function (req, res, next) {
     try {
+      
       const result = await M_ADMIN.setACCSRenewal(req);
 
       if (result) {
@@ -520,5 +539,19 @@ module.exports = {
     } catch (err) {
       next(err);
     }
-  }
+  },
+  getStockStartDtInfo : async function (req, res, next) {
+    try {
+      const result = await M_ADMIN.getStockStartDtInfo(req);
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
 };

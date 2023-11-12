@@ -1140,5 +1140,16 @@ VALUES      ( UUID_V4(),
         proc_cd = :proc_cd
       where
         apply_no = :apply_no
-    `
+    `,
+
+    /**
+   * [공통DB] 증권시작일 조회
+   */
+    SELECT_STOCK_START_DT_LIST: `
+      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    
+      select date_format(start_dt, '%Y-%m-%d') as start_dt
+           , business_cd
+        from tcom0112a
+       where use_yn = 'Y';
+      `
 });
