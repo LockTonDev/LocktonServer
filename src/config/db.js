@@ -112,7 +112,10 @@ module.exports = {
 
     try {
       const executeQueries = async () => {
-        return await Promise.all(queries.map((query, index) => executeQuery(query, parameters[index])));
+        return await Promise.all(queries.map(async (query, index) => {
+          const result = await connection.query(query, parameters[index]);
+          return result[0];
+        }));
       };
 
       rows = await executeQueries();

@@ -288,6 +288,7 @@ module.exports = {
   getTAX: async function (req) {
     const { params } = req.body;
     const resultData = await knexDB.raw(AdminMapper.INSURANCE_INFO, params);
+    logger.info(resultData[0])
     return resultData[0];
   },
 
@@ -296,6 +297,7 @@ module.exports = {
     const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
     return resultData[0];
   },
+  
   getTAXExcel: async function (req) {
     const { params } = req.body;
     const resultData = await knexDB.raw(AdminMapper.INSURANCE_EXCEL_LIST, params);
