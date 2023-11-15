@@ -259,4 +259,73 @@ module.exports = {
     return true;
   },
 
+  getADV_TRX: async function (req) {
+    const params = req.body.params
+    logger.info(params)
+    const queryParams = [
+      params.business_cd,
+      params.user_cd,
+      params.user_cd,
+      params.insr_year,
+      params.insr_year,
+      params.status_cd,
+      params.status_cd,
+      params.user_nm,
+      params.user_nm,
+    ];
+    const [rowsInsrInfo] = await db.query(ADVAdminMapper.SELECT_INSURANCE_ADV_TRX_DATA_LIST, queryParams);
+    //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
+    if (rowsInsrInfo.affectedRows < 1) {
+      throw new NotFound(StatusMessage.SELECT_FAILED);
+    }
+    return Object.setPrototypeOf(rowsInsrInfo, []);
+  },
+
+  setADV_TRX: async function (req) {
+    const params = req.body.params
+    logger.info(params)
+    let querys = []
+    let query_params = []
+    for(const param of params){
+      const updateQueryParams = [
+        JSON.stringify(param.trx_data),
+        param.insr_tot_unpaid_amt,
+        param.insr_tot_paid_amt,
+        param.status_cd,
+        param.updated_id,
+        param.updated_ip,
+        param.insurance_uuid,
+      ];
+      querys.push(ADVAdminMapper.UPDATE_INSURANCE_ADV_TRX_DATA)
+      query_params.push(updateQueryParams)
+    }
+    
+    
+    const rows_results = await db.queryListWithTransaction(querys, query_params);
+    //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
+    for(const rows of rows_results){
+      if (rows.affectedRows < 1) {
+        throw new NotFound(StatusMessage.SELECT_FAILED);
+      }
+    }
+    return true;
+  },
+
+  getADVExcel: async function (req) {
+    const params = req.body.params;
+    const queryParams = [
+      params.business_cd,
+      params.user_cd,
+      params.insr_year,
+      params.status_cd,
+      params.status_cd,
+      params.user_nm,
+    ];
+    const [rows] = await db.query(ADVAdminMapper.INSURANCE_ADV_EXCEL_LIST, queryParams);
+    if (rows.affectedRows < 1) {
+      throw new NotFound(StatusMessage.SELECT_FAILED);
+    }
+    return rows;
+  },
+
 };

@@ -71,6 +71,25 @@ module.exports = {
       next(err);
     }
   },
+  setUserPassword: async function (req, res, next) {
+    try {
+      const params = req.body.params;
+      const hash_password = bcrypt.hashSync(params.rmk, 10);
+      params.user_pwd = hash_password;
+      console.log("params", params)
+      const result = await M_ADMIN.setUserPassword(params);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
   setUserRegNo: async function (req, res, next) {
     try {
       const result = await M_ADMIN.setUserRegNo(req);
@@ -353,18 +372,6 @@ module.exports = {
   getTAXExcel: async function (req, res, next) {
     try {
       const result = await M_ADMIN.getTAXExcel(req);
-
-      result.map(row => {
-        row.user_birth = parseFloat(row.user_birth)
-        row.user_regno = parseFloat(row.user_regno)
-        row.insr_amt = parseFloat(row.insr_amt)
-        row.insr_tot_amt = parseFloat(row.insr_tot_amt)
-        row.insr_tot_paid_amt = parseFloat(row.insr_tot_paid_amt)
-        row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
-        row.insr_base_amt = parseFloat(row.insr_base_amt)
-        row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
-      })
-
 
       result.map(row => {
         row.user_birth = parseFloat(row.user_birth)
@@ -703,6 +710,32 @@ module.exports = {
         res.status(StatusCode.OK).json({
           success: true,
           message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getADVExcel: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_ADV.getADVExcel(req);
+
+      result.map(row => {
+        row.user_birth = parseFloat(row.user_birth)
+        row.user_regno = parseFloat(row.user_regno)
+        row.insr_amt = parseFloat(row.insr_amt)
+        row.insr_tot_amt = parseFloat(row.insr_tot_amt)
+        row.insr_tot_paid_amt = parseFloat(row.insr_tot_paid_amt)
+        row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
+        row.insr_base_amt = parseFloat(row.insr_base_amt)
+        row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+      })
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
           data: result
         });
       }

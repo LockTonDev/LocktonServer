@@ -100,7 +100,7 @@ module.exports = {
    */
   getSaleRtNDupInfo: async function (req, res, next) {
     try {
-      const result = await M_TTAX0030A.getSaleRtNDupInfo(req);
+      const result = await M_TADV0030A.getSaleRtNDupInfo(req);
 
       if (result) {
         res.status(StatusCode.OK).json({

@@ -44,7 +44,7 @@ module.exports = {
           rmk, created_id, created_ip, updated_id, updated_ip
           , FN_GET_CODENM('COM030', status_cd) AS status_nm
           , FN_GET_CODENM('TAX001', corp_region_cd) AS corp_region_nm
-        FROM TTAX0031A
+        FROM TADV0031A
         WHERE  insurance_uuid = ?
         order by insurance_uuid`;
 
@@ -293,9 +293,6 @@ module.exports = {
       params.user_nm,
       params.user_birth,
       params.user_regno,
-      params.user_nm,
-      params.user_birth,
-      params.user_regno
     ];
 
     const queryInd = `
@@ -306,7 +303,8 @@ module.exports = {
           user_regno,
           null as corp_bnno,
           insr_retr_dt,
-          insr_pblc_brdn_rt,
+          insr_take_amt,
+          insr_take_sec,
           insr_clm_lt_amt,
           insr_psnl_brdn_amt,
           IFNULL(NULLIF(insr_sale_rt, ''), 0) as insr_sale_rt
@@ -326,7 +324,8 @@ module.exports = {
           j.cbr_brdt as user_birth,
           j.cbr_regno as user_regno,
           j.insr_retr_dt as insr_retr_dt,
-          t.insr_pblc_brdn_rt,
+          t.insr_take_amt,
+          t.insr_take_sec,
           t.insr_clm_lt_amt,
           t.insr_psnl_brdn_amt,
           IFNULL(NULLIF(j.insr_sale_rt, ''), 0) as insr_sale_rt
@@ -353,14 +352,116 @@ module.exports = {
     const [rowsCor] = await db.query(queryCor, queryParams);
     const result = [...rowsInd, ...rowsCor];
 
-    // if (result.length == 0) {
-    //   throw new NotFound(StatusMessage.SELECT_FAILED);
-    // }
+    if (result.affectedRows == 0) {
+       throw new NotFound(StatusMessage.SELECT_FAILED);
+    }
 
     return Object.setPrototypeOf(result, []);
   },
 
   getSaleRtNDupInfo: async function (req) {
+    const params = req.body.params;
+    const queryParamsDataInd = [
+      params.business_cd,
+      params.user_nm,
+      params.user_birth,
+      params.user_regno,
+      params.insr_year,
+    ];
+    const queryDataInd = `
+        select
+          user_cd,
+          user_nm,
+          user_birth,
+          user_regno,
+          null as corp_bnno,
+          insr_retr_dt,
+          insr_take_amt,
+          insr_take_sec,
+          insr_clm_lt_amt,
+          insr_psnl_brdn_amt,
+          IFNULL(NULLIF(insr_sale_year, ''), 0) as insr_sale_year,
+          IFNULL(NULLIF(insr_sale_rt, ''), 0) as insr_sale_rt
+        from
+          TADV0031A
+        where business_cd = ?
+          and user_cd = 'IND'
+          and user_nm = ?
+          and user_birth = ?
+          and user_regno = ?
+          and insr_year = ?
+    `
+    const queryParamsDataDup = [
+      params.business_cd,
+      params.user_nm,
+      params.user_birth,
+      params.user_regno,
+      params.insr_year,
+      params.business_cd,
+      params.user_nm,
+      params.user_birth,
+      params.user_regno,
+      params.insr_year,
+    ];
+    const queryDataDup = `
+        SELECT COUNT(*) AS cnt
+        FROM (
+            SELECT 1
+            FROM TADV0030A
+            WHERE business_cd = ?
+              AND user_cd = 'IND'
+              AND user_nm = ?
+              AND user_birth = ?
+              AND user_regno = ?
+              AND insr_year = ?
+              AND status_cd in ('10', '20', '80') -- 신청중, 처리중, 정상
+            UNION ALL
+            SELECT 1
+            FROM TADV0030A t,
+            json_table(t.cbr_data,
+            '$[*]' columns (
+              cbr_nm VARCHAR(50) path '$.cbr_nm',
+              cbr_brdt VARCHAR(8) path '$.cbr_brdt',
+              cbr_regno VARCHAR(50) path '$.cbr_regno',
+              status_cd VARCHAR(3) path '$.status_cd'
+            )) j
+            WHERE t.business_cd = ?
+              AND t.user_cd = 'JNT'
+              AND j.cbr_nm = ?
+              AND j.cbr_brdt = ?
+              AND j.cbr_regno = ?
+              AND j.status_cd in ('10', '20', '80') -- 신청중, 처리중, 정상
+              AND t.insr_year = ?
+        ) AS cnt
+      `
+
+      const queryParamsDataMbr = [
+        params.business_cd,
+        params.user_nm,
+        params.user_regno
+      ];
+      const queryDataMbr = `
+      SELECT count(*) AS cnt
+            FROM   tcom0111a
+            WHERE  business_cd = ?
+                  AND nm = ?
+                  AND reg_no = ?
+      `
+      const [resultDataInd] = await db.query(queryDataInd, queryParamsDataInd);
+      const [resultDataDup] = await db.query(queryDataDup, queryParamsDataDup);
+      const [resultDataMbr] = await db.query(queryDataMbr, queryParamsDataMbr);
+      if (resultDataInd.affectedRows == 0 || resultDataDup.affectedRows == 0 || resultDataMbr.affectedRows == 0) {
+        throw new NotFound(StatusMessage.SELECT_FAILED);
+     }
+
+     const result = {renewal:[...resultDataInd], dup_cnt: resultDataDup[0].cnt, mbr_cnt: resultDataMbr[0].cnt}
+
+     console.log(result)
+
+    return Object.setPrototypeOf(
+      result,
+      []
+    );
 
   },
 

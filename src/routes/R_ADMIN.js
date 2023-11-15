@@ -53,5 +53,6 @@ router.post('/ADV/TRX/set', verifyToken, C_ADMIN.setADV_TRX);
 router.post('/ADV/TRX/get', verifyToken, C_ADMIN.getADV_TRX);
 router.post('/ADV/APPLY/set', verifyToken, C_ADMIN.setApplyADVInsurance);
 router.post('/ADV/APPLY/get', verifyToken, C_ADMIN.getApplyADVInsurance);
+router.post('/ADV/EXCEL/get', verifyToken, C_ADMIN.getADVExcel);
 
 module.exports = router;

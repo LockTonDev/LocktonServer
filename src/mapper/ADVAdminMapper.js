@@ -80,13 +80,11 @@ module.exports = Object.freeze({
       LIMIT  1 
     `,
   /**
-   * [보험DB] 보험 데이터 조회 엑셀용
+   * [보험DB - ADV] 보험 데이터 조회 엑셀용
    *
    */
-  INSURANCE_EXCEL_LIST: `
-      /* AdminMapper.INSURANCE_EXCEL_LIST */    
+  INSURANCE_ADV_EXCEL_LIST: `
       SELECT A.insurance_uuid
-            ,A.insurance_seq
             ,A.user_uuid
             ,A.business_cd
             ,A.user_cd
@@ -114,7 +112,8 @@ module.exports = Object.freeze({
             ,A.insr_cncls_dt
             ,A.insr_retr_yn
             ,A.insr_retr_dt
-            ,A.insr_pblc_brdn_rt
+            ,A.insr_take_amt
+            ,A.insr_take_sec
             ,A.insr_clm_lt_amt
             ,A.insr_year_clm_lt_amt
             ,A.insr_psnl_brdn_amt
@@ -126,8 +125,6 @@ module.exports = Object.freeze({
             ,A.insr_tot_amt
             ,A.insr_tot_paid_amt
             ,A.insr_tot_unpaid_amt
-            ,A.cons_join_yn
-            ,A.cons_data
             ,A.spct_join_yn
             ,A.spct_data
             ,A.cbr_data
@@ -153,16 +150,16 @@ module.exports = Object.freeze({
             ,B.insr_st_dt as base_insr_st_dt
             ,B.insr_cncls_dt as base_insr_cncls_dt
             ,B.insurance_no
-      FROM   TTAX0030A A
+      FROM   TADV0030A A
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
 		    AND A.user_cd = B.user_cd 
 		    AND A.business_cd = B.business_cd
-      WHERE  A.business_cd = :business_cd
-         AND A.user_cd = :user_cd
-         AND (A.insr_year like CONCAT('%', :insr_year, '%'))
-         AND (:status_cd = '%' or A.status_cd = :status_cd)
-         AND (A.user_nm like CONCAT('%', :user_nm, '%'))
+      WHERE  A.business_cd = ?
+         AND A.user_cd = ?
+         AND (A.insr_year like CONCAT('%', ?, '%'))
+         AND (? = '%' or A.status_cd = ?)
+         AND (A.user_nm like CONCAT('%', ?, '%'))
       ORDER  BY A.created_at DESC 
     `,
 
