@@ -69,9 +69,9 @@ module.exports = {
   selectList: async function (req) {
     const user_uuid = req.decoded.uuid;
 
-    const queryList = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm 
+    const queryList = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
                   , insr_year, insr_st_dt, insr_cncls_dt
-                  , insr_tot_amt, status_cd
+                  , insr_tot_amt, status_cd, cbr_cnt, cbr_data
                   , FN_GET_CODENM('COM030', status_cd) AS status_nm
                     FROM TADV0030A
                    WHERE user_uuid = ? 
@@ -79,7 +79,7 @@ module.exports = {
 
     const [listData] = await db.query(queryList, user_uuid);
 
-    /*const queryNewInsr = `
+    const queryNewInsr = `
       select
           CASE
             WHEN COUNT(a.insurance_uuid) >= 1 THEN 'N'
@@ -144,20 +144,20 @@ module.exports = {
     `;
 
     const queryRenewalInsrParams = [user_uuid, user_uuid];
-    const renewalInsrData = await db.query(queryRenewalInsr, queryRenewalInsrParams);*/
+    const renewalInsrData = await db.query(queryRenewalInsr, queryRenewalInsrParams);
 
     if (listData.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
     }
-    return Object.setPrototypeOf(listData, [])
-    /*const result = {
+    //return Object.setPrototypeOf(listData, [])
+    const result = {
       list: Object.setPrototypeOf(listData, []),
       newInsrYN: Object.setPrototypeOf(newInsrData[0], Object),
       renewalInsrUUID: Object.setPrototypeOf(renewalInsrData[0], Object)
     };
 
     console.log(result);
-    return result;*/
+    return result;
   },
 
   selectStatus: async function (req) {
