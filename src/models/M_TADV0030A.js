@@ -122,7 +122,7 @@ module.exports = {
         and A.user_cd = B.USER_CD
         and (
                 (A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
-             or (A.user_cd = 'COR' AND A.corp_cnno = B.corp_cnno )
+             or (A.user_cd = 'JNT' AND A.corp_cnno = B.corp_cnno )
             )
         and B.user_uuid = ?
         and a.insr_year in (
@@ -316,7 +316,7 @@ module.exports = {
           and user_birth = ?
           and user_regno = ?
     `;
-    const queryCor = `
+    const queryJNT = `
         select
           t.user_cd,
           t.corp_bnno,
@@ -342,14 +342,14 @@ module.exports = {
         )) j
         where
           t.business_cd = 'ADV'
-          and t.user_cd = 'COR'
+          and t.user_cd = 'JNT'
           and j.cbr_nm = ?
           and j.cbr_brdt = ?
           and j.cbr_regno = ?
     `;
 
     const [rowsInd] = await db.query(queryInd, queryParams);
-    const [rowsCor] = await db.query(queryCor, queryParams);
+    const [rowsCor] = await db.query(queryJNT, queryParams);
     const result = [...rowsInd, ...rowsCor];
 
     if (result.affectedRows == 0) {
