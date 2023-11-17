@@ -170,14 +170,16 @@ module.exports = {
   update: async function (req) {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
+    const hash_password = bcrypt.hashSync(params.user_pwd, 10);
 
-    const query = `UPDATE TCOM0110A SET user_hpno=?, user_email=?, corp_type=?, corp_nm=?, corp_ceo_nm=?, corp_bnno=?, corp_cnno=?, corp_telno=?, corp_faxno=?
+    const query = `UPDATE TCOM0110A SET user_pwd=?, user_hpno=?, user_email=?, corp_type=?, corp_nm=?, corp_ceo_nm=?, corp_bnno=?, corp_cnno=?, corp_telno=?, corp_faxno=?
                   , corp_cust_nm=?, corp_cust_hpno=?, corp_cust_email=?, corp_post=?, corp_addr=?, corp_addr_dtl=?, corp_region_cd=?
                   , recv_email_yn=?, agr1_yn=?, agr2_yn=?, agr3_yn=?, agr4_yn=?, active_yn=?
                   , status_cd=?, rmk=?, updated_at=now(), updated_ip=?
                   WHERE user_uuid=?`;
 
     const queryParams = [
+      hash_password,
       params.user_hpno,
       params.user_email,
       params.corp_type,

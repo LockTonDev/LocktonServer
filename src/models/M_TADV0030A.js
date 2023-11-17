@@ -36,12 +36,11 @@ module.exports = {
           user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
           corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
           insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
-          insr_pblc_brdn_rt, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt,
-          insr_sale_rt, insr_pcnt_sale_rt,insr_base_amt, insr_amt, insr_premium_amt, insr_tot_amt, cbr_cnt,
-          cbr_data, cons_join_yn, cons_data, spct_join_yn, spct_data, active_yn, agr10_yn,
+          insr_take_amt, insr_take_sec, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, insr_sale_year,
+          insr_sale_rt, insr_pcnt_sale_rt,insr_base_amt, insr_amt, insr_premium_amt, insr_tot_amt, insr_tot_paid_amt, 
+          insr_tot_unpaid_amt, cbr_cnt, cbr_data, spct_join_yn, spct_data, active_yn, agr10_yn,
           agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
-          agr50_yn, trans_cd, payment_dt, payment_amt, leftover_amt, complete_dt, status_cd,
-          rmk, created_id, created_ip, updated_id, updated_ip
+          agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip
           , FN_GET_CODENM('COM030', status_cd) AS status_nm
           , FN_GET_CODENM('TAX001', corp_region_cd) AS corp_region_nm
         FROM TADV0031A
@@ -115,7 +114,7 @@ module.exports = {
       select
         MAX(A.insurance_uuid) as data
       from
-        tadv0030a A,
+        tadv0031a A,
         tcom0110a B
       where
         A.business_cd = B.business_cd
