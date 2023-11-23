@@ -119,7 +119,7 @@ module.exports = {
           param.agr41_yn,param.agr50_yn,param.status_cd,param.rmk,param.erp_amt,
           param.erp_dt,param.erp_st_dt,param.erp_cncls_dt,param.change_rmk,param.change_dt,
           param.created_id,param.created_ip,param.updated_id,param.updated_ip,
-          param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data)
+          param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data),param.limited_collateral
         ]
         querys.push(ADVAdminMapper.INSERT_ADV_INSURANCE)
         query_params.push(insert_params)
@@ -136,7 +136,7 @@ module.exports = {
           param.cbr_cnt, JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data), param.spct_join_yn, JSON.stringify(param.spct_data), param.active_yn, 
           param.agr10_yn, param.agr20_yn, param.agr30_yn, param.agr31_yn, param.agr32_yn, param.agr33_yn, param.agr34_yn, param.agr40_yn,
           param.agr41_yn, param.agr50_yn, param.status_cd, param.rmk, param.erp_amt, param.erp_dt, param.erp_st_dt, param.erp_cncls_dt,
-          param.change_rmk, param.change_dt, param.updated_id, param.updated_ip, param.insurance_uuid 
+          param.change_rmk, param.change_dt, param.updated_id, param.updated_ip, param.limited_collateral, param.insurance_uuid 
         ]
         querys.push(ADVAdminMapper.UPDATE_INSURANCE)
         query_params.push(update_params)

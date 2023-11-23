@@ -119,20 +119,58 @@ module.exports = {
   insert: async function (req, res, next) {
     try {
       if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
-      const result = await M_TADV0030A.insert(req);
 
-      if (result) {
-        // 문자발송 - 보험가입[CS0001]
+      // 중복확인
+      const isChkDup = await M_TADV0030A.chkDup(req);
 
-        // const templateParams = { t_id: 'CS0001', to: req.body.params.user_hpno, user_nm: req.body.params.user_nm };
-        // const templeteRet = TemplateController.sendTemplete(req, res, templateParams);
-        const resultUser = await user.updateFromInsurance(req);
-        logger.debug(resultUser);
+      if (isChkDup) {
         res.status(StatusCode.CREATED).json({
-          success: true,
-          message: StatusMessage.INSERT,
-          data: result
+          success: false,
+          message: StatusMessage.DUPLICATION_FAILED,
+          data: null
         });
+
+      } else {
+        const result = await M_TADV0030A.insert(req);
+
+        if (result) {
+          try {
+            // 1. 문자발송 - 보험가입[CS0210]
+            const templateParams1 = {
+              t_id: 'CS0210',
+              to: req.body.params.corp_cust_hpno,
+              user_nm: req.body.params.user_nm
+            };
+            const templeteRet1 = TemplateController.sendTemplete(req, res, templateParams1);
+          } catch (e) {
+            logger.error(' 1. 문자발송 - 보험가입[CS0210]');
+            logger.error(e);
+          }
+          try {
+            // 1. 메일발송 - 보험가입[CM0210]
+            const templateParams2 = {
+              t_id: 'CM0210',
+              to: req.body.params.corp_cust_email,
+              user_nm: req.body.params.user_nm,
+              user_id: req.body.params.user_id,
+              created_at: dayjs().format('YYYY-MM-DD')
+            };
+            const templeteRet2 = TemplateController.sendTemplete(req, res, templateParams2);
+          } catch (e) {
+            logger.error(' 1. 메일발송 - 보험가입[CM0210]');
+            logger.error(e);
+          }
+          // 2. 보험정보에서 USER_UUID 업데이트
+
+          // 3. USER_UUID 로 보험정보 업데이트
+          const resultUser = await user.updateFromInsurance(req);
+          logger.debug(resultUser);
+          res.status(StatusCode.CREATED).json({
+            success: true,
+            message: StatusMessage.INSERT,
+            data: result
+          });
+        }
       }
     } catch (err) {
       next(err);

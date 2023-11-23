@@ -170,14 +170,16 @@ module.exports = {
   update: async function (req) {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
+    const hash_password = bcrypt.hashSync(params.user_pwd, 10);
 
-    const query = `UPDATE TCOM0110A SET user_hpno=?, user_email=?, corp_type=?, corp_nm=?, corp_ceo_nm=?, corp_bnno=?, corp_cnno=?, corp_telno=?, corp_faxno=?
+    const query = `UPDATE TCOM0110A SET user_pwd=?, user_hpno=?, user_email=?, corp_type=?, corp_nm=?, corp_ceo_nm=?, corp_bnno=?, corp_cnno=?, corp_telno=?, corp_faxno=?
                   , corp_cust_nm=?, corp_cust_hpno=?, corp_cust_email=?, corp_post=?, corp_addr=?, corp_addr_dtl=?, corp_region_cd=?
                   , recv_email_yn=?, agr1_yn=?, agr2_yn=?, agr3_yn=?, agr4_yn=?, active_yn=?
                   , status_cd=?, rmk=?, updated_at=now(), updated_ip=?
                   WHERE user_uuid=?`;
 
     const queryParams = [
+      hash_password,
       params.user_hpno,
       params.user_email,
       params.corp_type,
@@ -331,6 +333,19 @@ module.exports = {
     return rows;
   },
 
+  isVerifyUserForRegNo: async function (params) {
+    const query =
+      'select user_id FROM TCOM0110A where business_cd = ? and user_nm = ? and user_birth = ? and user_regno = ?';
+    const queryParams = [params.business_cd, params.nm, params.birth, params.reg_no];
+    logger.debug(queryParams);
+    const [rows] = await db.query(query, queryParams);
+
+    if (rows.length == 0) {
+      return true;
+    }
+    return false;
+  },
+
   isVerifyUserId: async function (params) {
     const query = 'select user_id FROM TCOM0110A where business_cd = ? and user_cd = ? and user_id = ?';
     const queryParams = [params.business_cd, params.user_cd, params.user_id];
@@ -405,6 +420,22 @@ module.exports = {
     params.auth_code = null;
     params.user_email = null;
 
+    if (resultData[0].length > 0) {
+      // 인증번호 생성 후 저장
+      params.auth_code = genAuthCode().authCode;
+      params.user_email = resultData[0][0].user_email;
+      logger.debug(params);
+      await knexDB.raw(UserMapper.INSERT_EMAIL_AUTH, params);
+    }
+
+    return params;
+  },
+  isVerifyUserEMail_JNT: async function (req) {
+    const params = req.body.params;
+    const resultData = await knexDB.raw(UserMapper.SELECT_USER_EMAIL_JNT, params);
+    params.auth_code = null;
+    params.user_email = null;
+    logger.info(resultData[0])
     if (resultData[0].length > 0) {
       // 인증번호 생성 후 저장
       params.auth_code = genAuthCode().authCode;
