@@ -145,6 +145,7 @@ module.exports = Object.freeze({
             ,A.rmk
             ,A.change_rmk
             ,A.change_dt
+            ,A.limited_collateral
             ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
             ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
             ,B.insr_st_dt as base_insr_st_dt
@@ -272,6 +273,7 @@ module.exports = Object.freeze({
   ,A.rmk
   ,A.change_rmk
   ,A.change_dt
+  ,A.limited_collateral
   ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
   ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
   ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1
@@ -459,7 +461,8 @@ LIMIT  1
              spct_data,
              cbr_cnt,
              cbr_data,
-             trx_data)
+             trx_data,
+             limited_collateral)
 VALUES      ( UUID_V4(), ?, ?, ?, ?, 
               ?, ?, ?, ?, ?,  
               ?, ?, ?, ?, ?,
@@ -473,7 +476,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, now(), ?, ?, 
-              now(), ?, ?, ?, ?, ?) 
+              now(), ?, ?, ?, ?, ?, ?) 
     `,
 
   /**
@@ -548,7 +551,8 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
           change_dt = ?,
           updated_at = Now(),
           updated_id = ?,
-          updated_ip = ?
+          updated_ip = ?,
+          limited_collateral = ?
     WHERE  insurance_uuid = ?
     `,
 

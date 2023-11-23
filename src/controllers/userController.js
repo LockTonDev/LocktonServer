@@ -52,6 +52,15 @@ module.exports = {
 
         await M_TTAX0030A.updateFromUserInfo(req);
 
+        const templateParams = {
+          t_id: 'CM0100',
+          to: req.body.params.user_email,
+          user_nm: req.body.params.user_nm,
+          user_id: req.body.params.user_id,
+          created_at: dayjs().format('YYYY-MM-DD')
+        };
+        const templeteRet2 = TemplateController.sendTemplete(req, res, templateParams);
+
         if (result) {
           res.status(StatusCode.CREATED).json({
             success: true,
@@ -266,6 +275,37 @@ module.exports = {
   findCORUserNSendEMail: async function (req, res, next) {
     try {
       const resultData = await User.isVerifyUserEMail_COR(req);
+
+      logger.debug(resultData);
+
+      if (resultData.auth_code) {
+        // 메일발송 - [CM0110] [록톤코리아] 비밀번호 찾기 이메일 인증 요청
+        const templateParams = {
+          t_id: 'CM0110',
+          to: resultData.user_email,
+          auth_code: resultData.auth_code,
+          created_at: dayjs().format('YYYY-MM-DD')
+        };
+
+        const templeteRet = TemplateController.sendTemplete(req, res, templateParams);
+
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.VERITY_OK
+        });
+      } else {
+        res.status(StatusCode.OK).json({
+          success: false,
+          message: StatusMessage.VERITY_FAILED
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  findJNTUserNSendEMail: async function (req, res, next) {
+    try {
+      const resultData = await User.isVerifyUserEMail_JNT(req);
 
       logger.debug(resultData);
 

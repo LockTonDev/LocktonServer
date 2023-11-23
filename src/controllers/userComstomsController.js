@@ -2,6 +2,7 @@ const logger = require('../config/winston');
 const { StatusCode, StatusMessage } = require('../utils/response');
 const { BadRequest } = require('../utils/errors');
 const UserCustoms = require('../models/userCustoms');
+const User = require('../models/user');
 
 module.exports = {
   select: async function (req, res, next) {
@@ -31,9 +32,11 @@ module.exports = {
 
       const result = await UserCustoms.isVerifyUserRegNo(req.body.params);
 
+      const result2 = await User.isVerifyUserForRegNo(req.body.params)
+
       res.status(StatusCode.OK).json({
-        success: result,
-        message: result ? StatusMessage.VERITY_OK : StatusMessage.VERITY_FAILED
+        success: result && result2,
+        message: result && result2 ? StatusMessage.VERITY_OK : StatusMessage.VERITY_FAILED
       });
     } catch (err) {
       next(err);

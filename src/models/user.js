@@ -333,6 +333,19 @@ module.exports = {
     return rows;
   },
 
+  isVerifyUserForRegNo: async function (params) {
+    const query =
+      'select user_id FROM TCOM0110A where business_cd = ? and user_nm = ? and user_birth = ? and user_regno = ?';
+    const queryParams = [params.business_cd, params.nm, params.birth, params.reg_no];
+    logger.debug(queryParams);
+    const [rows] = await db.query(query, queryParams);
+
+    if (rows.length == 0) {
+      return true;
+    }
+    return false;
+  },
+
   isVerifyUserId: async function (params) {
     const query = 'select user_id FROM TCOM0110A where business_cd = ? and user_cd = ? and user_id = ?';
     const queryParams = [params.business_cd, params.user_cd, params.user_id];
@@ -407,6 +420,22 @@ module.exports = {
     params.auth_code = null;
     params.user_email = null;
 
+    if (resultData[0].length > 0) {
+      // 인증번호 생성 후 저장
+      params.auth_code = genAuthCode().authCode;
+      params.user_email = resultData[0][0].user_email;
+      logger.debug(params);
+      await knexDB.raw(UserMapper.INSERT_EMAIL_AUTH, params);
+    }
+
+    return params;
+  },
+  isVerifyUserEMail_JNT: async function (req) {
+    const params = req.body.params;
+    const resultData = await knexDB.raw(UserMapper.SELECT_USER_EMAIL_JNT, params);
+    params.auth_code = null;
+    params.user_email = null;
+    logger.info(resultData[0])
     if (resultData[0].length > 0) {
       // 인증번호 생성 후 저장
       params.auth_code = genAuthCode().authCode;

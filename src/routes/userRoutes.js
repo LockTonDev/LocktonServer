@@ -17,6 +17,7 @@ router.post('/isVerifyUserEMail', userController.isVerifyUserEMail);
 router.post('/isVerifyUserRegNo', UserComstomsController.isVerifyUserRegNo);
 router.post('/isVerifyEMailAuthCode', userController.isVerifyEMailAuthCode);
 router.post('/findCORUserNSendEMail', userController.findCORUserNSendEMail);
+router.post('/findJNTUserNSendEMail', userController.findJNTUserNSendEMail);
 router.post('/isVerifyUserUUID', userController.isVerifyUserUUID);
 router.post('/updatePasswordNotLogin', userController.updatePasswordNotLogin);
 
