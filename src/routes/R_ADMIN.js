@@ -33,13 +33,26 @@ router.post('/TAX/APPLY/get', verifyToken, C_ADMIN.getApplyInsurance);
 
 router.post('/TAX/TRX/set', verifyToken, C_ADMIN.setTAX_TRX);
 router.post('/TAX/TRX/get', verifyToken, C_ADMIN.getTAX_TRX);
+
 router.post('/TAX/rate', verifyToken, C_ADMIN.getTAXRate);
 router.post('/TAX/get', verifyToken, C_ADMIN.getTAX);
 router.post('/TAX/gets', verifyToken, C_ADMIN.getTAXS);
 router.post('/TAX/renewal/get', verifyToken, C_ADMIN.getRenewal);
 router.post('/TAX/renewal/gets', verifyToken, C_ADMIN.getRenewals);
-
 router.post('/TAX/set', verifyToken, C_ADMIN.setTAX);
 router.post('/TAX/renewal/set', verifyToken, C_ADMIN.setTAXRenewal);
+
+router.post('/ADV/rate', verifyToken, C_ADMIN.getADVRate);
+router.post('/ADV/set', verifyToken, C_ADMIN.setADV);
+router.post('/ADV/get', verifyToken, C_ADMIN.getADV);
+router.post('/ADV/gets', verifyToken, C_ADMIN.getADVS);
+router.post('/ADV/renewal/set', verifyToken, C_ADMIN.setADVRenewal);
+router.post('/ADV/renewal/get', verifyToken, C_ADMIN.getADVRenewal);
+router.post('/ADV/renewal/gets', verifyToken, C_ADMIN.getADVRenewals);
+router.post('/ADV/TRX/set', verifyToken, C_ADMIN.setADV_TRX);
+router.post('/ADV/TRX/get', verifyToken, C_ADMIN.getADV_TRX);
+router.post('/ADV/APPLY/set', verifyToken, C_ADMIN.setApplyADVInsurance);
+router.post('/ADV/APPLY/get', verifyToken, C_ADMIN.getApplyADVInsurance);
+router.post('/ADV/EXCEL/get', verifyToken, C_ADMIN.getADVExcel);
 
 module.exports = router;

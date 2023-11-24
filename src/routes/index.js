@@ -16,8 +16,10 @@ router.use('/COMMON/', require('./R_COMMON'));
 router.use('/CAA/CAA0030A', require('./R_TCAA0030A'));
 router.use('/ACC/ACC0030A', require('./R_TACC0030A'));
 router.use('/TAX/TAX0030A', require('./R_TTAX0030A'));
+router.use('/ADV/ADV0030A', require('./R_TADV0030A'));
 router.use('/CAA/CAA0030A', require('./R_TCAA0030A'));
 router.use('/CAA/CAA0040A', require('./R_TCAA0040A'));
 router.use('/TAX/TAX0040A', require('./R_TTAX0040A'));
+router.use('/ADV/ADV0040A', require('./R_TADV0040A'));
 
 module.exports = router;

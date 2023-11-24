@@ -4,6 +4,7 @@ const { BadRequest } = require('../utils/errors');
 const bcrypt = require('bcryptjs');
 
 const M_ADMIN = require('../models/M_ADMIN');
+const M_ADMIN_ADV = require('../models/M_ADMIN_ADV')
 const { genPassword } = require('../utils/util');
 
 module.exports = {
@@ -70,21 +71,6 @@ module.exports = {
       next(err);
     }
   },
-  setUserRegNo: async function (req, res, next) {
-    try {
-      const result = await M_ADMIN.setUserRegNo(req);
-
-      if (result) {
-        res.status(StatusCode.OK).json({
-          success: true,
-          message: StatusMessage.UPDATE_OK,
-          data: result
-        });
-      }
-    } catch (err) {
-      next(err);
-    }
-  },
   setUserPassword: async function (req, res, next) {
     try {
       const params = req.body.params;
@@ -104,6 +90,22 @@ module.exports = {
       next(err);
     }
   },
+  setUserRegNo: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN.setUserRegNo(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
   getBoardInfo: async function (req, res, next) {
     try {
       const result = await M_ADMIN.getBoardInfo(req);
@@ -382,7 +384,6 @@ module.exports = {
         row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
       })
 
-
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
@@ -444,6 +445,8 @@ module.exports = {
   getRenewals: async function (req, res, next) {
     try {
       const result = await M_ADMIN.getRenewals(req);
+      console.log("========================")
+      console.log(result)
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
@@ -524,8 +527,210 @@ module.exports = {
   },
   setACCSRenewal: async function (req, res, next) {
     try {
-      
       const result = await M_ADMIN.setACCSRenewal(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getADV: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_ADV.getADV(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getADVS: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_ADV.getADVS(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getADVRate: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_ADV.getADVRate(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getADVRenewal: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_ADV.getADVRenewal(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getADVRenewals: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_ADV.getADVRenewals(req);
+      console.log("========================")
+      console.log(result)
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setADV: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_ADV.setADV(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setADVRenewal: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_ADV.setADVRenewal(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getADV_TRX: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_ADV.getADV_TRX(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setADV_TRX: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_ADV.setADV_TRX(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getApplyADVInsurance: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_ADV.getApplyADVInsurance(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  setApplyADVInsurance: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_ADV.setApplyADVInsurance(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getADVExcel: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_ADV.getADVExcel(req);
+
+      result.map(row => {
+        row.user_birth = parseFloat(row.user_birth)
+        row.user_regno = parseFloat(row.user_regno)
+        row.insr_amt = parseFloat(row.insr_amt)
+        row.insr_tot_amt = parseFloat(row.insr_tot_amt)
+        row.insr_tot_paid_amt = parseFloat(row.insr_tot_paid_amt)
+        row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
+        row.insr_base_amt = parseFloat(row.insr_base_amt)
+        row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+      })
 
       if (result) {
         res.status(StatusCode.OK).json({
@@ -552,4 +757,5 @@ module.exports = {
       next(err);
     }
   },
+  
 };

@@ -7,6 +7,8 @@ const hpp = require('hpp');
 const morgan = require('morgan');
 const logger = require('./config/winston');
 
+require('dotenv').config();
+
 const port = process.env.SERVER_PORT;
 const nodeEnv = process.env.NODE_ENV;
 

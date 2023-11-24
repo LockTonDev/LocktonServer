@@ -1,15 +1,13 @@
 const logger = require('../config/winston');
 const { StatusCode, StatusMessage } = require('../utils/response');
 const { BadRequest } = require('../utils/errors');
-const UserCustoms = require('../models/userCustoms');
-const User = require('../models/user');
+const M_TADV0040A = require('../models/M_TADV0040A');
 
 module.exports = {
   select: async function (req, res, next) {
     try {
-      if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
-
-      const result = await UserCustoms.select(req.body.params);
+      if (!req.params) throw new BadRequest(StatusMessage.BadRequestMeg);
+      const result = await M_TADV0040A.select(req);
 
       if (result) {
         res.status(StatusCode.OK).json({
@@ -22,31 +20,46 @@ module.exports = {
       next(err);
     }
   },
-
-  /**
-   * 등록번호 등록유무 확인
-   */
-  isVerifyUserRegNo: async function (req, res, next) {
+  selectList: async function (req, res, next) {
     try {
-      if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
+      if (!req.body) throw new BadRequest(StatusMessage.BadRequestMeg);
 
-      const result = await UserCustoms.isVerifyUserRegNo(req.body.params);
+      const itemsData = await M_TADV0040A.selectList(req);
+      const countData = await M_TADV0040A.selectCount(req);
 
-      const result2 = await User.isVerifyUserForRegNo(req.body.params)
-
-      res.status(StatusCode.OK).json({
-        success: result && result2,
-        message: result && result2 ? StatusMessage.VERITY_OK : StatusMessage.VERITY_FAILED
-      });
+      if (itemsData) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: { items: itemsData, tot_count: countData }
+        });
+      }
     } catch (err) {
       next(err);
     }
   },
+  selectCount: async function (req, res, next) {
+    try {
+      if (!req.body) throw new BadRequest(StatusMessage.BadRequestMeg);
 
+      const result = await M_TADV0040A.selectCount(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
   insert: async function (req, res, next) {
     try {
       if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
-      const result = await UserCustoms.insert(req.body.params);
+
+      const result = await M_TADV0040A.insert(req);
 
       if (result) {
         res.status(StatusCode.CREATED).json({
@@ -61,8 +74,8 @@ module.exports = {
   },
   update: async function (req, res, next) {
     try {
-      if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
-      const result = await UserCustoms.update(req.body.params);
+      // if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
+      const result = await M_TADV0040A.update(req);
 
       if (result) {
         res.status(StatusCode.CREATED).json({
@@ -76,8 +89,8 @@ module.exports = {
   },
   delete: async function (req, res, next) {
     try {
-      if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
-      const result = await UserCustoms.delete(req.body.params);
+      //if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
+      const result = await M_TADV0040A.delete(req);
 
       if (result) {
         res.status(StatusCode.CREATED).json({

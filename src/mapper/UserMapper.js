@@ -21,6 +21,19 @@ module.exports = Object.freeze({
             AND corp_bnno = :corp_bnno
   `,
 
+  /**
+   * [회원DB]
+   *
+   * - :user_uuid 사용자 KEY
+   */
+  SELECT_USER_EMAIL_JNT: `
+      /* UserMapper.SELECT_USER_EMAIL_JNT */  
+      SELECT user_email
+      FROM   tcom0110a
+      WHERE  user_id = :user_id
+            AND user_nm = :user_nm
+  `,
+
   SELECT_USER_HP_AUTH_USER_UUID_IND: `
       /* UserMapper.SELECT_USER_HP_AUTH_USER_UUID_IND */  
       SELECT user_uuid
