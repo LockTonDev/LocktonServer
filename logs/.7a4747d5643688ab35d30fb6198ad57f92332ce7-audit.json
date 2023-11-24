@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 10000
+    },
+    "auditLog": "C:\\Users\\naran\\Documents\\2023\\JMS\\LocktonServer\\logs\\.7a4747d5643688ab35d30fb6198ad57f92332ce7-audit.json",
+    "files": [
+        {
+            "date": 1699441216547,
+            "name": "C:\\Users\\naran\\Documents\\2023\\JMS\\LocktonServer\\logs\\2023-11-08.log",
+            "hash": "31f1e4d45755f602cc099ebeaa065f56389e39aae7636e303b23bfacda27ca4f"
+        },
+        {
+            "date": 1699456014178,
+            "name": "C:\\Users\\naran\\Documents\\2023\\JMS\\LocktonServer\\logs\\2023-11-09.log",
+            "hash": "028847f1d44b261d189fbe9b83298b9968c62bd67aef0613e7f1dd898e1b3430"
+        },
+        {
+            "date": 1699593656289,
+            "name": "C:\\Users\\naran\\Documents\\2023\\JMS\\LocktonServer\\logs\\2023-11-10.log",
+            "hash": "02df7a286999cf704596d1e1cfe4540224ff0008f5e0931f4445c5421fca6890"
+        },
+        {
+            "date": 1699787186351,
+            "name": "C:\\Users\\naran\\Documents\\2023\\JMS\\LocktonServer\\logs\\2023-11-12.log",
+            "hash": "6461a9b9f50c8fbe21d7908714f62dbee811616de29c876bbc86b4f4ec2bd4e4"
+        }
+    ],
+    "hashType": "sha256"
+}
