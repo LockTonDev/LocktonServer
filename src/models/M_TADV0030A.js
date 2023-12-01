@@ -15,7 +15,7 @@ module.exports = {
     const user_uuid = req.decoded.uuid;
     logger.debug(req.body.params);
 
-    const queryADV0030AIND = `SELECT 
+    const queryADV0030A = `SELECT 
                       insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
                       user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
                       corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
@@ -28,23 +28,7 @@ module.exports = {
                       , FN_GET_CODENM('COM030', status_cd) AS status_nm
                       , FN_GET_CODENM('TAX001', corp_region_cd) AS corp_region_nm
                     FROM TADV0030A
-                    WHERE  insurance_uuid = ? and user_nm = ? and user_birth = ? and user_regno = ?
-                    order by insurance_uuid`;
-    
-     const queryADV0030AJNT = `SELECT 
-                      insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
-                      user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
-                      corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
-                      insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
-                      insr_take_amt, insr_take_sec, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, insr_sale_year,
-                      insr_sale_rt, insr_pcnt_sale_rt,insr_base_amt, insr_amt, insr_premium_amt, insr_tot_amt, insr_tot_paid_amt, 
-                      insr_tot_unpaid_amt, cbr_cnt, cbr_data, spct_join_yn, spct_data, active_yn, agr10_yn,
-                      agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
-                      agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip, limited_collateral
-                      , FN_GET_CODENM('COM030', status_cd) AS status_nm
-                      , FN_GET_CODENM('TAX001', corp_region_cd) AS corp_region_nm
-                    FROM TADV0030A
-                    WHERE  insurance_uuid = ? and user_nm = ? and corp_cnno = ?
+                    WHERE  insurance_uuid = ?
                     order by insurance_uuid`;
 
 
@@ -70,20 +54,8 @@ module.exports = {
       query = queryADV0031A;
       params = [req.body.params.insurance_uuid];
     } else {
-      const userQuery = `SELECT * from tcom0110a where user_uuid = ?`
-      const [user] = await db.query(userQuery, user_uuid);  
-      
-      if (user.length < 1) {
-        throw new NotFound(StatusMessage.SELECT_FAILED);
-      }
-      if(user[0].user_cd == 'IND'){
-        query = queryADV0030AIND;
-        params = [req.body.params.insurance_uuid, user[0].user_nm, user[0].user_birth, user[0].user_regno];
-      }else {
-        query = queryADV0030AJNT;
-        params = [req.body.params.insurance_uuid, user[0].user_nm, user[0].corp_cnno];
-      }
-      
+      query = queryADV0030A;
+      params = [req.body.params.insurance_uuid];
     }
     
     const [rows] = await db.query(query, params);
