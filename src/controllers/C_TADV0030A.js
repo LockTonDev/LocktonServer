@@ -5,6 +5,7 @@ const { BadRequest } = require('../utils/errors');
 const M_TADV0030A = require('../models/M_TADV0030A');
 const user = require('../models/user');
 const TemplateController = require('./templateController');
+const dayjs = require('dayjs');
 
 module.exports = {
   select: async function (req, res, next) {
@@ -145,6 +146,7 @@ module.exports = {
           } catch (e) {
             logger.error(' 1. 문자발송 - 보험가입[CS0210]');
             logger.error(e);
+            next(e);
           }
           try {
             // 1. 메일발송 - 보험가입[CM0210]
@@ -159,6 +161,7 @@ module.exports = {
           } catch (e) {
             logger.error(' 1. 메일발송 - 보험가입[CM0210]');
             logger.error(e);
+            next(e);
           }
           // 2. 보험정보에서 USER_UUID 업데이트
 
