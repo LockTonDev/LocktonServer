@@ -26,7 +26,7 @@ module.exports = {
                       agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
                       agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip, limited_collateral
                       , FN_GET_CODENM('COM030', status_cd) AS status_nm
-                      , FN_GET_CODENM('TAX001', corp_region_cd) AS corp_region_nm
+                      , FN_GET_CODENM('ADV001', corp_region_cd) AS corp_region_nm
                     FROM TADV0030A
                     WHERE  insurance_uuid = ?
                     order by insurance_uuid`;
@@ -43,7 +43,7 @@ module.exports = {
           agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
           agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip, limited_collateral
           , FN_GET_CODENM('COM030', status_cd) AS status_nm
-          , FN_GET_CODENM('TAX001', corp_region_cd) AS corp_region_nm
+          , FN_GET_CODENM('ADV001', corp_region_cd) AS corp_region_nm
         FROM TADV0031A
         WHERE  insurance_uuid = ?
         order by insurance_uuid`;
@@ -303,7 +303,7 @@ module.exports = {
             ,A.change_rmk
             ,A.change_dt
             ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
-            ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
+            ,FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
             ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1
             ,FN_GET_SPLIT(A.corp_telno, '-', 2) as corp_telno2
             ,FN_GET_SPLIT(A.corp_telno, '-', 3) as corp_telno3
