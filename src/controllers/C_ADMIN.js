@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 
 const M_ADMIN = require('../models/M_ADMIN');
 const M_ADMIN_ADV = require('../models/M_ADMIN_ADV')
+const M_ADMIN_CAA = require('../models/M_ADMIN_CAA')
 const { genPassword } = require('../utils/util');
 
 module.exports = {
@@ -754,6 +755,211 @@ module.exports = {
       next(err);
     }
   },
+
+  getCAA: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_CAA.getCAA(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getCAAS: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_CAA.getCAAS(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getCAARate: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_CAA.getCAARate(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getCAARenewal: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_CAA.getCAARenewal(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getCAARenewals: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_CAA.getCAARenewals(req);
+      console.log("========================")
+      console.log(result)
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setCAA: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_CAA.setCAA(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setCAARenewal: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_CAA.setCAARenewal(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getCAA_TRX: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_CAA.getCAA_TRX(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setCAA_TRX: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_CAA.setCAA_TRX(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getApplyCAAInsurance: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_CAA.getApplyCAAInsurance(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  setApplyCAAInsurance: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_CAA.setApplyCAAInsurance(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getCAAExcel: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_CAA.getCAAExcel(req);
+
+      result.map(row => {
+        row.user_birth = parseFloat(row.user_birth)
+        row.user_regno = parseFloat(row.user_regno)
+        row.insr_amt = parseFloat(row.insr_amt)
+        row.insr_tot_amt = parseFloat(row.insr_tot_amt)
+        row.insr_tot_paid_amt = parseFloat(row.insr_tot_paid_amt)
+        row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
+        row.insr_base_amt = parseFloat(row.insr_base_amt)
+        row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+      })
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  
   getStockStartDtInfo : async function (req, res, next) {
     try {
       const result = await M_ADMIN.getStockStartDtInfo(req);

@@ -272,6 +272,28 @@ module.exports = {
       next(err);
     }
   },
+  getUserCd: async function (req, res, next) {
+    try {
+      const resultData = await User.getUserCd(req);
+
+      logger.debug(resultData);
+
+      if (resultData) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.VERITY_OK,
+          data: resultData
+        });
+      } else {
+        res.status(StatusCode.OK).json({
+          success: false,
+          message: StatusMessage.VERITY_FAILED
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
   findCORUserNSendEMail: async function (req, res, next) {
     try {
       const resultData = await User.isVerifyUserEMail_COR(req);

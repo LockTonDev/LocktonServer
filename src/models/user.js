@@ -414,6 +414,17 @@ module.exports = {
 
     return null;
   },
+  getUserCd: async function (req) {
+    const params = req.body.params;
+    const resultData = await knexDB.raw(UserMapper.SELECT_USER_CD, params);
+    params.user_cd = null;
+    logger.debug(resultData[0]);
+    if (resultData[0].length > 0) {
+      return resultData[0][0].user_cd;
+    }
+
+    return null;
+  },
   isVerifyUserEMail_COR: async function (req) {
     const params = req.body.params;
     const resultData = await knexDB.raw(UserMapper.SELECT_USER_EMAIL_COR, params);
