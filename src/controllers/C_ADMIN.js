@@ -102,7 +102,17 @@ module.exports = {
         });
       }
     } catch (err) {
-      next(err);
+      let errMessage = "등록번호 등록 중 오류가 발생했습니다."
+      if (err.code == 'ER_DUP_ENTRY') {
+        errMessage = "DUP"
+      }
+      res.status(StatusCode.OK).json({
+        success: false,
+        message: errMessage
+      });
+
+
+     // next(err);
     }
   },
 
@@ -684,6 +694,7 @@ module.exports = {
         });
       }
     } catch (err) {
+      console.log("========================== setADV_TRX  ==========================")
       next(err);
     }
   },

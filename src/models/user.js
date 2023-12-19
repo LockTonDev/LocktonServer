@@ -16,7 +16,7 @@ module.exports = {
    * @returns
    */
   signIn: async function (business_cd, user_cd, user_id, user_pwd) {
-    const sqlSelect = `SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = ? and user_cd = ? and user_id = ? and status_cd not in ('90')`;
+    const sqlSelect = `SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = ? and user_cd = ? and user_id = ? and (status_cd not in ('90') || status_cd is null)`;
     const [rows] = await db.query(sqlSelect, [business_cd, user_cd, user_id]);
 
     if (rows.affectedRows < 1) {
@@ -34,7 +34,7 @@ module.exports = {
   updateLoginCnt: async function (business_cd, user_cd, user_id) {
     const sqlSelect = `UPDATE TCOM0110A SET login_fail_cnt = login_fail_cnt + 1
                                             , login_block_yn = CASE WHEN login_fail_cnt >= 5 THEN 'Y' ELSE 'N' END
-                         WHERE business_cd = ? and user_cd = ? and user_id = ? and status_cd not in ('90')`;
+                         WHERE business_cd = ? and user_cd = ? and user_id = ? and (status_cd not in ('90') || status_cd is null)`;
     const [rows] = await db.query(sqlSelect, [business_cd, user_cd, user_id]);
 
     if (rows.affectedRows < 1) {
@@ -51,7 +51,7 @@ module.exports = {
   updateLoginCntZero: async function (business_cd, user_cd, user_id) {
     const sqlSelect = `UPDATE TCOM0110A SET login_fail_cnt = 0
                                             , login_block_yn = 'N'
-                         WHERE business_cd = ? and user_cd = ? and user_id = ? and status_cd not in ('90')`;
+                         WHERE business_cd = ? and user_cd = ? and user_id = ? and (status_cd not in ('90') || status_cd is null)`;
     const [rows] = await db.query(sqlSelect, [business_cd, user_cd, user_id]);
 
     if (rows.affectedRows < 1) {
@@ -69,7 +69,7 @@ module.exports = {
   setLoginCntInit: async function (business_cd, user_cd, user_id, user_pwd) {
     const sqlSelect = `UPDATE TCOM0110A SET login_fail_cnt = 0
                                             , login_block_yn = 'N'
-                         WHERE business_cd = ? and user_cd = ? and user_id = ? and status_cd not in ('90')`;
+                         WHERE business_cd = ? and user_cd = ? and user_id = ? and (status_cd not in ('90') || status_cd is null)`;
     const [rows] = await db.query(sqlSelect, [business_cd, user_cd, user_id]);
 
     if (rows.affectedRows < 1) {

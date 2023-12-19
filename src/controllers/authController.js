@@ -75,7 +75,7 @@ module.exports = {
         uuid: userInfo.user_uuid,
         role: 'user'
       };
-      console.log("userInfo :",userInfo)
+
       const accessToken = jwt.sign(payload, process.env.JWT_SECRET_KEY, {
         algorithm: 'HS256',
         expiresIn: expiresInMinutes * 60 // expiresIn은 초 단위로 설정해야 함
@@ -169,7 +169,7 @@ module.exports = {
         uuid: userInfo.userUuid,
         role: 'user'
       };
-      console.log("userInfo :",userInfo)
+
       const accessToken = jwt.sign(payload, process.env.JWT_SECRET_KEY, {
         algorithm: 'HS256',
         expiresIn: expiresInMinutes * 60 // expiresIn은 초 단위로 설정해야 함

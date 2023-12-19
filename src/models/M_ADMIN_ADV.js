@@ -286,6 +286,7 @@ module.exports = {
     logger.info(params)
     let querys = []
     let query_params = []
+    let nCnt = 0;
     for(const param of params){
       const updateQueryParams = [
         JSON.stringify(param.trx_data),
@@ -298,6 +299,7 @@ module.exports = {
       ];
       querys.push(ADVAdminMapper.UPDATE_INSURANCE_ADV_TRX_DATA)
       query_params.push(updateQueryParams)
+      nCnt ++
     }
     
     
@@ -308,7 +310,7 @@ module.exports = {
         throw new NotFound(StatusMessage.SELECT_FAILED);
       }
     }
-    return true;
+    return nCnt;
   },
 
   getADVExcel: async function (req) {

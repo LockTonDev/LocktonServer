@@ -147,11 +147,11 @@ module.exports = Object.freeze({
             ,A.change_dt
             ,A.limited_collateral
             ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
-            ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
+            ,FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
             ,B.insr_st_dt as base_insr_st_dt
             ,B.insr_cncls_dt as base_insr_cncls_dt
             ,B.insurance_no
-      FROM   TADV0030A A
+      FROM   TADV0030A A    
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
 		    AND A.user_cd = B.user_cd 
@@ -189,7 +189,7 @@ module.exports = Object.freeze({
     , B.insr_cncls_dt as base_insr_cncls_dt
     , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm
     , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
-    , FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
+    , FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
     FROM TADV0030A A
     LEFT JOIN TCOM0030A B
   ON A.insr_year = B.base_year 
@@ -275,7 +275,7 @@ module.exports = Object.freeze({
   ,A.change_dt
   ,A.limited_collateral
   ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
-  ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
+  ,FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
   ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1
   ,FN_GET_SPLIT(A.corp_telno, '-', 2) as corp_telno2
   ,FN_GET_SPLIT(A.corp_telno, '-', 3) as corp_telno3
@@ -366,7 +366,7 @@ LIMIT  1
             ,A.change_rmk
             ,A.change_dt
             ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
-            ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
+            ,FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
             ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1
             ,FN_GET_SPLIT(A.corp_telno, '-', 2) as corp_telno2
             ,FN_GET_SPLIT(A.corp_telno, '-', 3) as corp_telno3
@@ -600,7 +600,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
             , B.insr_cncls_dt as base_insr_cncls_dt
             , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm
             , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
-            , FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
+            , FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
             FROM   TADV0030A A
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
@@ -732,7 +732,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     ,A.change_rmk
     ,A.change_dt
     ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
-    ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
+    ,FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
     ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1
     ,FN_GET_SPLIT(A.corp_telno, '-', 2) as corp_telno2
     ,FN_GET_SPLIT(A.corp_telno, '-', 3) as corp_telno3
@@ -773,7 +773,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     , B.insurance_no
     , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm
     , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
-    , FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
+    , FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
   FROM   TADV0031A A
     LEFT JOIN TCOM0030A B
   ON A.insr_year = B.base_year 
