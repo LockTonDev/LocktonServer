@@ -45,7 +45,7 @@ module.exports = Object.freeze({
   `,
   SELECT_EMAIL_AUTH: `
       /* UserMapper.SELECT_EMAIL_AUTH */  
-      SELECT (SELECT user_uuid from tcom0110a where user_id = :user_id) as user_uuid
+      SELECT (SELECT user_uuid from tcom0110a where user_id = :user_id and business_cd = :business_cd) as user_uuid
       FROM email_auth
       WHERE user_id = :user_id
             AND auth_code = :auth_code
