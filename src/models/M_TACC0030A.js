@@ -29,7 +29,7 @@ module.exports = {
                       , FN_GET_CODENM('COM030', status_cd) AS status_nm
                       , FN_GET_CODENM('ACC001', corp_region_cd) AS corp_region_nm
                     FROM TACC0030A
-                    WHERE  user_uuid = ? and insurance_uuid = ?
+                    WHERE  insurance_uuid = ?
                     order by insurance_uuid`;
 
     const queryACC0031A = `SELECT 

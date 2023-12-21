@@ -55,4 +55,17 @@ router.post('/ADV/APPLY/set', verifyToken, C_ADMIN.setApplyADVInsurance);
 router.post('/ADV/APPLY/get', verifyToken, C_ADMIN.getApplyADVInsurance);
 router.post('/ADV/EXCEL/get', verifyToken, C_ADMIN.getADVExcel);
 
+router.post('/CAA/rate', verifyToken, C_ADMIN.getCAARate);
+router.post('/CAA/set', verifyToken, C_ADMIN.setCAA);
+router.post('/CAA/get', verifyToken, C_ADMIN.getCAA);
+router.post('/CAA/gets', verifyToken, C_ADMIN.getCAAS);
+router.post('/CAA/renewal/set', verifyToken, C_ADMIN.setCAARenewal);
+router.post('/CAA/renewal/get', verifyToken, C_ADMIN.getCAARenewal);
+router.post('/CAA/renewal/gets', verifyToken, C_ADMIN.getCAARenewals);
+router.post('/CAA/TRX/set', verifyToken, C_ADMIN.setCAA_TRX);
+router.post('/CAA/TRX/get', verifyToken, C_ADMIN.getCAA_TRX);
+router.post('/CAA/APPLY/set', verifyToken, C_ADMIN.setApplyCAAInsurance);
+router.post('/CAA/APPLY/get', verifyToken, C_ADMIN.getApplyCAAInsurance);
+router.post('/CAA/EXCEL/get', verifyToken, C_ADMIN.getCAAExcel);
+
 module.exports = router;

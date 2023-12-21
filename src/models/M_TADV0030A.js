@@ -52,11 +52,10 @@ module.exports = {
     let params;
     if (req.body.params.renewal == 'Y') {
       query = queryADV0031A;
-      params = [req.body.params.insurance_uuid];
     } else {
       query = queryADV0030A;
-      params = [req.body.params.insurance_uuid];
     }
+    params = [req.body.params.insurance_uuid];
     
     const [rows] = await db.query(query, params);
 
@@ -184,7 +183,6 @@ module.exports = {
       renewalInsrUUID: Object.setPrototypeOf(renewalInsrData[0], Object)
     };
 
-    console.log(result);
     return result;
   },
 
@@ -590,7 +588,7 @@ module.exports = {
             AND status_cd in ('10', '20', '80') -- 신청중, 처리중, 정상
           UNION ALL
           SELECT 1
-          FROM TTAX0030A t,
+          FROM TADV0030A t,
           json_table(t.cbr_data,
           '$[*]' columns (
             cbr_nm VARCHAR(50) path '$.cbr_nm',

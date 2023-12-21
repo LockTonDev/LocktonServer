@@ -96,11 +96,14 @@ module.exports = {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
 
-    const query = `INSERT INTO TCAA0040A (insurance_no, insurance_user_nm, email, tel, nm, apply_cd, apply_content, apply_posted_dt, apply_dt, proc_cd,
-                                           insurance_uuid, user_uuid, created_ip, updated_ip) 
-                                            VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    const query = `INSERT INTO TCAA0040A (user_cd, business_cd, insurance_no, insurance_user_nm, email,
+                                          tel, nm, apply_cd, apply_content, apply_posted_dt,
+                                          apply_dt, proc_cd, insurance_uuid, user_uuid, created_ip, updated_ip) 
+                                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     const queryParams = [
+      params.user_cd,
+      params.business_cd,
       params.insurance_no,
       params.insurance_user_nm,
       params.email,
