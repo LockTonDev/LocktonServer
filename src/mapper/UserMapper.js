@@ -18,7 +18,7 @@ module.exports = Object.freeze({
       FROM   tcom0110a
       WHERE  user_id = :user_id
             AND user_nm = :user_nm
-            AND corp_bnno = :corp_bnno
+            AND (corp_bnno = :corp_bnno or business_cd != 'TAX')
   `,
 
   /**
