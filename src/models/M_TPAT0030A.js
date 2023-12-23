@@ -149,8 +149,8 @@ module.exports = {
       where
         A.business_cd = B.business_cd
         and ((A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
-             or (A.user_cd = 'JNT' AND A.corp_cnno = B.corp_cnno )
-             or (A.user_cd = 'JNT' AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND A.corp_cnno = B.corp_cnno )
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
              AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(B.user_birth))
              AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(b.user_regno)))
             )
@@ -397,7 +397,7 @@ module.exports = {
         )) j
         where
           t.business_cd = 'PAT'
-          and t.user_cd = 'JNT'
+          and (t.user_cd = 'JNT' or t.user_cd = 'COR')
           and j.cbr_nm = ?
           and j.cbr_brdt = ?
           and j.cbr_regno = ?
@@ -516,7 +516,7 @@ module.exports = {
               status_cd VARCHAR(3) path '$.status_cd'
             )) j
             WHERE t.business_cd = ?
-              AND t.user_cd = 'JNT'
+              AND (t.user_cd = 'JNT' or t.user_cd = 'COR')
               AND j.cbr_nm = ?
               AND j.cbr_brdt = ?
               AND j.cbr_regno = ?
@@ -601,7 +601,7 @@ module.exports = {
             status_cd VARCHAR(3) path '$.status_cd'
           )) j
           WHERE t.business_cd = ?
-            AND t.user_cd = 'JNT'
+            AND (t.user_cd = 'JNT' or t.user_cd = 'COR')
             AND j.cbr_nm = ?
             AND j.cbr_brdt = ?
             AND j.cbr_regno = ?
