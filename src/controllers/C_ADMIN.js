@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 const M_ADMIN = require('../models/M_ADMIN');
 const M_ADMIN_ADV = require('../models/M_ADMIN_ADV')
 const M_ADMIN_CAA = require('../models/M_ADMIN_CAA')
+const M_ADMIN_PAT = require('../models/M_ADMIN_PAT')
 const { genPassword } = require('../utils/util');
 
 module.exports = {
@@ -959,6 +960,208 @@ module.exports = {
     }
   },
 
+  getPAT: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_PAT.getPAT(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getPATS: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_PAT.getPATS(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getPATRate: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_PAT.getPATRate(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getPATRenewal: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_PAT.getPATRenewal(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getPATRenewals: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_PAT.getPATRenewals(req);
+      console.log("========================")
+      console.log(result)
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setPAT: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_PAT.setPAT(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setPATRenewal: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_PAT.setPATRenewal(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getPAT_TRX: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_PAT.getPAT_TRX(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setPAT_TRX: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_PAT.setPAT_TRX(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getApplyPATInsurance: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_PAT.getApplyPATInsurance(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  setApplyPATInsurance: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_PAT.setApplyPATInsurance(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getPATExcel: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_PAT.getPATExcel(req);
+
+      result.map(row => {
+        row.user_birth = parseFloat(row.user_birth)
+        row.user_regno = parseFloat(row.user_regno)
+        row.insr_amt = parseFloat(row.insr_amt)
+        row.insr_tot_amt = parseFloat(row.insr_tot_amt)
+        row.insr_tot_paid_amt = parseFloat(row.insr_tot_paid_amt)
+        row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
+        row.insr_base_amt = parseFloat(row.insr_base_amt)
+        row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+      })
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
   
   getStockStartDtInfo : async function (req, res, next) {
     try {
