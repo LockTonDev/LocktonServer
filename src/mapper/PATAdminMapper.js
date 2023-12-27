@@ -401,8 +401,7 @@ LIMIT  1
              spct_data,
              cbr_cnt,
              cbr_data,
-             trx_data,
-             limited_collateral)
+             trx_data)
 VALUES      ( UUID_V4(), ?, ?, ?, ?, 
               ?, ?, ?, ?, ?,  
               ?, ?, ?, ?, ?,
@@ -417,7 +416,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, now(), ?, ?, 
-              now(), ?, ?, ?, ?, ?, ?) 
+              now(), ?, ?, ?, ?, ?) 
     `,
 
   /**
@@ -495,8 +494,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
           change_dt = ?,
           updated_at = Now(),
           updated_id = ?,
-          updated_ip = ?,
-          limited_collateral = ?
+          updated_ip = ?
     WHERE  insurance_uuid = ?
     `,
 
