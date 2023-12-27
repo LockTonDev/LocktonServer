@@ -2,15 +2,17 @@ const logger = require('../config/winston');
 const { StatusCode, StatusMessage } = require('../utils/response');
 const { BadRequest } = require('../utils/errors');
 
-const M_TCAA0030A = require('../models/M_TCAA0030A');
+const M_TPAT0030A = require('../models/M_TPAT0030A');
 const user = require('../models/user');
 const TemplateController = require('./templateController');
 const dayjs = require('dayjs');
+const { saveFile } = require('../utils/saveFile')
+
 
 module.exports = {
   select: async function (req, res, next) {
     try {
-      const result = await M_TCAA0030A.select(req);
+      const result = await M_TPAT0030A.select(req);
 
       if (result) {
         res.status(StatusCode.OK).json({
@@ -26,7 +28,7 @@ module.exports = {
 
   selectStatus: async function (req, res, next) {
     try {
-      const result = await M_TCAA0030A.selectStatus(req);
+      const result = await M_TPAT0030A.selectStatus(req);
 
       if (result) {
         res.status(StatusCode.OK).json({
@@ -42,7 +44,7 @@ module.exports = {
 
   selectHistory: async function (req, res, next) {
     try {
-      const result = await M_TCAA0030A.selectHistory(req);
+      const result = await M_TPAT0030A.selectHistory(req);
 
       if (result) {
         res.status(StatusCode.OK).json({
@@ -58,7 +60,23 @@ module.exports = {
 
   selectList: async function (req, res, next) {
     try {
-      const result = await M_TCAA0030A.selectList(req);
+      const result = await M_TPAT0030A.selectList(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  selectRenewalInfo: async function (req, res, next) {
+    try {
+      const result = await M_TPAT0030A.selectRenewalInfo(req);
 
       if (result) {
         res.status(StatusCode.OK).json({
@@ -85,7 +103,7 @@ module.exports = {
    */
   getSaleRtNDupInfo: async function (req, res, next) {
     try {
-      const result = await M_TCAA0030A.getSaleRtNDupInfo(req);
+      const result = await M_TPAT0030A.getSaleRtNDupInfo(req);
 
       if (result) {
         res.status(StatusCode.OK).json({
@@ -98,13 +116,17 @@ module.exports = {
       next(err);
     }
   },
+
   
 
   insert: async function (req, res, next) {
     try {
+      
       if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
+      
+            
       // 중복확인
-      const isChkDup = await M_TCAA0030A.chkDup(req);
+      const isChkDup = await M_TPAT0030A.chkDup(req);
 
       if (isChkDup) {
         res.status(StatusCode.CREATED).json({
@@ -114,7 +136,9 @@ module.exports = {
         });
 
       } else {
-        const result = await M_TCAA0030A.insert(req);
+        saveFile(req, null)
+        const result = await M_TPAT0030A.insert(req);
+        const resultUser = await user.updateFromInsurance(req);
 
         if (result) {
           try {
@@ -164,7 +188,11 @@ module.exports = {
   update: async function (req, res, next) {
     try {
       if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
-      const result = await M_TCAA0030A.update(req);
+      const checkFile = await M_TPAT0030A.checkFile(req)
+      saveFile(req, checkFile)
+      const result = await M_TPAT0030A.update(req);
+
+      const resultUser = await user.updateFromInsurance(req);
 
       if (result) {
         res.status(StatusCode.CREATED).json({
@@ -173,13 +201,14 @@ module.exports = {
         });
       }
     } catch (err) {
+      logger.error('error : ', err);
       next(err);
     }
   },
   delete: async function (req, res, next) {
     try {
       if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
-      const result = await M_TCAA0030A.delete(req);
+      const result = await M_TPAT0030A.delete(req);
 
       if (result) {
         res.status(StatusCode.CREATED).json({

@@ -2,27 +2,24 @@ const logger = require('../config/winston');
 const { NotFound, Conflict } = require('../utils/errors');
 const { StatusMessage } = require('../utils/response');
 const db = require('../config/db');
-const knexDB = require('../config/knexDB');
-const ADVAdminMapper = require('../mapper/ADVAdminMapper');
-const AdminUserMapper = require('../mapper/AdminUserMapper');
-const AdminBoardMapper = require('../mapper/AdminBoardMapper');
+const CAAAdminMapper = require('../mapper/CAAAdminMapper');
 
 module.exports = {
-  getADV: async function (req) {
+  getCAA: async function (req) {
     const params = req.body.params
     logger.info(params)
     const queryParams = [
       params.insurance_uuid
     ];
 
-    const [rowsInsrInfo] = await db.query(ADVAdminMapper.INSURANCE_ADV_INFO, queryParams);
+    const [rowsInsrInfo] = await db.query(CAAAdminMapper.INSURANCE_CAA_INFO, queryParams);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
     }
     return Object.setPrototypeOf(rowsInsrInfo, []);
   },
 
-  getADVS: async function (req) {
+  getCAAS: async function (req) {
     const params = req.body.params
     logger.info(params)
     const queryParams = [
@@ -38,7 +35,7 @@ module.exports = {
     ];
 
 
-    const [rowsInsrInfo] = await db.query(ADVAdminMapper.INSURANCE_ADV_LIST, queryParams);
+    const [rowsInsrInfo] = await db.query(CAAAdminMapper.INSURANCE_CAA_LIST, queryParams);
     //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
@@ -46,14 +43,14 @@ module.exports = {
     return Object.setPrototypeOf(rowsInsrInfo, []);
   },
 
-  getADVRate: async function (req) {
+  getCAARate: async function (req) {
     const params = req.body.params
     logger.info(params)
     const queryParams = [
       params.user_cd,
       params.business_cd,
     ];
-    const [rowsInsrInfo] = await db.query(ADVAdminMapper.INSURANCE_ADV_RATE_TOP, queryParams);
+    const [rowsInsrInfo] = await db.query(CAAAdminMapper.INSURANCE_CAA_RATE_TOP, queryParams);
     //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
@@ -61,20 +58,20 @@ module.exports = {
     return Object.setPrototypeOf(rowsInsrInfo, []);
   },
 
-  getADVRenewal: async function (req) {
+  getCAARenewal: async function (req) {
     const params = req.body.params
     logger.info(params)
     const queryParams = [
       params.insurance_uuid
     ];
-    const [rowsInsrInfo] = await db.query(ADVAdminMapper.RENEWAL_INSURANCE_ADV_INFO, queryParams);
+    const [rowsInsrInfo] = await db.query(CAAAdminMapper.RENEWAL_INSURANCE_CAA_INFO, queryParams);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
     }
     return Object.setPrototypeOf(rowsInsrInfo, []);
   },
 
-  getADVRenewals: async function (req) {
+  getCAARenewals: async function (req) {
     const params = req.body.params
     logger.info(params)
     const queryParams = [
@@ -89,14 +86,14 @@ module.exports = {
       params.user_nm,
     ];
 
-    const [rowsInsrInfo] = await db.query(ADVAdminMapper.RENEWAL_INSURANCE_ADV_LIST, queryParams);
+    const [rowsInsrInfo] = await db.query(CAAAdminMapper.RENEWAL_INSURANCE_CAA_LIST, queryParams);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
     }
     return Object.setPrototypeOf(rowsInsrInfo, []);
   },
   
-  setADV: async function (req) {
+  setCAA: async function (req) {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
     logger.info(user_uuid)
@@ -108,10 +105,10 @@ module.exports = {
         const insert_params = [
           param.user_uuid, param.insurance_no,param.business_cd,param.user_cd,
           param.user_id,param.user_nm,param.user_birth,param.user_regno,param.corp_type,
-          param.corp_nm,param.corp_bnno,param.corp_cnno,param.corp_telno,param.corp_faxno,
+          param.corp_nm,param.corp_ceo_nm,param.corp_bnno,param.corp_cnno,param.corp_telno,param.corp_faxno,
           param.corp_cust_nm,param.corp_cust_hpno,param.corp_cust_email,param.corp_post,param.corp_addr,
           param.corp_addr_dtl,param.corp_region_cd,param.insr_year,param.insr_reg_dt,param.insr_st_dt,
-          param.insr_cncls_dt,param.insr_retr_yn,param.insr_retr_dt,param.insr_take_amt,param.insr_take_sec,
+          param.insr_cncls_dt,param.insr_retr_yn,param.insr_retr_dt,param.insr_pblc_brdn_rt,
           param.insr_clm_lt_amt,param.insr_year_clm_lt_amt,param.insr_psnl_brdn_amt,param.insr_sale_year,param.insr_sale_rt,
           param.insr_pcnt_sale_rt,param.insr_base_amt,param.insr_amt,param.insr_tot_amt,param.insr_tot_paid_amt,
           param.insr_tot_unpaid_amt,param.active_yn,param.agr10_yn,param.agr20_yn,param.agr30_yn,
@@ -119,9 +116,9 @@ module.exports = {
           param.agr41_yn,param.agr50_yn,param.status_cd,param.rmk,param.erp_amt,
           param.erp_dt,param.erp_st_dt,param.erp_cncls_dt,param.change_rmk,param.change_dt,
           param.created_id,param.created_ip,param.updated_id,param.updated_ip,
-          param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data),param.limited_collateral
+          param.cons_join_yn,JSON.stringify(param.cons_data), param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data)
         ]
-        querys.push(ADVAdminMapper.INSERT_ADV_INSURANCE)
+        querys.push(CAAAdminMapper.INSERT_CAA_INSURANCE)
         query_params.push(insert_params)
       }
       else if (param.mode === 'U') {
@@ -130,22 +127,22 @@ module.exports = {
           param.user_regno, param.corp_type, param.corp_nm, param.corp_ceo_nm, param.corp_bnno, param.corp_cnno,
           param.corp_telno, param.corp_faxno, param.corp_cust_nm, param.corp_cust_hpno, param.corp_cust_email,
           param.corp_post, param.corp_addr, param.corp_addr_dtl, param.corp_region_cd, param.insr_year, param.insr_reg_dt,
-          param.insr_st_dt, param.insr_cncls_dt, param.insr_retr_yn, param.insr_retr_dt, param.insr_take_amt, param.insr_take_sec,
+          param.insr_st_dt, param.insr_cncls_dt, param.insr_retr_yn, param.insr_retr_dt, param.insr_pblc_brdn_rt,
           param.insr_clm_lt_amt, param.insr_year_clm_lt_amt, param.insr_psnl_brdn_amt, param.insr_sale_year, param.insr_sale_rt,
           param.insr_pcnt_sale_rt, param.insr_base_amt, param.insr_amt, param.insr_tot_amt, param.insr_tot_paid_amt, param.insr_tot_unpaid_amt,
-          param.cbr_cnt, JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data), param.spct_join_yn, JSON.stringify(param.spct_data), param.active_yn, 
+          param.cbr_cnt, JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data), param.cons_join_yn, JSON.stringify(param.cons_data), param.spct_join_yn, JSON.stringify(param.spct_data), param.active_yn, 
           param.agr10_yn, param.agr20_yn, param.agr30_yn, param.agr31_yn, param.agr32_yn, param.agr33_yn, param.agr34_yn, param.agr40_yn,
           param.agr41_yn, param.agr50_yn, param.status_cd, param.rmk, param.erp_amt, param.erp_dt, param.erp_st_dt, param.erp_cncls_dt,
-          param.change_rmk, param.change_dt, param.updated_id, param.updated_ip, param.limited_collateral, param.insurance_uuid 
+          param.change_rmk, param.change_dt, param.updated_id, param.updated_ip, param.insurance_uuid 
         ]
-        querys.push(ADVAdminMapper.UPDATE_INSURANCE)
+        querys.push(CAAAdminMapper.UPDATE_INSURANCE)
         query_params.push(update_params)
       }
       else if (param.mode === 'D'){
         const delete_params = [
           param.insurance_uuid, param.user_uuid
         ]
-        querys.push(ADVAdminMapper.DELETE_ADV_INSURANCE)
+        querys.push(CAAAdminMapper.DELETE_ADV_INSURANCE)
         query_params.push(delete_params)
       }
     }
@@ -161,7 +158,7 @@ module.exports = {
     return true;
   },
 
-  setADVRenewal: async function (req) {
+  setCAARenewal: async function (req) {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
     logger.info(user_uuid)
@@ -176,16 +173,16 @@ module.exports = {
           param.corp_nm,param.corp_bnno,param.corp_cnno,param.corp_telno,param.corp_faxno,
           param.corp_cust_nm,param.corp_cust_hpno,param.corp_cust_email,param.corp_post,param.corp_addr,
           param.corp_addr_dtl,param.corp_region_cd,param.insr_year,param.insr_reg_dt,param.insr_st_dt,
-          param.insr_cncls_dt,param.insr_retr_yn,param.insr_retr_dt,param.insr_take_amt,param.insr_take_sec,
+          param.insr_cncls_dt,param.insr_retr_yn,param.insr_retr_dt,param.insr_pblc_brdn_rt,
           param.insr_clm_lt_amt,param.insr_year_clm_lt_amt,param.insr_psnl_brdn_amt,param.insr_sale_year,param.insr_sale_rt,
           param.insr_pcnt_sale_rt,param.insr_base_amt,param.insr_amt,param.insr_tot_amt,param.insr_tot_paid_amt,
           param.insr_tot_unpaid_amt,param.active_yn,param.agr10_yn,param.agr20_yn,param.agr30_yn,
           param.agr31_yn,param.agr32_yn,param.agr33_yn,param.agr34_yn,param.agr40_yn,
           param.agr41_yn,param.agr50_yn,param.status_cd,param.rmk, param.change_rmk,
           param.change_dt,param.created_id,param.created_ip,param.updated_id,
-          param.updated_ip,param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data),JSON.stringify(param.trx_data)
+          param.updated_ip,param.cons_join_yn,JSON.stringify(param.cons_data),param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data),JSON.stringify(param.trx_data)
         ]
-        querys.push(ADVAdminMapper.INSERT_RENEWAL_ADV_INSURANCE)
+        querys.push(CAAAdminMapper.INSERT_RENEWAL_CAA_INSURANCE)
         query_params.push(insert_params)
       }
       else if (param.mode === 'U') {
@@ -195,21 +192,21 @@ module.exports = {
           param.user_regno, param.corp_type, param.corp_nm, param.corp_ceo_nm, param.corp_bnno, param.corp_cnno,
           param.corp_telno, param.corp_faxno, param.corp_cust_nm, param.corp_cust_hpno, param.corp_cust_email,
           param.corp_post, param.corp_addr, param.corp_addr_dtl, param.corp_region_cd, param.insr_year, param.insr_reg_dt,
-          param.insr_st_dt, param.insr_cncls_dt, param.insr_retr_yn, param.insr_retr_dt, param.insr_take_amt, param.insr_take_sec,
+          param.insr_st_dt, param.insr_cncls_dt, param.insr_retr_yn, param.insr_retr_dt, param.insr_pblc_brdn_rt,
           param.insr_clm_lt_amt, param.insr_year_clm_lt_amt, param.insr_psnl_brdn_amt, param.insr_sale_year, param.insr_sale_rt,
           param.insr_pcnt_sale_rt, param.insr_base_amt, param.insr_amt, param.insr_tot_amt, param.insr_tot_paid_amt, param.insr_tot_unpaid_amt,
-          param.cbr_cnt, JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data), param.spct_join_yn, JSON.stringify(param.spct_data), param.active_yn, 
+          param.cbr_cnt, JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data), param.cons_join_yn, JSON.stringify(param.cons_data), param.spct_join_yn, JSON.stringify(param.spct_data), param.active_yn, 
           param.agr10_yn, param.agr20_yn, param.agr30_yn, param.agr31_yn, param.agr32_yn, param.agr33_yn, param.agr34_yn, param.agr40_yn,
           param.agr41_yn, param.agr50_yn, param.status_cd, param.rmk, param.change_rmk, param.change_dt, param.updated_id, param.updated_ip, param.insurance_uuid 
         ]
-        querys.push(ADVAdminMapper.UPDATE_RENEWAL_ADV_INSURANCE)
+        querys.push(CAAAdminMapper.UPDATE_RENEWAL_CAA_INSURANCE)
         query_params.push(update_params)
       }
       else if (param.mode === 'D'){
         const delete_params = [
           param.insurance_uuid
         ]
-        querys.push(ADVAdminMapper.DELETE_RENEWAL_ADV_INSURANCE)
+        querys.push(CAAAdminMapper.DELETE_RENEWAL_CAA_INSURANCE)
         query_params.push(delete_params)
       }
     }
@@ -224,7 +221,7 @@ module.exports = {
   },
 
 
-  getApplyADVInsurance: async function (req) {
+  getApplyCAAInsurance: async function (req) {
     const params = req.body.params
     logger.info(params)
     const queryParams = [
@@ -233,7 +230,7 @@ module.exports = {
       params.proc_cd,
       params.user_nm
     ];
-    const [rowsInsrInfo] = await db.query(ADVAdminMapper.SELECT_APPLY_ADV_INSURANCE_LIST, queryParams);
+    const [rowsInsrInfo] = await db.query(CAAAdminMapper.SELECT_APPLY_CAA_INSURANCE_LIST, queryParams);
     //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
@@ -241,7 +238,7 @@ module.exports = {
     return Object.setPrototypeOf(rowsInsrInfo, []);
   },
 
-  setApplyADVInsurance: async function (req) {
+  setApplyCAAInsurance: async function (req) {
     const params = req.body.params
     logger.info(params)
     const queryParams = [
@@ -251,7 +248,7 @@ module.exports = {
       params.apply_no,
     ];
     
-    const [rows] = await db.query(ADVAdminMapper.UPDATE_APPLY_ADV_INSURANCE, queryParams);
+    const [rows] = await db.query(CAAAdminMapper.UPDATE_APPLY_CAA_INSURANCE, queryParams);
     //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
     if (rows.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
@@ -259,7 +256,7 @@ module.exports = {
     return true;
   },
 
-  getADV_TRX: async function (req) {
+  getCAA_TRX: async function (req) {
     const params = req.body.params
     logger.info(params)
     const queryParams = [
@@ -273,7 +270,7 @@ module.exports = {
       params.user_nm,
       params.user_nm,
     ];
-    const [rowsInsrInfo] = await db.query(ADVAdminMapper.SELECT_INSURANCE_ADV_TRX_DATA_LIST, queryParams);
+    const [rowsInsrInfo] = await db.query(CAAAdminMapper.SELECT_INSURANCE_CAA_TRX_DATA_LIST, queryParams);
     //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
@@ -281,12 +278,11 @@ module.exports = {
     return Object.setPrototypeOf(rowsInsrInfo, []);
   },
 
-  setADV_TRX: async function (req) {
+  setCAA_TRX: async function (req) {
     const params = req.body.params
     logger.info(params)
     let querys = []
     let query_params = []
-    let nCnt = 0;
     for(const param of params){
       const updateQueryParams = [
         JSON.stringify(param.trx_data),
@@ -297,9 +293,8 @@ module.exports = {
         param.updated_ip,
         param.insurance_uuid,
       ];
-      querys.push(ADVAdminMapper.UPDATE_INSURANCE_ADV_TRX_DATA)
+      querys.push(CAAAdminMapper.UPDATE_INSURANCE_CAA_TRX_DATA)
       query_params.push(updateQueryParams)
-      nCnt ++
     }
     
     
@@ -310,10 +305,10 @@ module.exports = {
         throw new NotFound(StatusMessage.SELECT_FAILED);
       }
     }
-    return nCnt;
+    return true;
   },
 
-  getADVExcel: async function (req) {
+  getCAAExcel: async function (req) {
     const params = req.body.params;
     const queryParams = [
       params.business_cd,
@@ -323,7 +318,7 @@ module.exports = {
       params.status_cd,
       params.user_nm,
     ];
-    const [rows] = await db.query(ADVAdminMapper.INSURANCE_ADV_EXCEL_LIST, queryParams);
+    const [rows] = await db.query(CAAAdminMapper.INSURANCE_CAA_EXCEL_LIST, queryParams);
     if (rows.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
     }

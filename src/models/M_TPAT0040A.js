@@ -11,13 +11,13 @@ module.exports = {
     const query = `SELECT b.*,
                           a.*,
                           FN_GET_CODENM('COM040', a.apply_cd) AS apply_nm,
-                          FN_GET_CODENM('COM030', a.proc_cd) AS proc_nm
-                      FROM   TCAA0040A a,
+                          FN_GET_CODENM('COM041', a.proc_cd) AS proc_nm
+                      FROM   TADV0040A a,
                           (SELECT insurance_uuid,
                                   user_uuid,
                                   user_nm   AS insurance_user_nm,
                                   insr_year AS insurance_year
-                          FROM   TCAA0030A
+                          FROM   TADV0030A
                           WHERE  user_uuid = ?
                           ORDER  BY created_at DESC
                           LIMIT  1) AS b
@@ -42,11 +42,10 @@ module.exports = {
     const limit = parseInt(params.limit || 10, 10);
     const offset = (page - 1) * limit;
 
-    // const query = 'SELECT * FROM TCAA0040A WHERE user_id = ? ORDER BY apply_no DESC';
     let query = `SELECT a.*,
                         FN_GET_CODENM('COM040', a.apply_cd) AS apply_nm,
-                        FN_GET_CODENM('COM030', a.proc_cd) AS proc_nm
-                    FROM   TCAA0040A a
+                        FN_GET_CODENM('COM041', a.proc_cd) AS proc_nm
+                    FROM   TADV0040A a
                     WHERE  a.user_uuid = ?`;
     let conditions = [user_uuid];
 
@@ -72,7 +71,7 @@ module.exports = {
   selectCount: async function (req) {
     const user_uuid = req.decoded.uuid;
 
-    let query = 'SELECT COUNT(*) AS count FROM TCAA0040A WHERE user_uuid = ? ';
+    let query = 'SELECT COUNT(*) AS count FROM TADV0040A WHERE user_uuid = ? ';
 
     let conditions = [user_uuid];
 
@@ -96,9 +95,9 @@ module.exports = {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
 
-    const query = `INSERT INTO TCAA0040A (user_cd, business_cd, insurance_no, insurance_user_nm, email,
+    const query = `INSERT INTO TADV0040A (user_cd, business_cd, insurance_no, insurance_user_nm, email,
                                           tel, nm, apply_cd, apply_content, apply_posted_dt,
-                                          apply_dt, proc_cd, insurance_uuid, user_uuid, created_ip, updated_ip) 
+                                           apply_dt, proc_cd, insurance_uuid, user_uuid, created_ip, updated_ip) 
                                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
 
     const queryParams = [
@@ -134,12 +133,27 @@ module.exports = {
     const params = req.body.params;
 
     const query =
-      'UPDATE TCAA0040A SET email = ?, tel = ?, nm = ?, apply_cd = ?, apply_content = ?, apply_posted_dt = ?, proc_at = ?, proc_content = ?, proc_cd = ? WHERE apply_no = ?';
-    const { email, tel, nm, apply_cd, apply_content, apply_posted_dt, proc_at, proc_content, proc_cd, apply_no } =
-      params;
+      'UPDATE TADV0040A SET email = ?, tel = ?, nm = ?, apply_cd = ?, apply_content = ?, apply_posted_dt = ?, proc_at = ?, proc_content = ?, proc_cd = ? WHERE apply_no = ?';
+    const {
+      email,
+      tel,
+      tel1,
+      tel2,
+      tel3,
+      nm,
+      apply_cd,
+      apply_content,
+      apply_posted_dt,
+      proc_at,
+      proc_content,
+      proc_cd,
+      apply_no
+    } = params;
+
     const [result] = await db.query(query, [
       email,
       tel,
+      //tel1 + '-' + tel2 + '-' + tel3,
       nm,
       apply_cd,
       apply_content,
@@ -161,7 +175,7 @@ module.exports = {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
 
-    const query = 'DELETE FROM TCAA0040A WHERE apply_no = ?';
+    const query = 'DELETE FROM TADV0040A WHERE apply_no = ?';
     const [result] = await db.query(query, params.apply_no);
 
     if (result.affectedRows === 0) {

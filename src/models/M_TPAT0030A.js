@@ -6,7 +6,7 @@ const db = require('../config/db');
 /**
  * 회계사_보험계약
  *
- * TABLE : TADV0030A
+ * TABLE : TPAT0030A
  *
  */
 
@@ -15,45 +15,46 @@ module.exports = {
     const user_uuid = req.decoded.uuid;
     logger.debug(req.body.params);
 
-    const queryADV0030A = `SELECT 
+    const query0030A = `SELECT 
                       insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
-                      user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
+                      user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno, corp_ceo_nm,
                       corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
                       insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
-                      insr_take_amt, insr_take_sec, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, insr_sale_year,
+                      insr_take_amt, insr_take_sec, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, 
+                      insr_program_yn, insr_program, insr_service, insr_sale_year, insr_income_filename,
                       insr_sale_rt, insr_pcnt_sale_rt,insr_base_amt, insr_amt, insr_premium_amt, insr_tot_amt, insr_tot_paid_amt, 
                       insr_tot_unpaid_amt, cbr_cnt, cbr_data, spct_join_yn, spct_data, active_yn, agr10_yn,
                       agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
-                      agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip, limited_collateral
+                      agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip
                       , FN_GET_CODENM('COM030', status_cd) AS status_nm
                       , FN_GET_CODENM('ADV001', corp_region_cd) AS corp_region_nm
-                    FROM TADV0030A
+                    FROM TPAT0030A
                     WHERE  insurance_uuid = ?
                     order by insurance_uuid`;
 
 
-    const queryADV0031A = `SELECT 
+    const query0031A = `SELECT 
           insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
           user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
           corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
-          insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
+          insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt, insr_program_yn, insr_program, insr_service,
           insr_take_amt, insr_take_sec, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, insr_sale_year,
           insr_sale_rt, insr_pcnt_sale_rt,insr_base_amt, insr_amt, insr_premium_amt, insr_tot_amt, insr_tot_paid_amt, 
           insr_tot_unpaid_amt, cbr_cnt, cbr_data, spct_join_yn, spct_data, active_yn, agr10_yn,
           agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
-          agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip, limited_collateral
+          agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip
           , FN_GET_CODENM('COM030', status_cd) AS status_nm
           , FN_GET_CODENM('ADV001', corp_region_cd) AS corp_region_nm
-        FROM TADV0031A
+        FROM TPAT0031A
         WHERE  insurance_uuid = ?
         order by insurance_uuid`;
 
     let query;
     let params;
     if (req.body.params.renewal == 'Y') {
-      query = queryADV0031A;
+      query = query0031A;
     } else {
-      query = queryADV0030A;
+      query = query0030A;
     }
     params = [req.body.params.insurance_uuid];
     
@@ -72,7 +73,7 @@ module.exports = {
                   , insr_year, insr_st_dt, insr_cncls_dt
                   , insr_tot_amt, status_cd, cbr_cnt, cbr_data
                   , FN_GET_CODENM('COM030', status_cd) AS status_nm
-                    FROM TADV0030A
+                    FROM TPAT0030A
                    WHERE (user_nm = ? and user_birth = ? and user_regno = ?)
                    OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY(?))
                    AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(?))
@@ -83,7 +84,7 @@ module.exports = {
                    , insr_year, insr_st_dt, insr_cncls_dt
                    , insr_tot_amt, status_cd, cbr_cnt, cbr_data
                    , FN_GET_CODENM('COM030', status_cd) AS status_nm
-                     FROM TADV0030A
+                     FROM TPAT0030A
                     WHERE user_nm = ? and corp_cnno = ?
                     order by created_at desc`;
 
@@ -114,7 +115,7 @@ module.exports = {
             ELSE 'Y'
           END AS data
       from
-        tadv0030a a
+        TPAT0030A a
       where
         a.user_uuid = ?
         and a.status_cd not in ('20', '40') -- 해지, 기간종료
@@ -143,14 +144,13 @@ module.exports = {
       select
         A.insurance_uuid as data, A.insr_year
       from
-        tadv0031a A,
+        TPAT0031A A,
         tcom0110a B
       where
         A.business_cd = B.business_cd
-        and (
-                (A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
-             or (A.user_cd = 'JNT' AND A.corp_cnno = B.corp_cnno )
-             or (A.user_cd = 'JNT' AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
+        and ((A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND A.corp_cnno = B.corp_cnno )
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
              AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(B.user_birth))
              AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(b.user_regno)))
             )
@@ -192,7 +192,7 @@ module.exports = {
     const queryIND = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm 
                   , insr_year, insr_st_dt, insr_cncls_dt
                   , insr_tot_amt, status_cd
-                    FROM TADV0030A
+                    FROM TPAT0030A
                    WHERE user_nm = ? and user_birth = ? and user_regno = ? 
                    order by created_at desc
                    LIMIT 1`;
@@ -200,7 +200,7 @@ module.exports = {
     const queryJNT = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm 
                    , insr_year, insr_st_dt, insr_cncls_dt
                    , insr_tot_amt, status_cd
-                     FROM TADV0030A
+                     FROM TPAT0030A
                     WHERE user_nm = ? and corp_cnno = ? 
                     order by created_at desc
                     LIMIT 1`;
@@ -272,6 +272,10 @@ module.exports = {
             ,A.insr_clm_lt_amt
             ,A.insr_year_clm_lt_amt
             ,A.insr_psnl_brdn_amt
+            ,A.insr_program_yn
+            ,A.insr_program
+            ,A.insr_service
+            ,A.insr_income_filename
             ,A.insr_sale_year
             ,A.insr_sale_rt
             ,A.insr_pcnt_sale_rt
@@ -311,7 +315,7 @@ module.exports = {
             ,B.insr_st_dt as base_insr_st_dt
             ,B.insr_cncls_dt as base_insr_cncls_dt
             ,B.insurance_no
-      FROM   TADV0030A A
+      FROM   TPAT0030A A
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
 		    AND A.user_cd = B.user_cd 
@@ -360,7 +364,7 @@ module.exports = {
           insr_psnl_brdn_amt,
           IFNULL(NULLIF(insr_sale_rt, ''), 0) as insr_sale_rt
         from
-          TADV0031A
+          TPAT0031A
         where
           user_cd = 'IND'
           and user_nm = ?
@@ -381,7 +385,7 @@ module.exports = {
           t.insr_psnl_brdn_amt,
           IFNULL(NULLIF(j.insr_sale_rt, ''), 0) as insr_sale_rt
         from
-          TADV0031A t,
+          TPAT0031A t,
           json_table(t.cbr_data,
           '$[*]' columns (
             cbr_nm VARCHAR(50) path '$.cbr_nm',
@@ -392,8 +396,8 @@ module.exports = {
           insr_sale_rt decimal(3,0) path '$.insr_sale_rt'
         )) j
         where
-          t.business_cd = 'ADV'
-          and t.user_cd = 'JNT'
+          t.business_cd = 'PAT'
+          and (t.user_cd = 'JNT' or t.user_cd = 'COR')
           and j.cbr_nm = ?
           and j.cbr_brdt = ?
           and j.cbr_regno = ?
@@ -434,7 +438,7 @@ module.exports = {
           IFNULL(NULLIF(insr_sale_year, ''), 0) as insr_sale_year,
           IFNULL(NULLIF(insr_sale_rt, ''), 0) as insr_sale_rt
         from
-          TADV0031A
+          TPAT0031A
         where business_cd = ?
           and user_cd = 'IND'
           and user_nm = ?
@@ -459,7 +463,7 @@ module.exports = {
       COALESCE(j.insr_sale_year, 0) AS insr_sale_year,
       COALESCE(j.insr_sale_rt, 0) AS insr_sale_rt
     FROM
-      tadv0031a t
+      TPAT0031A t
       CROSS JOIN JSON_TABLE(
         t.cbr_data,
         '$[*]' COLUMNS (
@@ -493,7 +497,7 @@ module.exports = {
         SELECT COUNT(*) AS cnt
         FROM (
             SELECT 1
-            FROM TADV0030A
+            FROM TPAT0030A
             WHERE business_cd = ?
               AND user_cd = 'IND'
               AND user_nm = ?
@@ -503,7 +507,7 @@ module.exports = {
               AND status_cd in ('10', '20', '80') -- 신청중, 처리중, 정상
             UNION ALL
             SELECT 1
-            FROM TADV0030A t,
+            FROM TPAT0030A t,
             json_table(t.cbr_data,
             '$[*]' columns (
               cbr_nm VARCHAR(50) path '$.cbr_nm',
@@ -512,7 +516,7 @@ module.exports = {
               status_cd VARCHAR(3) path '$.status_cd'
             )) j
             WHERE t.business_cd = ?
-              AND t.user_cd = 'JNT'
+              AND (t.user_cd = 'JNT' or t.user_cd = 'COR')
               AND j.cbr_nm = ?
               AND j.cbr_brdt = ?
               AND j.cbr_regno = ?
@@ -578,7 +582,7 @@ module.exports = {
       query = `SELECT COUNT(*) AS cnt
       FROM (
           SELECT 1
-          FROM TADV0030A
+          FROM TPAT0030A
           WHERE business_cd = ?
             AND user_cd = 'IND'
             AND user_nm = ?
@@ -588,7 +592,7 @@ module.exports = {
             AND status_cd in ('10', '20', '80') -- 신청중, 처리중, 정상
           UNION ALL
           SELECT 1
-          FROM TADV0030A t,
+          FROM TPAT0030A t,
           json_table(t.cbr_data,
           '$[*]' columns (
             cbr_nm VARCHAR(50) path '$.cbr_nm',
@@ -597,7 +601,7 @@ module.exports = {
             status_cd VARCHAR(3) path '$.status_cd'
           )) j
           WHERE t.business_cd = ?
-            AND t.user_cd = 'JNT'
+            AND (t.user_cd = 'JNT' or t.user_cd = 'COR')
             AND j.cbr_nm = ?
             AND j.cbr_brdt = ?
             AND j.cbr_regno = ?
@@ -618,17 +622,33 @@ module.exports = {
     return false;
   },
 
+  checkFile: async function(req) {
+    const params = req.body.params;
+
+    const query = `SELECT insr_year, user_nm, insr_income_filename FROM TPAT0030A
+      WHERE insurance_uuid = ?`;
+    const param = [params.insurance_uuid]
+    const [rows] = await db.query(query, param);
+
+    if (rows.length < 1){
+      return null
+    }
+
+    return rows[0]
+  },
+
   insert: async function (req) {
     const user_uuid = req.decoded.uuid;
 
     const params = req.body.params;
 
-    const query = `INSERT INTO TADV0030A (
+    const query = `INSERT INTO TPAT0030A (
                       insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
                       user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno, corp_ceo_nm,
                       corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl,corp_region_cd,
                       insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
                       insr_take_amt, insr_take_sec , insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, 
+                      insr_program_yn, insr_program, insr_service, insr_income_filename,
                       insr_sale_year, insr_sale_rt, insr_pcnt_sale_rt, insr_base_amt, insr_amt, insr_premium_amt, insr_tot_amt, 
                       insr_tot_paid_amt, insr_tot_unpaid_amt, cbr_cnt, cbr_data,
                       trx_data, spct_join_yn, spct_data, active_yn, agr10_yn,
@@ -648,6 +668,7 @@ module.exports = {
                       , ?, ?, ?, ?, ?
                       , ?, ?, ?, ?, ?
                       , ?, ?, ?, ?, ?
+                      , ?, ?, ?, ?
                     )`;
 
     const queryParams = [
@@ -684,6 +705,10 @@ module.exports = {
       params.insr_clm_lt_amt,
       params.insr_year_clm_lt_amt,
       params.insr_psnl_brdn_amt,
+      params.insr_program_yn,
+      params.insr_program,
+      params.insr_service,
+      params.insr_income_filename,
       params.insr_sale_year,
       params.insr_sale_rt,
       params.insr_pcnt_sale_rt,
@@ -730,7 +755,7 @@ module.exports = {
   update: async function (req) {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
-    const queryIND = ` UPDATE TADV0030A 
+    const queryIND = ` UPDATE TPAT0030A 
                     SET 
                       insurance_no = ?,
                       business_cd = ?,
@@ -763,6 +788,9 @@ module.exports = {
                       insr_clm_lt_amt = ?,
                       insr_year_clm_lt_amt = ?,
                       insr_psnl_brdn_amt = ?,
+                      insr_program_yn = ?,
+                      insr_program = ?,
+                      insr_service = ?,
                       insr_sale_rt = ?,
                       insr_pcnt_sale_rt = ?,
                       insr_base_amt = ?,
@@ -796,7 +824,7 @@ module.exports = {
                       updated_ip = ?
                     WHERE insurance_uuid = ? AND user_nm = ? and user_birth = ? and user_regno = ?
                   `;
-    const queryJNT = ` UPDATE TADV0030A 
+    const queryJNT = ` UPDATE TPAT0030A 
                   SET 
                     insurance_no = ?,
                     business_cd = ?,
@@ -830,6 +858,10 @@ module.exports = {
                     insr_clm_lt_amt = ?,
                     insr_year_clm_lt_amt = ?,
                     insr_psnl_brdn_amt = ?,
+                    insr_program_yn = ?,
+                    insr_program = ?,
+                    insr_service = ?,
+                    insr_income_filename = ?,
                     insr_sale_rt = ?,
                     insr_pcnt_sale_rt = ?,
                     insr_base_amt = ?,
@@ -905,6 +937,9 @@ module.exports = {
         params.insr_clm_lt_amt,
         params.insr_year_clm_lt_amt,
         params.insr_psnl_brdn_amt,
+        params.insr_program_yn,
+        params.insr_program,
+        params.insr_service,
         params.insr_sale_rt,
         params.insr_pcnt_sale_rt,
         params.insr_base_amt,
@@ -975,6 +1010,10 @@ module.exports = {
         params.insr_clm_lt_amt,
         params.insr_year_clm_lt_amt,
         params.insr_psnl_brdn_amt,
+        params.insr_program_yn,
+        params.insr_program,
+        params.insr_service,
+        params.insr_income_filename,
         params.insr_sale_rt,
         params.insr_pcnt_sale_rt,
         params.insr_base_amt,
@@ -1020,8 +1059,8 @@ module.exports = {
   },
   delete: async function (req) {
     const user_uuid = req.decoded.uuid;
-    const queryIND = 'DELETE FROM TADV0030A WHERE insurance_uuid = ? AND user_nm = ? and user_birth = ? and user_regno = ?';
-    const queryJNT = 'DELETE FROM TADV0030A WHERE insurance_uuid = ? AND user_nm = ? and corp_cnno = ?';
+    const queryIND = 'DELETE FROM TPAT0030A WHERE insurance_uuid = ? AND user_nm = ? and user_birth = ? and user_regno = ?';
+    const queryJNT = 'DELETE FROM TPAT0030A WHERE insurance_uuid = ? AND user_nm = ? and corp_cnno = ?';
     const userQuery = `SELECT * from tcom0110a where user_uuid = ?`
     const [user] = await db.query(userQuery, user_uuid);  
     if (user.length < 1) {
@@ -1049,7 +1088,7 @@ module.exports = {
   },
 
   updateUserInfo: async function (params) {
-    const query = ` UPDATE TADV0030A 
+    const query = ` UPDATE TPAT0030A 
                     SET 
                       user_id = ?,
                       user_uuid = ?,

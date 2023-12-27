@@ -4,7 +4,7 @@ module.exports = Object.freeze({
    *
    * - :user_uuid 사용자 KEY
    */
-  INSURANCE_ADV_RATE_TOP: `SELECT base_year,
+  INSURANCE_PAT_RATE_TOP: `SELECT base_year,
       ver,
       user_cd,
       business_cd,
@@ -36,7 +36,7 @@ module.exports = Object.freeze({
             ELSE 'Y'
           END AS data
       from
-        ttax0030a a
+        tpat0030a a
       where
         a.user_uuid = :user_uuid
         and a.status_cd not in ('20', '40') -- 해지, 기간종료
@@ -74,16 +74,16 @@ module.exports = Object.freeze({
             , insr_cncls_dt
             , insr_tot_amt
             , status_cd
-      FROM   ttax0030a
+      FROM   tpat0030a
       WHERE  user_uuid = :user_uuid
       ORDER  BY insurance_uuid, insurance_seq DESC
       LIMIT  1 
     `,
   /**
-   * [보험DB - ADV] 보험 데이터 조회 엑셀용
+   * [보험DB - PAT] 보험 데이터 조회 엑셀용
    *
    */
-  INSURANCE_ADV_EXCEL_LIST: `
+  INSURANCE_PAT_EXCEL_LIST: `
       SELECT A.insurance_uuid
             ,A.user_uuid
             ,A.business_cd
@@ -117,6 +117,9 @@ module.exports = Object.freeze({
             ,A.insr_clm_lt_amt
             ,A.insr_year_clm_lt_amt
             ,A.insr_psnl_brdn_amt
+            ,A.insr_program_yn
+            ,A.insr_program
+            ,A.insr_service
             ,A.insr_sale_year
             ,A.insr_sale_rt
             ,A.insr_pcnt_sale_rt
@@ -145,13 +148,12 @@ module.exports = Object.freeze({
             ,A.rmk
             ,A.change_rmk
             ,A.change_dt
-            ,A.limited_collateral
             ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
             ,FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
             ,B.insr_st_dt as base_insr_st_dt
             ,B.insr_cncls_dt as base_insr_cncls_dt
             ,B.insurance_no
-      FROM   TADV0030A A    
+      FROM   TPAT0030A A    
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
 		    AND A.user_cd = B.user_cd 
@@ -169,7 +171,7 @@ module.exports = Object.freeze({
    *
    * - :user_uuid 사용자 KEY
    */
-  INSURANCE_ADV_LIST: `SELECT A.insurance_uuid
+  INSURANCE_PAT_LIST: `SELECT A.insurance_uuid
     , A.business_cd
     , A.user_cd
     , A.user_uuid
@@ -190,7 +192,7 @@ module.exports = Object.freeze({
     , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm
     , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
     , FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
-    FROM TADV0030A A
+    FROM TPAT0030A A
     LEFT JOIN TCOM0030A B
   ON A.insr_year = B.base_year 
   AND A.user_cd = B.user_cd 
@@ -208,72 +210,7 @@ module.exports = Object.freeze({
    *
    * - :insurance_uuid 보험 KEY
    */
-  INSURANCE_ADV_INFO: `SELECT A.insurance_uuid
-  ,A.user_uuid
-  ,A.business_cd
-  ,A.user_cd
-  ,A.user_id
-  ,A.user_nm
-  ,A.user_birth
-  ,A.user_regno
-  ,A.corp_type
-  ,A.corp_nm
-  ,A.corp_ceo_nm
-  ,A.corp_bnno
-  ,A.corp_cnno
-  ,A.corp_telno
-  ,A.corp_faxno
-  ,A.corp_cust_nm
-  ,A.corp_cust_hpno
-  ,A.corp_cust_email
-  ,A.corp_post
-  ,A.corp_addr
-  ,A.corp_addr_dtl
-  ,A.corp_region_cd
-  ,A.insr_year
-  ,A.insr_reg_dt
-  ,A.insr_st_dt
-  ,A.insr_cncls_dt
-  ,A.insr_retr_yn
-  ,A.insr_retr_dt
-  ,A.insr_take_amt
-  ,A.insr_take_sec
-  ,A.insr_clm_lt_amt
-  ,A.insr_year_clm_lt_amt
-  ,A.insr_psnl_brdn_amt
-  ,A.insr_sale_year
-  ,A.insr_sale_rt
-  ,A.insr_pcnt_sale_rt
-  ,A.insr_base_amt
-  ,A.insr_amt
-  ,A.insr_tot_amt
-  ,A.insr_tot_paid_amt
-  ,A.insr_tot_unpaid_amt
-  ,A.spct_join_yn
-  ,A.spct_data
-  ,A.cbr_data
-  ,A.cbr_cnt
-  ,A.trx_data
-  ,A.erp_amt
-  ,A.erp_dt
-  ,A.erp_st_dt
-  ,A.erp_cncls_dt
-  ,A.active_yn
-  ,A.agr10_yn
-  ,A.agr20_yn
-  ,A.agr30_yn
-  ,A.agr31_yn
-  ,A.agr32_yn
-  ,A.agr33_yn
-  ,A.agr34_yn
-  ,A.agr40_yn
-  ,A.agr41_yn
-  ,A.agr50_yn
-  ,A.status_cd
-  ,A.rmk
-  ,A.change_rmk
-  ,A.change_dt
-  ,A.limited_collateral
+  INSURANCE_PAT_INFO: `SELECT A.*
   ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
   ,FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
   ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1
@@ -285,7 +222,7 @@ module.exports = Object.freeze({
   ,B.insr_st_dt as base_insr_st_dt
   ,B.insr_cncls_dt as base_insr_cncls_dt
   ,B.insurance_no
-FROM   TADV0030A A
+FROM   TPAT0030A A
     LEFT JOIN TCOM0030A B
 ON A.insr_year = B.base_year 
 AND A.user_cd = B.user_cd 
@@ -376,7 +313,7 @@ LIMIT  1
             ,B.insr_st_dt AS base_insr_st_dt
             ,B.insr_cncls_dt AS base_insr_cncls_dt
             ,B.insurance_no
-      FROM   TTAX0030A A
+      FROM   TPAT0030A A
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
 		    AND A.user_cd = B.user_cd 
@@ -388,9 +325,9 @@ LIMIT  1
     `,
 
   /**
-   * [보험DB - ADV] 입력
+   * [보험DB - PAT] 입력
    */
-  INSERT_ADV_INSURANCE: `INSERT INTO tadv0030a
+  INSERT_PAT_INSURANCE: `INSERT INTO tpat0030a
             (insurance_uuid,
              user_uuid,
              insurance_no,
@@ -424,6 +361,9 @@ LIMIT  1
              insr_clm_lt_amt,
              insr_year_clm_lt_amt,
              insr_psnl_brdn_amt,
+             insr_program_yn,
+             insr_program,
+             insr_service,
              insr_sale_year,
              insr_sale_rt,
              insr_pcnt_sale_rt,
@@ -469,6 +409,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
+              ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
@@ -484,7 +425,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
    */
   UPDATE_INSURANCE: `
     /* AdminMapper.UPDATE_ADV_INSURANCE */    
-    UPDATE tadv0030a
+    UPDATE tpat0030a
     SET    insurance_no = ?,
           business_cd = ?,
           user_cd = ?,
@@ -517,6 +458,9 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
           insr_clm_lt_amt = ?,
           insr_year_clm_lt_amt = ?,
           insr_psnl_brdn_amt = ?,
+          insr_program_yn = ?,
+          insr_program = ?,
+          insr_service = ?,
           insr_sale_year = ?,
           insr_sale_rt = ?,
           insr_pcnt_sale_rt = ?,
@@ -561,7 +505,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
    */
   UPDATE_INSURANCE_TRX_DATA: `
     /* AdminMapper.UPDATE_INSURANCE_TRX_DATA */    
-    UPDATE ttax0030a
+    UPDATE tpat0030a
     SET    
           trx_data = :trx_data,
           status_cd = :status_cd,
@@ -574,11 +518,11 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     `,
 
   /**
-   * [보험DB - ADV] 입금처리 조회
+   * [보험DB - PAT] 입금처리 조회
    *
    * - :user_uuid 사용자 KEY
    */
-  SELECT_INSURANCE_ADV_TRX_DATA_LIST: `
+  SELECT_INSURANCE_PAT_TRX_DATA_LIST: `
       SELECT A.insurance_uuid
             , A.business_cd
             , A.user_cd
@@ -601,7 +545,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
             , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm
             , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
             , FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
-            FROM   TADV0030A A
+            FROM   TPAT0030A A
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
 		    AND A.user_cd = B.user_cd 
@@ -615,10 +559,10 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     `,
 
   /**
-   * [보험DB - ADV] 입금처리
+   * [보험DB - PAT] 입금처리
    */
-  UPDATE_INSURANCE_ADV_TRX_DATA: `
-    UPDATE tadv0030a
+  UPDATE_INSURANCE_PAT_TRX_DATA: `
+    UPDATE tpat0030a
     SET    
           trx_data = ?,
           insr_tot_unpaid_amt = ?,
@@ -631,10 +575,10 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     `,
 
   /**
-   * [보험DB - ADV] 삭제
+   * [보험DB - PAT] 삭제
    */
-  DELETE_ADV_INSURANCE: `
-      DELETE FROM tadv0030a WHERE insurance_uuid = ? AND user_uuid = ?
+  DELETE_PAT_INSURANCE: `
+      DELETE FROM tpat0030a WHERE insurance_uuid = ? AND user_uuid = ?
     `,
 
   /**
@@ -642,9 +586,9 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
    *
    * - :user_uuid 사용자 KEY
    */
-  RENEWAL_ADV_INSURANCE_UUID: `
+  RENEWAL_PAT_INSURANCE_UUID: `
     SELECT MAX(A.insurance_uuid) as data
-      FROM tadv0031a A
+      FROM tpat0031a A
       JOIN tcom0110a B
         ON A.business_cd = B.business_cd
         AND A.user_cd = B.USER_CD
@@ -666,71 +610,11 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     `,
 
   /**
-   * [갱신DB - ADV] 보험 상세 조회
+   * [갱신DB - PAT] 보험 상세 조회
    *
    * - :insurance_uuid 보험 KEY
    */
-  RENEWAL_INSURANCE_ADV_INFO: `SELECT A.insurance_uuid
-    ,A.user_uuid
-    ,A.business_cd
-    ,A.user_cd
-    ,A.user_id
-    ,A.user_nm
-    ,A.user_birth
-    ,A.user_regno
-    ,A.corp_type
-    ,A.corp_nm
-    ,A.corp_ceo_nm
-    ,A.corp_bnno
-    ,A.corp_cnno
-    ,A.corp_telno
-    ,A.corp_faxno
-    ,A.corp_cust_nm
-    ,A.corp_cust_hpno
-    ,A.corp_cust_email
-    ,A.corp_post
-    ,A.corp_addr
-    ,A.corp_addr_dtl
-    ,A.corp_region_cd
-    ,A.insr_year
-    ,A.insr_reg_dt
-    ,A.insr_st_dt
-    ,A.insr_cncls_dt
-    ,A.insr_retr_yn
-    ,A.insr_retr_dt
-    ,A.insr_take_amt
-    ,A.insr_take_sec
-    ,A.insr_clm_lt_amt
-    ,A.insr_year_clm_lt_amt
-    ,A.insr_psnl_brdn_amt
-    ,A.insr_sale_year
-    ,A.insr_sale_rt
-    ,A.insr_pcnt_sale_rt
-    ,A.insr_base_amt
-    ,A.insr_amt
-    ,A.insr_tot_amt
-    ,A.insr_tot_paid_amt
-    ,A.insr_tot_unpaid_amt
-    ,A.spct_join_yn
-    ,A.spct_data
-    ,A.cbr_data
-    ,A.cbr_cnt
-    ,A.trx_data
-    ,A.active_yn
-    ,A.agr10_yn
-    ,A.agr20_yn
-    ,A.agr30_yn
-    ,A.agr31_yn
-    ,A.agr32_yn
-    ,A.agr33_yn
-    ,A.agr34_yn
-    ,A.agr40_yn
-    ,A.agr41_yn
-    ,A.agr50_yn
-    ,A.status_cd
-    ,A.rmk
-    ,A.change_rmk
-    ,A.change_dt
+  RENEWAL_INSURANCE_PAT_INFO: `SELECT A.*
     ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
     ,FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
     ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1
@@ -742,7 +626,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     ,B.insr_st_dt as base_insr_st_dt
     ,B.insr_cncls_dt as base_insr_cncls_dt
     ,B.insurance_no
-  FROM   TADV0031A A
+  FROM   TPAT0031A A
     LEFT JOIN TCOM0030A B
   ON A.insr_year = B.base_year 
   AND A.user_cd = B.user_cd 
@@ -753,11 +637,11 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
   LIMIT  1 
   `,
   /**
-   * [보험DB - ADV] 목록 조회
+   * [보험DB - PAT] 목록 조회
    *
    * - :user_uuid 사용자 KEY
    */
-  RENEWAL_INSURANCE_ADV_LIST: `SELECT A.insurance_uuid
+  RENEWAL_INSURANCE_PAT_LIST: `SELECT A.insurance_uuid
     , A.business_cd
     , A.user_cd
     , A.user_uuid
@@ -774,7 +658,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm
     , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
     , FN_GET_CODENM('ADV001', A.corp_region_cd) AS corp_region_nm
-  FROM   TADV0031A A
+  FROM   TPAT0031A A
     LEFT JOIN TCOM0030A B
   ON A.insr_year = B.base_year 
   AND A.user_cd = B.user_cd 
@@ -788,10 +672,10 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
   `,
 
   /**
-   * [갱신DB - ADV] 입력
+   * [갱신DB - PAT] 입력
    */
-  INSERT_RENEWAL_ADV_INSURANCE: `
-      INSERT INTO tadv0031a
+  INSERT_RENEWAL_PAT_INSURANCE: `
+      INSERT INTO tpat0031a
             (insurance_uuid,
              user_uuid,
              insurance_no,
@@ -825,6 +709,9 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
              insr_clm_lt_amt,
              insr_year_clm_lt_amt,
              insr_psnl_brdn_amt,
+             insr_program_yn,
+             insr_program,
+             insr_service,
              insr_sale_year,
              insr_sale_rt,
              insr_pcnt_sale_rt,
@@ -863,6 +750,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
+              ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
@@ -875,11 +763,11 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     `,
 
   /**
-   * [갱신DB - ADV] 수정
+   * [갱신DB - PAT] 수정
    */
-  UPDATE_RENEWAL_ADV_INSURANCE: `
+  UPDATE_RENEWAL_PAT_INSURANCE: `
     /*  */    
-    UPDATE tadv0031a
+    UPDATE tpat0031a
     SET    insurance_no = ?,
           business_cd = ?,
           user_cd = ?,
@@ -912,6 +800,9 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
           insr_clm_lt_amt = ?,
           insr_year_clm_lt_amt = ?,
           insr_psnl_brdn_amt = ?,
+          insr_program_yn = ?,
+          insr_program = ?,
+          insr_service = ?,
           insr_sale_year = ?,
           insr_sale_rt = ?,
           insr_pcnt_sale_rt = ?,
@@ -947,17 +838,17 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     `,
 
   /**
-   * [갱신DB - ADV] 삭제
+   * [갱신DB - PAT] 삭제
    */
-  DELETE_RENEWAL_ADV_INSURANCE: `
+  DELETE_RENEWAL_PAT_INSURANCE: `
       /* AdminMapper.DELETE_RENEWAL_INSURANCE */    
-      DELETE FROM tadv0031a WHERE insurance_uuid = ?
+      DELETE FROM tpat0031a WHERE insurance_uuid = ?
     `,
 
   /**
-   * [변경요청DB - ADV] 목록 조회
+   * [변경요청DB - PAT] 목록 조회
    */
-  SELECT_APPLY_ADV_INSURANCE_LIST: `
+  SELECT_APPLY_PAT_INSURANCE_LIST: `
       SELECT 
         a.*,
         (
@@ -979,7 +870,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
         FN_GET_CODENM('COM040', a.apply_cd) AS apply_nm,
         FN_GET_CODENM('COM041', a.proc_cd) AS proc_nm 
       FROM 
-        TADV0040A a LEFT OUTER JOIN TADV0030A b 
+        TPAT0040A a LEFT OUTER JOIN TPAT0030A b 
         ON a.insurance_uuid = b.insurance_uuid
       WHERE  a.business_cd = ?
         AND (? = '%' or a.proc_cd = ?)
@@ -988,11 +879,11 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     `,
 
   /**
-   * [변경요청DB - ADV] 수정 조회
+   * [변경요청DB - PAT] 수정 조회
    */
-  UPDATE_APPLY_ADV_INSURANCE: `
+  UPDATE_APPLY_PAT_INSURANCE: `
       update
-        TADV0040A
+        TPAT0040A
       set
         proc_dt = ?,
         proc_content = ?,
