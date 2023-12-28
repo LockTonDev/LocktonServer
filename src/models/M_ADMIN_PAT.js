@@ -163,7 +163,7 @@ module.exports = {
     return true;
   },
 
-  setpatRenewal: async function (req) {
+  setPATRenewal: async function (req) {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
     logger.info(user_uuid)
