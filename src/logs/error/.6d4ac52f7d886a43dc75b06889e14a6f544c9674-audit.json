@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 10000
+    },
+    "auditLog": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\.6d4ac52f7d886a43dc75b06889e14a6f544c9674-audit.json",
+    "files": [
+        {
+            "date": 1703498031894,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2023-12-25_error.log",
+            "hash": "3529c668e42ad3ce03fc394fd003f05ce5929af2db9682440a9edc709cb4d161"
+        },
+        {
+            "date": 1703551394143,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2023-12-26_error.log",
+            "hash": "7ca65cd87290ba3aa3c64756466633587eb964514d09cd06c7dd29e2fd4c0e88"
+        },
+        {
+            "date": 1703661900728,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2023-12-27_error.log",
+            "hash": "b5320f154f858a5c794e4c855b02dc446c8cec334c26a7669d4a6fbfda5c4c43"
+        },
+        {
+            "date": 1703711891377,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2023-12-28_error.log",
+            "hash": "95993046e9219ab5a290063d5c7074cb9ff7a8e888e5b989f726589904d37724"
+        }
+    ],
+    "hashType": "sha256"
+}
