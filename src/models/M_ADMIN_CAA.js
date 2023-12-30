@@ -284,6 +284,9 @@ module.exports = {
     let querys = []
     let query_params = []
     for(const param of params){
+      if(param.insr_tot_paid_amt==''){
+        param.insr_tot_paid_amt = 0
+      }
       const updateQueryParams = [
         JSON.stringify(param.trx_data),
         param.insr_tot_unpaid_amt,
