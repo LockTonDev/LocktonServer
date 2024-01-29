@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 
 const M_ADMIN = require('../models/M_ADMIN');
 const M_ADMIN_ADV = require('../models/M_ADMIN_ADV')
+const M_ADMIN_LAW = require('../models/M_ADMIN_LAW')
 const M_ADMIN_CAA = require('../models/M_ADMIN_CAA')
 const M_ADMIN_PAT = require('../models/M_ADMIN_PAT')
 const { genPassword } = require('../utils/util');
@@ -1166,6 +1167,210 @@ module.exports = {
   getStockStartDtInfo : async function (req, res, next) {
     try {
       const result = await M_ADMIN.getStockStartDtInfo(req);
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getLAW: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_LAW.getLAW(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getLAWS: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_LAW.getLAWS(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getLAWRate: async function (req, res, next) {
+    try {
+      console.log(req)
+      const result = await M_ADMIN_LAW.getLAWRate(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getLAWRenewal: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_LAW.getLAWRenewal(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getLAWRenewals: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_LAW.getLAWRenewals(req);
+      console.log("========================")
+      console.log(result)
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setLAW: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_LAW.setLAW(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setLAWRenewal: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_LAW.setLAWRenewal(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  getLAW_TRX: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_LAW.getLAW_TRX(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+  setLAW_TRX: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_LAW.setLAW_TRX(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      console.log("========================== setLAW_TRX  ==========================")
+      next(err);
+    }
+  },
+  getApplyLAWInsurance: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_LAW.getApplyLAWInsurance(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  setApplyLAWInsurance: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_LAW.setApplyLAWInsurance(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.UPDATE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getLAWExcel: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_LAW.getLAWExcel(req);
+
+      result.map(row => {
+        row.user_birth = parseFloat(row.user_birth)
+        row.user_regno = parseFloat(row.user_regno)
+        row.insr_amt = parseFloat(row.insr_amt)
+        row.insr_tot_amt = parseFloat(row.insr_tot_amt)
+        row.insr_tot_paid_amt = parseFloat(row.insr_tot_paid_amt)
+        row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
+        row.insr_base_amt = parseFloat(row.insr_base_amt)
+        row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+      })
+
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
