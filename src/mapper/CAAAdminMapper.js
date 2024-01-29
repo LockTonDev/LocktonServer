@@ -555,7 +555,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
    * [보험DB - CAA] 입금처리
    */
   UPDATE_INSURANCE_CAA_TRX_DATA: `
-    UPDATE tcaa030a
+    UPDATE tcaa0030a
     SET    
           trx_data = ?,
           insr_tot_unpaid_amt = ?,
