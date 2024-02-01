@@ -394,6 +394,12 @@ module.exports = {
         row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
         row.insr_base_amt = parseFloat(row.insr_base_amt)
         row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+        row.trx_data.map(trx=>{
+          trx.trx_amt = parseFloat(trx.trx_amt)
+        })
+        row.cbr_data.map(cbr=>{
+          cbr.insr_amt = parseFloat(cbr.insr_amt)
+        })
       })
 
       if (result) {
@@ -743,6 +749,12 @@ module.exports = {
         row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
         row.insr_base_amt = parseFloat(row.insr_base_amt)
         row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+        row.trx_data.map(trx=>{
+          trx.trx_amt = parseFloat(trx.trx_amt)
+        })
+        row.cbr_data.map(cbr=>{
+          cbr.insr_amt = parseFloat(cbr.insr_amt)
+        })
       })
 
       if (result) {
@@ -946,6 +958,12 @@ module.exports = {
         row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
         row.insr_base_amt = parseFloat(row.insr_base_amt)
         row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+        row.trx_data.map(trx=>{
+          trx.trx_amt = parseFloat(trx.trx_amt)
+        })
+        row.cbr_data.map(cbr=>{
+          cbr.insr_amt = parseFloat(cbr.insr_amt)
+        })
       })
 
       if (result) {
@@ -1149,6 +1167,12 @@ module.exports = {
         row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
         row.insr_base_amt = parseFloat(row.insr_base_amt)
         row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+        row.trx_data.map(trx=>{
+          trx.trx_amt = parseFloat(trx.trx_amt)
+        })
+        row.cbr_data.map(cbr=>{
+          cbr.insr_amt = parseFloat(cbr.insr_amt)
+        })
       })
 
       if (result) {
