@@ -1,0 +1,5 @@
+2024-01-02 10:16:33 [error] : PASSPORT localVerify Error :  Cannot read property 'user_pwd' of undefined
+2024-01-02 10:16:33 [error] : >> 
+2024-01-02 11:47:06 [error] : PASSPORT localVerify Error :  Cannot read property 'user_pwd' of undefined
+2024-01-02 11:47:06 [error] : >> 
+2024-01-02 11:47:19 [error] : passport isAuth  : true
