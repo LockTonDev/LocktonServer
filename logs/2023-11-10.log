@@ -1,0 +1,140 @@
+2023-11-10 14:20:57 [info] : Server on port 3000 | run
+2023-11-10 14:22:42 [debug] : ---------------------------------S query
+2023-11-10 14:22:42 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-11-10 14:22:42 [debug] : ROWS : 
+2023-11-10 14:22:42 [debug] : 1---------------------------------E query
+
+
+2023-11-10 14:22:43 [error] : passport isAuth  : true
+2023-11-10 14:22:43 [debug] : ---------------------------------S query
+2023-11-10 14:22:43 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and status_cd not in ('90')
+2023-11-10 14:22:43 [debug] : ROWS : 
+2023-11-10 14:22:43 [debug] : 1---------------------------------E query
+
+
+2023-11-10 14:22:43 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$fs5avhe1SJ1cax0nF2kq9unzkXopsxhFKlBK3QMAVktRVo0D2pizi",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 3,
+   "login_block_yn": "N"
+}
+2023-11-10 14:22:43 [info] : ::1 - - [10/Nov/2023:05:22:43 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+
+2023-11-10 14:23:20 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.INSURANCE_LIST */  \n      SELECT A.insurance_uuid\n            , A.business_cd\n            , A.user_cd\n            , A.user_uuid\n            , A.user_nm\n            , A.user_id\n            , A.user_regno\n            , A.corp_cnno\n            , A.insr_year\n            , A.insr_st_dt\n            , A.insr_cncls_dt\n            , A.insr_tot_amt\n            , A.insr_tot_paid_amt\n            , A.insr_tot_unpaid_amt\n            , A.status_cd\n            , B.insurance_no\n            , B.insr_st_dt as base_insr_st_dt\n            , B.insr_cncls_dt as base_insr_cncls_dt\n            , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm\n            , FN_GET_CODENM('COM030', A.status_cd) AS status_nm\n            , FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm\n            FROM   TTAX0030A A\n      \t\t\tLEFT JOIN TCOM0030A B\n\t\t    ON A.insr_year = B.base_year \n\t\t    AND A.user_cd = B.user_cd \n\t\t    AND A.business_cd = B.business_cd\n      WHERE  A.business_cd =  ?\n         AND (? = '%' or A.user_cd = ?)\n         AND (? = '%' or A.insr_year = ?)\n         AND (? = '%' or A.status_cd = ?)\n         AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )\n        \n      ORDER  BY A.created_at DESC \n    ",
+   "bindings": [
+      "TAX",
+      "%",
+      "%",
+      "%",
+      "%",
+      "%",
+      "%",
+      "",
+      ""
+   ],
+   "options": {},
+   "__knexQueryUid": "IMdS9eUglezytJQpUzc1P"
+}
+2023-11-10 14:23:24 [info] : ::1 - - [10/Nov/2023:05:23:24 +0000] "POST /ADM/TAX/gets HTTP/1.1" 200 5838568 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+
+2023-11-10 14:23:34 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.INSURANCE_INFO */    \n      SELECT A.insurance_uuid\n            ,A.insurance_seq\n            ,A.user_uuid\n            ,A.business_cd\n            ,A.user_cd\n            ,A.user_id\n            ,A.user_nm\n            ,A.user_birth\n            ,A.user_regno\n            ,A.corp_type\n            ,A.corp_nm\n            ,A.corp_ceo_nm\n            ,A.corp_bnno\n            ,A.corp_cnno\n            ,A.corp_telno\n            ,A.corp_faxno\n            ,A.corp_cust_nm\n            ,A.corp_cust_hpno\n            ,A.corp_cust_email\n            ,A.corp_post\n            ,A.corp_addr\n            ,A.corp_addr_dtl\n            ,A.corp_region_cd\n            ,A.insr_year\n            ,A.insr_reg_dt\n            ,A.insr_st_dt\n            ,A.insr_cncls_dt\n            ,A.insr_retr_yn\n            ,A.insr_retr_dt\n            ,A.insr_pblc_brdn_rt\n            ,A.insr_clm_lt_amt\n            ,A.insr_year_clm_lt_amt\n            ,A.insr_psnl_brdn_amt\n            ,A.insr_sale_year\n            ,A.insr_sale_rt\n            ,A.insr_pcnt_sale_rt\n            ,A.insr_base_amt\n            ,A.insr_amt\n            ,A.insr_tot_amt\n            ,A.insr_tot_paid_amt\n            ,A.insr_tot_unpaid_amt\n            ,A.cons_join_yn\n            ,A.cons_data\n            ,A.spct_join_yn\n            ,A.spct_data\n            ,A.cbr_data\n            ,A.cbr_cnt\n            ,A.trx_data\n            ,A.erp_amt\n            ,A.erp_dt\n            ,A.erp_st_dt\n            ,A.erp_cncls_dt\n            ,A.active_yn\n            ,A.agr10_yn\n            ,A.agr20_yn\n            ,A.agr30_yn\n            ,A.agr31_yn\n            ,A.agr32_yn\n            ,A.agr33_yn\n            ,A.agr34_yn\n            ,A.agr40_yn\n            ,A.agr41_yn\n            ,A.agr50_yn\n            ,A.status_cd\n            ,A.rmk\n            ,A.change_rmk\n            ,A.change_dt\n            ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm\n            ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm\n            ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1\n            ,FN_GET_SPLIT(A.corp_telno, '-', 2) as corp_telno2\n            ,FN_GET_SPLIT(A.corp_telno, '-', 3) as corp_telno3\n            ,FN_GET_SPLIT(A.corp_faxno, '-', 1) as corp_faxno1\n            ,FN_GET_SPLIT(A.corp_faxno, '-', 2) as corp_faxno2\n            ,FN_GET_SPLIT(A.corp_faxno, '-', 3) as corp_faxno3\n            ,B.insr_st_dt as base_insr_st_dt\n            ,B.insr_cncls_dt as base_insr_cncls_dt\n            ,B.insurance_no\n      FROM   TTAX0030A A\n      \t\t\tLEFT JOIN TCOM0030A B\n\t\t    ON A.insr_year = B.base_year \n\t\t    AND A.user_cd = B.user_cd \n\t\t    AND A.business_cd = B.business_cd\n      WHERE A.insurance_uuid = ? \n            AND A.status_cd not in ('40') -- 이력제외\n      ORDER  BY A.insurance_uuid, A.insurance_seq DESC\n      LIMIT  1 \n    ",
+   "bindings": [
+      "3c3e7f95f2ec4d0d9ab46068dd6786e5"
+   ],
+   "options": {},
+   "__knexQueryUid": "xbbfwcFH-wPvKCUT4cnku"
+}
+2023-11-10 14:23:34 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.INSURANCE_INFO */    \n      SELECT A.insurance_uuid\n            ,A.insurance_seq\n            ,A.user_uuid\n            ,A.business_cd\n            ,A.user_cd\n            ,A.user_id\n            ,A.user_nm\n            ,A.user_birth\n            ,A.user_regno\n            ,A.corp_type\n            ,A.corp_nm\n            ,A.corp_ceo_nm\n            ,A.corp_bnno\n            ,A.corp_cnno\n            ,A.corp_telno\n            ,A.corp_faxno\n            ,A.corp_cust_nm\n            ,A.corp_cust_hpno\n            ,A.corp_cust_email\n            ,A.corp_post\n            ,A.corp_addr\n            ,A.corp_addr_dtl\n            ,A.corp_region_cd\n            ,A.insr_year\n            ,A.insr_reg_dt\n            ,A.insr_st_dt\n            ,A.insr_cncls_dt\n            ,A.insr_retr_yn\n            ,A.insr_retr_dt\n            ,A.insr_pblc_brdn_rt\n            ,A.insr_clm_lt_amt\n            ,A.insr_year_clm_lt_amt\n            ,A.insr_psnl_brdn_amt\n            ,A.insr_sale_year\n            ,A.insr_sale_rt\n            ,A.insr_pcnt_sale_rt\n            ,A.insr_base_amt\n            ,A.insr_amt\n            ,A.insr_tot_amt\n            ,A.insr_tot_paid_amt\n            ,A.insr_tot_unpaid_amt\n            ,A.cons_join_yn\n            ,A.cons_data\n            ,A.spct_join_yn\n            ,A.spct_data\n            ,A.cbr_data\n            ,A.cbr_cnt\n            ,A.trx_data\n            ,A.erp_amt\n            ,A.erp_dt\n            ,A.erp_st_dt\n            ,A.erp_cncls_dt\n            ,A.active_yn\n            ,A.agr10_yn\n            ,A.agr20_yn\n            ,A.agr30_yn\n            ,A.agr31_yn\n            ,A.agr32_yn\n            ,A.agr33_yn\n            ,A.agr34_yn\n            ,A.agr40_yn\n            ,A.agr41_yn\n            ,A.agr50_yn\n            ,A.status_cd\n            ,A.rmk\n            ,A.change_rmk\n            ,A.change_dt\n            ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm\n            ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm\n            ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1\n            ,FN_GET_SPLIT(A.corp_telno, '-', 2) as corp_telno2\n            ,FN_GET_SPLIT(A.corp_telno, '-', 3) as corp_telno3\n            ,FN_GET_SPLIT(A.corp_faxno, '-', 1) as corp_faxno1\n            ,FN_GET_SPLIT(A.corp_faxno, '-', 2) as corp_faxno2\n            ,FN_GET_SPLIT(A.corp_faxno, '-', 3) as corp_faxno3\n            ,B.insr_st_dt as base_insr_st_dt\n            ,B.insr_cncls_dt as base_insr_cncls_dt\n            ,B.insurance_no\n      FROM   TTAX0030A A\n      \t\t\tLEFT JOIN TCOM0030A B\n\t\t    ON A.insr_year = B.base_year \n\t\t    AND A.user_cd = B.user_cd \n\t\t    AND A.business_cd = B.business_cd\n      WHERE A.insurance_uuid = ? \n            AND A.status_cd not in ('40') -- 이력제외\n      ORDER  BY A.insurance_uuid, A.insurance_seq DESC\n      LIMIT  1 \n    ",
+   "bindings": [
+      "3c3e7f95f2ec4d0d9ab46068dd6786e5"
+   ],
+   "options": {},
+   "__knexQueryUid": "NTNh_cmcHHr-_7LpHBoQQ"
+}
+2023-11-10 14:23:34 [info] : ::1 - - [10/Nov/2023:05:23:34 +0000] "POST /ADM/TAX/get HTTP/1.1" 200 4215 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+
+2023-11-10 14:23:34 [info] : ::1 - - [10/Nov/2023:05:23:34 +0000] "POST /ADM/TAX/get HTTP/1.1" 200 4215 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+
+2023-11-10 14:23:35 [debug] : {
+   "method": "raw",
+   "sql": "\n    /* AdminMapper.INSURANCE_RATE_TOP */    \n    SELECT base_year,\n          ver,\n          user_cd,\n          business_cd,\n          insr_st_dt,\n          insr_cncls_dt,\n          days,\n          insurance_nm,\n          contents,\n          insurance_no\n    FROM   tcom0030a\n    WHERE  user_cd = ?\n          AND business_cd = ?\n          AND use_yn = 'Y'\n    ORDER  BY base_year DESC,\n              ver DESC\n    LIMIT  1 \n    ",
+   "bindings": [
+      "COR",
+      "TAX"
+   ],
+   "options": {},
+   "__knexQueryUid": "Emxko7eL5EGLs-GO5pLER"
+}
+2023-11-10 14:23:35 [info] : ::1 - - [10/Nov/2023:05:23:35 +0000] "POST /ADM/TAX/rate HTTP/1.1" 200 1382 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+
+2023-11-10 14:23:35 [debug] : {
+   "method": "raw",
+   "sql": "\n    /* AdminMapper.INSURANCE_RATE_TOP */    \n    SELECT base_year,\n          ver,\n          user_cd,\n          business_cd,\n          insr_st_dt,\n          insr_cncls_dt,\n          days,\n          insurance_nm,\n          contents,\n          insurance_no\n    FROM   tcom0030a\n    WHERE  user_cd = ?\n          AND business_cd = ?\n          AND use_yn = 'Y'\n    ORDER  BY base_year DESC,\n              ver DESC\n    LIMIT  1 \n    ",
+   "bindings": [
+      "COR",
+      "TAX"
+   ],
+   "options": {},
+   "__knexQueryUid": "WxUwbbv3GB-8MChV1Dak3"
+}
+2023-11-10 14:23:35 [info] : ::1 - - [10/Nov/2023:05:23:35 +0000] "POST /ADM/TAX/rate HTTP/1.1" 200 1382 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+
+2023-11-10 14:29:06 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.INSURANCE_LIST */  \n      SELECT A.insurance_uuid\n            , A.business_cd\n            , A.user_cd\n            , A.user_uuid\n            , A.user_nm\n            , A.user_id\n            , A.user_regno\n            , A.corp_cnno\n            , A.insr_year\n            , A.insr_st_dt\n            , A.insr_cncls_dt\n            , A.insr_tot_amt\n            , A.insr_tot_paid_amt\n            , A.insr_tot_unpaid_amt\n            , A.status_cd\n            , B.insurance_no\n            , B.insr_st_dt as base_insr_st_dt\n            , B.insr_cncls_dt as base_insr_cncls_dt\n            , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm\n            , FN_GET_CODENM('COM030', A.status_cd) AS status_nm\n            , FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm\n            FROM   TTAX0030A A\n      \t\t\tLEFT JOIN TCOM0030A B\n\t\t    ON A.insr_year = B.base_year \n\t\t    AND A.user_cd = B.user_cd \n\t\t    AND A.business_cd = B.business_cd\n      WHERE  A.business_cd =  ?\n         AND (? = '%' or A.user_cd = ?)\n         AND (? = '%' or A.insr_year = ?)\n         AND (? = '%' or A.status_cd = ?)\n         AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )\n        \n      ORDER  BY A.created_at DESC \n    ",
+   "bindings": [
+      "TAX",
+      "%",
+      "%",
+      "%",
+      "%",
+      "%",
+      "%",
+      "",
+      ""
+   ],
+   "options": {},
+   "__knexQueryUid": "66diCs6LZZMKjXDeN0Raw"
+}
+2023-11-10 14:29:11 [info] : ::1 - - [10/Nov/2023:05:29:11 +0000] "POST /ADM/TAX/gets HTTP/1.1" 200 5838568 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+
+2023-11-10 14:29:18 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.INSURANCE_INFO */    \n      SELECT A.insurance_uuid\n            ,A.insurance_seq\n            ,A.user_uuid\n            ,A.business_cd\n            ,A.user_cd\n            ,A.user_id\n            ,A.user_nm\n            ,A.user_birth\n            ,A.user_regno\n            ,A.corp_type\n            ,A.corp_nm\n            ,A.corp_ceo_nm\n            ,A.corp_bnno\n            ,A.corp_cnno\n            ,A.corp_telno\n            ,A.corp_faxno\n            ,A.corp_cust_nm\n            ,A.corp_cust_hpno\n            ,A.corp_cust_email\n            ,A.corp_post\n            ,A.corp_addr\n            ,A.corp_addr_dtl\n            ,A.corp_region_cd\n            ,A.insr_year\n            ,A.insr_reg_dt\n            ,A.insr_st_dt\n            ,A.insr_cncls_dt\n            ,A.insr_retr_yn\n            ,A.insr_retr_dt\n            ,A.insr_pblc_brdn_rt\n            ,A.insr_clm_lt_amt\n            ,A.insr_year_clm_lt_amt\n            ,A.insr_psnl_brdn_amt\n            ,A.insr_sale_year\n            ,A.insr_sale_rt\n            ,A.insr_pcnt_sale_rt\n            ,A.insr_base_amt\n            ,A.insr_amt\n            ,A.insr_tot_amt\n            ,A.insr_tot_paid_amt\n            ,A.insr_tot_unpaid_amt\n            ,A.cons_join_yn\n            ,A.cons_data\n            ,A.spct_join_yn\n            ,A.spct_data\n            ,A.cbr_data\n            ,A.cbr_cnt\n            ,A.trx_data\n            ,A.erp_amt\n            ,A.erp_dt\n            ,A.erp_st_dt\n            ,A.erp_cncls_dt\n            ,A.active_yn\n            ,A.agr10_yn\n            ,A.agr20_yn\n            ,A.agr30_yn\n            ,A.agr31_yn\n            ,A.agr32_yn\n            ,A.agr33_yn\n            ,A.agr34_yn\n            ,A.agr40_yn\n            ,A.agr41_yn\n            ,A.agr50_yn\n            ,A.status_cd\n            ,A.rmk\n            ,A.change_rmk\n            ,A.change_dt\n            ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm\n            ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm\n            ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1\n            ,FN_GET_SPLIT(A.corp_telno, '-', 2) as corp_telno2\n            ,FN_GET_SPLIT(A.corp_telno, '-', 3) as corp_telno3\n            ,FN_GET_SPLIT(A.corp_faxno, '-', 1) as corp_faxno1\n            ,FN_GET_SPLIT(A.corp_faxno, '-', 2) as corp_faxno2\n            ,FN_GET_SPLIT(A.corp_faxno, '-', 3) as corp_faxno3\n            ,B.insr_st_dt as base_insr_st_dt\n            ,B.insr_cncls_dt as base_insr_cncls_dt\n            ,B.insurance_no\n      FROM   TTAX0030A A\n      \t\t\tLEFT JOIN TCOM0030A B\n\t\t    ON A.insr_year = B.base_year \n\t\t    AND A.user_cd = B.user_cd \n\t\t    AND A.business_cd = B.business_cd\n      WHERE A.insurance_uuid = ? \n            AND A.status_cd not in ('40') -- 이력제외\n      ORDER  BY A.insurance_uuid, A.insurance_seq DESC\n      LIMIT  1 \n    ",
+   "bindings": [
+      "3c3e7f95f2ec4d0d9ab46068dd6786e5"
+   ],
+   "options": {},
+   "__knexQueryUid": "aRHztLjvP9KxRTZSExYBM"
+}
+2023-11-10 14:29:18 [info] : ::1 - - [10/Nov/2023:05:29:18 +0000] "POST /ADM/TAX/get HTTP/1.1" 200 4215 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+
+2023-11-10 14:29:21 [debug] : {
+   "method": "raw",
+   "sql": "\n    /* AdminMapper.INSURANCE_RATE_TOP */    \n    SELECT base_year,\n          ver,\n          user_cd,\n          business_cd,\n          insr_st_dt,\n          insr_cncls_dt,\n          days,\n          insurance_nm,\n          contents,\n          insurance_no\n    FROM   tcom0030a\n    WHERE  user_cd = ?\n          AND business_cd = ?\n          AND use_yn = 'Y'\n    ORDER  BY base_year DESC,\n              ver DESC\n    LIMIT  1 \n    ",
+   "bindings": [
+      "COR",
+      "TAX"
+   ],
+   "options": {},
+   "__knexQueryUid": "6LlCE09ANd_dMdPhLT6YN"
+}
+2023-11-10 14:29:21 [info] : ::1 - - [10/Nov/2023:05:29:21 +0000] "POST /ADM/TAX/rate HTTP/1.1" 200 1382 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+
+2023-11-10 14:34:55 [info] : Server off
