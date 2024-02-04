@@ -24,7 +24,7 @@ module.exports = {
                       insr_sale_rt, insr_relief, insr_pcnt_sale_rt,insr_base_amt, insr_amt, insr_premium_amt, insr_tot_amt, insr_tot_paid_amt, 
                       insr_tot_unpaid_amt, cbr_cnt, cbr_data, spct_join_yn, spct_data, active_yn, agr10_yn,
                       agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
-                      agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip, limited_collateral
+                      agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip
                       , FN_GET_CODENM('COM030', status_cd) AS status_nm
                       , FN_GET_CODENM('LAW001', corp_region_cd) AS corp_region_nm
                     FROM TLAW0030A
@@ -41,7 +41,7 @@ module.exports = {
           insr_sale_rt, insr_relief, insr_pcnt_sale_rt,insr_base_amt, insr_amt, insr_premium_amt, insr_tot_amt, insr_tot_paid_amt, 
           insr_tot_unpaid_amt, cbr_cnt, cbr_data, spct_join_yn, spct_data, active_yn, agr10_yn,
           agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
-          agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip, limited_collateral
+          agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip
           , FN_GET_CODENM('COM030', status_cd) AS status_nm
           , FN_GET_CODENM('LAW001', corp_region_cd) AS corp_region_nm
         FROM TLAW0031A
