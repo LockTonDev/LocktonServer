@@ -82,4 +82,17 @@ router.post('/PAT/APPLY/set', verifyToken, C_ADMIN.setApplyPATInsurance);
 router.post('/PAT/APPLY/get', verifyToken, C_ADMIN.getApplyPATInsurance);
 router.post('/PAT/EXCEL/get', verifyToken, C_ADMIN.getPATExcel);
 
+router.post('/LAW/rate', verifyToken, C_ADMIN.getLAWRate);
+router.post('/LAW/set', verifyToken, C_ADMIN.setLAW);
+router.post('/LAW/get', verifyToken, C_ADMIN.getLAW);
+router.post('/LAW/gets', verifyToken, C_ADMIN.getLAWS);
+router.post('/LAW/renewal/set', verifyToken, C_ADMIN.setLAWRenewal);
+router.post('/LAW/renewal/get', verifyToken, C_ADMIN.getLAWRenewal);
+router.post('/LAW/renewal/gets', verifyToken, C_ADMIN.getLAWRenewals);
+router.post('/LAW/TRX/set', verifyToken, C_ADMIN.setLAW_TRX);
+router.post('/LAW/TRX/get', verifyToken, C_ADMIN.getLAW_TRX);
+router.post('/LAW/APPLY/set', verifyToken, C_ADMIN.setApplyLAWInsurance);
+router.post('/LAW/APPLY/get', verifyToken, C_ADMIN.getApplyLAWInsurance);
+router.post('/LAW/EXCEL/get', verifyToken, C_ADMIN.getLAWExcel);
+
 module.exports = router;

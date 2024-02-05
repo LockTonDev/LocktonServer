@@ -12,12 +12,12 @@ module.exports = {
                           a.*,
                           FN_GET_CODENM('COM040', a.apply_cd) AS apply_nm,
                           FN_GET_CODENM('COM041', a.proc_cd) AS proc_nm
-                      FROM   TPAT0040A a,
+                      FROM   TLAW0040A a,
                           (SELECT insurance_uuid,
                                   user_uuid,
                                   user_nm   AS insurance_user_nm,
                                   insr_year AS insurance_year
-                          FROM   TPAT0030A
+                          FROM   TLAW0030A
                           WHERE  user_uuid = ?
                           ORDER  BY created_at DESC
                           LIMIT  1) AS b
@@ -45,7 +45,7 @@ module.exports = {
     let query = `SELECT a.*,
                         FN_GET_CODENM('COM040', a.apply_cd) AS apply_nm,
                         FN_GET_CODENM('COM041', a.proc_cd) AS proc_nm
-                    FROM   TPAT0040A a
+                    FROM   TLAW0040A a
                     WHERE  a.user_uuid = ?`;
     let conditions = [user_uuid];
 
@@ -71,7 +71,7 @@ module.exports = {
   selectCount: async function (req) {
     const user_uuid = req.decoded.uuid;
 
-    let query = 'SELECT COUNT(*) AS count FROM TPAT0040A WHERE user_uuid = ? ';
+    let query = 'SELECT COUNT(*) AS count FROM TLAW0040A WHERE user_uuid = ? ';
 
     let conditions = [user_uuid];
 
@@ -95,7 +95,7 @@ module.exports = {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
 
-    const query = `INSERT INTO TPAT0040A (user_cd, business_cd, insurance_no, insurance_user_nm, email,
+    const query = `INSERT INTO TLAW0040A (user_cd, business_cd, insurance_no, insurance_user_nm, email,
                                           tel, nm, apply_cd, apply_content, apply_posted_dt,
                                            apply_dt, proc_cd, insurance_uuid, user_uuid, created_ip, updated_ip) 
                                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
@@ -133,7 +133,7 @@ module.exports = {
     const params = req.body.params;
 
     const query =
-      'UPDATE TPAT0040A SET email = ?, tel = ?, nm = ?, apply_cd = ?, apply_content = ?, apply_posted_dt = ?, proc_at = ?, proc_content = ?, proc_cd = ? WHERE apply_no = ?';
+      'UPDATE TLAW0040A SET email = ?, tel = ?, nm = ?, apply_cd = ?, apply_content = ?, apply_posted_dt = ?, proc_at = ?, proc_content = ?, proc_cd = ? WHERE apply_no = ?';
     const {
       email,
       tel,
@@ -175,7 +175,7 @@ module.exports = {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
 
-    const query = 'DELETE FROM TPAT0040A WHERE apply_no = ?';
+    const query = 'DELETE FROM TLAW0040A WHERE apply_no = ?';
     const [result] = await db.query(query, params.apply_no);
 
     if (result.affectedRows === 0) {
