@@ -132,7 +132,7 @@ module.exports = {
           param.corp_telno, param.corp_faxno, param.corp_cust_nm, param.corp_cust_hpno, param.corp_cust_email,
           param.corp_post, param.corp_addr, param.corp_addr_dtl, param.corp_region_cd, param.insr_year, param.insr_reg_dt,
           param.insr_st_dt, param.insr_cncls_dt, param.insr_retr_yn, param.insr_retr_dt, param.insr_take_amt, param.insr_take_sec,
-          param.insr_clm_lt_amt, param.insr_year_clm_lt_amt, param.insr_psnl_brdn_amt, param.insr_program,
+          param.insr_clm_lt_amt, param.insr_year_clm_lt_amt, param.insr_psnl_brdn_amt, param.insr_program_yn,
           param.insr_program, param.insr_service, param.insr_sale_year, param.insr_sale_rt,
           param.insr_pcnt_sale_rt, param.insr_base_amt, param.insr_amt, param.insr_tot_amt, param.insr_tot_paid_amt, param.insr_tot_unpaid_amt,
           param.cbr_cnt, JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data), param.spct_join_yn, JSON.stringify(param.spct_data), param.active_yn, 
