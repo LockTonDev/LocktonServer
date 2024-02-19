@@ -979,6 +979,26 @@ module.exports = {
     }
   },
 
+  deleteCAA: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_CAA.deleteCAA(req);
+
+      result.map(row => {
+      })
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.DELETE_OK,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+
   getPAT: async function (req, res, next) {
     try {
       console.log(req)

@@ -331,4 +331,25 @@ module.exports = {
     return rows;
   },
 
+  deleteCAA: async function (req) {
+    let querys = []
+    let query_params = []
+    const params = req.body.params;
+    const delete_params = [
+      params.insurance_uuid
+    ];
+    querys.push(CAAAdminMapper.DELETE_ADV_INSURANCE)
+    query_params.push(delete_params)
+
+    const rows_results = await db.queryListWithTransaction(querys, query_params);
+    //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
+    for(const rows of rows_results){
+      if (rows.affectedRows < 1) {
+        throw new NotFound(StatusMessage.SELECT_FAILED);
+      }
+    }
+    return true;
+
+  },
+
 };

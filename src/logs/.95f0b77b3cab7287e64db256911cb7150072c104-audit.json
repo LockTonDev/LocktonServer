@@ -24,6 +24,81 @@
             "date": 1703711891301,
             "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2023-12-28.log",
             "hash": "15e0238482cb3fab193241967a60569d9caa5221ca98e30eb38c93d11a867e15"
+        },
+        {
+            "date": 1703937589617,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2023-12-30.log",
+            "hash": "9cfe903d9c5ecf7b919b08f8ded2747b0a2c8c0de4016beccb099d33153380fd"
+        },
+        {
+            "date": 1704158193957,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-02.log",
+            "hash": "568fb8d02a8a9bc62c51f07e03322cdca784697b3a17a4e70f6336147d63a167"
+        },
+        {
+            "date": 1704252825192,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-03.log",
+            "hash": "b2e4691ef7f7db409074e0ba76da2995365a6e7ef16b40849b147d01c432b87c"
+        },
+        {
+            "date": 1704348518487,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-04.log",
+            "hash": "abe21dd082eda00bdba2fc6a237162c365738d67520bdf80c558aa52a851cf90"
+        },
+        {
+            "date": 1704414912786,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-05.log",
+            "hash": "cdf74e6e4eac9931296c64d2a85628538cb3b562d6b93d40c0382d2b3be8ff67"
+        },
+        {
+            "date": 1704881584787,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-10.log",
+            "hash": "e784b4c607cf4b69026b92e3d4351a0c0ea64d4cc6bb8d21cee4230033e776cd"
+        },
+        {
+            "date": 1704941549144,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-11.log",
+            "hash": "47c57a3f8a40c8ad9bdb4d46b36c335257e378d4944728f8531d57b0896eddd6"
+        },
+        {
+            "date": 1705021918879,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-12.log",
+            "hash": "182b1ec7470bf331d82ceb529475db56278fbceedb7a8be27ba25d1ecd6f0a57"
+        },
+        {
+            "date": 1705132952009,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-13.log",
+            "hash": "26467a226f9813c297fdfab4311eab5cbb410a98d7a29dd5e86d3f9b626e8430"
+        },
+        {
+            "date": 1705280602848,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-15.log",
+            "hash": "0953d747993916db1e8de0564f1c048bf73e7fd8b9107c8b4f2c4d80680b9967"
+        },
+        {
+            "date": 1705372251003,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-16.log",
+            "hash": "ef878b02988702f0077247dde6f0123bcb0d24e71c09ac11743ecaa51ce91b00"
+        },
+        {
+            "date": 1705454881921,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-17.log",
+            "hash": "0c50aeeff860dfc8d4bf048342fee127300349b31e250ad100af6533a26f72e7"
+        },
+        {
+            "date": 1705629426196,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-19.log",
+            "hash": "39c34a5cac87d79c92bb90d2d96707ba2d7046c3d07231c9a5a506d625a58a5c"
+        },
+        {
+            "date": 1705721721040,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-20.log",
+            "hash": "4dd6089e0d108b2c0f96760ac64718531e728db96035c88a54f7189aae65b09f"
+        },
+        {
+            "date": 1706695660176,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-01-31.log",
+            "hash": "4d3b52b79794404dfdb9c155efed802f0c242aa389844e96776513cecf985354"
         }
     ],
     "hashType": "sha256"
