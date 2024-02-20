@@ -32,10 +32,12 @@ module.exports = {
       params.status_cd,
       params.user_nm,
       params.user_nm,
+      params.user_nm,
     ];
 
 
     const [rowsInsrInfo] = await db.query(CAAAdminMapper.INSURANCE_CAA_LIST, queryParams);
+    logger.info("CAAAdminMapper.INSURANCE_CAA_LIST",CAAAdminMapper.INSURANCE_CAA_LIST)
     //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
