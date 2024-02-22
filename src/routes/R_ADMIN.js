@@ -67,6 +67,7 @@ router.post('/CAA/TRX/get', verifyToken, C_ADMIN.getCAA_TRX);
 router.post('/CAA/APPLY/set', verifyToken, C_ADMIN.setApplyCAAInsurance);
 router.post('/CAA/APPLY/get', verifyToken, C_ADMIN.getApplyCAAInsurance);
 router.post('/CAA/EXCEL/get', verifyToken, C_ADMIN.getCAAExcel);
+router.delete('/CAA/del', verifyToken, C_ADMIN.deleteCAA);
 
 router.post('/PAT/rate', verifyToken, C_ADMIN.getPATRate);
 router.post('/PAT/set', verifyToken, C_ADMIN.setPAT);

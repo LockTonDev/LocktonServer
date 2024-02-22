@@ -199,7 +199,7 @@ module.exports = Object.freeze({
   AND (? = '%' or A.user_cd = ?)
   AND (? = '%' or A.insr_year = ?)
   AND (? = '%' or A.status_cd = ?)
-  AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )
+  AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%')  OR a.cons_data like CONCAT('%', ?, '%')  )
   ORDER  BY A.created_at DESC 
   `,
 
