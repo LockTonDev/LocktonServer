@@ -11,7 +11,7 @@ module.exports = {
     const query = `SELECT b.*,
                           a.*,
                           FN_GET_CODENM('COM040', a.apply_cd) AS apply_nm,
-                          FN_GET_CODENM('COM030', a.proc_cd) AS proc_nm
+                          FN_GET_CODENM('COM041', a.proc_cd) AS proc_nm
                       FROM   TCAA0040A a,
                           (SELECT insurance_uuid,
                                   user_uuid,
@@ -45,7 +45,7 @@ module.exports = {
     // const query = 'SELECT * FROM TCAA0040A WHERE user_id = ? ORDER BY apply_no DESC';
     let query = `SELECT a.*,
                         FN_GET_CODENM('COM040', a.apply_cd) AS apply_nm,
-                        FN_GET_CODENM('COM030', a.proc_cd) AS proc_nm
+                        FN_GET_CODENM('COM041', a.proc_cd) AS proc_nm
                     FROM   TCAA0040A a
                     WHERE  a.user_uuid = ?`;
     let conditions = [user_uuid];
