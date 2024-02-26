@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2024-02-20 20:46:22 [info] : Server on port 3000 | run
 2024-02-20 21:25:45 [debug] : ---------------------------------S query
 2024-02-20 21:25:45 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'getdream' and (status_cd not in ('90') || status_cd is null)
@@ -486,3 +487,6 @@
 }
 2024-02-20 21:40:24 [info] : ::1 - - [20/Feb/2024:12:40:24 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:5000/admin/mng/AC2/ACC" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
 
+=======
+2024-02-20 23:17:58 [info] : Server off
+>>>>>>> 957ddfab28b073918118e44c933b0168c1f533f4

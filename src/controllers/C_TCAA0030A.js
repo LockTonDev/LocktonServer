@@ -58,8 +58,11 @@ module.exports = {
 
   selectList: async function (req, res, next) {
     try {
+      //console.log("test",req)
       const result = await M_TCAA0030A.selectList(req);
-
+      if(result.newInsrYN[0].data=='N'){
+        console.log("test123")
+      }
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
