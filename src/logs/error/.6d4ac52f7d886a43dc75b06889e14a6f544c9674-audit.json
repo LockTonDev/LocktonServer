@@ -124,6 +124,26 @@
             "date": 1708313261199,
             "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-02-19_error.log",
             "hash": "41558f96d0a3e6e0e51c673ce20c933bf54b2f4fbaba9534ff091eaacf2ba508"
+        },
+        {
+            "date": 1708429577982,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-02-20_error.log",
+            "hash": "8e9f4c04b5aa92c2ddd700f90fd8848c055b25315a2cea5346d298a51572bbe7"
+        },
+        {
+            "date": 1708487468865,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-02-21_error.log",
+            "hash": "11858b241ba4e190689f8aa8ca810c6f096142f4418647f030cf7db50af98625"
+        },
+        {
+            "date": 1708866921711,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-02-25_error.log",
+            "hash": "2c8ef6c29ea000074ed853de9ada344db4d4443caf9c97bdca925702568a6717"
+        },
+        {
+            "date": 1708920524230,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-02-26_error.log",
+            "hash": "0380f23eea8c57976b9ba4b5ea60297e67ea50a77ace29ae2ce7c7834f833192"
         }
     ],
     "hashType": "sha256"
