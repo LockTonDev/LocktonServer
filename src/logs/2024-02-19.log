@@ -1,0 +1,10 @@
+2024-02-19 12:29:00 [info] : Server on port 3000 | run
+2024-02-19 12:29:01 [info] : ::ffff:127.0.0.1 - - [19/Feb/2024:03:29:01 +0000] "GET / HTTP/1.1" 200 31 "http://localhost:3000/client/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-19 12:29:01 [info] : ::ffff:127.0.0.1 - - [19/Feb/2024:03:29:01 +0000] "GET /client/ HTTP/1.1" 500 1646 "http://localhost:3000/client/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-19 12:31:32 [info] : Server off
+2024-02-19 12:31:52 [info] : Server on port 3000 | run
+2024-02-19 12:31:59 [info] : Server off
+2024-02-19 12:32:02 [info] : Server on port 3000 | run
+2024-02-19 12:32:14 [info] : Server off

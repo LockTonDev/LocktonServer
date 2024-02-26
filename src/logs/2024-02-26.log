@@ -9630,3 +9630,833 @@ LIMIT  1
 2024-02-26 20:37:17 [info] : ::1 - - [26/Feb/2024:11:37:17 +0000] "POST /CAA/CAA0030A HTTP/1.1" 500 259 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
 
 2024-02-26 20:38:57 [info] : Server off
+2024-02-26 20:39:01 [info] : Server on port 3000 | run
+2024-02-26 20:39:03 [debug] : ---------------------------------S query
+2024-02-26 20:39:03 [debug] : SQL : SELECT business_cd, board_id, board_no, title, content, DATE_FORMAT(created_at, "%Y-%m-%d") as created_at, false as open_popup  FROM TCOM0050A WHERE business_cd = 'CAA' AND board_id = "notice" AND del_yn = "N" and popup_yn = "Y" ORDER BY board_no DESC
+2024-02-26 20:39:03 [debug] : ROWS : 
+2024-02-26 20:39:03 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:03 [info] : ::1 - - [26/Feb/2024:11:39:03 +0000] "POST /board/popup HTTP/1.1" 200 1741 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:03 [debug] : ---------------------------------S query
+2024-02-26 20:39:03 [debug] : SQL : SELECT * from tcom0110a where user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+2024-02-26 20:39:03 [debug] : ROWS : 
+2024-02-26 20:39:03 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:03 [debug] : ---------------------------------S query
+2024-02-26 20:39:03 [debug] : SQL : SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
+                  , insr_year, insr_st_dt, insr_cncls_dt
+                  , insr_tot_amt, status_cd, cbr_cnt, cbr_data
+                  , FN_GET_CODENM('COM030', status_cd) AS status_nm
+                    FROM TCAA0030A
+                   WHERE (user_nm = '배성재' and user_birth = '770702' and user_regno = '3483')
+                   OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY('배성재'))
+                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY('770702'))
+                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY('3483')))
+                   order by insr_year desc
+2024-02-26 20:39:03 [debug] : ROWS : 
+2024-02-26 20:39:03 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:03 [debug] : ---------------------------------S query
+2024-02-26 20:39:03 [debug] : SQL : 
+    SELECT   CASE WHEN COUNT(aa.insurance_uuid) >= 1 THEN 'N'  ELSE 'Y' END AS data
+    from
+       (select t.insurance_uuid 
+       FROM TCAA0030A t,
+       json_table(t.cbr_data,
+       '$[*]' columns (
+         cbr_nm VARCHAR(50) path '$.cbr_nm',
+         cbr_brdt VARCHAR(8) path '$.cbr_brdt',
+         cbr_regno VARCHAR(50) path '$.cbr_regno',
+         status_cd VARCHAR(3) path '$.status_cd'
+       )) j
+       WHERE t.business_cd = 'CAA'
+         AND j.cbr_nm = '배성재'
+         AND j.cbr_brdt = '770702'
+         AND j.cbr_regno = '3483'
+         AND j.status_cd not in ('52','30')-- 개인전환,해지
+         AND t.insr_year in (
+                    select
+                      max(C.base_year)
+                    from
+                      TCOM0030A C,
+                      tcom0110a D
+                    where
+                      C.user_cd = D.user_cd
+                      and C.business_cd = D.business_cd
+                      and C.use_yn = 'Y'
+                      and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+                    order by
+                      C.base_year desc,
+                      C.ver desc )
+        union all 
+       select user_uuid 
+         from tcaa0030a ta
+         where user_nm = '배성재'
+           and user_birth = '770702'
+            and user_regno = '3483'
+            and status_cd not in ('20', '40') 
+            AND insr_year in (
+              select
+                max(C.base_year)
+              from
+                TCOM0030A C,
+                tcom0110a D
+              where
+                C.user_cd = D.user_cd
+                and C.business_cd = D.business_cd
+                and C.use_yn = 'Y'
+                and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+              order by
+                C.base_year desc,
+                C.ver desc )
+            ) aa ;
+    
+2024-02-26 20:39:03 [debug] : ROWS : 
+2024-02-26 20:39:03 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:03 [debug] : ---------------------------------S query
+2024-02-26 20:39:03 [debug] : SQL : 
+      select
+        A.insurance_uuid as data, A.insr_year
+      from
+        tcaa0031a A,
+        tcom0110a B
+      where
+        A.business_cd = B.business_cd
+        and (
+                (A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND A.corp_cnno = B.corp_cnno )
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
+             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(B.user_birth))
+             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(b.user_regno)))
+            )
+        and B.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+        and a.insr_year in (
+            select
+              max(C.base_year)
+            from
+              TCOM0030A C,
+              tcom0110a D
+            where
+              C.user_cd = D.user_cd
+              and C.business_cd = D.business_cd
+              and C.use_yn = 'Y'
+              and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+            order by
+              C.base_year desc,
+              C.ver desc
+           
+        ) limit 1;
+    
+2024-02-26 20:39:03 [debug] : ROWS : 
+2024-02-26 20:39:03 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:03 [info] : ::1 - - [26/Feb/2024:11:39:03 +0000] "POST /CAA/CAA0030A HTTP/1.1" 200 10238 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:10 [debug] : ---------------------------------S query
+2024-02-26 20:39:10 [debug] : SQL : select base_year, ver, user_cd, business_cd, insr_st_dt, insr_cncls_dt, days, insurance_nm, contents, insurance_no 
+        from TCOM0030A 
+        where user_cd = 'IND' and business_cd = 'CAA' and use_yn = 'Y' 
+        order by base_year desc, ver desc limit 1
+2024-02-26 20:39:10 [debug] : ROWS : 
+2024-02-26 20:39:10 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:10 [info] : ::1 - - [26/Feb/2024:11:39:10 +0000] "POST /CAA/CAA0030A/rate HTTP/1.1" 200 3840 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:10 [debug] : {
+   "insurance_uuid": "93c5bc084faf44ef8cd9a9a211159ab6"
+}
+2024-02-26 20:39:10 [debug] : ---------------------------------S query
+2024-02-26 20:39:10 [debug] : SQL : SELECT 
+                      insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
+                      user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
+                      corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
+                      insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
+                      insr_pblc_brdn_rt, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt,
+                      insr_sale_rt, insr_pcnt_sale_rt,insr_base_amt, insr_amt, insr_tot_amt, cbr_cnt,
+                      cbr_data, cons_join_yn, cons_data, spct_join_yn, spct_data, active_yn, agr10_yn,
+                      agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
+                      agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip
+                      , FN_GET_CODENM('COM030', status_cd) AS status_nm
+                      , FN_GET_CODENM('ACC001', corp_region_cd) AS corp_region_nm
+                    FROM TCAA0030A
+                    WHERE insurance_uuid = '93c5bc084faf44ef8cd9a9a211159ab6'
+                    order by insurance_uuid
+2024-02-26 20:39:10 [debug] : ROWS : 
+2024-02-26 20:39:10 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:10 [info] : ::1 - - [26/Feb/2024:11:39:10 +0000] "POST /CAA/CAA0030A/get HTTP/1.1" 200 1785 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:13 [debug] : ---------------------------------S query
+2024-02-26 20:39:13 [debug] : SQL : SELECT business_cd, board_id, board_no, title, content, DATE_FORMAT(created_at, "%Y-%m-%d") as created_at, false as open_popup  FROM TCOM0050A WHERE business_cd = 'CAA' AND board_id = "notice" AND del_yn = "N" and popup_yn = "Y" ORDER BY board_no DESC
+2024-02-26 20:39:13 [debug] : ROWS : 
+2024-02-26 20:39:13 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:13 [info] : ::1 - - [26/Feb/2024:11:39:13 +0000] "POST /board/popup HTTP/1.1" 200 1741 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:13 [debug] : ---------------------------------S query
+2024-02-26 20:39:13 [debug] : SQL : SELECT * from tcom0110a where user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+2024-02-26 20:39:13 [debug] : ROWS : 
+2024-02-26 20:39:13 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:13 [debug] : ---------------------------------S query
+2024-02-26 20:39:13 [debug] : SQL : SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
+                  , insr_year, insr_st_dt, insr_cncls_dt
+                  , insr_tot_amt, status_cd, cbr_cnt, cbr_data
+                  , FN_GET_CODENM('COM030', status_cd) AS status_nm
+                    FROM TCAA0030A
+                   WHERE (user_nm = '배성재' and user_birth = '770702' and user_regno = '3483')
+                   OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY('배성재'))
+                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY('770702'))
+                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY('3483')))
+                   order by insr_year desc
+2024-02-26 20:39:13 [debug] : ROWS : 
+2024-02-26 20:39:13 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:13 [debug] : ---------------------------------S query
+2024-02-26 20:39:13 [debug] : SQL : 
+    SELECT   CASE WHEN COUNT(aa.insurance_uuid) >= 1 THEN 'N'  ELSE 'Y' END AS data
+    from
+       (select t.insurance_uuid 
+       FROM TCAA0030A t,
+       json_table(t.cbr_data,
+       '$[*]' columns (
+         cbr_nm VARCHAR(50) path '$.cbr_nm',
+         cbr_brdt VARCHAR(8) path '$.cbr_brdt',
+         cbr_regno VARCHAR(50) path '$.cbr_regno',
+         status_cd VARCHAR(3) path '$.status_cd'
+       )) j
+       WHERE t.business_cd = 'CAA'
+         AND j.cbr_nm = '배성재'
+         AND j.cbr_brdt = '770702'
+         AND j.cbr_regno = '3483'
+         AND j.status_cd not in ('52','30')-- 개인전환,해지
+         AND t.insr_year in (
+                    select
+                      max(C.base_year)
+                    from
+                      TCOM0030A C,
+                      tcom0110a D
+                    where
+                      C.user_cd = D.user_cd
+                      and C.business_cd = D.business_cd
+                      and C.use_yn = 'Y'
+                      and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+                    order by
+                      C.base_year desc,
+                      C.ver desc )
+        union all 
+       select user_uuid 
+         from tcaa0030a ta
+         where user_nm = '배성재'
+           and user_birth = '770702'
+            and user_regno = '3483'
+            and status_cd not in ('20', '40') 
+            AND insr_year in (
+              select
+                max(C.base_year)
+              from
+                TCOM0030A C,
+                tcom0110a D
+              where
+                C.user_cd = D.user_cd
+                and C.business_cd = D.business_cd
+                and C.use_yn = 'Y'
+                and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+              order by
+                C.base_year desc,
+                C.ver desc )
+            ) aa ;
+    
+2024-02-26 20:39:13 [debug] : ROWS : 
+2024-02-26 20:39:13 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:13 [debug] : ---------------------------------S query
+2024-02-26 20:39:13 [debug] : SQL : 
+      select
+        A.insurance_uuid as data, A.insr_year
+      from
+        tcaa0031a A,
+        tcom0110a B
+      where
+        A.business_cd = B.business_cd
+        and (
+                (A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND A.corp_cnno = B.corp_cnno )
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
+             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(B.user_birth))
+             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(b.user_regno)))
+            )
+        and B.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+        and a.insr_year in (
+            select
+              max(C.base_year)
+            from
+              TCOM0030A C,
+              tcom0110a D
+            where
+              C.user_cd = D.user_cd
+              and C.business_cd = D.business_cd
+              and C.use_yn = 'Y'
+              and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+            order by
+              C.base_year desc,
+              C.ver desc
+           
+        ) limit 1;
+    
+2024-02-26 20:39:13 [debug] : ROWS : 
+2024-02-26 20:39:13 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:13 [info] : ::1 - - [26/Feb/2024:11:39:13 +0000] "POST /CAA/CAA0030A HTTP/1.1" 200 10238 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:40 [debug] : ---------------------------------S query
+2024-02-26 20:39:40 [debug] : SQL : SELECT business_cd, board_id, board_no, title, content, DATE_FORMAT(created_at, "%Y-%m-%d") as created_at, false as open_popup  FROM TCOM0050A WHERE business_cd = 'CAA' AND board_id = "notice" AND del_yn = "N" and popup_yn = "Y" ORDER BY board_no DESC
+2024-02-26 20:39:40 [debug] : ROWS : 
+2024-02-26 20:39:40 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:40 [info] : ::1 - - [26/Feb/2024:11:39:40 +0000] "POST /board/popup HTTP/1.1" 200 1741 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:40 [debug] : ---------------------------------S query
+2024-02-26 20:39:40 [debug] : SQL : SELECT * from tcom0110a where user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+2024-02-26 20:39:40 [debug] : ROWS : 
+2024-02-26 20:39:40 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:40 [debug] : ---------------------------------S query
+2024-02-26 20:39:40 [debug] : SQL : SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
+                  , insr_year, insr_st_dt, insr_cncls_dt
+                  , insr_tot_amt, status_cd, cbr_cnt, cbr_data
+                  , FN_GET_CODENM('COM030', status_cd) AS status_nm
+                    FROM TCAA0030A
+                   WHERE (user_nm = '배성재' and user_birth = '770702' and user_regno = '3483')
+                   OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY('배성재'))
+                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY('770702'))
+                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY('3483')))
+                   order by insr_year desc
+2024-02-26 20:39:40 [debug] : ROWS : 
+2024-02-26 20:39:40 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:40 [debug] : ---------------------------------S query
+2024-02-26 20:39:40 [debug] : SQL : 
+    SELECT   CASE WHEN COUNT(aa.insurance_uuid) >= 1 THEN 'N'  ELSE 'Y' END AS data
+    from
+       (select t.insurance_uuid 
+       FROM TCAA0030A t,
+       json_table(t.cbr_data,
+       '$[*]' columns (
+         cbr_nm VARCHAR(50) path '$.cbr_nm',
+         cbr_brdt VARCHAR(8) path '$.cbr_brdt',
+         cbr_regno VARCHAR(50) path '$.cbr_regno',
+         status_cd VARCHAR(3) path '$.status_cd'
+       )) j
+       WHERE t.business_cd = 'CAA'
+         AND j.cbr_nm = '배성재'
+         AND j.cbr_brdt = '770702'
+         AND j.cbr_regno = '3483'
+         AND j.status_cd not in ('52','30')-- 개인전환,해지
+         AND t.insr_year in (
+                    select
+                      max(C.base_year)
+                    from
+                      TCOM0030A C,
+                      tcom0110a D
+                    where
+                      C.user_cd = D.user_cd
+                      and C.business_cd = D.business_cd
+                      and C.use_yn = 'Y'
+                      and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+                    order by
+                      C.base_year desc,
+                      C.ver desc )
+        union all 
+       select user_uuid 
+         from tcaa0030a ta
+         where user_nm = '배성재'
+           and user_birth = '770702'
+            and user_regno = '3483'
+            and status_cd not in ('20', '40') 
+            AND insr_year in (
+              select
+                max(C.base_year)
+              from
+                TCOM0030A C,
+                tcom0110a D
+              where
+                C.user_cd = D.user_cd
+                and C.business_cd = D.business_cd
+                and C.use_yn = 'Y'
+                and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+              order by
+                C.base_year desc,
+                C.ver desc )
+            ) aa ;
+    
+2024-02-26 20:39:40 [debug] : ROWS : 
+2024-02-26 20:39:40 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:40 [debug] : ---------------------------------S query
+2024-02-26 20:39:40 [debug] : SQL : 
+      select
+        A.insurance_uuid as data, A.insr_year
+      from
+        tcaa0031a A,
+        tcom0110a B
+      where
+        A.business_cd = B.business_cd
+        and (
+                (A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND A.corp_cnno = B.corp_cnno )
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
+             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(B.user_birth))
+             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(b.user_regno)))
+            )
+        and B.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+        and a.insr_year in (
+            select
+              max(C.base_year)
+            from
+              TCOM0030A C,
+              tcom0110a D
+            where
+              C.user_cd = D.user_cd
+              and C.business_cd = D.business_cd
+              and C.use_yn = 'Y'
+              and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+            order by
+              C.base_year desc,
+              C.ver desc
+           
+        ) limit 1;
+    
+2024-02-26 20:39:40 [debug] : ROWS : 
+2024-02-26 20:39:40 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:40 [info] : ::1 - - [26/Feb/2024:11:39:40 +0000] "POST /CAA/CAA0030A HTTP/1.1" 200 9907 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:43 [debug] : ---------------------------------S query
+2024-02-26 20:39:43 [debug] : SQL : select base_year, ver, user_cd, business_cd, insr_st_dt, insr_cncls_dt, days, insurance_nm, contents, insurance_no 
+        from TCOM0030A 
+        where user_cd = 'IND' and business_cd = 'CAA' and use_yn = 'Y' 
+        order by base_year desc, ver desc limit 1
+2024-02-26 20:39:43 [debug] : ROWS : 
+2024-02-26 20:39:43 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:43 [info] : ::1 - - [26/Feb/2024:11:39:43 +0000] "POST /CAA/CAA0030A/rate HTTP/1.1" 200 3840 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:43 [debug] : {
+   "renewal": "Y",
+   "insurance_uuid": "b358efba624213befe231a818915200b"
+}
+2024-02-26 20:39:43 [debug] : ---------------------------------S query
+2024-02-26 20:39:43 [debug] : SQL : SELECT 
+          insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
+          user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
+          corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
+          insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
+          insr_pblc_brdn_rt, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt,
+          insr_sale_rt, insr_pcnt_sale_rt,insr_base_amt, insr_amt, insr_tot_amt, cbr_cnt,
+          cbr_data, cons_join_yn, cons_data, spct_join_yn, spct_data, active_yn, agr10_yn,
+          agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
+          agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip
+          , FN_GET_CODENM('COM030', status_cd) AS status_nm
+          , FN_GET_CODENM('ACC001', corp_region_cd) AS corp_region_nm
+        FROM TCAA0031A
+        WHERE  insurance_uuid = 'b358efba624213befe231a818915200b'
+        order by insurance_uuid
+2024-02-26 20:39:43 [debug] : ROWS : 
+2024-02-26 20:39:43 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:43 [info] : ::1 - - [26/Feb/2024:11:39:43 +0000] "POST /CAA/CAA0030A/get HTTP/1.1" 200 7761 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:43 [debug] : ---------------------------------S query
+2024-02-26 20:39:43 [debug] : SQL : SELECT user_uuid, business_cd, user_cd, user_nm, user_birth, user_id, user_regno, user_hpno, user_email
+                              , corp_type, corp_nm, corp_ceo_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno, corp_cust_nm
+                              , corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd
+                              , status_cd
+                              , recv_email_yn
+                              , agr1_yn
+                              , agr2_yn
+                              , agr3_yn
+                              , agr4_yn
+                              , active_yn
+                              , FN_GET_SPLIT(corp_telno, '-', 1) as corp_telno1
+                              , FN_GET_SPLIT(corp_telno, '-', 2) as corp_telno2
+                              , FN_GET_SPLIT(corp_telno, '-', 3) as corp_telno3
+                              , FN_GET_SPLIT(corp_faxno, '-', 1) as corp_faxno1
+                              , FN_GET_SPLIT(corp_faxno, '-', 2) as corp_faxno2
+                              , FN_GET_SPLIT(corp_faxno, '-', 3) as corp_faxno3
+                              , FN_GET_CODENM('TAX001', corp_region_cd) as corp_region_nm
+                              , created_at
+                              FROM TCOM0110A WHERE user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+2024-02-26 20:39:43 [debug] : ROWS : 
+2024-02-26 20:39:43 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:43 [info] : ::1 - - [26/Feb/2024:11:39:43 +0000] "POST /user/select HTTP/1.1" 200 878 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:39:44 [debug] : ---------------------------------S query
+2024-02-26 20:39:44 [debug] : SQL : 
+        select
+          user_cd,
+          user_nm,
+          user_birth,
+          user_regno,
+          null as corp_bnno,
+          insr_retr_dt,
+          insr_pblc_brdn_rt,
+          insr_clm_lt_amt,
+          insr_psnl_brdn_amt,
+          IFNULL(NULLIF(insr_sale_year, ''), 0) as insr_sale_year,
+          IFNULL(NULLIF(insr_sale_rt, ''), 0) as insr_sale_rt
+        from
+          TCAA0031A
+        where business_cd = 'CAA'
+          and user_cd = 'IND'
+          and user_nm = '배성재'
+          and user_birth = '770702'
+          and user_regno = '3483'
+          and insr_year = '2024'
+    
+2024-02-26 20:39:44 [debug] : ROWS : 
+2024-02-26 20:39:44 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:44 [debug] : ---------------------------------S query
+2024-02-26 20:39:44 [debug] : SQL : 
+    SELECT
+      t.user_cd,
+      j.cbr_nm AS user_nm,
+      j.cbr_brdt AS user_birth,
+      j.cbr_regno AS user_regno,
+      j.insr_retr_dt AS insr_retr_dt,
+      COALESCE(j.insr_sale_year, 0) AS insr_sale_year,
+      COALESCE(j.insr_sale_rt, 0) AS insr_sale_rt
+    FROM
+      tCAA0031a t
+      CROSS JOIN JSON_TABLE(
+        t.cbr_data,
+        '$[*]' COLUMNS (
+          cbr_nm VARCHAR(50) PATH '$.cbr_nm',
+          cbr_brdt VARCHAR(8) PATH '$.cbr_brdt',
+          cbr_type VARCHAR(20) PATH '$.cbr_type',
+          cbr_regno VARCHAR(50) PATH '$.cbr_regno',
+          insr_retr_dt VARCHAR(10) PATH '$.insr_retr_dt',
+          insr_sale_rt DECIMAL(3, 0) PATH '$.insr_sale_rt',
+          insr_sale_year INT PATH '$.insr_sale_year'
+        )
+      ) j
+    WHERE t.insr_year = '2024'
+      AND j.cbr_nm = '배성재'
+      AND j.cbr_brdt = '770702'
+      AND j.cbr_regno = '3483';
+    
+2024-02-26 20:39:44 [debug] : ROWS : 
+2024-02-26 20:39:44 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:44 [debug] : ---------------------------------S query
+2024-02-26 20:39:44 [debug] : SQL : 
+        SELECT COUNT(*) AS cnt
+        FROM (
+            SELECT 1
+            FROM TCAA0030A
+            WHERE business_cd = 'CAA'
+              AND user_cd = 'IND'
+              AND user_nm = '배성재'
+              AND user_birth = '770702'
+              AND user_regno = '3483'
+              AND insr_year = '2024'
+              AND status_cd in ('10', '20', '80') -- 신청중, 처리중, 정상
+            UNION ALL
+            SELECT 1
+            FROM TCAA0030A t,
+            json_table(t.cbr_data,
+            '$[*]' columns (
+              cbr_nm VARCHAR(50) path '$.cbr_nm',
+              cbr_brdt VARCHAR(8) path '$.cbr_brdt',
+              cbr_regno VARCHAR(50) path '$.cbr_regno',
+              status_cd VARCHAR(3) path '$.status_cd'
+            )) j
+            WHERE t.business_cd = 'CAA'
+              AND t.user_cd = NULL
+              AND j.cbr_nm = '배성재'
+              AND j.cbr_brdt = '770702'
+              AND j.cbr_regno = '3483'
+              AND j.status_cd in ('10', '20', '80') -- 신청중, 처리중, 정상
+              AND t.insr_year = '2024'
+        ) AS cnt
+      
+2024-02-26 20:39:44 [debug] : ROWS : 
+2024-02-26 20:39:44 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:44 [debug] : ---------------------------------S query
+2024-02-26 20:39:44 [debug] : SQL : 
+      SELECT count(*) AS cnt
+            FROM   tcom0111a
+            WHERE  business_cd = 'CAA'
+                  AND nm = '배성재'
+                  AND reg_no = '3483'
+      
+2024-02-26 20:39:44 [debug] : ROWS : 
+2024-02-26 20:39:44 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:39:44 [info] : ::1 - - [26/Feb/2024:11:39:44 +0000] "POST /CAA/CAA0030A/getSaleRtNDupInfo HTTP/1.1" 200 211 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:40:14 [info] : 
+2024-02-26 20:40:14 [debug] : [
+   "df470072d2dc46a8aa80d8f9dea318b6",
+   "140907489",
+   "CAA",
+   "IND",
+   "woosancus1",
+   "배성재",
+   "770702",
+   "3483",
+   "",
+   "우산관세사무소",
+   "",
+   "654-21-01873",
+   "031-781-3998",
+   "031-781-3999",
+   "",
+   "양정화",
+   "010-4163-3998",
+   "hwa808@woosancus.com",
+   "13511",
+   "경기 성남시 분당구 판교로 715",
+   "401호",
+   "",
+   "2024",
+   "2024-02-26",
+   "2024-01-01",
+   "2025-01-01",
+   "Y",
+   "2017-02-08",
+   "1|공동부담 없음",
+   "20000000|2천만원",
+   "2천만원",
+   "2000000|2백만원",
+   0,
+   0,
+   0,
+   1067000,
+   1067000,
+   1067000,
+   0,
+   0,
+   "",
+   "{\"insr_st_dt\":\"\",\"insr_cncls_dt\":\"\",\"insr_pblc_brdn_rt\":\"\",\"insr_year_clm_lt_amt\":\"\",\"insr_clm_lt_amt\":\"\",\"insr_psnl_brdn_amt\":\"\",\"insr_retr_yn\":\"\",\"insr_retr_dt\":\"\",\"insr_sale_rt\":0,\"insr_base_amt\":0,\"insr_amt\":0,\"cbr_cnt\":0,\"cbr_data\":[]}",
+   0,
+   "[]",
+   "[]",
+   "N",
+   "{\"insr_base_amt\":0,\"insr_amt\":0,\"insr_year_clm_lt_amt\":\"\"}",
+   "",
+   "Y",
+   "Y",
+   "Y",
+   "Y",
+   "Y",
+   "Y",
+   "Y",
+   "Y",
+   "Y",
+   "Y",
+   "10",
+   "",
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+]
+2024-02-26 20:40:14 [debug] : 2---------------------------------S query
+2024-02-26 20:40:14 [debug] : SQL : 
+2024-02-26 20:40:14 [debug] : ROWS : 
+2024-02-26 20:40:14 [debug] : 2---------------------------------E query
+
+
+2024-02-26 20:40:14 [debug] : ---------------------------------S query
+2024-02-26 20:40:14 [debug] : SQL : SELECT * FROM TCOM0020A where t_id = 'CS0210'
+2024-02-26 20:40:14 [debug] : ROWS : 
+2024-02-26 20:40:14 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:40:14 [debug] : TemplateControllers sendTemplete result : 
+2024-02-26 20:40:14 [debug] : TemplateControllers sendTemplete params : 
+2024-02-26 20:40:14 [debug] : sendSMSFromTemplate req.AuthData : 
+2024-02-26 20:40:14 [debug] : sendSMSFromTemplate req.body : 
+2024-02-26 20:40:14 [error] : TypeError: source.on is not a function
+2024-02-26 20:40:14 [error] : sendSMSFromTemplate 실패 :  TypeError: source.on is not a function
+2024-02-26 20:40:14 [debug] : ---------------------------------S query
+2024-02-26 20:40:14 [debug] : SQL : SELECT * FROM TCOM0020A where t_id = 'CM0210'
+2024-02-26 20:40:14 [debug] : ROWS : 
+2024-02-26 20:40:14 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:40:14 [debug] : TemplateControllers sendTemplete result : 
+2024-02-26 20:40:14 [debug] : TemplateControllers sendTemplete params : 
+2024-02-26 20:40:14 [error] : sendTemplete error : ReferenceError: ejs:1
+ >> 1| <!DOCTYPE html> <html>  <head>   <meta charset="utf-8">   <title>Email Template</title>   <meta name="viewport" content="width=device-width, initial-scale=1.0"> </head>  <body style="font-family: Arial, sans-serif;">    <!--MAILFORM-->   <table style="width:auto;max-width:700px;padding:16px;word-break: keep-all;" border="0" cellspacing="0"     cellpadding="0">     <tbody>       <tr>         <td height="24"></td>       </tr>       <tr>         <td valign="top">           <table border="0" cellspacing="0" cellpadding="0" width="100%">             <tbody>               <tr>                 <td width="300"></td>                 <td style="font-size:0;text-align: center;">                   <img border="0" width="100" src="https://locktonpi.com/assets/Lockton_Logo_Black_simbol.png"                     alt="록톤코리아" loading="lazy">                 </td>                 <td width="300"></td>               </tr>             </tbody>           </table>         </td>       </tr>       <tr>         <td height="40"></td>       </tr>       <tr>         <td           style="font-weight: bold;font-family: 'Malgun Gothic', dotum, 돋움, sans-serif;font-size: 24px;line-height: 31px;color: #222222;">           [록톤코리아] 비밀번호 찾기 이메일 인증 요청</td>       </tr>       <tr>         <td height="40"></td>       </tr>       <tr>         <td>           <table border="0" cellspacing="0" cellpadding="0" width="100%">             <tbody>               <tr>                 <td width="32" height="3" bgcolor="#00aeef" style="padding: 0;font-size:0"></td>                 <td></td>               </tr>             </tbody>           </table>         </td>       </tr>       <tr>         <td height="16"></td>       </tr>       <tr>         <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;line-height:24px;color: #595959;">           안녕하세요. 회원님.</td>       </tr>       <tr>         <td height="6"></td>       </tr>       <tr>         <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;line-height:24px;color: #00aeef;">           회원님의 비밀번호를 찾기 위해 이메일 인증을 요청 하셨습니다.</td>       </tr>       <tr>         <td height="40"></td>       </tr>       <tr>         <td>           <table border="0" cellspacing="0" cellpadding="0" width="100%">             <tbody>               <tr>                 <td height="1" bgcolor="#222222" colspan="7"></td>               </tr>               <tr>                 <td colspan="3" bgcolor="#f3f7f9" align="center"                   style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;color:#595959"                   width="28.13%" height="40">인증번호</td>                 <td width="1" bgcolor="#cccccc"></td>                 <td width="1.8%"></td>                 <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;color:#595959">                   <%= auth_code %>                 </td>                 <td width="1.8%"></td>               </tr>               <tr>                 <td height="1" bgcolor="#222222" colspan="7"></td>               </tr>             </tbody>           </table>         </td>       </tr>       <tr>         <td height="24"></td>       </tr>       <tr>         <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;line-height:24px">비밀번호를 찾기를 요청한 적이           없으시다면, 다른 사람이 내 계정정보를 알아내어 변경을 시도했을 수 있습니다.</td>       </tr>       <tr>         <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;line-height:24px">이 경우 록톤코리아로 연락하여           확인하여 주시기 바랍니다.</td>       </tr>       <tr>         <td height="12"></td>       </tr>       <tr>         <td height="40"></td>       </tr>       <tr>         <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;line-height:24px;color: #595959;">           감사합니다. 록톤코리아</td>       </tr>       <tr>         <td height="40"></td>       </tr>       <tr>         <td bgcolor="#1a1a1a">           <table border="0" cellspacing="0" cellpadding="0" width="100%">             <tr>               <td width="24"></td>               <td height="40"                 style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:10px;line-height:14px;color:#e9e9e9">                 ※ 본 메일은 발신 전용 메일이므로 회신되지 않습니다.</td>               <td colspan="24"></td>             </tr>           </table>         </td>       </tr>       <tr>         <td bgcolor="#2b2b2b">           <table border="0" cellspacing="0" cellpadding="0" width="100%">             <tr>               <td colspan="5" height="24"></td>             </tr>             <tr>               <td width="24"></td>               <td width="140" valign="top" rowspan="4" style="font-size: 0;text-align:center;"> <img border="0"                   width="100" src="https://locktonpi.com/assets/Lockton_Logo_White_simbol.png" alt="록톤코리아"                   loading="lazy"></td>               <td width="12"></td>               <td                 style="font-weight:bold;font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:10px;line-height:14px;color:#e9e9e9">                 록톤컴퍼니즈코리아손해보험중개(주)</td>               <td width="24"></td>             </tr>             <tr>               <td colspan="5" height="6"></td>             </tr>             <tr>               <td width="24"></td>               <td width="12"></td>               <td colspan="2"                 style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:10px;line-height:14px;color:#e9e9e9">                 대표자 : 손방의 | 사업자등록번호 : 220-81-20652 | 통신판매신고번호 : 제2023-서울종로-0230호<br />주소 : (04520) 서울시 중구 세종대로 136,                 서울파이낸스센터 13층 | 대표전화 : 02-2011-0300</td>               <td width="24"></td>             </tr>             <tr>               <td colspan="5" height="16"></td>             </tr>             <tr>               <td width="24"></td>               <td colspan="3" height="1" bgcolor="#3a3a3a" style="font-size:0;padding:0;"></td>               <td width="24"></td>             </tr>             <tr>               <td colspan="5" height="16"></td>             </tr>             <tr>               <td width="24"></td>               <td colspan="3"                 style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:10px;line-height:14px;color:#e9e9e9">                 © Lockton Companies (Korea) Inc. All rights reserved.</td>               <td></td>             </tr>             <tr>               <td colspan="5" height="24"></td>             </tr>           </table>         </td>       </tr>       <tr>         <td height="40"></td>       </tr>     </tbody>   </table>   </body>  </html>   <!DOCTYPE html> <html> <head> 	<meta charset="utf-8"> 	<title>Email Template</title> 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> </head> <body style="font-family: Arial, sans-serif;">  <!--MAILFORM--> <table style="margin:0 auto;width:auto;max-width:700px;padding:16px;word-break: keep-all;" border="0" cellspacing="0" cellpadding="0" width="100%">   <tbody>       <tr>           <td height="24"></td>       </tr>       <tr>         <td valign="top">           <table border="0" cellspacing="0" cellpadding="0" width="100%">             <tbody>               <tr>                 <td width="300"></td>                 <td style="font-size:0;text-align: center;">                   <img border="0" width="100" src="https://locktonpi.com/assets/Lockton_Logo_Black_simbol.png" alt="록톤코리아" loading="lazy">                 </td>                 <td width="300"></td>               </tr>             </tbody>           </table>         </td>       </tr>       <tr>         <td height="40"></td>       </tr>       <tr>         <td style="font-weight: bold;font-family: 'Malgun Gothic', dotum, 돋움, sans-serif;font-size: 24px;line-height: 31px;color: #222222;">[록톤코리아] 가입신청 완료 및 보험료 납입 안내</td>       </tr>       <tr>           <td height="40"></td>       </tr>       <tr>         <td>           <table border="0" cellspacing="0" cellpadding="0" width="100%">             <tbody>               <tr>                 <td width="32" height="3" bgcolor="#00aeef" style="padding: 0;font-size:0"></td>                                 <td></td>               </tr>             </tbody>           </table>         </td>       </tr>       <tr>         <td height="16"></td>       </tr>       <tr>         <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;line-height:24px;color: #595959;"><%= user_nm %>님 안녕하세요.</td>       </tr>       <tr>         <td height="6"></td>       </tr>       <tr>         <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;line-height:24px;color: #00aeef;">전문인배상책임보험 가입(갱신) 신청서 제출이 완료되었습니다.</td>       </tr>       <tr>           <td height="40"></td>       </tr>       <tr>         <td>           <a style="font-weight:bold;font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;color:#00aeef;text-decoration: none;display: inline-block;border-bottom:1px solid #00aeef;" href="https://locktonpi.com" rel="noreferrer noopener" target="_blank">홈페이지 바로가기 &gt;</a>         </td>       </tr>       <tr>         <td height="24"></td>       </tr>       <tr>           <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;line-height:24px">전문인배상책임보험 홈페이지 및 출력하신 신청서 상에 기재된 납부계좌로 보험료를 입금하여 주시기<br/>바랍니다. <br/>(보험료 미입금시 가입 또는 갱신 처리되지 않습니다.)</td>       </tr>       <tr>           <td height="12"></td>       </tr>       <tr>         <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;line-height:24px;">기타 문의사항은 02-2011-0300으로 연락하여 주시기 바랍니다.</td>       </tr>       <tr>         <td height="40"></td>       </tr>       <tr>         <td style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:14px;line-height:24px;color: #595959;">감사합니다. 록톤코리아</td>       </tr>       <tr>           <td height="40"></td>       </tr>       <tr>         <td bgcolor="#1a1a1a">           <table border="0" cellspacing="0" cellpadding="0" width="100%">             <tr>               <td width="24"></td>               <td height="40"style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:10px;line-height:14px;color:#e9e9e9">※ 본 메일은 발신 전용 메일이므로 회신되지 않습니다.</td>               <td colspan="24"></td>             </tr>             </table>           </td>       </tr>       <tr>         <td bgcolor="#2b2b2b">           <table border="0" cellspacing="0" cellpadding="0" width="100%">             <tr>                 <td colspan="5" height="24"></td>             </tr>             <tr>               <td width="24"></td>               <td width="140" valign="top" rowspan="4" style="font-size: 0;text-align:center;"> <img border="0" width="100" src="https://locktonpi.com/assets/Lockton_Logo_White_simbol.png" alt="록톤코리아" loading="lazy"></td>               <td width="12"></td>               <td style="font-weight:bold;font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:10px;line-height:14px;color:#e9e9e9">록톤컴퍼니즈코리아손해보험중개(주)</td>               <td width="24"></td>             </tr>             <tr>               <td colspan="5" height="6"></td>             </tr>             <tr>               <td width="24"></td>               <td width="12"></td>               <td colspan="2" style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:10px;line-height:14px;color:#e9e9e9">대표자 : 손방의 | 사업자등록번호 : 220-81-20652 | 통신판매신고번호 : 제2023-서울종로-0230호<br/>주소 : (04520) 서울시 중구 세종대로 136, 서울파이낸스센터 13층 | 대표전화 : 02-2011-0300</td>               <td width="24"></td>             </tr>             <tr>               <td colspan="5" height="16"></td>             </tr>             <tr>               <td width="24"></td>               <td colspan="3" height="1" bgcolor="#3a3a3a" style="font-size:0;padding:0;"></td>               <td width="24"></td>             </tr>             <tr>               <td colspan="5" height="16"></td>             </tr>             <tr>               <td width="24"></td>               <td colspan="3" style="font-family:'Malgun Gothic','dotum','돋움',sans-serif;font-size:10px;line-height:14px;color:#e9e9e9">© Lockton Companies (Korea) Inc. All rights reserved.</td>               <td></td>             </tr>             <tr>                 <td colspan="5" height="24"></td>             </tr>           </table>         </td>       </tr>       <tr>           <td height="40"></td>       </tr>   </tbody> </table>   </body> </html>     
+
+auth_code is not defined
+2024-02-26 20:40:14 [debug] : 2---------------------------------S query
+2024-02-26 20:40:14 [debug] : SQL : 
+2024-02-26 20:40:14 [debug] : ROWS : 
+2024-02-26 20:40:14 [debug] : 2---------------------------------E query
+
+
+2024-02-26 20:40:14 [debug] : true
+2024-02-26 20:40:14 [info] : ::1 - - [26/Feb/2024:11:40:14 +0000] "POST /CAA/CAA0030A/set HTTP/1.1" 201 28 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:40:17 [debug] : ---------------------------------S query
+2024-02-26 20:40:17 [debug] : SQL : SELECT business_cd, board_id, board_no, title, content, DATE_FORMAT(created_at, "%Y-%m-%d") as created_at, false as open_popup  FROM TCOM0050A WHERE business_cd = 'CAA' AND board_id = "notice" AND del_yn = "N" and popup_yn = "Y" ORDER BY board_no DESC
+2024-02-26 20:40:17 [debug] : ROWS : 
+2024-02-26 20:40:17 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:40:17 [info] : ::1 - - [26/Feb/2024:11:40:17 +0000] "POST /board/popup HTTP/1.1" 200 1741 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
+2024-02-26 20:40:17 [debug] : ---------------------------------S query
+2024-02-26 20:40:17 [debug] : SQL : SELECT * from tcom0110a where user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+2024-02-26 20:40:17 [debug] : ROWS : 
+2024-02-26 20:40:17 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:40:17 [debug] : ---------------------------------S query
+2024-02-26 20:40:17 [debug] : SQL : SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
+                  , insr_year, insr_st_dt, insr_cncls_dt
+                  , insr_tot_amt, status_cd, cbr_cnt, cbr_data
+                  , FN_GET_CODENM('COM030', status_cd) AS status_nm
+                    FROM TCAA0030A
+                   WHERE (user_nm = '배성재' and user_birth = '770702' and user_regno = '3483')
+                   OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY('배성재'))
+                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY('770702'))
+                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY('3483')))
+                   order by insr_year desc
+2024-02-26 20:40:17 [debug] : ROWS : 
+2024-02-26 20:40:17 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:40:17 [debug] : ---------------------------------S query
+2024-02-26 20:40:17 [debug] : SQL : 
+    SELECT   CASE WHEN COUNT(aa.insurance_uuid) >= 1 THEN 'N'  ELSE 'Y' END AS data
+    from
+       (select t.insurance_uuid 
+       FROM TCAA0030A t,
+       json_table(t.cbr_data,
+       '$[*]' columns (
+         cbr_nm VARCHAR(50) path '$.cbr_nm',
+         cbr_brdt VARCHAR(8) path '$.cbr_brdt',
+         cbr_regno VARCHAR(50) path '$.cbr_regno',
+         status_cd VARCHAR(3) path '$.status_cd'
+       )) j
+       WHERE t.business_cd = 'CAA'
+         AND j.cbr_nm = '배성재'
+         AND j.cbr_brdt = '770702'
+         AND j.cbr_regno = '3483'
+         AND j.status_cd not in ('52','30')-- 개인전환,해지
+         AND t.insr_year in (
+                    select
+                      max(C.base_year)
+                    from
+                      TCOM0030A C,
+                      tcom0110a D
+                    where
+                      C.user_cd = D.user_cd
+                      and C.business_cd = D.business_cd
+                      and C.use_yn = 'Y'
+                      and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+                    order by
+                      C.base_year desc,
+                      C.ver desc )
+        union all 
+       select user_uuid 
+         from tcaa0030a ta
+         where user_nm = '배성재'
+           and user_birth = '770702'
+            and user_regno = '3483'
+            and status_cd not in ('20', '40') 
+            AND insr_year in (
+              select
+                max(C.base_year)
+              from
+                TCOM0030A C,
+                tcom0110a D
+              where
+                C.user_cd = D.user_cd
+                and C.business_cd = D.business_cd
+                and C.use_yn = 'Y'
+                and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+              order by
+                C.base_year desc,
+                C.ver desc )
+            ) aa ;
+    
+2024-02-26 20:40:17 [debug] : ROWS : 
+2024-02-26 20:40:17 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:40:17 [debug] : ---------------------------------S query
+2024-02-26 20:40:17 [debug] : SQL : 
+      select
+        A.insurance_uuid as data, A.insr_year
+      from
+        tcaa0031a A,
+        tcom0110a B
+      where
+        A.business_cd = B.business_cd
+        and (
+                (A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND A.corp_cnno = B.corp_cnno )
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
+             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(B.user_birth))
+             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(b.user_regno)))
+            )
+        and B.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+        and a.insr_year in (
+            select
+              max(C.base_year)
+            from
+              TCOM0030A C,
+              tcom0110a D
+            where
+              C.user_cd = D.user_cd
+              and C.business_cd = D.business_cd
+              and C.use_yn = 'Y'
+              and D.user_uuid = 'df470072d2dc46a8aa80d8f9dea318b6'
+            order by
+              C.base_year desc,
+              C.ver desc
+           
+        ) limit 1;
+    
+2024-02-26 20:40:17 [debug] : ROWS : 
+2024-02-26 20:40:17 [debug] : 1---------------------------------E query
+
+
+2024-02-26 20:40:17 [info] : ::1 - - [26/Feb/2024:11:40:17 +0000] "POST /CAA/CAA0030A HTTP/1.1" 200 10239 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+
