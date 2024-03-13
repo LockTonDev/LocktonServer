@@ -52,14 +52,14 @@ module.exports = {
 
         await M_TTAX0030A.updateFromUserInfo(req);
 
-        const templateParams = {
-          t_id: 'CM0100',
-          to: req.body.params.user_email,
-          user_nm: req.body.params.user_nm,
-          user_id: req.body.params.user_id,
-          created_at: dayjs().format('YYYY-MM-DD')
-        };
-        const templeteRet2 = TemplateController.sendTemplete(req, res, templateParams);
+        // const templateParams = {
+        //   t_id: 'CM0100',
+        //   to: req.body.params.user_email,
+        //   user_nm: req.body.params.user_nm,
+        //   user_id: req.body.params.user_id,
+        //   created_at: dayjs().format('YYYY-MM-DD')
+        // };
+        // const templeteRet2 = TemplateController.sendTemplete(req, res, templateParams);
 
         if (result) {
           res.status(StatusCode.CREATED).json({
