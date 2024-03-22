@@ -17,7 +17,7 @@ module.exports = {
 
     const queryADV0030A = `SELECT 
                       insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
-                      user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
+                      user_regno, corp_type, corp_nm, corp_ceo_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
                       corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
                       insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
                       insr_take_amt, insr_take_sec, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, insr_sale_year,
@@ -34,7 +34,7 @@ module.exports = {
 
     const queryADV0031A = `SELECT 
           insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
-          user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
+          user_regno, corp_type, corp_nm, corp_ceo_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
           corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
           insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
           insr_take_amt, insr_take_sec, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, insr_sale_year,
