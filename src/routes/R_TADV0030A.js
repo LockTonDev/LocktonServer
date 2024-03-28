@@ -11,7 +11,7 @@ router.post('/get', verifyToken, C_TADV0030A.select);
 router.post('/get/history', verifyToken, C_TADV0030A.selectHistory);
 router.post('/set', verifyToken, C_TADV0030A.insert);
 router.post('/set/:insurance_uuid', verifyToken, C_TADV0030A.update);
-router.get('/del/::insurance_uuid', verifyToken, C_TADV0030A.delete);
+router.get('/del/:insurance_uuid', verifyToken, C_TADV0030A.delete);
 
 router.post('/rate', verifyToken, InsuranceRateController.selectTop);
 

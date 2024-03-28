@@ -10,7 +10,7 @@ router.post('/status', verifyToken, C_TTAX0030A.selectStatus);
 router.post('/get', verifyToken, C_TTAX0030A.select);
 router.post('/set', verifyToken, C_TTAX0030A.insert);
 router.post('/set/:insurance_uuid', verifyToken, C_TTAX0030A.update);
-router.get('/del/::insurance_uuid', verifyToken, C_TTAX0030A.delete);
+router.get('/del/:insurance_uuid', verifyToken, C_TTAX0030A.delete);
 
 router.post('/rate', verifyToken, InsuranceRateController.selectTop);
 

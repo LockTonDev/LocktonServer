@@ -1,13 +1,13 @@
 const logger = require('../config/winston');
 const { StatusCode, StatusMessage } = require('../utils/response');
 const { BadRequest } = require('../utils/errors');
-const M_TADV0040A = require('../models/M_TADV0040A');
+const M_TPAT0040A = require('../models/M_TPAT0040A');
 
 module.exports = {
   select: async function (req, res, next) {
     try {
       if (!req.params) throw new BadRequest(StatusMessage.BadRequestMeg);
-      const result = await M_TADV0040A.select(req);
+      const result = await M_TPAT0040A.select(req);
 
       if (result) {
         res.status(StatusCode.OK).json({
@@ -24,8 +24,8 @@ module.exports = {
     try {
       if (!req.body) throw new BadRequest(StatusMessage.BadRequestMeg);
 
-      const itemsData = await M_TADV0040A.selectList(req);
-      const countData = await M_TADV0040A.selectCount(req);
+      const itemsData = await M_TPAT0040A.selectList(req);
+      const countData = await M_TPAT0040A.selectCount(req);
 
       if (itemsData) {
         res.status(StatusCode.OK).json({
@@ -42,7 +42,7 @@ module.exports = {
     try {
       if (!req.body) throw new BadRequest(StatusMessage.BadRequestMeg);
 
-      const result = await M_TADV0040A.selectCount(req);
+      const result = await M_TPAT0040A.selectCount(req);
 
       if (result) {
         res.status(StatusCode.OK).json({
@@ -59,7 +59,7 @@ module.exports = {
     try {
       if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
 
-      const result = await M_TADV0040A.insert(req);
+      const result = await M_TPAT0040A.insert(req);
 
       if (result) {
         res.status(StatusCode.CREATED).json({
@@ -75,7 +75,7 @@ module.exports = {
   update: async function (req, res, next) {
     try {
       // if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
-      const result = await M_TADV0040A.update(req);
+      const result = await M_TPAT0040A.update(req);
 
       if (result) {
         res.status(StatusCode.CREATED).json({
@@ -90,7 +90,7 @@ module.exports = {
   delete: async function (req, res, next) {
     try {
       //if (!req.body.params) throw new BadRequest(StatusMessage.BadRequestMeg);
-      const result = await M_TADV0040A.delete(req);
+      const result = await M_TPAT0040A.delete(req);
 
       if (result) {
         res.status(StatusCode.CREATED).json({
