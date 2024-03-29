@@ -181,6 +181,7 @@ module.exports = Object.freeze({
     , A.insr_year
     , A.insr_st_dt
     , A.insr_cncls_dt
+    , A.insr_relief
     , A.insr_tot_amt
     , A.insr_tot_paid_amt
     , A.insr_tot_unpaid_amt
@@ -592,6 +593,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
             , A.insr_year
             , A.insr_st_dt
             , A.insr_cncls_dt
+            , A.insr_relief
             , A.insr_tot_amt
             , A.insr_tot_paid_amt
             , A.insr_tot_unpaid_amt
