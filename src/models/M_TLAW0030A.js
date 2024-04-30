@@ -17,7 +17,7 @@ module.exports = {
 
     const queryLAW0030A = `SELECT 
                       insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
-                      user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
+                      user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno, corp_ceo_nm,
                       corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
                       insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
                       insr_take_amt, insr_take_sec, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, insr_sale_year,
@@ -34,7 +34,7 @@ module.exports = {
 
     const queryLAW0031A = `SELECT 
           insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
-          user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno,
+          user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno, corp_ceo_nm,
           corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl, corp_region_cd, 
           insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, insr_retr_dt,
           insr_take_amt, insr_take_sec, insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, insr_sale_year,
@@ -540,7 +540,9 @@ module.exports = {
       }
       const [resultDataDup] = await db.query(queryDataDup, queryParamsDataDup);
       const [resultDataMbr] = await db.query(queryDataMbr, queryParamsDataMbr);
-      if (resultDataDup.length == 0 || resultDataMbr.length == 0) {
+      console.log(resultDataDup)
+      console.log(resultDataMbr)
+      if (resultDataDup.length == 0 || resultDataMbr.length == 0 || resultDataMbr[0].cnt == 0) {
         throw new NotFound(StatusMessage.SELECT_FAILED);
      }
 
