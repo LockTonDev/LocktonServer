@@ -13,6 +13,7 @@ module.exports = {
     ];
 
     const [rowsInsrInfo] = await db.query(CAAAdminMapper.INSURANCE_CAA_INFO, queryParams);
+    
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
     }

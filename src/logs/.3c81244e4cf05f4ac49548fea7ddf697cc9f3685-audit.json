@@ -1,0 +1,70 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 10000
+    },
+    "auditLog": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\.3c81244e4cf05f4ac49548fea7ddf697cc9f3685-audit.json",
+    "files": [
+        {
+            "date": 1714614786177,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-05-02.log",
+            "hash": "9fdc322b645d721ece89c9757c74eefe52363bf1266497cad4da953d53035c1a"
+        },
+        {
+            "date": 1714713927083,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-05-03.log",
+            "hash": "7d68a49ea9b14c59713740ee9bd524a096ca06a6ae5e3f5f2b7f7c400bc0bd7e"
+        },
+        {
+            "date": 1715135141310,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-05-08.log",
+            "hash": "34152fa7ab894555711c7fb56fc12958477a1bb89d1a51ac2c8633d98ab13b0e"
+        },
+        {
+            "date": 1715235841316,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-05-09.log",
+            "hash": "ef2d2170b1aeeb574e6661e26c41522ae7402e2792cb32e89f5e1f1404aab89e"
+        },
+        {
+            "date": 1715578677832,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-05-13.log",
+            "hash": "0b2c72404653adac6544c9b4d6e6876686972ae0379966c7fd396611324ecefe"
+        },
+        {
+            "date": 1716181725918,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-05-20.log",
+            "hash": "62b5c5f9e2c01522588144e693a23e973a10bbcc01bf418855d0ee817c8fbbb1"
+        },
+        {
+            "date": 1716255133873,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-05-21.log",
+            "hash": "c90a55eaad1f095f2b02a8289f876e803e418985d18f5720547e40f718174732"
+        },
+        {
+            "date": 1716432118349,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-05-23.log",
+            "hash": "d6726947189f447a92a1a2ba503a456ba9a6bdd744528ae1715c1dd93e93a72b"
+        },
+        {
+            "date": 1717125135804,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-05-31.log",
+            "hash": "fe7c3325faecd4aa14c746cc127eddd27b5965f2a3f8825137a7531d1db2ad33"
+        },
+        {
+            "date": 1717492385113,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-06-04.log",
+            "hash": "97f82cec32e875c481708b32068b7cdbabb757de818b2dad05d2ef37a5eb1a39"
+        },
+        {
+            "date": 1717997370756,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-06-10.log",
+            "hash": "62feb176eb299e4a7ba2277fc97e6d19e9cd7a0157c98d1fcb43dc9911c39424"
+        },
+        {
+            "date": 1718072858150,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\2024-06-11.log",
+            "hash": "72f05b8bba3739becfefb37dbc04e0579bfdb0f7ed5099352b8ce1b6624b24ba"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -85,6 +85,8 @@ module.exports = {
       params.insr_year,
       params.status_cd,
       params.status_cd,
+      params.renewal_cd,
+      params.renewal_cd,
       params.user_nm,
       params.user_nm,
     ];
@@ -96,6 +98,25 @@ module.exports = {
     return Object.setPrototypeOf(rowsInsrInfo, []);
   },
   
+  getLAWRenewalsExcel: async function (req) {
+    const params = req.body.params
+    logger.info(params)
+    const queryParams = [
+      params.business_cd,
+      params.user_cd,
+      params.insr_year,
+      params.status_cd,
+      params.status_cd,
+      params.user_nm,
+    ];
+
+    const [rowsInsrInfo] = await db.query(LAWVAdminMapper.INSURANCE_RENEWAL_EXCEL_LIST, queryParams);
+    if (rowsInsrInfo.affectedRows < 1) {
+      throw new NotFound(StatusMessage.SELECT_FAILED);
+    }
+    return Object.setPrototypeOf(rowsInsrInfo, []);
+  },
+
   setLAW: async function (req) {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
