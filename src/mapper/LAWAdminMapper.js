@@ -1048,6 +1048,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
         AND A.user_cd = ?
         AND (A.insr_year like CONCAT('%', ?, '%'))
         AND (? = '%' or A.status_cd = ?)
+        AND (? = '%' or A.renewal_cd = ?)
         AND (A.user_nm like CONCAT('%', ?, '%'))
       ORDER  BY A.created_at DESC 
   `,

@@ -962,6 +962,7 @@ VALUES      ( UUID_V4(),
       AND (A.insr_year like CONCAT('%', :insr_year, '%'))
       AND (:status_cd = '%' or A.status_cd = :status_cd)
       AND (A.user_nm like CONCAT('%', :user_nm, '%'))
+      AND (:renewal_cd = '%' or A.renewal_cd = :renewal_cd)
     ORDER  BY A.created_at DESC 
     `,
 
