@@ -176,7 +176,7 @@ module.exports = {
         });
       } else {
         const result = await M_TTAX0030A.insert(req);
-
+        await M_TTAX0030A.updateRenewalState(req);
         if (result) {
           try {
             // 1. 문자발송 - 보험가입[CS0210]

@@ -34,7 +34,8 @@ module.exports = {
   /**
    * 1. 보험목록 조회
    * 2. 신규가입 가능여부 조회
-   * 3. 갱신가입 UUID 조회
+   * 3. 갱신기간 조회
+   * 4. 갱신가입 UUID 조회
    *
    * @param {*} req
    * @returns
@@ -425,6 +426,21 @@ module.exports = {
   updateUserInfo: async function (params) {
     const result = await knexDB.raw(TTAX0030AMapper.UPDATE_INSURANCE_MAPPING_WITH_LOGIN_INFO, params);
 
+    return true;
+  },
+
+  updateRenewalState: async function (req) {
+    const user_uuid = req.decoded.uuid;
+    const params = req.body.params;
+   // const result = await knexDB.raw(TTAX0030AMapper.RENEWAL_STAT_UPDATE, params);
+
+    const query = `UPDATE TTAX0031A SET renewal_cd = 'Y' WHERE USER_UUID = ? AND INSR_YEAR= ?`;
+    const queryParams = [user_uuid, params.insr_year];
+    
+    logger.debug('updateRenewalState>>>'+queryParams);
+    logger.debug(query);
+    const [rows] = await db.queryWithTransaction(query, queryParams);
+    logger.debug('updateRenewalState rows >>>'+rows);
     return true;
   }
 };
