@@ -303,6 +303,12 @@ module.exports = {
     const resultData = await knexDB.raw(AdminMapper.INSURANCE_EXCEL_LIST, params);
     return resultData[0];
   },
+
+  getTAXRenewalExcel: async function (req) {
+    const { params } = req.body;
+    const resultData = await knexDB.raw(AdminMapper.INSURANCE_RENEWAL_EXCEL_LIST, params);
+    return resultData[0];
+  },
   /**
    *
    *
