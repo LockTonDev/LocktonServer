@@ -1,8 +1,0 @@
-2024-03-04 10:49:29 [debug] : ---------------------------------S query
-2024-03-04 10:49:29 [debug] : SQL : SELECT grp_cd, dtl_cd as value, dtl_nm as title, description as rmk FROM TCOM0011A
-2024-03-04 10:49:29 [debug] : ROWS : 
-2024-03-04 10:49:29 [debug] : 1---------------------------------E query
-
-
-2024-03-04 10:49:29 [info] : ::1 - - [04/Mar/2024:01:49:29 +0000] "POST /COMMON/code/all HTTP/1.1" 200 11024 "http://localhost:5000/admin/login" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
-
