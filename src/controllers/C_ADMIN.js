@@ -414,6 +414,40 @@ module.exports = {
       next(err);
     }
   },
+  
+  getTAXRenewalExcel: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN.getTAXRenewalExcel(req);
+
+      // result.map(row => {
+      //   row.user_birth = parseFloat(row.user_birth)
+      //   row.user_regno = parseFloat(row.user_regno)
+      //   row.insr_amt = parseFloat(row.insr_amt)
+      //   row.insr_tot_amt = parseFloat(row.insr_tot_amt)
+      //   row.insr_tot_paid_amt = parseFloat(row.insr_tot_paid_amt)
+      //   row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
+      //   row.insr_base_amt = parseFloat(row.insr_base_amt)
+      //   row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+      //   row.trx_data.map(trx=>{
+      //     trx.trx_amt = parseFloat(trx.trx_amt)
+      //   })
+      //   row.cbr_data.map(cbr=>{
+      //     cbr.insr_amt = parseFloat(cbr.insr_amt)
+      //   })
+      // })
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  
   getTAX_TRX: async function (req, res, next) {
     try {
       const result = await M_ADMIN.getTAX_TRX(req);
@@ -772,9 +806,11 @@ module.exports = {
 
   getCAA: async function (req, res, next) {
     try {
-      console.log(req)
       const result = await M_ADMIN_CAA.getCAA(req);
 
+      logger.info("CAAAdminMapper.result>>> ")
+      
+      logger.info(result)
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
@@ -1292,6 +1328,22 @@ module.exports = {
   getLAWRenewals: async function (req, res, next) {
     try {
       const result = await M_ADMIN_LAW.getLAWRenewals(req);
+      console.log("========================")
+      console.log(result)
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getLAWRenewalsExcel: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_LAW.getLAWRenewalsExcel(req);
       console.log("========================")
       console.log(result)
       if (result) {

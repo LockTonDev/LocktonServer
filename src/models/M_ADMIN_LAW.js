@@ -85,6 +85,8 @@ module.exports = {
       params.insr_year,
       params.status_cd,
       params.status_cd,
+      params.renewal_cd,
+      params.renewal_cd,
       params.user_nm,
       params.user_nm,
     ];
@@ -96,6 +98,27 @@ module.exports = {
     return Object.setPrototypeOf(rowsInsrInfo, []);
   },
   
+  getLAWRenewalsExcel: async function (req) {
+    const params = req.body.params
+    logger.info(params)
+    const queryParams = [
+      params.business_cd,
+      params.user_cd,
+      params.insr_year,
+      params.status_cd,
+      params.status_cd,
+      params.renewal_cd,
+      params.renewal_cd,
+      params.user_nm,
+    ];
+
+    const [rowsInsrInfo] = await db.query(LAWVAdminMapper.INSURANCE_RENEWAL_EXCEL_LIST, queryParams);
+    if (rowsInsrInfo.affectedRows < 1) {
+      throw new NotFound(StatusMessage.SELECT_FAILED);
+    }
+    return Object.setPrototypeOf(rowsInsrInfo, []);
+  },
+
   setLAW: async function (req) {
     const user_uuid = req.decoded.uuid;
     const params = req.body.params;
@@ -183,7 +206,7 @@ module.exports = {
           param.agr31_yn,param.agr32_yn,param.agr33_yn,param.agr34_yn,param.agr40_yn,
           param.agr41_yn,param.agr50_yn,param.status_cd,param.rmk, param.change_rmk,
           param.change_dt,param.created_id,param.created_ip,param.updated_id,
-          param.updated_ip,param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data),JSON.stringify(param.trx_data)
+          param.updated_ip,param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data),JSON.stringify(param.trx_data), param.renewal_cd
         ]
         querys.push(LAWVAdminMapper.INSERT_RENEWAL_LAW_INSURANCE)
         query_params.push(insert_params)
@@ -200,7 +223,7 @@ module.exports = {
           param.insr_pcnt_sale_rt, param.insr_base_amt, param.insr_amt, param.insr_tot_amt, param.insr_tot_paid_amt, param.insr_tot_unpaid_amt,
           param.cbr_cnt, JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data), param.spct_join_yn, JSON.stringify(param.spct_data), param.active_yn, 
           param.agr10_yn, param.agr20_yn, param.agr30_yn, param.agr31_yn, param.agr32_yn, param.agr33_yn, param.agr34_yn, param.agr40_yn,
-          param.agr41_yn, param.agr50_yn, param.status_cd, param.rmk, param.change_rmk, param.change_dt, param.updated_id, param.updated_ip, param.insurance_uuid 
+          param.agr41_yn, param.agr50_yn, param.status_cd, param.rmk, param.change_rmk, param.change_dt, param.updated_id, param.updated_ip, param.renewal_cd, param.insurance_uuid 
         ]
         querys.push(LAWVAdminMapper.UPDATE_RENEWAL_LAW_INSURANCE)
         query_params.push(update_params)

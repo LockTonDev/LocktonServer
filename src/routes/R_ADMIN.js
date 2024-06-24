@@ -27,6 +27,7 @@ router.post('/USER/set', verifyToken, C_ADMIN.setUserInfo);
 router.post('/USER/setUserPassword', verifyToken, C_ADMIN.setUserPassword);
 
 router.post('/TAX/EXCEL/get', verifyToken, C_ADMIN.getTAXExcel);
+router.post('/TAX/EXCEL/renewal/gets', verifyToken, C_ADMIN.getTAXRenewalExcel);
 
 router.post('/TAX/APPLY/set', verifyToken, C_ADMIN.setApplyInsurance);
 router.post('/TAX/APPLY/get', verifyToken, C_ADMIN.getApplyInsurance);
@@ -89,6 +90,7 @@ router.post('/LAW/gets', verifyToken, C_ADMIN.getLAWS);
 router.post('/LAW/renewal/set', verifyToken, C_ADMIN.setLAWRenewal);
 router.post('/LAW/renewal/get', verifyToken, C_ADMIN.getLAWRenewal);
 router.post('/LAW/renewal/gets', verifyToken, C_ADMIN.getLAWRenewals);
+router.post('/LAW/EXCEL/renewal/gets', verifyToken, C_ADMIN.getLAWRenewalsExcel); //getTAXRenewalExcel
 router.post('/LAW/TRX/set', verifyToken, C_ADMIN.setLAW_TRX);
 router.post('/LAW/TRX/get', verifyToken, C_ADMIN.getLAW_TRX);
 router.post('/LAW/APPLY/set', verifyToken, C_ADMIN.setApplyLAWInsurance);

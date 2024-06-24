@@ -133,6 +133,7 @@ module.exports = {
 
       } else {
         const result = await M_TLAW0030A.insert(req);
+        await M_TLAW0030A.updateRenewalState(req);
 
         if (result) {
           try {
