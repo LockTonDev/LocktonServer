@@ -42,7 +42,7 @@ module.exports = {
    */
   selectList: async function (req) {
     const params = { user_uuid: req.decoded.uuid };
-    
+
     const listData = await knexDB.raw(TTAX0030AMapper.INSURANCE_LIST, params);
     const newInsrData = await knexDB.raw(TTAX0030AMapper.INSURANCE_UUID_YN, params);
     const renewalInsrData = await knexDB.raw(TTAX0030AMapper.RENEWAL_INSURANCE_UUID, params);
