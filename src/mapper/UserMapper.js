@@ -50,6 +50,13 @@ module.exports = Object.freeze({
       WHERE user_id = :user_id
             AND business_cd = :business_cd
   `,
+  SELECT_USER_UUID: `
+      /* UserMapper.SELECT_USER_UUID */  
+      SELECT user_uuid
+       FROM tcom0110a
+      WHERE user_id = :user_id
+      AND business_cd = :business_cd
+  `,
   SELECT_EMAIL_AUTH: `
       /* UserMapper.SELECT_EMAIL_AUTH */  
       SELECT (SELECT user_uuid from tcom0110a where user_id = :user_id and business_cd = :business_cd) as user_uuid

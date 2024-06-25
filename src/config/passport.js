@@ -14,7 +14,7 @@ const localStrategyOption = {
   passwordField: 'user_pwd',
   passReqToCallback: true
 };
-console.log("JWT_SECRET_KEY:", process.env.JWT_SECRET_KEY);
+// console.log("JWT_SECRET_KEY:", process.env.JWT_SECRET_KEY);
 const jwtStrategyOption = {
   jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.JWT_SECRET_KEY

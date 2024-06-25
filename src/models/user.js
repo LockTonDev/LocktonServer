@@ -425,6 +425,20 @@ module.exports = {
 
     return null;
   },
+  getUserUUID: async function (params) {
+    //const params = req.body.params;
+    console.log(params.user_id)
+    const resultData = await knexDB.raw(UserMapper.SELECT_USER_UUID, params);
+    params.user_uuid = null;
+    
+    console.log(resultData);
+    console.log(resultData[0]);
+    if (resultData[0].length > 0) {
+      return resultData[0][0].user_uuid;
+    }
+
+    return resultData[0].user_uuid;
+  },
   isVerifyUserEMail_COR: async function (req) {
     const params = req.body.params;
     const resultData = await knexDB.raw(UserMapper.SELECT_USER_EMAIL_COR, params);
@@ -456,5 +470,45 @@ module.exports = {
     }
 
     return params;
-  }
+  },
+  updateTTAX0030a: async function (params) {
+    //const user_uuid = req?.decoded?.uuid;
+    //const params = req.body.params;
+
+    console.log('params.corp_cnno',params.corp_cnno)
+    console.log('params.user_regno',params.user_regno)
+    let query = 'update ttax0030a set user_uuid = ? where user_regno = ? and corp_cnno = ? ';
+    const queryParams = [params.user_uuid, params.user_regno, params.corp_cnno];
+
+    // if (typeof user_uuid !== 'undefined') {
+    //   query += ' and user_uuid != ?';
+    //   queryParams.push(user_uuid);
+    // }
+
+    const [rows] = await db.query(query, queryParams);
+
+    if (rows.length != 0) {
+      return false;
+    }
+    return true;
+  },
+  updateTTAX0031a: async function (params) {
+     //const user_uuid = req?.decoded?.uuid;
+    //  const params = req.body.params;
+
+     let query = 'update ttax0031a set user_uuid = ? where user_regno = ? and corp_cnno = ? ';
+     const queryParams = [params.user_uuid, params.user_regno, params.corp_cnno];
+ 
+     // if (typeof user_uuid !== 'undefined') {
+     //   query += ' and user_uuid != ?';
+     //   queryParams.push(user_uuid);
+     // }
+
+    const [rows] = await db.query(query, queryParams);
+
+    if (rows.length != 0) {
+      return false;
+    }
+    return true;
+  },
 };
