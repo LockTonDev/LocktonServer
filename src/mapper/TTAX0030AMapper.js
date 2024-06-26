@@ -114,6 +114,9 @@ module.exports = Object.freeze({
             , A.status_cd
             , B.insurance_no
             , FN_GET_CODENM('COM030', status_cd) AS status_nm
+            , B.use_yn
+            , B.rn_st_dt 
+            , B.rn_en_dt 
         FROM   TTAX0030A A
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
