@@ -1,0 +1,54 @@
+2024-06-17 17:22:51 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\getdr\AppData\Roaming\nvm\v20.7.0\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file D:\Dev\lockton\backend_nodejs\src\server.js --log "locktonserver wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-17 17:22:51 - Started 46944
+2024-06-17 17:23:01 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\getdr\AppData\Roaming\nvm\v20.7.0\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file D:\Dev\lockton\backend_nodejs\src\server.js --log "locktonserver wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-17 17:23:01 - Started 47984
+2024-06-17 17:26:05 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\getdr\AppData\Roaming\nvm\v20.7.0\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file D:\Dev\lockton\backend_nodejs\src\server.js --log "locktonserver wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-17 17:26:05 - Started 8976
+2024-06-17 17:35:54 - Stopping locktonserver.exe
+2024-06-17 17:35:54 - ProcessKill 8976
+2024-06-17 17:35:54 - Shutdown exception
+Message:시스템을 종료하고 있습니다.
+
+Stacktrace:   위치: System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   위치: System.Management.ManagementScope.InitializeGuts(Object o)
+   위치: System.Management.ManagementScope.Initialize()
+   위치: System.Management.ManagementObjectSearcher.Initialize()
+   위치: System.Management.ManagementObjectSearcher.Get()
+   위치: winsw.WrapperService.GetChildPids(Int32 pid)
+   위치: winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   위치: winsw.WrapperService.StopIt()
+   위치: winsw.WrapperService.OnShutdown()
+2024-06-17 17:36:21 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\getdr\AppData\Roaming\nvm\v20.7.0\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file D:\Dev\lockton\backend_nodejs\src\server.js --log "locktonserver wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-17 17:36:21 - Started 8832
+2024-06-25 13:43:46 - Stopping locktonserver.exe
+2024-06-25 13:43:46 - ProcessKill 8832
+2024-06-25 13:43:46 - Shutdown exception
+Message:시스템을 종료하고 있습니다.
+
+Stacktrace:   위치: System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   위치: System.Management.ManagementScope.InitializeGuts(Object o)
+   위치: System.Management.ManagementScope.Initialize()
+   위치: System.Management.ManagementObjectSearcher.Initialize()
+   위치: System.Management.ManagementObjectSearcher.Get()
+   위치: winsw.WrapperService.GetChildPids(Int32 pid)
+   위치: winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   위치: winsw.WrapperService.StopIt()
+   위치: winsw.WrapperService.OnShutdown()
+2024-06-25 13:44:17 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\getdr\AppData\Roaming\nvm\v20.7.0\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file D:\Dev\lockton\backend_nodejs\src\server.js --log "locktonserver wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-25 13:44:17 - Started 8284
+2024-06-27 09:44:45 - Stopping locktonserver.exe
+2024-06-27 09:44:45 - ProcessKill 8284
+2024-06-27 09:44:46 - Shutdown exception
+Message:시스템을 종료하고 있습니다.
+
+Stacktrace:   위치: System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   위치: System.Management.ManagementScope.InitializeGuts(Object o)
+   위치: System.Management.ManagementScope.Initialize()
+   위치: System.Management.ManagementObjectSearcher.Initialize()
+   위치: System.Management.ManagementObjectSearcher.Get()
+   위치: winsw.WrapperService.GetChildPids(Int32 pid)
+   위치: winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   위치: winsw.WrapperService.StopIt()
+   위치: winsw.WrapperService.OnShutdown()
+2024-06-27 09:45:14 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\getdr\AppData\Roaming\nvm\v20.7.0\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file D:\Dev\lockton\backend_nodejs\src\server.js --log "locktonserver wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2024-06-27 09:45:14 - Started 8580

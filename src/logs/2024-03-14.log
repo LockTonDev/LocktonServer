@@ -1,0 +1,296 @@
+2024-03-14 11:34:33 [info] : Server on port 3000 | run
+2024-03-14 11:35:50 [debug] : ---------------------------------S query
+2024-03-14 11:35:50 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and (status_cd not in ('90') || status_cd is null)
+2024-03-14 11:35:50 [debug] : ROWS : 
+2024-03-14 11:35:50 [debug] : 1---------------------------------E query
+
+
+2024-03-14 11:35:50 [error] : passport isAuth  : true
+2024-03-14 11:35:50 [debug] : ---------------------------------S query
+2024-03-14 11:35:50 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and (status_cd not in ('90') || status_cd is null)
+2024-03-14 11:35:50 [debug] : ROWS : 
+2024-03-14 11:35:50 [debug] : 1---------------------------------E query
+
+
+2024-03-14 11:35:50 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$RYqhgOTL.klk2Do7wakTDeWk6waGw7fmOFw9ZpCFIt1ljuC30PvQu",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 0,
+   "login_block_yn": "N"
+}
+2024-03-14 11:35:50 [info] : ::1 - - [14/Mar/2024:02:35:50 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 12:44:02 [debug] : ---------------------------------S query
+2024-03-14 12:44:02 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and (status_cd not in ('90') || status_cd is null)
+2024-03-14 12:44:02 [debug] : ROWS : 
+2024-03-14 12:44:02 [debug] : 1---------------------------------E query
+
+
+2024-03-14 12:44:02 [error] : passport isAuth  : true
+2024-03-14 12:44:02 [debug] : ---------------------------------S query
+2024-03-14 12:44:02 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and (status_cd not in ('90') || status_cd is null)
+2024-03-14 12:44:02 [debug] : ROWS : 
+2024-03-14 12:44:02 [debug] : 1---------------------------------E query
+
+
+2024-03-14 12:44:02 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$RYqhgOTL.klk2Do7wakTDeWk6waGw7fmOFw9ZpCFIt1ljuC30PvQu",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 0,
+   "login_block_yn": "N"
+}
+2024-03-14 12:44:02 [info] : ::1 - - [14/Mar/2024:03:44:02 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 13:15:25 [debug] : ---------------------------------S query
+2024-03-14 13:15:25 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and (status_cd not in ('90') || status_cd is null)
+2024-03-14 13:15:25 [debug] : ROWS : 
+2024-03-14 13:15:25 [debug] : 1---------------------------------E query
+
+
+2024-03-14 13:15:25 [error] : passport isAuth  : true
+2024-03-14 13:15:25 [debug] : ---------------------------------S query
+2024-03-14 13:15:25 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and (status_cd not in ('90') || status_cd is null)
+2024-03-14 13:15:25 [debug] : ROWS : 
+2024-03-14 13:15:25 [debug] : 1---------------------------------E query
+
+
+2024-03-14 13:15:25 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$RYqhgOTL.klk2Do7wakTDeWk6waGw7fmOFw9ZpCFIt1ljuC30PvQu",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 0,
+   "login_block_yn": "N"
+}
+2024-03-14 13:15:25 [info] : ::1 - - [14/Mar/2024:04:15:25 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 17:19:51 [debug] : ---------------------------------S query
+2024-03-14 17:19:51 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and (status_cd not in ('90') || status_cd is null)
+2024-03-14 17:19:51 [debug] : ROWS : 
+2024-03-14 17:19:51 [debug] : 1---------------------------------E query
+
+
+2024-03-14 17:19:51 [error] : passport isAuth  : true
+2024-03-14 17:19:51 [debug] : ---------------------------------S query
+2024-03-14 17:19:51 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and (status_cd not in ('90') || status_cd is null)
+2024-03-14 17:19:51 [debug] : ROWS : 
+2024-03-14 17:19:51 [debug] : 1---------------------------------E query
+
+
+2024-03-14 17:19:51 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$RYqhgOTL.klk2Do7wakTDeWk6waGw7fmOFw9ZpCFIt1ljuC30PvQu",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 0,
+   "login_block_yn": "N"
+}
+2024-03-14 17:19:51 [info] : ::1 - - [14/Mar/2024:08:19:51 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 17:32:09 [info] : ::1 - - [14/Mar/2024:08:32:09 +0000] "POST /auth/refresh HTTP/1.1" 200 466 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:22:42 [debug] : ---------------------------------S query
+2024-03-14 18:22:42 [debug] : SQL : SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and (status_cd not in ('90') || status_cd is null)
+2024-03-14 18:22:42 [debug] : ROWS : 
+2024-03-14 18:22:42 [debug] : 1---------------------------------E query
+
+
+2024-03-14 18:22:42 [error] : passport isAuth  : true
+2024-03-14 18:22:42 [debug] : ---------------------------------S query
+2024-03-14 18:22:42 [debug] : SQL : UPDATE TCOM0110A SET login_fail_cnt = 0
+                                            , login_block_yn = 'N'
+                         WHERE business_cd = 'ADM' and user_cd = 'IND' and user_id = 'Lkgf03g' and (status_cd not in ('90') || status_cd is null)
+2024-03-14 18:22:42 [debug] : ROWS : 
+2024-03-14 18:22:42 [debug] : 1---------------------------------E query
+
+
+2024-03-14 18:22:42 [debug] : {
+   "business_cd": "ADM",
+   "user_uuid": "8cd7e11d53a441169f638f18b0aac029",
+   "user_id": "Lkgf03g",
+   "user_pwd": "$2a$10$RYqhgOTL.klk2Do7wakTDeWk6waGw7fmOFw9ZpCFIt1ljuC30PvQu",
+   "user_nm": "윤자영",
+   "user_cd": "IND",
+   "user_birth": "",
+   "user_regno": "",
+   "corp_cnno": "",
+   "status_cd": "30",
+   "login_fail_cnt": 0,
+   "login_block_yn": "N"
+}
+2024-03-14 18:22:42 [info] : ::1 - - [14/Mar/2024:09:22:42 +0000] "POST /auth/signin HTTP/1.1" 200 556 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:33:46 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "5vvNdDaf4p_lwuMm46ERy"
+}
+2024-03-14 18:33:46 [info] : ::1 - - [14/Mar/2024:09:33:46 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:37:30 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "VFxOZLZ2NrzuKc4KSpAKo"
+}
+2024-03-14 18:37:30 [info] : ::1 - - [14/Mar/2024:09:37:30 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:38:14 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "ufO91tYWT0HS4X5sMmHup"
+}
+2024-03-14 18:38:14 [info] : ::1 - - [14/Mar/2024:09:38:14 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:43:58 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "tqY2BoPQe8NJM3qVCeYd-"
+}
+2024-03-14 18:43:58 [info] : ::1 - - [14/Mar/2024:09:43:58 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:44:27 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "AGLL3DzwCyxSNlgnaihWY"
+}
+2024-03-14 18:44:27 [info] : ::1 - - [14/Mar/2024:09:44:27 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:49:44 [info] : ::1 - - [14/Mar/2024:09:49:44 +0000] "POST /auth/refresh HTTP/1.1" 200 466 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:49:56 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "ldqFJcCQsg2cf5ueZTJ89"
+}
+2024-03-14 18:49:56 [info] : ::1 - - [14/Mar/2024:09:49:56 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:50:20 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "McmgaKHKAJTSs928pItlN"
+}
+2024-03-14 18:50:20 [info] : ::1 - - [14/Mar/2024:09:50:20 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:50:25 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "BRbwo_9Gb3WmC7lwTR35W"
+}
+2024-03-14 18:50:25 [info] : ::1 - - [14/Mar/2024:09:50:25 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:50:25 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "_Xh1AHYyI42NjhBpltSNe"
+}
+2024-03-14 18:50:25 [info] : ::1 - - [14/Mar/2024:09:50:25 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:51:19 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "VyjUAADiiY75L9jrkzXCZ"
+}
+2024-03-14 18:51:19 [info] : ::1 - - [14/Mar/2024:09:51:19 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:51:19 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "IX_u4rNjDrZUZlH441SDm"
+}
+2024-03-14 18:51:19 [info] : ::1 - - [14/Mar/2024:09:51:19 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:51:37 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "2CGAg4eJMcY9Ly8WsYOQb"
+}
+2024-03-14 18:51:37 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.SELECT_STOCK_START_DT_LIST */    \n      select date_format(start_dt, '%Y-%m-%d') as start_dt\n           , business_cd\n        from tcom0112a\n       where use_yn = 'Y';\n      ",
+   "bindings": [],
+   "options": {},
+   "__knexQueryUid": "5bZEsd6LS9o4ByAVLywlP"
+}
+2024-03-14 18:51:37 [info] : ::1 - - [14/Mar/2024:09:51:37 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:51:37 [info] : ::1 - - [14/Mar/2024:09:51:37 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
+2024-03-14 18:59:55 [debug] : {
+   "method": "raw",
+   "sql": "\n      /* AdminMapper.INSURANCE_LIST */  \n      SELECT A.insurance_uuid\n            , A.business_cd\n            , A.user_cd\n            , A.user_uuid\n            , A.user_nm\n            , A.user_id\n            , A.user_regno\n            , A.corp_cnno\n            , A.insr_year\n            , A.insr_st_dt\n            , A.insr_cncls_dt\n            , A.insr_tot_amt\n            , A.insr_tot_paid_amt\n            , A.insr_tot_unpaid_amt\n            , A.status_cd\n            , B.insurance_no\n            , B.insr_st_dt as base_insr_st_dt\n            , B.insr_cncls_dt as base_insr_cncls_dt\n            , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm\n            , FN_GET_CODENM('COM030', A.status_cd) AS status_nm\n            , FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm\n            FROM   TTAX0030A A\n      \t\t\tLEFT JOIN TCOM0030A B\n\t\t    ON A.insr_year = B.base_year \n\t\t    AND A.user_cd = B.user_cd \n\t\t    AND A.business_cd = B.business_cd\n      WHERE  A.business_cd =  ?\n         AND (? = '%' or A.user_cd = ?)\n         AND (? = '%' or A.insr_year = ?)\n         AND (? = '%' or A.status_cd = ?)\n         AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )\n        \n      ORDER  BY A.created_at DESC \n    ",
+   "bindings": [
+      "TAX",
+      "%",
+      "%",
+      "%",
+      "%",
+      "%",
+      "%",
+      "",
+      ""
+   ],
+   "options": {},
+   "__knexQueryUid": "7pSEIRnIY5JaAASksQbjw"
+}
+2024-03-14 18:59:58 [info] : ::1 - - [14/Mar/2024:09:59:58 +0000] "POST /ADM/TAX/gets HTTP/1.1" 200 6034613 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+
