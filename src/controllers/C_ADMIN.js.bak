@@ -60,7 +60,6 @@ module.exports = {
       next(err);
     }
   },
-  
   setApplyInsurance: async function (req, res, next) {
     try {
       const result = await M_ADMIN.setApplyInsurance(req);

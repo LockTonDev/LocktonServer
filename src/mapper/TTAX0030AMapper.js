@@ -11,8 +11,7 @@ module.exports = Object.freeze({
             WHEN COUNT(a.insurance_uuid) >= 1 THEN 'N'
             ELSE 'Y'
           END AS data
-      from
-        ttax0030a a
+      from ttax0030a a
       where
         a.user_uuid = :user_uuid
         and a.status_cd not in ('20', '40') -- 해지, 기간종료
@@ -115,6 +114,9 @@ module.exports = Object.freeze({
             , A.status_cd
             , B.insurance_no
             , FN_GET_CODENM('COM030', status_cd) AS status_nm
+            , B.use_yn
+            , B.rn_st_dt 
+            , B.rn_en_dt 
         FROM   TTAX0030A A
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
@@ -351,6 +353,11 @@ module.exports = Object.freeze({
 
     SELECT MAX(A.insurance_uuid) as data
       FROM ttax0031a A
+      join tcom0030a ta
+        on A.business_cd = ta.business_cd
+        and A.user_cd = ta.USER_CD
+        and a.insr_year = ta.base_year
+        and now() between CONCAT (ta.rn_st_dt,' 00:00:00') and CONCAT(ta.rn_en_dt,' 23:59:59')
       JOIN tcom0110a B
         ON A.business_cd = B.business_cd
         AND A.user_cd = B.USER_CD
@@ -531,7 +538,6 @@ module.exports = Object.freeze({
           and j.cbr_regno = :user_regno
           and t.insr_year = :insr_year
     `,
-
   /**
    * [명단DB] 회원 여부 조회
    *

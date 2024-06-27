@@ -523,7 +523,7 @@ module.exports = {
         param.trx_data = JSON.stringify(param.trx_data);
         param.cons_data = JSON.stringify(param.cons_data);
         param.spct_data = JSON.stringify(param.spct_data);
-       
+
         if (param.mode === 'C') await transaction.raw(AdminMapper.INSERT_RENEWAL_INSURANCE, param);
         else if (param.mode === 'U') await transaction.raw(AdminMapper.UPDATE_RENEWAL_INSURANCE, param);
         else if (param.mode === 'D') await transaction.raw(AdminMapper.DELETE_RENEWAL_INSURANCE, param);

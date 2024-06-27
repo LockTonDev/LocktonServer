@@ -20,8 +20,8 @@ router.post('/BOARD/ins', verifyToken, C_ADMIN.setInsertBoard);
 router.post('/BOARD/udt', verifyToken, C_ADMIN.setUpdateBoard);
 router.post('/BOARD/del', verifyToken, C_ADMIN.setDeleteBoard);
 
-router.post('/MASTER/getRenwalInsurance', verifyToken, C_ADMIN.getRenwalInsurance);
 
+router.post('/MASTER/getRenwalInsurance', verifyToken, C_ADMIN.getRenwalInsurance);
 router.post('/USER/setUserLoginBlockReset', verifyToken, C_ADMIN.setUserLoginBlockReset);
 router.post('/USER/get', verifyToken, C_ADMIN.getUserInfo);
 router.post('/USER/gets', verifyToken, C_ADMIN.getUserList);

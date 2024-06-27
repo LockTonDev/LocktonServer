@@ -167,7 +167,6 @@ module.exports = Object.freeze({
          AND (A.user_nm like CONCAT('%', :user_nm, '%'))
       ORDER  BY A.created_at DESC 
     `,
-
   /**
    * [보험DB] 목록 조회
    *
@@ -419,6 +418,7 @@ module.exports = Object.freeze({
              corp_cnno,
              corp_telno,
              corp_faxno,
+             corp_ceo_nm,
              corp_cust_nm,
              corp_cust_hpno,
              corp_cust_email,
@@ -492,6 +492,7 @@ VALUES      ( UUID_V4(),
               :corp_cnno,
               :corp_telno,
               :corp_faxno,
+              :corp_ceo_nm,
               :corp_cust_nm,
               :corp_cust_hpno,
               :corp_cust_email,
@@ -820,6 +821,8 @@ VALUES      ( UUID_V4(),
             ,B.insr_st_dt as base_insr_st_dt
             ,B.insr_cncls_dt as base_insr_cncls_dt
             ,B.insurance_no
+            ,A.renewal_cd
+            ,FN_GET_CODENM('COM032', A.renewal_cd) AS renewal_cd_nm
       FROM   TTAX0031A A
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
@@ -850,6 +853,8 @@ VALUES      ( UUID_V4(),
             , A.insr_tot_amt
             , A.status_cd
             , B.insurance_no
+            , A.renewal_cd
+            , FN_GET_CODENM('COM032', A.renewal_cd) AS renewal_cd_nm
             , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm
             , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
             , FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
@@ -862,8 +867,105 @@ VALUES      ( UUID_V4(),
          AND (:user_cd = '%' or A.user_cd = :user_cd)
          AND (:insr_year = '%' or A.insr_year = :insr_year)
          AND (:status_cd = '%' or A.status_cd = :status_cd)
+         AND (:renewal_cd = '%' or A.renewal_cd = :renewal_cd)
          AND ((A.user_nm like CONCAT('%', :user_nm, '%')) OR a.cbr_data like CONCAT('%', :user_nm, '%') )
       ORDER  BY A.created_at DESC 
+    `,
+    
+    /**
+       * [보험DB] 보험 갱신 데이터 조회 엑셀용
+       *
+       */
+    INSURANCE_RENEWAL_EXCEL_LIST: `
+    /* AdminMapper.INSURANCE_RENEWAL_EXCEL_LIST */    
+    SELECT A.insurance_uuid
+            ,A.insurance_seq
+            ,A.user_uuid
+            ,A.business_cd
+            ,A.user_cd
+            ,A.user_id
+            ,A.user_nm
+            ,A.user_birth
+            ,A.user_regno
+            ,A.renewal_cd
+            ,FN_GET_CODENM('COM032', A.renewal_cd) AS renewal_cd_nm
+            ,A.corp_type
+            ,A.corp_nm
+            ,A.corp_ceo_nm
+            ,A.corp_bnno
+            ,A.corp_cnno
+            ,A.corp_telno
+            ,A.corp_faxno
+            ,A.corp_cust_nm
+            ,A.corp_cust_hpno
+            ,A.corp_cust_email
+            ,A.corp_post
+            ,A.corp_addr
+            ,A.corp_addr_dtl
+            ,A.corp_region_cd
+            ,A.insr_year
+            ,A.insr_reg_dt
+            ,A.insr_st_dt
+            ,A.insr_cncls_dt
+            ,A.insr_retr_yn
+            ,A.insr_retr_dt
+            ,A.insr_pblc_brdn_rt
+            ,A.insr_clm_lt_amt
+            ,A.insr_year_clm_lt_amt
+            ,A.insr_psnl_brdn_amt
+            ,A.insr_sale_year
+            ,A.insr_sale_rt
+            ,A.insr_pcnt_sale_rt
+            ,A.insr_base_amt
+            ,A.insr_amt
+            ,A.insr_tot_amt
+            ,A.insr_tot_paid_amt
+            ,A.insr_tot_unpaid_amt
+            ,A.cons_join_yn
+            ,A.cons_data
+            ,A.spct_join_yn
+            ,A.spct_data
+            ,A.cbr_data
+            ,A.cbr_cnt
+            ,A.trx_data
+            ,A.active_yn
+            ,A.agr10_yn
+            ,A.agr20_yn
+            ,A.agr30_yn
+            ,A.agr31_yn
+            ,A.agr32_yn
+            ,A.agr33_yn
+            ,A.agr34_yn
+            ,A.agr40_yn
+            ,A.agr41_yn
+            ,A.agr50_yn
+            ,A.status_cd
+            ,A.rmk
+            ,A.change_rmk
+            ,A.change_dt
+            ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
+            ,FN_GET_CODENM('TAX001', A.corp_region_cd) AS corp_region_nm
+            ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1
+            ,FN_GET_SPLIT(A.corp_telno, '-', 2) as corp_telno2
+            ,FN_GET_SPLIT(A.corp_telno, '-', 3) as corp_telno3
+            ,FN_GET_SPLIT(A.corp_faxno, '-', 1) as corp_faxno1
+            ,FN_GET_SPLIT(A.corp_faxno, '-', 2) as corp_faxno2
+            ,FN_GET_SPLIT(A.corp_faxno, '-', 3) as corp_faxno3
+            ,B.insr_st_dt as base_insr_st_dt
+            ,B.insr_cncls_dt as base_insr_cncls_dt
+            ,B.insurance_no
+        FROM TTAX0031A A
+        LEFT JOIN TCOM0030A B
+      ON A.insr_year = B.base_year 
+      AND A.user_cd = B.user_cd 
+      AND A.business_cd = B.business_cd
+    WHERE  A.business_cd = :business_cd
+      AND A.user_cd = :user_cd
+      AND (A.insr_year like CONCAT('%', :insr_year, '%'))
+      AND (:status_cd = '%' or A.status_cd = :status_cd)
+      AND (A.user_nm like CONCAT('%', :user_nm, '%'))
+      AND (:renewal_cd = '%' or A.renewal_cd = :renewal_cd)
+    ORDER  BY A.created_at DESC 
     `,
 
   /**
@@ -888,6 +990,7 @@ VALUES      ( UUID_V4(),
              corp_cnno,
              corp_telno,
              corp_faxno,
+             corp_ceo_nm,
              corp_cust_nm,
              corp_cust_hpno,
              corp_cust_email,
@@ -940,7 +1043,8 @@ VALUES      ( UUID_V4(),
              spct_data,
              cbr_cnt,
              cbr_data,
-             trx_data)
+             trx_data,
+             renewal_cd)
 VALUES      ( UUID_V4(),
               1,
               :user_uuid,
@@ -957,6 +1061,7 @@ VALUES      ( UUID_V4(),
               :corp_cnno,
               :corp_telno,
               :corp_faxno,
+              :corp_ceo_nm,
               :corp_cust_nm,
               :corp_cust_hpno,
               :corp_cust_email,
@@ -1009,7 +1114,8 @@ VALUES      ( UUID_V4(),
               :spct_data,
               :cbr_cnt,
               :cbr_data,
-              :trx_data ) 
+              :trx_data,
+              'N' ) 
     `,
 
   /**
@@ -1081,7 +1187,8 @@ VALUES      ( UUID_V4(),
           change_dt = :change_dt,
           updated_at = Now(),
           updated_id = :updated_id,
-          updated_ip = :updated_ip
+          updated_ip = :updated_ip,
+          renewal_cd = :renewal_cd
     WHERE  insurance_uuid = :insurance_uuid
     `,
 
