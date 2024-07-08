@@ -515,7 +515,6 @@ module.exports = {
   getRenewals: async function (req, res, next) {
     try {
       const result = await M_ADMIN.getRenewals(req);
-      console.log("========================")
       console.log(result)
       if (result) {
         res.status(StatusCode.OK).json({
@@ -680,8 +679,6 @@ module.exports = {
   getADVRenewals: async function (req, res, next) {
     try {
       const result = await M_ADMIN_ADV.getADVRenewals(req);
-      console.log("========================")
-      console.log(result)
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
@@ -892,8 +889,6 @@ module.exports = {
   getCAARenewals: async function (req, res, next) {
     try {
       const result = await M_ADMIN_CAA.getCAARenewals(req);
-      console.log("========================")
-      console.log(result)
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
@@ -1121,8 +1116,6 @@ module.exports = {
   getPATRenewals: async function (req, res, next) {
     try {
       const result = await M_ADMIN_PAT.getPATRenewals(req);
-      console.log("========================")
-      console.log(result)
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
@@ -1345,8 +1338,6 @@ module.exports = {
   getLAWRenewals: async function (req, res, next) {
     try {
       const result = await M_ADMIN_LAW.getLAWRenewals(req);
-      console.log("========================")
-      console.log(result)
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
@@ -1361,8 +1352,6 @@ module.exports = {
   getLAWRenewalsExcel: async function (req, res, next) {
     try {
       const result = await M_ADMIN_LAW.getLAWRenewalsExcel(req);
-      console.log("========================")
-      console.log(result)
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,

@@ -6,5 +6,6 @@ const C_COMMON = require('../controllers/C_COMMON');
 
 router.post('/code/get', C_COMMON.getCode);
 router.post('/code/all', C_COMMON.getCodeALL);
+router.post('/code/getStockStartDtByBusinessCd', C_COMMON.getStockStartDtByBusinessCd);
 
 module.exports = router;

@@ -16,3 +16,9 @@ JWT_SECRET_KEY: 5BAEFDB5-1DBA-418E-B224-51559EFC3098
 2024-06-25 13:44:21 [[32minfo[39m] : [32mServer on port 3000 | run[39m
 JWT_SECRET_KEY: 5BAEFDB5-1DBA-418E-B224-51559EFC3098
 2024-06-27 09:45:18 [[32minfo[39m] : [32mServer on port 3000 | run[39m
+2024-06-27 11:57:20 [[31merror[39m] : [31mPASSPORT localVerify Error :  connect ETIMEDOUT[39m
+2024-06-27 11:57:20 [[31merror[39m] : [31m>> [39m
+2024-06-27 11:57:20 [[32minfo[39m] : [32m::1 - - [27/Jun/2024:02:57:20 +0000] "POST /auth/signin HTTP/1.1" 500 47 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"[39m
+[32m[39m
+2024-06-27 12:10:00 [[32minfo[39m] : [32mServer on port 3000 | run[39m
+2024-06-27 12:11:23 [[32minfo[39m] : [32mServer on port 3000 | run[39m

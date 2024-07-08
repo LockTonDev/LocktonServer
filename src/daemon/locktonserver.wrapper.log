@@ -52,3 +52,17 @@ Stacktrace:   위치: System.Runtime.InteropServices.Marshal.ThrowExceptionForHR
    위치: winsw.WrapperService.OnShutdown()
 2024-06-27 09:45:14 - Starting C:\Program Files\nodejs\node.exe  --harmony C:\Users\getdr\AppData\Roaming\nvm\v20.7.0\node_modules\qckwinsvc\node_modules\node-windows\lib\wrapper.js --file D:\Dev\lockton\backend_nodejs\src\server.js --log "locktonserver wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
 2024-06-27 09:45:14 - Started 8580
+2024-06-27 12:11:58 - Stopping locktonserver.exe
+2024-06-27 12:11:58 - ProcessKill 8580
+2024-06-27 12:11:58 - Found child process: 8592 Name: conhost.exe
+2024-06-27 12:11:58 - Found child process: 8472 Name: node.exe
+2024-06-27 12:11:58 - Stopping process 8592
+2024-06-27 12:11:58 - Send SIGINT 8592
+2024-06-27 12:11:58 - SIGINT to 8592 failed - Killing as fallback
+2024-06-27 12:11:58 - Stopping process 8472
+2024-06-27 12:11:58 - Send SIGINT 8472
+2024-06-27 12:11:58 - SIGINT to 8472 failed - Killing as fallback
+2024-06-27 12:11:58 - Stopping process 8580
+2024-06-27 12:11:58 - Send SIGINT 8580
+2024-06-27 12:11:58 - SIGINT to 8580 failed - Killing as fallback
+2024-06-27 12:11:58 - Finished locktonserver.exe

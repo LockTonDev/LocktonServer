@@ -35,5 +35,38 @@ module.exports = {
     } catch (err) {
       next(err);
     }
-  }
+  },
+  getStockStartDtInfo: async function (req, res, next) {
+    try {
+      logger.debug(req.body);
+      const result = await M_COMMON.getStockStartDtInfo(req.body.params);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  getStockStartDtByBusinessCd: async function (req, res, next) {
+    try {
+      logger.debug(req.body);
+      const result = await M_COMMON.getStockStartDtByBusinessCd(req.body.params);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
 };

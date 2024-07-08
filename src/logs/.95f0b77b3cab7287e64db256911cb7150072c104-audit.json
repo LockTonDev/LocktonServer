@@ -234,6 +234,46 @@
             "date": 1719448684876,
             "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-06-27.log",
             "hash": "d4a14bb712e7befd3cec1b8e708c94dad3c1fc9476eae86f14029637ca6dd625"
+        },
+        {
+            "date": 1719532530983,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-06-28.log",
+            "hash": "1ec14436ebce1db7912731a9986284a919c4b98802562f30c1aa552086eac97c"
+        },
+        {
+            "date": 1719796802026,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-01.log",
+            "hash": "c56a6bb33dec6cbf43bfd2e18b5f216c4d6a7ec972d8b1c0a538937360239e35"
+        },
+        {
+            "date": 1719869184361,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-02.log",
+            "hash": "97c7e66aa9e0077c16aa415dd49c2d9e89622231cd4d8f407310c18c908ab11d"
+        },
+        {
+            "date": 1719963624650,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-03.log",
+            "hash": "4de2b5abd1b7768cc648826c12b7e47c8325a23e3e779fd5c9f22131f22705aa"
+        },
+        {
+            "date": 1720050758688,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-04.log",
+            "hash": "e1fb5d096659b6379a8ced58614533014ce61f3283df18d95d2a794f5c1d8226"
+        },
+        {
+            "date": 1720141571239,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-05.log",
+            "hash": "4ad3ccf1bab5702f8efa4937803325e89af251c3dc30e27eb4ab991fb726f24d"
+        },
+        {
+            "date": 1720324994832,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-07.log",
+            "hash": "25107c7b0c6ee4059b17b4367cb159865b7cbdc84cbe921702aa78656f79f20e"
+        },
+        {
+            "date": 1720403243456,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-08.log",
+            "hash": "f2e8b04de0bc2a4003f2f1ce23de8025ab9309e604935ae59d6567b07294e329"
         }
     ],
     "hashType": "sha256"

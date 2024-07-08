@@ -219,6 +219,46 @@
             "date": 1719448684883,
             "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-06-27_error.log",
             "hash": "0c47f079f4c2944680cc2645f4ec019e7a0d80c40ed2824e7de765b19799e986"
+        },
+        {
+            "date": 1719532531039,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-06-28_error.log",
+            "hash": "a32b46082787ff671884b61bfbbce20c0ec388cd2708a499884c94be7771a091"
+        },
+        {
+            "date": 1719796802098,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-07-01_error.log",
+            "hash": "0d13137d6f025b626b216f85f83b801299cd84e0bdad47f4bb4f92ca920c5856"
+        },
+        {
+            "date": 1719869184418,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-07-02_error.log",
+            "hash": "605f975612fa92e6a671fe9e8f93daa72deb596b24b77e54ab9c8a0a86f17ceb"
+        },
+        {
+            "date": 1719963624709,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-07-03_error.log",
+            "hash": "72ca93fe628061a8d3e9f6e00915feee7504633845079d0c58750407f8185942"
+        },
+        {
+            "date": 1720050758749,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-07-04_error.log",
+            "hash": "d7a23cec8ad75b5e301dca78b4b565ea294d8da265feed7fa124eaa9e60d4dbd"
+        },
+        {
+            "date": 1720141571299,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-07-05_error.log",
+            "hash": "ea958f1b36c37d6b4a513b71619fc456de4e8f74be83798451a887210bf3eef1"
+        },
+        {
+            "date": 1720324994891,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-07-07_error.log",
+            "hash": "22a21426dc034f6d0b29e7e9983b1c86f4798e7d9ddbe621725ecb9e3e496fb7"
+        },
+        {
+            "date": 1720403251731,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-07-08_error.log",
+            "hash": "062cd3e39eab85e71f6607df3508c3c44bdae857204047789a222078c66d3b5f"
         }
     ],
     "hashType": "sha256"

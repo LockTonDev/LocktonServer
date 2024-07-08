@@ -343,6 +343,8 @@ module.exports = {
       transaction = await knexDB.transaction();
 
       for (const param of params) {
+        //총입금액이 '' 일경우 오류, null로 변경 2024-07-04
+        if(param.insr_tot_paid_amt == '') param.insr_tot_paid_amt = null
         param.trx_data = JSON.stringify(param.trx_data);
         await transaction.raw(AdminMapper.UPDATE_INSURANCE_TRX_DATA, param);
         nCnt++;
@@ -352,6 +354,7 @@ module.exports = {
       if (transaction) {
         await transaction.rollback();
       }
+      console.log(error)
       logger.error(error);
       throw new NotFound(StatusMessage.UPDATE_FAILED);
     }

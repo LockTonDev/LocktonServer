@@ -78,5 +78,23 @@ module.exports = {
       throw new NotFound(StatusMessage.DELETE_FAILED);
     }
     return result.affectedRows;
-  }
+  },
+
+  async getStockStartDtByBusinessCd(params) {
+    logger.debug(params);
+    const query = `select date_format(start_dt, '%Y-%m-%d') as start_dt
+                        , business_cd
+                   from tcom0112a
+                   where use_yn = 'Y'
+                     and business_cd = ?
+                   order by start_dt desc
+                     limit 1
+    `;
+    const [rows] = await db.query(query, params.business_cd);
+    if (rows.length === 0) {
+      throw new NotFound(StatusMessage.NOT_FOUND);
+    }
+    return rows[0];
+  },
+
 };
