@@ -434,8 +434,8 @@ module.exports = {
     const params = req.body.params;
    // const result = await knexDB.raw(TTAX0030AMapper.RENEWAL_STAT_UPDATE, params);
 
-    const query = `UPDATE TTAX0031A SET renewal_cd = 'Y' WHERE USER_UUID = ? AND INSR_YEAR= ?`;
-    const queryParams = [user_uuid, params.insr_year];
+    const query = `UPDATE TTAX0031A SET renewal_cd = 'Y' WHERE USER_REGNO = ? AND INSR_YEAR= ?`;
+    const queryParams = [params.user_regno, params.insr_year];
     
     logger.debug('updateRenewalState>>>'+queryParams);
     logger.debug(query);
