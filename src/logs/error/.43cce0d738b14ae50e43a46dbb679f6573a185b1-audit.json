@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 10000
+    },
+    "auditLog": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\error\\.43cce0d738b14ae50e43a46dbb679f6573a185b1-audit.json",
+    "files": [
+        {
+            "date": 1719368218323,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\error\\2024-06-26_error.log",
+            "hash": "2c1b474a769e6c67831ae630c274285187eab32e97c73acebe0bad6f560e62d4"
+        },
+        {
+            "date": 1720499491753,
+            "name": "C:\\Users\\naran\\OneDrive\\바탕 화면\\LOCKTON\\LocktonServer\\src\\logs\\error\\2024-07-09_error.log",
+            "hash": "51efb158a59249bffac6c5c9f5b84abb6e3bf472e44aa405df5d70de8001622f"
+        }
+    ],
+    "hashType": "sha256"
+}
