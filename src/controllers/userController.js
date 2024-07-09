@@ -17,22 +17,38 @@ module.exports = {
       // 회원가입 저장
       const result = await User.insert(req.body.params);
 
-      if(req.body.params.business_cd=='TAX'){
-        
-        //uuid 조회
-        const user_uuid = await User.getUserUUID(req.body.params);
-        req.body.params.user_uuid = user_uuid;
+      //uuid 조회
+      const user_uuid = await User.getUserUUID(req.body.params);
+      req.body.params.user_uuid = user_uuid;
+      let contractTable = "";
+      let renewalTable = "";
+      if(req.body.params.business_cd=='TAX' || req.body.params.business_cd=='ACC' ){
 
-        //갱신 테이블 업데이트
-        const res0030 = await User.updateTTAX0030a(req.body.params);
+        contractTable = "ttax0030a";
+        renewalTable = "ttax0031a";
 
-        //계약관리 테이블 업데이트
-        const res0031 = await User.updateTTAX0031a(req.body.params);
-
-        console.log('res0030',res0030)
-        console.log('res0030',res0031)
+      } else if(req.body.params.business_cd=='ADV' ) {
+        contractTable = "tadv0030a";
+        renewalTable = "tadv0031a";
+      } else if(req.body.params.business_cd=='CAA' ) {
+        contractTable = "tcaa0030a";
+        renewalTable = "tcaa0031a";
+      } else if(req.body.params.business_cd=='LAW' ) {
+        contractTable = "tlaw0030a";
+        renewalTable = "tlaw0031a";
+      } else if(req.body.params.business_cd=='PAT' ) {
+        contractTable = "tpat0030a";
+        renewalTable = "tpat0031a";
       }
-      
+
+      //계약관리 테이블 업데이트
+      const res0030 = await User.updateContract0030a(req.body.params,contractTable);
+
+      //갱신 테이블 업데이트
+      const res0031 = await User.updateRenewal0031a(req.body.params,renewalTable);
+
+     // console.log('res0030',res0030)
+     // console.log('res0030',res0031)
 
       if (result) {
         // 메일발송 - CM0100 / [록톤코리아] 회원가입이 완료되었습니다.

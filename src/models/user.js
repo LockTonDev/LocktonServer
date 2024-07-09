@@ -471,13 +471,13 @@ module.exports = {
 
     return params;
   },
-  updateTTAX0030a: async function (params) {
+  updateContract0030a: async function (params,tableName) {
     //const user_uuid = req?.decoded?.uuid;
     //const params = req.body.params;
 
-    console.log('params.corp_cnno',params.corp_cnno)
-    console.log('params.user_regno',params.user_regno)
-    let query = 'update ttax0030a set user_uuid = ? where user_regno = ? and corp_cnno = ? ';
+    //console.log('params.corp_cnno',params.corp_cnno)
+    //console.log('params.user_regno',params.user_regno)
+    let query = 'update '+tableName+' set user_uuid = ? where user_regno = ? and corp_cnno = ? ';
     const queryParams = [params.user_uuid, params.user_regno, params.corp_cnno];
 
     // if (typeof user_uuid !== 'undefined') {
@@ -492,12 +492,12 @@ module.exports = {
     }
     return true;
   },
-  updateTTAX0031a: async function (params) {
+  updateRenewal0031a: async function (params,tableName) {
      //const user_uuid = req?.decoded?.uuid;
     //  const params = req.body.params;
 
-     let query = 'update ttax0031a set user_uuid = ? where user_regno = ? and corp_cnno = ? ';
-     const queryParams = [params.user_uuid, params.user_regno, params.corp_cnno];
+     let query = 'update '+tableName+' set user_uuid = ? where user_regno = ? and corp_cnno = ? and business_cd = ? ';
+     const queryParams = [params.user_uuid, params.user_regno, params.corp_cnno, params.business_cd];
  
      // if (typeof user_uuid !== 'undefined') {
      //   query += ' and user_uuid != ?';
