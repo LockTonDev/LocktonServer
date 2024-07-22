@@ -1,5 +1,6 @@
 const authController = require('../controllers/authController');
 const C_ADMIN = require('../controllers/C_ADMIN');
+const C_ADMIN_MASTER = require('../controllers/C_ADMIN_MASTER');
 const passport = require('passport');
 const express = require('express');
 const router = new express.Router();
@@ -19,8 +20,6 @@ router.post('/BOARD/gets', verifyToken, C_ADMIN.getBoardList);
 router.post('/BOARD/ins', verifyToken, C_ADMIN.setInsertBoard);
 router.post('/BOARD/udt', verifyToken, C_ADMIN.setUpdateBoard);
 router.post('/BOARD/del', verifyToken, C_ADMIN.setDeleteBoard);
-
-router.post('/MASTER/getRenwalInsurance', verifyToken, C_ADMIN.getRenwalInsurance);
 
 router.post('/USER/setUserLoginBlockReset', verifyToken, C_ADMIN.setUserLoginBlockReset);
 router.post('/USER/get', verifyToken, C_ADMIN.getUserInfo);
@@ -98,5 +97,11 @@ router.post('/LAW/TRX/get', verifyToken, C_ADMIN.getLAW_TRX);
 router.post('/LAW/APPLY/set', verifyToken, C_ADMIN.setApplyLAWInsurance);
 router.post('/LAW/APPLY/get', verifyToken, C_ADMIN.getApplyLAWInsurance);
 router.post('/LAW/EXCEL/get', verifyToken, C_ADMIN.getLAWExcel);
+
+router.post('/MASTER/getRenwalInsurance', verifyToken, C_ADMIN.getRenwalInsurance);
+router.post('/MASTER/insurance', verifyToken, C_ADMIN_MASTER.getInsuranceMaster);
+router.post('/MASTER/insurance/set', verifyToken, C_ADMIN_MASTER.setInsuranceMaster);
+router.post('/MASTER/insurance/chkDup', verifyToken, C_ADMIN_MASTER.chkDupInsuranceMaster);
+router.post('/MASTER/insurance/chgInsuranceNo', verifyToken, C_ADMIN_MASTER.chgInsuranceNo);
 
 module.exports = router;

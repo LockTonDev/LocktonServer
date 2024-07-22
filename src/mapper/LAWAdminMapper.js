@@ -92,8 +92,6 @@ module.exports = Object.freeze({
             ,A.user_nm
             ,A.user_birth
             ,A.user_regno
-            ,A.renewal_cd
-            ,FN_GET_CODENM('COM032', A.renewal_cd) AS renewal_cd_nm
             ,A.corp_type
             ,A.corp_nm
             ,A.corp_ceo_nm
@@ -118,6 +116,7 @@ module.exports = Object.freeze({
             ,A.insr_take_sec
             ,A.insr_clm_lt_amt
             ,A.insr_year_clm_lt_amt
+            ,A.org_insr_year_clm_lt_amt
             ,A.insr_psnl_brdn_amt
             ,A.insr_sale_year
             ,A.insr_sale_rt
@@ -243,6 +242,7 @@ module.exports = Object.freeze({
   ,A.insr_take_amt
   ,A.insr_take_sec
   ,A.insr_clm_lt_amt
+  ,A.org_insr_year_clm_lt_amt
   ,A.insr_year_clm_lt_amt
   ,A.insr_psnl_brdn_amt
   ,A.insr_sale_year
@@ -467,7 +467,8 @@ LIMIT  1
              spct_data,
              cbr_cnt,
              cbr_data,
-             trx_data)
+             trx_data,
+             org_insr_year_clm_lt_amt)
 VALUES      ( UUID_V4(), ?, ?, ?, ?, 
               ?, ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
@@ -481,7 +482,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, now(), ?, ?, 
-              now(), ?, ?, ?, ?, ?) 
+              now(), ?, ?, ?, ?, ?, ?) 
     `,
 
   /**
@@ -557,7 +558,8 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
           change_dt = ?,
           updated_at = Now(),
           updated_id = ?,
-          updated_ip = ?
+          updated_ip = ?,
+          org_insr_year_clm_lt_amt = ?
     WHERE  insurance_uuid = ?
     `,
 
@@ -708,6 +710,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     ,A.insr_take_sec
     ,A.insr_clm_lt_amt
     ,A.insr_year_clm_lt_amt
+    ,A.org_insr_year_clm_lt_amt
     ,A.insr_psnl_brdn_amt
     ,A.insr_sale_year
     ,A.insr_sale_rt
@@ -793,7 +796,6 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
   WHERE  A.business_cd = ?
   AND (? = '%' or A.user_cd = ?)
   AND (? = '%' or A.insr_year = ?)
-  AND (? = '%' or A.status_cd = ?)
   AND (? = '%' or A.renewal_cd = ?)
   AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )
   ORDER  BY A.created_at DESC 
@@ -815,6 +817,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
              user_regno,
              corp_type,
              corp_nm,
+             corp_ceo_nm,
              corp_bnno,
              corp_cnno,
              corp_telno,
@@ -872,9 +875,10 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
              cbr_cnt,
              cbr_data,
              trx_data,
-             renewal_cd)
+             renewal_cd,
+             org_insr_year_clm_lt_amt)
 VALUES      ( UUID_V4(), ?, ?, ?, ?,
-              ?, ?, ?, ?, ?, ?,
+              ?, ?, ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
@@ -885,7 +889,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, now(), ?,
-              ?, now(), ?, ?, ?, ?, ?, ?)
+              ?, now(), ?, ?, ?, ?, ?, ?, ?)
     `,
 
   /**
@@ -958,7 +962,8 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
           updated_at = Now(),
           updated_id = ?,
           updated_ip = ?,
-          renewal_cd = ?
+          renewal_cd = ?,
+          org_insr_year_clm_lt_amt = ?
     WHERE  insurance_uuid = ?
     `,
 
@@ -996,6 +1001,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
         ,A.insr_take_sec
         ,A.insr_clm_lt_amt
         ,A.insr_year_clm_lt_amt
+        ,A.org_insr_year_clm_lt_amt
         ,A.insr_psnl_brdn_amt
         ,A.insr_sale_year
         ,A.insr_sale_rt
@@ -1047,9 +1053,8 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
       WHERE  A.business_cd = ?
         AND A.user_cd = ?
         AND (A.insr_year like CONCAT('%', ?, '%'))
-        AND (? = '%' or A.status_cd = ?)
         AND (? = '%' or A.renewal_cd = ?)
-        AND (A.user_nm like CONCAT('%', ?, '%'))
+        AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )
       ORDER  BY A.created_at DESC 
   `,
   /**

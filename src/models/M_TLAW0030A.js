@@ -143,8 +143,15 @@ module.exports = {
       select
         A.insurance_uuid as data, A.insr_year
       from
-        tlaw0031a A,
-        tcom0110a B
+        tlaw0031a A
+      join tcom0030a ta
+        on A.business_cd = ta.business_cd
+        and A.user_cd = ta.USER_CD
+        and a.insr_year = ta.base_year
+        and now() between CONCAT (ta.rn_st_dt,' 00:00:00') and CONCAT(ta.rn_en_dt,' 23:59:59')
+      JOIN tcom0110a B
+        ON A.business_cd = B.business_cd
+        AND A.user_cd = B.USER_CD
       where
         A.business_cd = B.business_cd
         and (
@@ -169,7 +176,6 @@ module.exports = {
             order by
               C.base_year desc,
               C.ver desc
-           
         ) limit 1;
     `;
 
@@ -636,7 +642,7 @@ module.exports = {
                       insr_tot_paid_amt, insr_tot_unpaid_amt, cbr_cnt, cbr_data,
                       trx_data, spct_join_yn, spct_data, active_yn, agr10_yn,
                       agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
-                      agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip
+                      agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip ,org_insr_year_clm_lt_amt
                     ) VALUES (
                       UUID_V4() , ?, ?, ?, ?, ?
                       , ?, ?, ?, ?, ?, ?, ?
@@ -650,7 +656,7 @@ module.exports = {
                       , ?, ?, ?, ?, ?
                       , ?, ?, ?, ?, ?
                       , ?, ?, ?, ?, ?
-                      , ?, ?, ?, ?, ?
+                      , ?, ?, ?, ?, ?, ?
                     )`;
 
     const queryParams = [
@@ -720,7 +726,8 @@ module.exports = {
       params.created_id,
       params.created_ip,
       params.updated_id,
-      params.updated_ip
+      params.updated_ip,
+      params.org_insr_year_clm_lt_amt
     ];
     logger.debug(queryParams);
     const [rows] = await db.queryWithTransaction(query, queryParams);
@@ -834,6 +841,7 @@ module.exports = {
                     insr_take_sec = ?,
                     insr_clm_lt_amt = ?,
                     insr_year_clm_lt_amt = ?,
+                    org_insr_year_clm_lt_amt = ?,
                     insr_psnl_brdn_amt = ?,
                     insr_sale_rt = ?,
                     insr_relief = ?,
@@ -981,6 +989,7 @@ module.exports = {
         params.insr_take_sec,
         params.insr_clm_lt_amt,
         params.insr_year_clm_lt_amt,
+        params.org_insr_year_clm_lt_amt,
         params.insr_psnl_brdn_amt,
         params.insr_sale_rt,
         params.insr_relief,
@@ -1093,8 +1102,8 @@ module.exports = {
     const params = req.body.params;
    // const result = await knexDB.raw(TTAX0030AMapper.RENEWAL_STAT_UPDATE, params);
 
-    const query = `UPDATE TTAX0031A SET renewal_cd = 'Y' WHERE USER_UUID = ? AND INSR_YEAR= ?`;
-    const queryParams = [user_uuid, params.insr_year];
+    const query = `UPDATE TLAW0031A SET renewal_cd = 'Y' WHERE USER_REGNO = ? AND INSR_YEAR= ?`;
+    const queryParams = [params.user_regno, params.insr_year];
     
     logger.debug('updateRenewalState>>>'+queryParams);
     logger.debug(query);

@@ -4,6 +4,7 @@ const { BadRequest } = require('../utils/errors');
 const bcrypt = require('bcryptjs');
 
 const M_ADMIN = require('../models/M_ADMIN');
+const M_ADMIN_MASTER = require('../models/M_ADMIN_MASTER');
 const M_ADMIN_ADV = require('../models/M_ADMIN_ADV')
 const M_ADMIN_LAW = require('../models/M_ADMIN_LAW')
 const M_ADMIN_CAA = require('../models/M_ADMIN_CAA')
@@ -1485,4 +1486,19 @@ module.exports = {
     }
   },
   
+  getInsuranceMaster: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN_MASTER.getInsuranceMaster(req);
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
 };
