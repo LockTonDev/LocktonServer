@@ -84,13 +84,18 @@ module.exports = {
                    AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(?)))
                    order by A.created_at desc`;
 
-    const queryListJNT = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
-                   , insr_year, insr_st_dt, insr_cncls_dt
-                   , insr_tot_amt, status_cd, cbr_cnt, cbr_data
-                   , FN_GET_CODENM('COM030', status_cd) AS status_nm
-                     FROM TLAW0030A
-                    WHERE user_nm = ? and corp_cnno = ?
-                    order by created_at desc`;
+    const queryListJNT = `SELECT A.insurance_uuid, A.user_uuid, A.insurance_no, A.user_nm, A.user_cd 
+                   , A.insr_year, A.insr_st_dt, A.insr_cncls_dt
+                   , A.insr_tot_amt, A.status_cd, A.cbr_cnt, A.cbr_data
+                   , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
+                   , B.use_yn, B.rn_st_dt , B.rn_en_dt 
+                     FROM TLAW0030A A
+                    LEFT JOIN TCOM0030A B
+                      ON A.insr_year = B.base_year 
+                     AND A.user_cd = B.user_cd 
+                     AND A.business_cd = B.business_cd
+                    WHERE A.user_nm = ? and A.corp_cnno = ?
+                    order by A.created_at desc`;
 
 
     const userQuery = `SELECT * from tcom0110a where user_uuid = ?`
@@ -110,7 +115,6 @@ module.exports = {
     }
 
     const [listData] = await db.query(queryList, params);
-    
 
     const queryNewInsr = `
       select
@@ -637,7 +641,7 @@ module.exports = {
 
     const params = req.body.params;
 
-    const query = `INSERT INTO TLAW0030A (
+    const queryIND = `INSERT INTO TLAW0030A (
                       insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
                       user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno, corp_ceo_nm,
                       corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl,corp_region_cd,
@@ -663,77 +667,180 @@ module.exports = {
                       , ?, ?, ?, ?, ?
                       , ?, ?, ?, ?, ?, ?
                     )`;
+    const queryJNT = `INSERT INTO TLAW0030A (
+      insurance_uuid, user_uuid, insurance_no, business_cd, user_cd, user_id, user_nm, user_birth,
+      user_regno, corp_type, corp_nm, corp_bnno, corp_cnno, corp_telno, corp_faxno, corp_ceo_nm,
+      corp_cust_nm, corp_cust_hpno, corp_cust_email, corp_post, corp_addr, corp_addr_dtl,corp_region_cd,
+      insr_year, insr_reg_dt, insr_st_dt, insr_cncls_dt, insr_retr_yn, 
+      insr_take_amt, insr_take_sec , insr_clm_lt_amt, insr_year_clm_lt_amt, insr_psnl_brdn_amt, 
+      insr_sale_year, insr_sale_rt, insr_relief, insr_pcnt_sale_rt, insr_base_amt, insr_amt, insr_premium_amt, insr_tot_amt, 
+      insr_tot_paid_amt, insr_tot_unpaid_amt, cbr_cnt, cbr_data,
+      trx_data, spct_join_yn, spct_data, active_yn, agr10_yn,
+      agr20_yn, agr30_yn, agr31_yn, agr32_yn, agr33_yn, agr34_yn, agr40_yn, agr41_yn,
+      agr50_yn, status_cd, rmk, change_rmk, change_dt, created_id, created_ip, updated_id, updated_ip ,org_insr_year_clm_lt_amt
+    ) VALUES (
+      UUID_V4() , ?, ?, ?, ?, ?
+      , ?, ?, ?, ?, ?, ?, ?
+      , ?, ?, ?, ?, ?
+      , ?, ?, ?, ?
+      , ?, ?, ?, ?, ?
+      , ?, ?, ?, ?, ?
+      , ?, ?, ?, ?, ?
+      , ?, ?, ?, ?, ?
+      , ?, ?, ?, ?, ?
+      , ?, ?, ?, ?, ?
+      , ?, ?, ?, ?, ?
+      , ?, ?, ?, ?, ?
+      , ?, ?, ?, ?, ?, ?
+    )`;
 
-    const queryParams = [
-      user_uuid,
-      params.insurance_no,
-      params.business_cd,
-      params.user_cd,
-      params.user_id,
-      params.user_nm,
-      params.user_birth,
-      params.user_regno,
-      params.corp_type,
-      params.corp_nm,
-      params.corp_bnno,
-      params.corp_cnno,
-      params.corp_telno,
-      params.corp_faxno,
-      params.corp_ceo_nm,
-      params.corp_cust_nm,
-      params.corp_cust_hpno,
-      params.corp_cust_email,
-      params.corp_post,
-      params.corp_addr,
-      params.corp_addr_dtl,
-      params.corp_region_cd,
-      params.insr_year,
-      params.insr_reg_dt,
-      params.insr_st_dt,
-      params.insr_cncls_dt,
-      params.insr_retr_yn,
-      params.insr_retr_dt,
-      params.insr_take_amt,
-      params.insr_take_sec,
-      params.insr_clm_lt_amt,
-      params.insr_year_clm_lt_amt,
-      params.insr_psnl_brdn_amt,
-      params.insr_sale_year,
-      params.insr_sale_rt,
-      params.insr_relief,
-      params.insr_pcnt_sale_rt,
-      params.insr_base_amt,
-      params.insr_amt,
-      params.insr_premium_amt,
-      params.insr_tot_amt,
-      params.insr_tot_paid_amt,
-      params.insr_tot_unpaid_amt,
-      params.cbr_cnt,
-      JSON.stringify(params.cbr_data),
-      JSON.stringify(params.trx_data),
-      params.spct_join_yn,
-      JSON.stringify(params.spct_data),
-      params.active_yn,
-      params.agr10_yn,
-      params.agr20_yn,
-      params.agr30_yn,
-      params.agr31_yn,
-      params.agr32_yn,
-      params.agr33_yn,
-      params.agr34_yn,
-      params.agr40_yn,
-      params.agr41_yn,
-      params.agr50_yn,
-      params.status_cd,
-      params.rmk,
-      params.change_rmk,
-      params.change_dt,
-      params.created_id,
-      params.created_ip,
-      params.updated_id,
-      params.updated_ip,
-      params.org_insr_year_clm_lt_amt
-    ];
+    let queryParams = []
+
+    if(params.user_cd == 'IND'){
+      query = queryIND;
+      queryParams = [
+        user_uuid,
+        params.insurance_no,
+        params.business_cd,
+        params.user_cd,
+        params.user_id,
+        params.user_nm,
+        params.user_birth,
+        params.user_regno,
+        params.corp_type,
+        params.corp_nm,
+        params.corp_bnno,
+        params.corp_cnno,
+        params.corp_telno,
+        params.corp_faxno,
+        params.corp_ceo_nm,
+        params.corp_cust_nm,
+        params.corp_cust_hpno,
+        params.corp_cust_email,
+        params.corp_post,
+        params.corp_addr,
+        params.corp_addr_dtl,
+        params.corp_region_cd,
+        params.insr_year,
+        params.insr_reg_dt,
+        params.insr_st_dt,
+        params.insr_cncls_dt,
+        params.insr_retr_yn,
+        params.insr_retr_dt,
+        params.insr_take_amt,
+        params.insr_take_sec,
+        params.insr_clm_lt_amt,
+        params.insr_year_clm_lt_amt,
+        params.insr_psnl_brdn_amt,
+        params.insr_sale_year,
+        params.insr_sale_rt,
+        params.insr_relief,
+        params.insr_pcnt_sale_rt,
+        params.insr_base_amt,
+        params.insr_amt,
+        params.insr_premium_amt,
+        params.insr_tot_amt,
+        params.insr_tot_paid_amt,
+        params.insr_tot_unpaid_amt,
+        params.cbr_cnt,
+        JSON.stringify(params.cbr_data),
+        JSON.stringify(params.trx_data),
+        params.spct_join_yn,
+        JSON.stringify(params.spct_data),
+        params.active_yn,
+        params.agr10_yn,
+        params.agr20_yn,
+        params.agr30_yn,
+        params.agr31_yn,
+        params.agr32_yn,
+        params.agr33_yn,
+        params.agr34_yn,
+        params.agr40_yn,
+        params.agr41_yn,
+        params.agr50_yn,
+        params.status_cd,
+        params.rmk,
+        params.change_rmk,
+        params.change_dt,
+        params.created_id,
+        params.created_ip,
+        params.updated_id,
+        params.updated_ip,
+        params.org_insr_year_clm_lt_amt
+      ];
+    }else{
+      query = queryJNT;
+      queryParams = [
+        user_uuid,
+        params.insurance_no,
+        params.business_cd,
+        params.user_cd,
+        params.user_id,
+        params.user_nm,
+        params.user_birth,
+        params.user_regno,
+        params.corp_type,
+        params.corp_nm,
+        params.corp_bnno,
+        params.corp_cnno,
+        params.corp_telno,
+        params.corp_faxno,
+        params.corp_ceo_nm,
+        params.corp_cust_nm,
+        params.corp_cust_hpno,
+        params.corp_cust_email,
+        params.corp_post,
+        params.corp_addr,
+        params.corp_addr_dtl,
+        params.corp_region_cd,
+        params.insr_year,
+        params.insr_reg_dt,
+        params.insr_st_dt,
+        params.insr_cncls_dt,
+        params.insr_retr_yn,
+        params.insr_take_amt,
+        params.insr_take_sec,
+        params.insr_clm_lt_amt,
+        params.insr_year_clm_lt_amt,
+        params.insr_psnl_brdn_amt,
+        params.insr_sale_year,
+        params.insr_sale_rt,
+        params.insr_relief,
+        params.insr_pcnt_sale_rt,
+        params.insr_base_amt,
+        params.insr_amt,
+        params.insr_premium_amt,
+        params.insr_tot_amt,
+        params.insr_tot_paid_amt,
+        params.insr_tot_unpaid_amt,
+        params.cbr_cnt,
+        JSON.stringify(params.cbr_data),
+        JSON.stringify(params.trx_data),
+        params.spct_join_yn,
+        JSON.stringify(params.spct_data),
+        params.active_yn,
+        params.agr10_yn,
+        params.agr20_yn,
+        params.agr30_yn,
+        params.agr31_yn,
+        params.agr32_yn,
+        params.agr33_yn,
+        params.agr34_yn,
+        params.agr40_yn,
+        params.agr41_yn,
+        params.agr50_yn,
+        params.status_cd,
+        params.rmk,
+        params.change_rmk,
+        params.change_dt,
+        params.created_id,
+        params.created_ip,
+        params.updated_id,
+        params.updated_ip,
+        params.org_insr_year_clm_lt_amt
+      ];
+    }
+    
     logger.debug(queryParams);
     const [rows] = await db.queryWithTransaction(query, queryParams);
 
@@ -841,7 +948,6 @@ module.exports = {
                     insr_st_dt = ?,
                     insr_cncls_dt = ?,
                     insr_retr_yn = ?,
-                    insr_retr_dt = ?,
                     insr_take_amt = ?,
                     insr_take_sec = ?,
                     insr_clm_lt_amt = ?,
@@ -989,7 +1095,6 @@ module.exports = {
         params.insr_st_dt,
         params.insr_cncls_dt,
         params.insr_retr_yn,
-        params.insr_retr_dt,
         params.insr_take_amt,
         params.insr_take_sec,
         params.insr_clm_lt_amt,
