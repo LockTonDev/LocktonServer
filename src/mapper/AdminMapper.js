@@ -866,7 +866,7 @@ VALUES      ( UUID_V4(),
       WHERE  A.business_cd = :business_cd
          AND (:user_cd = '%' or A.user_cd = :user_cd)
          AND (:insr_year = '%' or A.insr_year = :insr_year)
-         AND (:renewal_cd = '%' or A.renewal_cd = :renewal_cd)
+         AND (:renewal_cd = '%' or A.renewal_cd = :renewal_cd) 
          AND ((A.user_nm like CONCAT('%', :user_nm, '%')) OR a.cbr_data like CONCAT('%', :user_nm, '%') )
       ORDER  BY A.created_at DESC 
     `,
@@ -961,7 +961,7 @@ VALUES      ( UUID_V4(),
     WHERE  A.business_cd = :business_cd
       AND A.user_cd = :user_cd
       AND (A.insr_year like CONCAT('%', :insr_year, '%'))
-      AND (:status_cd = '%' or A.status_cd = :status_cd)
+     /* AND (:status_cd = '%' or A.status_cd = :status_cd) */
       AND (A.user_nm like CONCAT('%', :user_nm, '%'))
       AND (:renewal_cd = '%' or A.renewal_cd = :renewal_cd)
     ORDER  BY A.created_at DESC 

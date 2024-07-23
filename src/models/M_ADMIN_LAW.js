@@ -191,7 +191,7 @@ module.exports = {
     for(const param of params){
       if (param.mode === 'C') {
         const insert_params = [
-          param.user_uuid, param.insurance_no,param.business_cd,param.user_cd,
+          param.insurance_no,param.business_cd,param.user_cd,
           param.user_id,param.user_nm,param.user_birth,param.user_regno,param.corp_type,
           param.corp_nm,param.corp_ceo_nm,param.corp_bnno,param.corp_cnno,param.corp_telno,param.corp_faxno,
           param.corp_cust_nm,param.corp_cust_hpno,param.corp_cust_email,param.corp_post,param.corp_addr,
@@ -203,7 +203,8 @@ module.exports = {
           param.agr31_yn,param.agr32_yn,param.agr33_yn,param.agr34_yn,param.agr40_yn,
           param.agr41_yn,param.agr50_yn,param.status_cd,param.rmk, param.change_rmk,
           param.change_dt,param.created_id,param.created_ip,param.updated_id,
-          param.updated_ip,param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data),JSON.stringify(param.trx_data), param.renewal_cd,param.org_insr_year_clm_lt_amt
+          param.updated_ip,param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data),JSON.stringify(param.trx_data), param.renewal_cd,param.org_insr_year_clm_lt_amt,
+          param.user_uuid
         ]
         querys.push(LAWVAdminMapper.INSERT_RENEWAL_LAW_INSURANCE)
         query_params.push(insert_params)
