@@ -99,15 +99,13 @@ module.exports = {
             from
               TCOM0030A C,
               tcom0110a D
-            where
-              C.user_cd = D.user_cd
+            where C.user_cd = D.user_cd
               and C.business_cd = D.business_cd
               and C.use_yn = 'Y'
               and D.user_uuid = ?
             order by
               C.base_year desc,
               C.ver desc
-           
         )
     `;
 
