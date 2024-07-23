@@ -1,0 +1,50 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 10000
+    },
+    "auditLog": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\.95f0b77b3cab7287e64db256911cb7150072c104-audit.json",
+    "files": [
+        {
+            "date": 1720577861560,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-10.log",
+            "hash": "78e11245109b7f71aae4efc449cf7997dc49a1ac883ed53932106b23468c9591"
+        },
+        {
+            "date": 1721019360133,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-15.log",
+            "hash": "50ad763e905d0a75043dadc02ec0062e7cff7399903646368e44d3653d4da2ad"
+        },
+        {
+            "date": 1721110780042,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-16.log",
+            "hash": "79303d3b69b5e745334de7bbeff9e0efea24a8694cee44e9fdfa6b3c849dd9e3"
+        },
+        {
+            "date": 1721177491844,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-17.log",
+            "hash": "fec50f5d1961ea3d0bb7437f602e80979feba0d4253754ca59ae31cf368b405c"
+        },
+        {
+            "date": 1721279094232,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-18.log",
+            "hash": "3fa7780f7d9802e778a6742421381dd7606290ed2388156d3bba92c4457a7d59"
+        },
+        {
+            "date": 1721352077067,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-19.log",
+            "hash": "4daac2e0101ad9ee10c1c0118e79d7d04d5cddf5110dedab54e08d57f6b8a040"
+        },
+        {
+            "date": 1721606190469,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-22.log",
+            "hash": "13f028d668d294f1746a2c26afc49a20d77219c5f408b63b4068fcc17f3a08a0"
+        },
+        {
+            "date": 1721696128701,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-23.log",
+            "hash": "cddb3784322f7944931a2a434cfc1edefd1ffa9dfbe15a84880f6eceaeb6c262"
+        }
+    ],
+    "hashType": "sha256"
+}
