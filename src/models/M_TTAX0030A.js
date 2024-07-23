@@ -41,19 +41,143 @@ module.exports = {
    * @returns
    */
   selectList: async function (req) {
-    const params = { user_uuid: req.decoded.uuid };
-    
-    const listData = await knexDB.raw(TTAX0030AMapper.INSURANCE_LIST, params);
-    const newInsrData = await knexDB.raw(TTAX0030AMapper.INSURANCE_UUID_YN, params);
-    const renewalInsrData = await knexDB.raw(TTAX0030AMapper.RENEWAL_INSURANCE_UUID, params);
+    const user_uuid = req.decoded.uuid;
 
+    const queryListIND = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
+                  , insr_year, insr_st_dt, insr_cncls_dt
+                  , insr_tot_amt, status_cd, cbr_cnt, cbr_data
+                  , FN_GET_CODENM('COM030', status_cd) AS status_nm
+                    FROM TTAX0030A
+                   WHERE (user_nm = ? and user_birth = ? and user_regno = ?)
+                   OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY(?))
+                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(?))
+                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY(?)))
+                   order by created_at desc`;
+
+    const queryListCOR = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
+                   , insr_year, insr_st_dt, insr_cncls_dt
+                   , insr_tot_amt, status_cd, cbr_cnt, cbr_data
+                   , FN_GET_CODENM('COM030', status_cd) AS status_nm
+                     FROM TTAX0030A
+                    WHERE user_nm = ? and corp_cnno = ?
+                    order by created_at desc`;
+
+
+    const userQuery = `SELECT * from tcom0110a where user_uuid = ?`
+    const [user] = await db.query(userQuery, user_uuid);  
+
+    if (user.length < 1) {
+      throw new NotFound(StatusMessage.SELECT_FAILED);
+    }  
+    let params;
+    let queryList;
+    if(user[0].user_cd == 'IND'){
+      queryList = queryListIND;
+      params = [user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].user_nm, user[0].user_birth, user[0].user_regno];
+    }else {
+      queryList = queryListCOR;
+      params = [user[0].user_nm, user[0].corp_cnno];
+    }
+
+    const [listData] = await db.query(queryList, params);
+    
+
+    const queryNewInsr = `
+      select
+          CASE
+            WHEN COUNT(a.insurance_uuid) >= 1 THEN 'N'
+            ELSE 'Y'
+          END AS data
+      from
+        TTAX0030A a
+      where
+        a.user_uuid = ?
+        and a.status_cd not in ('20', '40') -- 해지, 기간종료
+        and a.insr_year in (
+            select
+              max(C.base_year)
+            from
+              TCOM0030A C,
+              tcom0110a D
+            where
+              C.user_cd = D.user_cd
+              and C.business_cd = D.business_cd
+              and C.use_yn = 'Y'
+              and D.user_uuid = ?
+            order by
+              C.base_year desc,
+              C.ver desc
+           
+        )
+    `;
+
+    const queryNewInsrParams = [user_uuid, user_uuid];
+    const newInsrData = await db.query(queryNewInsr, queryNewInsrParams);
+
+    const queryRenewalInsr = `
+      select
+        A.insurance_uuid as data, A.insr_year
+      from
+        TTAX0031A  A
+      join tcom0030a ta
+        on A.business_cd = ta.business_cd
+        and A.user_cd = ta.USER_CD
+        and a.insr_year = ta.base_year
+        and now() between CONCAT (ta.rn_st_dt,' 00:00:00') and CONCAT(ta.rn_en_dt,' 23:59:59')
+      JOIN tcom0110a B
+        ON A.business_cd = B.business_cd
+        and ((A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND A.corp_cnno = B.corp_cnno )
+             or ((A.user_cd = 'JNT' or A.user_cd = 'COR') AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
+             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(B.user_birth))
+             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(b.user_regno)))
+            )
+        and B.user_uuid = ?
+        and a.insr_year in (
+            select
+              max(C.base_year)
+            from
+              TCOM0030A C,
+              tcom0110a D
+            where
+              C.user_cd = D.user_cd
+              and C.business_cd = D.business_cd
+              and C.use_yn = 'Y'
+              and D.user_uuid = ?
+            order by
+              C.base_year desc,
+              C.ver desc
+           
+        ) limit 1;
+    `;
+
+    const queryRenewalInsrParams = [user_uuid, user_uuid];
+    const renewalInsrData = await db.query(queryRenewalInsr, queryRenewalInsrParams);
+
+    //return Object.setPrototypeOf(listData, [])
     const result = {
-      list: listData[0],
-      newInsrYN: newInsrData[0][0],
-      renewalInsrUUID: renewalInsrData[0][0]
+      list: Object.setPrototypeOf(listData, []),
+      newInsrYN: Object.setPrototypeOf(newInsrData[0], Object),
+      renewalInsrUUID: Object.setPrototypeOf(renewalInsrData[0], Object)
     };
+
     return result;
   },
+
+  // selectList: async function (req) {
+  //   const params = { user_uuid: req.decoded.uuid };
+    
+  //   const listData = await knexDB.raw(TTAX0030AMapper.INSURANCE_LIST, params);
+  //   const newInsrData = await knexDB.raw(TTAX0030AMapper.INSURANCE_UUID_YN, params);
+  //   const renewalInsrData = await knexDB.raw(TTAX0030AMapper.RENEWAL_INSURANCE_UUID, params);
+
+  //   const result = {
+  //     list: listData[0],
+  //     newInsrYN: newInsrData[0][0],
+  //     renewalInsrUUID: renewalInsrData[0][0]
+  //   };
+  //   return result;
+  // },
 
   selectStatus: async function (req) {
     const params = { user_uuid: req.decoded.uuid };
