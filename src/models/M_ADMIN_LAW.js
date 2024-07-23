@@ -124,6 +124,20 @@ module.exports = {
     let querys = []
     let query_params = []
     for(const param of params){
+      if(param.user_uuid==''){
+        const sqlSelect = `SELECT user_uuid, user_id
+                            FROM TCOM0110A 
+                           WHERE user_nm = ? 
+                             and user_regno = ? 
+                             and user_birth = ?
+                             and business_cd = ?
+                             and user_cd = ?
+                             and status_cd not in ('90')`;
+        const select_params = [param.user_nm ,param.user_regno,param.user_birth,param.business_cd,param.user_cd]
+        const [resultData] =   await knexDB.raw(sqlSelect, select_params);
+        param.user_uuid = resultData[0].user_uuid
+        param.user_id = resultData[0].user_id
+      }
       if (param.mode === 'C') {
         const insert_params = [
           param.user_uuid, param.insurance_no,param.business_cd,param.user_cd,
@@ -146,7 +160,7 @@ module.exports = {
       }
       else if (param.mode === 'U') {
         const update_params = [
-          param.insurance_no, param.business_cd, param.user_cd, param.user_id, param.user_nm, param.user_birth,
+          param.insurance_no, param.business_cd, param.user_cd, param.user_uuid, param.user_id, param.user_nm, param.user_birth,
           param.user_regno, param.corp_type, param.corp_nm, param.corp_ceo_nm, param.corp_bnno, param.corp_cnno,
           param.corp_telno, param.corp_faxno, param.corp_cust_nm, param.corp_cust_hpno, param.corp_cust_email,
           param.corp_post, param.corp_addr, param.corp_addr_dtl, param.corp_region_cd, param.insr_year, param.insr_reg_dt,
@@ -158,6 +172,7 @@ module.exports = {
           param.agr41_yn, param.agr50_yn, param.status_cd, param.rmk, param.erp_amt, param.erp_dt, param.erp_st_dt, param.erp_cncls_dt,
           param.change_rmk, param.change_dt, param.updated_id, param.updated_ip,param.org_insr_year_clm_lt_amt, param.insurance_uuid 
         ]
+        //console.log('update_params>>>',update_params)
         querys.push(LAWVAdminMapper.UPDATE_INSURANCE)
         query_params.push(update_params)
       }

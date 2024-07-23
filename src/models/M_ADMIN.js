@@ -493,6 +493,22 @@ module.exports = {
       transaction = await knexDB.transaction();
       let index = 0;
       for (const param of params) {
+        //회원정보 없을시 맵핑
+        if(param.user_uuid==''){
+          const sqlSelect = `SELECT user_uuid, user_id
+                              FROM TCOM0110A 
+                             WHERE user_nm = ? 
+                               and user_regno = ? 
+                               and user_birth = ?
+                               and business_cd = ?
+                               and user_cd = ?
+                               and status_cd not in ('90')`;
+          const select_params = [param.user_nm ,param.user_regno,param.user_birth,param.business_cd,param.user_cd]
+          const [resultData] =   await knexDB.raw(sqlSelect, select_params);
+          param.user_uuid = resultData[0].user_uuid
+          param.user_id = resultData[0].user_id
+        }
+
         param.cbr_data = JSON.stringify(param.cbr_data);
         param.trx_data = JSON.stringify(param.trx_data);
         param.cons_data = JSON.stringify(param.cons_data);
