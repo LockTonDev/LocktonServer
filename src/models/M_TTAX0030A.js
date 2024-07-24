@@ -70,9 +70,9 @@ module.exports = {
                       ON A.insr_year = B.base_year 
                      AND A.user_cd = B.user_cd 
                      AND A.business_cd = B.business_cd
-                    WHERE user_nm = ? and corp_cnno = ?
-                      AND business_cd = ?
-                    order by created_at desc`;
+                   WHERE A.user_nm = ? and A.corp_cnno = ?
+                      AND A.business_cd = ?
+                    order by A.created_at desc`;
 
 
     const userQuery = `SELECT * from tcom0110a where user_uuid = ?`
