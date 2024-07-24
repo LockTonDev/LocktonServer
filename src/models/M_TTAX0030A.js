@@ -52,6 +52,7 @@ module.exports = {
                    OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY(?))
                    AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(?))
                    AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY(?)))
+                   AND business_cd = ?
                    order by created_at desc`;
 
     const queryListCOR = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
@@ -60,6 +61,7 @@ module.exports = {
                    , FN_GET_CODENM('COM030', status_cd) AS status_nm
                      FROM TTAX0030A
                     WHERE user_nm = ? and corp_cnno = ?
+                      AND business_cd = ?
                     order by created_at desc`;
 
 
@@ -73,10 +75,10 @@ module.exports = {
     let queryList;
     if(user[0].user_cd == 'IND'){
       queryList = queryListIND;
-      params = [user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].user_nm, user[0].user_birth, user[0].user_regno];
+      params = [user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].business_cd];
     }else {
       queryList = queryListCOR;
-      params = [user[0].user_nm, user[0].corp_cnno];
+      params = [user[0].user_nm, user[0].corp_cnno, user[0].business_cd];
     }
 
     const [listData] = await db.query(queryList, params);
