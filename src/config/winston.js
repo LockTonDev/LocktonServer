@@ -35,7 +35,7 @@ const logger = winston.createLogger({
   transports: [
     // 0, 1, 2 level과 0 level 로그 파일 별도 보관
     new WinstonDaily({
-      level: 'debug',
+      level: 'info',
       datePattern: 'YYYY-MM-DD',
       dirname: logDir,
       filename: `%DATE%.log`,
