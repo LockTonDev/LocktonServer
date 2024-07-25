@@ -53,11 +53,11 @@ module.exports = {
                       ON A.insr_year = B.base_year 
                      AND A.user_cd = B.user_cd 
                      AND A.business_cd = B.business_cd
-                   WHERE (A.user_nm = ? and A.user_birth = ? and A.user_regno = ?)
+                   WHERE (A.user_nm = ? and A.user_birth = ? and A.user_regno = ? AND A.business_cd = ?)
                    OR (JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(?))
-                   AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(?))
-                   AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(?)))
-                   AND A.business_cd = ?
+                      AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(?))
+                      AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(?))
+                      AND A.business_cd = ? )
                    order by A.created_at desc`;
 
     const queryListCOR = `SELECT A.insurance_uuid, A.user_uuid, A.insurance_no, A.user_nm, A.user_cd 
@@ -85,7 +85,7 @@ module.exports = {
     let queryList;
     if(user[0].user_cd == 'IND'){
       queryList = queryListIND;
-      params = [user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].business_cd];
+      params = [user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].business_cd, user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].business_cd];
     }else {
       queryList = queryListCOR;
       params = [user[0].user_nm, user[0].corp_cnno, user[0].business_cd];
