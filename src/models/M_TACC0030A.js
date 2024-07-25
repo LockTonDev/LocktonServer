@@ -156,7 +156,7 @@ module.exports = {
       renewalInsrUUID: Object.setPrototypeOf(renewalInsrData[0], Object)
     };
 
-    console.log(result);
+    // console.log(req)result);
     return result;
   },
 

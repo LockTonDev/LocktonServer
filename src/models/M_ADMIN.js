@@ -354,7 +354,6 @@ module.exports = {
       if (transaction) {
         await transaction.rollback();
       }
-      console.log(error)
       logger.error(error);
       throw new NotFound(StatusMessage.UPDATE_FAILED);
     }

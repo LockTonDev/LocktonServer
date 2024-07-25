@@ -97,7 +97,7 @@ module.exports = {
       const params = req.body.params;
       const hash_password = bcrypt.hashSync(params.rmk, 10);
       params.user_pwd = hash_password;
-      console.log("params", params)
+      // console.log("params", params)
       const result = await M_ADMIN.setUserPassword(params);
 
       if (result) {
@@ -168,6 +168,7 @@ module.exports = {
       next(err);
     }
   },
+  
   setInsertBoard: async function (req, res, next) {
     try {
       const result = await M_ADMIN.setInsertBoard(req);
@@ -385,7 +386,7 @@ module.exports = {
   },
   getTAXS: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN.getTAXS(req);
 
       if (result) {
@@ -516,7 +517,7 @@ module.exports = {
   getRenewals: async function (req, res, next) {
     try {
       const result = await M_ADMIN.getRenewals(req);
-      console.log(result)
+      // console.log(result)
       if (result) {
         res.status(StatusCode.OK).json({
           success: true,
@@ -613,7 +614,7 @@ module.exports = {
 
   getADV: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_ADV.getADV(req);
 
       if (result) {
@@ -630,7 +631,7 @@ module.exports = {
 
   getADVS: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_ADV.getADVS(req);
 
       if (result) {
@@ -647,7 +648,7 @@ module.exports = {
 
   getADVRate: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_ADV.getADVRate(req);
 
       if (result) {
@@ -752,7 +753,7 @@ module.exports = {
         });
       }
     } catch (err) {
-      console.log("========================== setADV_TRX  ==========================")
+      logger.error("========================== setADV_TRX  ==========================")
       next(err);
     }
   },
@@ -840,7 +841,7 @@ module.exports = {
 
   getCAAS: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_CAA.getCAAS(req);
 
       if (result) {
@@ -857,7 +858,7 @@ module.exports = {
 
   getCAARate: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_CAA.getCAARate(req);
 
       if (result) {
@@ -1050,7 +1051,7 @@ module.exports = {
 
   getPAT: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_PAT.getPAT(req);
 
       if (result) {
@@ -1067,7 +1068,7 @@ module.exports = {
 
   getPATS: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_PAT.getPATS(req);
 
       if (result) {
@@ -1084,7 +1085,7 @@ module.exports = {
 
   getPATRate: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_PAT.getPATRate(req);
 
       if (result) {
@@ -1272,7 +1273,7 @@ module.exports = {
 
   getLAW: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_LAW.getLAW(req);
 
       if (result) {
@@ -1289,7 +1290,7 @@ module.exports = {
 
   getLAWS: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_LAW.getLAWS(req);
 
       if (result) {
@@ -1306,7 +1307,7 @@ module.exports = {
 
   getLAWRate: async function (req, res, next) {
     try {
-      console.log(req)
+      // console.log(req)
       const result = await M_ADMIN_LAW.getLAWRate(req);
 
       if (result) {
