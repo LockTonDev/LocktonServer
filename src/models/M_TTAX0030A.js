@@ -103,7 +103,7 @@ module.exports = {
       from
         TTAX0030A a
       where
-        a.user_uuid = ?
+        a.user_uuid = ? and a.business_cd = ?
         and a.status_cd not in ('20', '40') -- 해지, 기간종료
         and a.insr_year in (
             select
@@ -121,7 +121,7 @@ module.exports = {
         )
     `;
 
-    const queryNewInsrParams = [user_uuid, user_uuid];
+    const queryNewInsrParams = [user_uuid, user[0].business_cd, user_uuid];
     const newInsrData = await db.query(queryNewInsr, queryNewInsrParams);
 
     const queryRenewalInsr = `

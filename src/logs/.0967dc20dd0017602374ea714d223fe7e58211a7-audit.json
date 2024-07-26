@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 10000
+    },
+    "auditLog": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\.0967dc20dd0017602374ea714d223fe7e58211a7-audit.json",
+    "files": [
+        {
+            "date": 1721955188517,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\2024-07-26.log",
+            "hash": "96a5611ea1a25bacecd54ff1ed2d1448275cb17d4b36ff36405d2fe538020098"
+        }
+    ],
+    "hashType": "sha256"
+}

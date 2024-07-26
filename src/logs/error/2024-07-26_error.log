@@ -1,0 +1,23 @@
+2024-07-26 09:50:59 [error] : passport isAuth  : true
+2024-07-26 11:41:02 [error] : jwt expired
+2024-07-26 11:41:07 [error] : passport isAuth  : true
+2024-07-26 13:37:12 [error] : passport isAuth  : false
+2024-07-26 13:37:13 [error] : passport isAuth  : false
+2024-07-26 13:37:14 [error] : passport isAuth  : false
+2024-07-26 13:37:15 [error] : passport isAuth  : false
+2024-07-26 13:37:15 [error] : passport isAuth  : false
+2024-07-26 13:37:19 [error] : passport isAuth  : true
+2024-07-26 14:16:37 [error] : jwt expired
+2024-07-26 15:08:14 [error] : PASSPORT localVerify Error :  Cannot read properties of undefined (reading 'user_pwd')
+2024-07-26 15:08:14 [error] : >> 
+2024-07-26 15:08:25 [error] : PASSPORT localVerify Error :  Cannot read properties of undefined (reading 'user_pwd')
+2024-07-26 15:08:25 [error] : >> 
+2024-07-26 15:08:42 [error] : passport isAuth  : false
+2024-07-26 15:08:44 [error] : passport isAuth  : false
+2024-07-26 15:11:11 [error] : passport isAuth  : true
+2024-07-26 15:12:26 [error] : TypeError: source.on is not a function
+2024-07-26 15:12:26 [error] : sendSMSFromTemplate 실패 :  TypeError: source.on is not a function
+2024-07-26 15:35:17 [error] : TypeError: source.on is not a function
+2024-07-26 15:35:17 [error] : sendSMSFromTemplate 실패 :  TypeError: source.on is not a function
+2024-07-26 15:46:19 [error] : passport isAuth  : true
+2024-07-26 16:00:15 [error] : passport isAuth  : true

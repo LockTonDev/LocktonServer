@@ -12,9 +12,12 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
+app.enable('trust proxy')
+app.set('trust proxy', () => true)
+
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
-app.set('trust proxy', true);
+
 /**
  * Create HTTP server.
  */

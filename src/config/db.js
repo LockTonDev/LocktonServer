@@ -113,6 +113,7 @@ module.exports = {
     try {
       const executeQueries = async () => {
         return await Promise.all(queries.map(async (query, index) => {
+          console.log(query)
           const result = await connection.query(query, parameters[index]);
           return result[0];
         }));
@@ -121,6 +122,7 @@ module.exports = {
       rows = await executeQueries();
       await connection.commit();
     } catch (error) {
+      console.log(error)
       await connection.rollback();
       throw error;
     } finally {
