@@ -16,8 +16,17 @@ module.exports = {
    * @returns
    */
   signIn: async function (business_cd, user_cd, user_id, user_pwd) {
-    const sqlSelect = `SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = ? and user_cd = ? and user_id = ? and (status_cd not in ('90') || status_cd is null)`;
-    const [rows] = await db.query(sqlSelect, [business_cd, user_cd, user_id]);
+    let sqlSelect = ''
+    let params = ''
+    if(business_cd == 'ADM'){
+      sqlSelect = `SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = ? and user_id = ? and (status_cd not in ('90') || status_cd is null)`;
+      params = [business_cd, user_id]
+    }else{
+      sqlSelect = `SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = ? and user_cd = ? and user_id = ? and (status_cd not in ('90') || status_cd is null)`;
+      params = [business_cd, user_cd, user_id]
+    }
+
+    const [rows] = await db.query(sqlSelect, params);
 
     if (rows.affectedRows < 1) {
       throw new NotFound(StatusMessage.unValidateUser);
@@ -156,8 +165,10 @@ module.exports = {
       params.updated_ip
     ];
 
-    const [rows] = await db.queryWithTransaction(query, queryParams);
+    const [rows] = await db.query(query, queryParams);
+    //const [rows] = await db.queryWithTransaction(query, queryParams);
     logger.debug(rows);
+    //console.log("!!!")
     //const resultUser = await user.updateFromInsurance(req);
 
     if (rows.affectedRows < 1) {
@@ -413,6 +424,11 @@ module.exports = {
     }
 
     return null;
+  },
+  chkDupUser: async function (req) {
+    const params = req.body.params;
+    const resultData = await knexDB.raw(UserMapper.CHECK_DUPLICATION_USER, params);
+    return resultData[0];
   },
   getUserCd: async function (req) {
     const params = req.body.params;
