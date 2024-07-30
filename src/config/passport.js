@@ -22,7 +22,8 @@ const jwtStrategyOption = {
 
 async function localVerify(req, user_id, user_pwd, done) {
   try {
-    const userInfo = await User.signIn(req.body.business_cd, req.body.user_cd, user_id, user_pwd);
+    console.log(req.body.user_browser)
+    const userInfo = await User.signIn(req.body.business_cd, req.body.user_cd, user_id, user_pwd,req.body.user_browser);
     let isAuth = bcrypt.compareSync(user_pwd, userInfo[0].user_pwd);
     const loginBlockYn = userInfo[0].login_block_yn;
 

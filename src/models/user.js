@@ -15,9 +15,25 @@ module.exports = {
    * @param {*} userInfo
    * @returns
    */
-  signIn: async function (business_cd, user_cd, user_id, user_pwd) {
+  signIn: async function (business_cd, user_cd, user_id, user_pwd,user_browser) {
     let sqlSelect = ''
     let params = ''
+    // var interfaces = require('os').networkInterfaces();
+    let serverNm = process.env.SERVER_NAME
+    // for (var devName in interfaces) {
+    //   var iface = interfaces[devName];
+    //
+    //   for (var i = 0; i < iface.length; i++) {
+    //     var alias = iface[i];
+    //     logger.info(alias.address)
+    //     if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal)
+    //       serverIp =  alias.address
+    //   }
+    // }
+   // let userAgent = req.headers['user-agent']
+
+    // logger.info("userAgent : "+userAgent)
+
     if(business_cd == 'ADM'){
       sqlSelect = `SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = ? and user_id = ? and (status_cd not in ('90') || status_cd is null)`;
       params = [business_cd, user_id]
@@ -32,6 +48,12 @@ module.exports = {
       throw new NotFound(StatusMessage.unValidateUser);
     }
 
+    //로그인 한 서버 IP와 접속자 브라우져 정보 저장
+    const sqlUpdate = `UPDATE TCOM0110A SET access_server = ?
+                            , user_browser = ?
+                            , login_at = NOW()
+                         WHERE business_cd = ? and user_cd = ? and user_id = ? `;
+    const [updateUserAccessInfo] = await db.query(sqlUpdate, [serverNm,user_browser,business_cd, user_cd, user_id]);
     return Object.setPrototypeOf(rows, []);
   },
 

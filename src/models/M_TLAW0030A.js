@@ -160,9 +160,9 @@ module.exports = {
         and now() between CONCAT (ta.rn_st_dt,' 00:00:00') and CONCAT(ta.rn_en_dt,' 23:59:59')
       JOIN tcom0110a B
         ON A.business_cd = B.business_cd
-        AND A.user_cd = B.USER_CD
-      where
-        A.business_cd = B.business_cd
+      --  AND A.user_cd = B.USER_CD
+      -- where
+      --  A.business_cd = B.business_cd
         and (
                 (A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
              or (A.user_cd = 'JNT' AND A.corp_cnno = B.corp_cnno )

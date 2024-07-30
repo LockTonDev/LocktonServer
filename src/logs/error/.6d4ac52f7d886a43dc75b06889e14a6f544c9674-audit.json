@@ -49,6 +49,16 @@
             "date": 1721955059138,
             "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-07-26_error.log",
             "hash": "2de9f4ab149019b614777629cefac7897f1bd4e8d0a250ae2bb2f2d693be942e"
+        },
+        {
+            "date": 1722058498621,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-07-27_error.log",
+            "hash": "af91004f8f21e8cb8ac95afa17f278faabe3f75c7be111dc357380e31d79bdbd"
+        },
+        {
+            "date": 1722213785492,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-07-29_error.log",
+            "hash": "80e692dc2e1193a303ae5fea97cd31f4545d52f44b501c55d4eea172ffd8ee8f"
         }
     ],
     "hashType": "sha256"
