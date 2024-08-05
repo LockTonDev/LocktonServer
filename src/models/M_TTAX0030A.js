@@ -47,17 +47,17 @@ module.exports = {
                   , A.insr_year, A.insr_st_dt, A.insr_cncls_dt
                   , A.insr_tot_amt, A.status_cd, A.cbr_cnt, A.cbr_data
                   , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
-                  , B.use_yn, B.rn_st_dt , B.rn_en_dt 
+                  , B.use_yn, B.rn_st_dt , B.rn_en_dt
                     FROM TTAX0030A A
       			        LEFT JOIN TCOM0030A B
                       ON A.insr_year = B.base_year 
                      AND A.user_cd = B.user_cd 
                      AND A.business_cd = B.business_cd
                    WHERE (A.user_nm = ? and A.user_birth = ? and A.user_regno = ? AND A.business_cd = ?)
-                   OR (JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(?))
-                      AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(?))
-                      AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(?))
-                      AND A.business_cd = ? )
+                      OR (JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(?))
+                          AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(?))
+                          AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(?))
+                          AND A.business_cd = ? )
                    order by A.created_at desc`;
 
     const queryListCOR = `SELECT A.insurance_uuid, A.user_uuid, A.insurance_no, A.user_nm, A.user_cd 
@@ -161,14 +161,28 @@ module.exports = {
         ) limit 1;
     `;
 
+    
     const queryRenewalInsrParams = [user_uuid, user_uuid];
     const renewalInsrData = await db.query(queryRenewalInsr, queryRenewalInsrParams);
+
+    const queryBaseYear = `
+    select BASE_YEAR
+      from tcom0030a ta
+     WHERE business_cd = ?
+       and USER_CD =?
+      order by base_year desc, ver desc
+      limit 1
+      ;
+  `;
+  const queryBaseYearParams = [user[0].business_cd, user[0].user_cd];
+  const baseYear = await db.query(queryBaseYear,queryBaseYearParams);
 
     //return Object.setPrototypeOf(listData, [])
     const result = {
       list: Object.setPrototypeOf(listData, []),
       newInsrYN: Object.setPrototypeOf(newInsrData[0], Object),
-      renewalInsrUUID: Object.setPrototypeOf(renewalInsrData[0], Object)
+      renewalInsrUUID: Object.setPrototypeOf(renewalInsrData[0], Object),
+      baseYear: Object.setPrototypeOf(baseYear[0], Object)
     };
 
     return result;

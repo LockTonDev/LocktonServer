@@ -4,7 +4,7 @@ const { StatusMessage } = require('../utils/response');
 const db = require('../config/db');
 
 /**
- * 회계사_보험계약
+ * 법무사_보험계약
  *
  * TABLE : TLAW0030A
  *
@@ -191,11 +191,24 @@ module.exports = {
     const queryRenewalInsrParams = [user_uuid, user_uuid];
     const renewalInsrData = await db.query(queryRenewalInsr, queryRenewalInsrParams);
 
+    const queryBaseYear = `
+    select BASE_YEAR
+      from tcom0030a ta
+     WHERE business_cd = ?
+       and USER_CD =?
+      order by base_year desc, ver desc
+      limit 1
+      ;
+  `;
+  const queryBaseYearParams = [user[0].business_cd, user[0].user_cd];
+  const baseYear = await db.query(queryBaseYear,queryBaseYearParams);
+
     //return Object.setPrototypeOf(listData, [])
     const result = {
       list: Object.setPrototypeOf(listData, []),
       newInsrYN: Object.setPrototypeOf(newInsrData[0], Object),
-      renewalInsrUUID: Object.setPrototypeOf(renewalInsrData[0], Object)
+      renewalInsrUUID: Object.setPrototypeOf(renewalInsrData[0], Object),
+      baseYear: Object.setPrototypeOf(baseYear[0], Object)
     };
 
     return result;
@@ -555,15 +568,15 @@ module.exports = {
       }
       const [resultDataDup] = await db.query(queryDataDup, queryParamsDataDup);
       const [resultDataMbr] = await db.query(queryDataMbr, queryParamsDataMbr);
-      console.log(resultDataDup)
-      console.log(resultDataMbr)
+      // console.log(resultDataDup)
+      // console.log(resultDataMbr)
       if (resultDataDup.length == 0 || resultDataMbr.length == 0 || resultDataMbr[0].cnt == 0) {
         throw new NotFound(StatusMessage.SELECT_FAILED);
      }
 
      const result = {renewal:[...resultData], dup_cnt: resultDataDup[0].cnt, mbr_cnt: resultDataMbr[0].cnt}
 
-     console.log(result)
+     // console.log(result)
 
     return Object.setPrototypeOf(
       result,
