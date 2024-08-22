@@ -34,7 +34,7 @@ module.exports = {
 
     // logger.info("userAgent : "+userAgent)
 
-    console.log(business_cd,user_id)
+    console.log('LOGIN :',business_cd,user_id)
     if(business_cd == 'ADM'){
       sqlSelect = `SELECT business_cd, user_uuid, user_id, user_pwd, user_nm, user_cd, user_birth, user_regno, corp_cnno, status_cd, login_fail_cnt, login_block_yn FROM TCOM0110A WHERE business_cd = ? and user_id = ? and (status_cd not in ('90') || status_cd is null)`;
       params = [business_cd, user_id]
