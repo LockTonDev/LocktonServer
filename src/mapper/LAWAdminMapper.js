@@ -153,6 +153,10 @@ module.exports = Object.freeze({
             ,B.insr_st_dt as base_insr_st_dt
             ,B.insr_cncls_dt as base_insr_cncls_dt
             ,B.insurance_no
+            ,A.erp_st_dt
+            ,A.erp_cncls_dt
+            ,A.erp_amt
+            ,A.erp_dt
       FROM   TLAW0030A A    
       			LEFT JOIN TCOM0030A B
 		    ON A.insr_year = B.base_year 
@@ -202,8 +206,32 @@ module.exports = Object.freeze({
   AND (? = '%' or A.user_cd = ?)
   AND (? = '%' or A.insr_year = ?)
   AND (? = '%' or A.status_cd = ?)
-  AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )
+  AND ((A.user_nm like CONCAT('%', ?, '%'))
+   OR a.corp_nm like CONCAT('%', ?, '%') OR a.user_birth like CONCAT('%', ?, '%')
+   OR a.user_regno like CONCAT('%', ?, '%') )
+   OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY(CONCAT('%', ?, '%')))
+  AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(CONCAT('%', ?, '%')))
+  AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY(CONCAT('%', ?, '%'))))
   ORDER  BY A.created_at DESC 
+  LIMIT ? OFFSET ?
+  `,
+  INSURANCE_TOTAL:`
+     SELECT count(*) as total FROM  TLAW0030A A
+          LEFT JOIN TCOM0030A B
+      ON A.insr_year = B.base_year 
+      AND A.user_cd = B.user_cd 
+      AND A.business_cd = B.business_cd
+    WHERE  A.business_cd = ?
+       AND (? = '%' or A.user_cd = ?)
+       AND (? = '%' or A.insr_year = ?)
+       AND (? = '%' or A.status_cd = ?)
+       AND ((A.user_nm like CONCAT('%', ?, '%'))
+        OR a.corp_nm like CONCAT('%', ?, '%') OR a.user_birth like CONCAT('%', ?, '%')
+        OR a.user_regno like CONCAT('%', ?, '%') )
+        OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY(CONCAT('%', ?, '%')))
+       AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(CONCAT('%', ?, '%')))
+       AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY(CONCAT('%', ?, '%'))))
+    ORDER  BY A.created_at DESC 
   `,
 
   /**
@@ -212,94 +240,110 @@ module.exports = Object.freeze({
    * - :insurance_uuid 보험 KEY
    */
   INSURANCE_LAW_INFO: `SELECT A.insurance_uuid
-  ,A.user_uuid
-  ,A.business_cd
-  ,A.user_cd
-  ,A.user_id
-  ,A.user_nm
-  ,A.user_birth
-  ,A.user_regno
-  ,A.corp_type
-  ,A.corp_nm
-  ,A.corp_ceo_nm
-  ,A.corp_bnno
-  ,A.corp_cnno
-  ,A.corp_telno
-  ,A.corp_faxno
-  ,A.corp_cust_nm
-  ,A.corp_cust_hpno
-  ,A.corp_cust_email
-  ,A.corp_post
-  ,A.corp_addr
-  ,A.corp_addr_dtl
-  ,A.corp_region_cd
-  ,A.insr_year
-  ,A.insr_reg_dt
-  ,A.insr_st_dt
-  ,A.insr_cncls_dt
-  ,A.insr_retr_yn
-  ,A.insr_retr_dt
-  ,A.insr_take_amt
-  ,A.insr_take_sec
-  ,A.insr_clm_lt_amt
-  ,A.org_insr_year_clm_lt_amt
-  ,A.insr_year_clm_lt_amt
-  ,A.insr_psnl_brdn_amt
-  ,A.insr_sale_year
-  ,A.insr_sale_rt
-  ,A.insr_relief
-  ,A.insr_pcnt_sale_rt
-  ,A.insr_base_amt
-  ,A.insr_amt
-  ,A.insr_tot_amt
-  ,A.insr_tot_paid_amt
-  ,A.insr_tot_unpaid_amt
-  ,A.spct_join_yn
-  ,A.spct_data
-  ,A.cbr_data
-  ,A.cbr_cnt
-  ,A.trx_data
-  ,A.erp_amt
-  ,A.erp_dt
-  ,A.erp_st_dt
-  ,A.erp_cncls_dt
-  ,A.active_yn
-  ,A.agr10_yn
-  ,A.agr20_yn
-  ,A.agr30_yn
-  ,A.agr31_yn
-  ,A.agr32_yn
-  ,A.agr33_yn
-  ,A.agr34_yn
-  ,A.agr40_yn
-  ,A.agr41_yn
-  ,A.agr50_yn
-  ,A.status_cd
-  ,A.rmk
-  ,A.change_rmk
-  ,A.change_dt
-  ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
-  ,FN_GET_CODENM('LAW001', A.corp_region_cd) AS corp_region_nm
-  ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1
-  ,FN_GET_SPLIT(A.corp_telno, '-', 2) as corp_telno2
-  ,FN_GET_SPLIT(A.corp_telno, '-', 3) as corp_telno3
-  ,FN_GET_SPLIT(A.corp_faxno, '-', 1) as corp_faxno1
-  ,FN_GET_SPLIT(A.corp_faxno, '-', 2) as corp_faxno2
-  ,FN_GET_SPLIT(A.corp_faxno, '-', 3) as corp_faxno3
-  ,B.insr_st_dt as base_insr_st_dt
-  ,B.insr_cncls_dt as base_insr_cncls_dt
-  ,B.insurance_no
-FROM   TLAW0030A A
-    LEFT JOIN TCOM0030A B
-ON A.insr_year = B.base_year 
-AND A.user_cd = B.user_cd 
-AND A.business_cd = B.business_cd
-WHERE A.insurance_uuid = ?
-    AND A.status_cd not in ('40') -- 이력제외
-ORDER  BY A.insurance_uuid DESC
-LIMIT  1
-`,
+      ,A.user_uuid
+      ,A.business_cd
+      ,A.user_cd
+      ,A.user_uuid
+      ,A.user_id
+      ,A.user_nm
+      ,A.user_birth
+      ,A.user_regno
+      ,A.corp_type
+      ,A.corp_nm
+      ,A.corp_ceo_nm
+      ,A.corp_bnno
+      ,A.corp_cnno
+      ,A.corp_telno
+      ,A.corp_faxno
+      ,A.corp_cust_nm
+      ,A.corp_cust_hpno
+      ,A.corp_cust_email
+      ,A.corp_post
+      ,A.corp_addr
+      ,A.corp_addr_dtl
+      ,A.corp_region_cd
+      ,A.insr_year
+      ,A.insr_reg_dt
+      ,A.insr_st_dt
+      ,A.insr_cncls_dt
+      ,A.insr_retr_yn
+      ,A.insr_retr_dt
+      ,A.insr_take_amt
+      ,A.insr_take_sec
+      ,A.insr_clm_lt_amt
+      ,A.org_insr_year_clm_lt_amt
+      ,A.insr_year_clm_lt_amt
+      ,A.insr_psnl_brdn_amt
+      ,A.insr_sale_year
+      ,A.insr_sale_rt
+      ,A.insr_relief
+      ,A.insr_pcnt_sale_rt
+      ,A.insr_base_amt
+      ,A.insr_amt
+      ,A.insr_tot_amt
+      ,A.insr_tot_paid_amt
+      ,A.insr_tot_unpaid_amt
+      ,A.spct_join_yn
+      ,A.spct_data
+      ,A.cbr_data
+      ,A.cbr_cnt
+      ,A.trx_data
+      ,A.erp_amt
+      ,A.erp_dt
+      ,A.erp_st_dt
+      ,A.erp_cncls_dt
+      ,A.active_yn
+      ,A.agr10_yn
+      ,A.agr20_yn
+      ,A.agr30_yn
+      ,A.agr31_yn
+      ,A.agr32_yn
+      ,A.agr33_yn
+      ,A.agr34_yn
+      ,A.agr40_yn
+      ,A.agr41_yn
+      ,A.agr50_yn
+      ,A.status_cd
+      ,A.rmk
+      ,A.change_rmk
+      ,A.change_dt
+      ,A.limited_collateral
+      ,FN_GET_CODENM('COM030', A.status_cd) AS status_nm
+      ,FN_GET_CODENM('LAW001', A.corp_region_cd) AS corp_region_nm
+      ,FN_GET_SPLIT(A.corp_telno, '-', 1) as corp_telno1
+      ,FN_GET_SPLIT(A.corp_telno, '-', 2) as corp_telno2
+      ,FN_GET_SPLIT(A.corp_telno, '-', 3) as corp_telno3
+      ,FN_GET_SPLIT(A.corp_faxno, '-', 1) as corp_faxno1
+      ,FN_GET_SPLIT(A.corp_faxno, '-', 2) as corp_faxno2
+      ,FN_GET_SPLIT(A.corp_faxno, '-', 3) as corp_faxno3
+      ,B.insr_st_dt as base_insr_st_dt
+      ,B.insr_cncls_dt as base_insr_cncls_dt
+      ,B.insurance_no
+    FROM   TLAW0030A A
+        LEFT JOIN TCOM0030A B
+    ON A.insr_year = B.base_year 
+    AND A.user_cd = B.user_cd 
+    AND A.business_cd = B.business_cd
+    WHERE A.insurance_uuid = ?
+        AND A.status_cd not in ('40') -- 이력제외
+    ORDER  BY A.insurance_uuid DESC
+    LIMIT  1
+    `,
 
+  /**
+   * [변경요청DB] 목록 조회 for 계약관리
+   */
+  INSURANCE_APPLY_LIST: `
+      /* AdminMapper.INSURANCE_APPLY_LIST */    
+      SELECT apply_no
+           , apply_posted_dt
+           , proc_content_summary
+           , FN_GET_CODENM('COM040', apply_cd) AS apply_nm
+           , FN_GET_CODENM('COM041', proc_cd) AS proc_nm 
+       FROM TLAW0040A 
+      WHERE insurance_uuid = ?
+      order by apply_no DESC
+    `,
   /**
    * [보험DB] 상세 이력 조회
    *
@@ -468,7 +512,8 @@ LIMIT  1
              cbr_cnt,
              cbr_data,
              trx_data,
-             org_insr_year_clm_lt_amt)
+             org_insr_year_clm_lt_amt,
+             limited_collateral)
 VALUES      ( UUID_V4(), ?, ?, ?, ?, 
               ?, ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
@@ -482,7 +527,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, ?, ?, ?,
               ?, ?, now(), ?, ?, 
-              now(), ?, ?, ?, ?, ?, ?) 
+              now(), ?, ?, ?, ?, ?, ?,?) 
     `,
 
   /**
@@ -560,7 +605,8 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
           updated_at = Now(),
           updated_id = ?,
           updated_ip = ?,
-          org_insr_year_clm_lt_amt = ?
+          org_insr_year_clm_lt_amt = ?,
+          limited_collateral = ?
     WHERE  insurance_uuid = ?
     `,
 
@@ -621,6 +667,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
          AND (? = '%' or A.status_cd = ?)
          AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )
       ORDER  BY A.created_at DESC 
+      limit ? offset ?
     `,
 
   /**
@@ -789,17 +836,41 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
     , FN_GET_CODENM('COM002', A.user_cd) AS user_cd_nm
     , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
     , FN_GET_CODENM('LAW001', A.corp_region_cd) AS corp_region_nm
-  FROM   TLAW0031A A
+    FROM TLAW0031A A
     LEFT JOIN TCOM0030A B
-  ON A.insr_year = B.base_year 
-  AND A.user_cd = B.user_cd 
-  AND A.business_cd = B.business_cd
-  WHERE  A.business_cd = ?
-  AND (? = '%' or A.user_cd = ?)
-  AND (? = '%' or A.insr_year = ?)
-  AND (? = '%' or A.renewal_cd = ?)
-  AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )
-  ORDER  BY A.created_at DESC 
+      ON A.insr_year = B.base_year 
+     AND A.user_cd = B.user_cd 
+     AND A.business_cd = B.business_cd
+    WHERE  A.business_cd = ?
+      AND (? = '%' or A.user_cd = ?)
+      AND (? = '%' or A.insr_year = ?)
+      AND (? = '%' or A.renewal_cd = ?)
+      AND ((A.user_nm like CONCAT('%', ?, '%'))
+        OR a.corp_nm like CONCAT('%', ?, '%') OR a.user_birth like CONCAT('%', ?, '%')
+        OR a.user_regno like CONCAT('%', ?, '%') )
+       OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY(CONCAT('%', ?, '%')))
+      AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(CONCAT('%', ?, '%')))
+      AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY(CONCAT('%', ?, '%'))))
+    ORDER  BY A.created_at DESC 
+    LIMIT ? OFFSET ?
+  `,
+  RENEWAL_INSURANCE_TOTAL:`
+     SELECT count(*) as total FROM  TLAW0031A A
+          LEFT JOIN TCOM0030A B
+      ON A.insr_year = B.base_year 
+      AND A.user_cd = B.user_cd 
+      AND A.business_cd = B.business_cd
+    WHERE  A.business_cd = ?
+       AND (? = '%' or A.user_cd = ?)
+       AND (? = '%' or A.insr_year = ?)
+       AND (? = '%' or A.renewal_cd = ?)
+      AND ((A.user_nm like CONCAT('%', ?, '%'))
+        OR a.corp_nm like CONCAT('%', ?, '%') OR a.user_birth like CONCAT('%', ?, '%')
+        OR a.user_regno like CONCAT('%', ?, '%') )
+       OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY(CONCAT('%', ?, '%')))
+      AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(CONCAT('%', ?, '%')))
+      AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY(CONCAT('%', ?, '%'))))
+    ORDER  BY A.created_at DESC 
   `,
 
   /**
