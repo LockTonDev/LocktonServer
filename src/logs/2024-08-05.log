@@ -1,0 +1,138 @@
+2024-08-05 17:04:07 [info] : Server on port 3000 | run
+2024-08-05 17:04:17 [error] : >> 
+2024-08-05 17:04:17 [info] : ::1 - - [05/Aug/2024:08:04:17 +0000] "POST /board/popup HTTP/1.1" 500 100 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:04:17 [error] : >> 
+2024-08-05 17:04:17 [info] : ::1 - - [05/Aug/2024:08:04:17 +0000] "POST /LAW/LAW0030A HTTP/1.1" 500 100 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:04:43 [info] : headers>>>>>>[object Object]
+2024-08-05 17:04:43 [info] : realIp>>>>>>undefined
+2024-08-05 17:04:43 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:04:43 [error] : PASSPORT localVerify Error :  Access denied for user 'lockton'@'210.91.70.141' (using password: YES)
+2024-08-05 17:04:43 [error] : >> 
+2024-08-05 17:04:43 [info] : ::1 - - [05/Aug/2024:08:04:43 +0000] "POST /auth/signin HTTP/1.1" 500 100 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:04:54 [info] : Server off
+2024-08-05 17:05:07 [info] : Server on port 3000 | run
+2024-08-05 17:05:10 [info] : headers>>>>>>[object Object]
+2024-08-05 17:05:10 [info] : realIp>>>>>>undefined
+2024-08-05 17:05:10 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:05:10 [error] : passport isAuth  : true
+2024-08-05 17:05:10 [info] : ::1 - - [05/Aug/2024:08:05:10 +0000] "POST /auth/signin HTTP/1.1" 200 555 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:05:11 [info] : ::1 - - [05/Aug/2024:08:05:11 +0000] "POST /board/popup HTTP/1.1" 200 1804 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:05:11 [info] : ::1 - - [05/Aug/2024:08:05:11 +0000] "POST /TAX/TAX0030A HTTP/1.1" 200 2688 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:05:33 [info] : headers>>>>>>[object Object]
+2024-08-05 17:05:33 [info] : realIp>>>>>>undefined
+2024-08-05 17:05:33 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:05:33 [error] : PASSPORT localVerify Error :  Cannot read properties of undefined (reading 'user_pwd')
+2024-08-05 17:05:33 [error] : >> 
+2024-08-05 17:05:33 [info] : ::1 - - [05/Aug/2024:08:05:33 +0000] "POST /auth/signin HTTP/1.1" 500 86 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:05:40 [info] : headers>>>>>>[object Object]
+2024-08-05 17:05:40 [info] : realIp>>>>>>undefined
+2024-08-05 17:05:40 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:05:40 [error] : passport isAuth  : true
+2024-08-05 17:05:40 [info] : ::1 - - [05/Aug/2024:08:05:40 +0000] "POST /auth/signin HTTP/1.1" 200 555 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:05:40 [info] : ::1 - - [05/Aug/2024:08:05:40 +0000] "POST /board/popup HTTP/1.1" 200 36 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:05:40 [info] : ::1 - - [05/Aug/2024:08:05:40 +0000] "POST /LAW/LAW0030A HTTP/1.1" 200 458 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:06:00 [info] : headers>>>>>>[object Object]
+2024-08-05 17:06:00 [info] : realIp>>>>>>undefined
+2024-08-05 17:06:00 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:06:00 [error] : passport isAuth  : true
+2024-08-05 17:06:00 [info] : ::1 - - [05/Aug/2024:08:06:00 +0000] "POST /auth/signin HTTP/1.1" 200 555 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:06:00 [info] : ::1 - - [05/Aug/2024:08:06:00 +0000] "POST /board/popup HTTP/1.1" 200 1645 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:06:00 [info] : ::1 - - [05/Aug/2024:08:06:00 +0000] "POST /TAX/TAX0030A HTTP/1.1" 200 868 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:08:54 [info] : ::1 - - [05/Aug/2024:08:08:54 +0000] "POST /board/popup HTTP/1.1" 200 1645 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:08:54 [info] : ::1 - - [05/Aug/2024:08:08:54 +0000] "POST /TAX/TAX0030A HTTP/1.1" 200 868 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:13:17 [info] : headers>>>>>>[object Object]
+2024-08-05 17:13:17 [info] : realIp>>>>>>undefined
+2024-08-05 17:13:17 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:13:17 [error] : passport isAuth  : true
+2024-08-05 17:13:17 [error] : 존재하지 않는 유저
+2024-08-05 17:13:17 [error] : >> 
+2024-08-05 17:13:17 [info] : ::1 - - [05/Aug/2024:08:13:17 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:13:19 [info] : headers>>>>>>[object Object]
+2024-08-05 17:13:19 [info] : realIp>>>>>>undefined
+2024-08-05 17:13:19 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:13:19 [error] : passport isAuth  : true
+2024-08-05 17:13:19 [error] : 존재하지 않는 유저
+2024-08-05 17:13:19 [error] : >> 
+2024-08-05 17:13:19 [info] : ::1 - - [05/Aug/2024:08:13:19 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:13:20 [info] : headers>>>>>>[object Object]
+2024-08-05 17:13:20 [info] : realIp>>>>>>undefined
+2024-08-05 17:13:20 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:13:20 [error] : passport isAuth  : true
+2024-08-05 17:13:20 [error] : 존재하지 않는 유저
+2024-08-05 17:13:20 [error] : >> 
+2024-08-05 17:13:20 [info] : ::1 - - [05/Aug/2024:08:13:20 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:13:25 [info] : Server off
+2024-08-05 17:13:27 [info] : Server on port 3000 | run
+2024-08-05 17:13:59 [info] : headers>>>>>>[object Object]
+2024-08-05 17:13:59 [info] : realIp>>>>>>undefined
+2024-08-05 17:13:59 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:13:59 [error] : passport isAuth  : true
+2024-08-05 17:13:59 [info] : ::1 - - [05/Aug/2024:08:13:59 +0000] "POST /auth/signin HTTP/1.1" 200 555 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:14:02 [info] : ::1 - - [05/Aug/2024:08:14:02 +0000] "POST /COMMON/code/all HTTP/1.1" 200 11456 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:14:02 [info] : ::1 - - [05/Aug/2024:08:14:02 +0000] "POST /COMMON/code/all HTTP/1.1" 200 11456 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:14:07 [info] : ::1 - - [05/Aug/2024:08:14:07 +0000] "POST /ADM/USER/gets HTTP/1.1" 200 3265179 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:50:26 [info] : headers>>>>>>[object Object]
+2024-08-05 17:50:26 [info] : realIp>>>>>>undefined
+2024-08-05 17:50:26 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:50:26 [error] : passport isAuth  : true
+2024-08-05 17:50:26 [info] : ::1 - - [05/Aug/2024:08:50:26 +0000] "POST /auth/signin HTTP/1.1" 200 555 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:50:27 [info] : ::1 - - [05/Aug/2024:08:50:27 +0000] "POST /board/popup HTTP/1.1" 200 1804 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:50:27 [info] : ::1 - - [05/Aug/2024:08:50:27 +0000] "POST /TAX/TAX0030A HTTP/1.1" 200 2688 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:50:43 [info] : ::1 - - [05/Aug/2024:08:50:43 +0000] "POST /board/popup HTTP/1.1" 200 1804 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:50:43 [info] : ::1 - - [05/Aug/2024:08:50:43 +0000] "POST /TAX/TAX0030A HTTP/1.1" 200 2688 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:51:12 [info] : headers>>>>>>[object Object]
+2024-08-05 17:51:12 [info] : realIp>>>>>>undefined
+2024-08-05 17:51:12 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 17:51:12 [error] : passport isAuth  : true
+2024-08-05 17:51:12 [info] : ::1 - - [05/Aug/2024:08:51:12 +0000] "POST /auth/signin HTTP/1.1" 200 555 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:51:13 [info] : ::1 - - [05/Aug/2024:08:51:13 +0000] "POST /board/popup HTTP/1.1" 200 1645 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:51:13 [info] : ::1 - - [05/Aug/2024:08:51:13 +0000] "POST /TAX/TAX0030A HTTP/1.1" 200 868 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:51:49 [info] : ::1 - - [05/Aug/2024:08:51:49 +0000] "POST /board/popup HTTP/1.1" 200 1645 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:51:49 [info] : ::1 - - [05/Aug/2024:08:51:49 +0000] "POST /TAX/TAX0030A HTTP/1.1" 200 117 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:52:37 [info] : ::1 - - [05/Aug/2024:08:52:37 +0000] "POST /board/popup HTTP/1.1" 200 1645 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 17:52:37 [info] : ::1 - - [05/Aug/2024:08:52:37 +0000] "POST /TAX/TAX0030A HTTP/1.1" 200 117 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 18:20:54 [info] : ::1 - - [05/Aug/2024:09:20:54 +0000] "POST /COMMON/code/all HTTP/1.1" 200 11456 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 18:21:16 [info] : headers>>>>>>[object Object]
+2024-08-05 18:21:16 [info] : realIp>>>>>>undefined
+2024-08-05 18:21:16 [info] : x-forwarded-for>>>>>>>undefined
+2024-08-05 18:21:16 [error] : passport isAuth  : true
+2024-08-05 18:21:16 [error] : 존재하지 않는 유저
+2024-08-05 18:21:16 [error] : >> 
+2024-08-05 18:21:16 [info] : ::1 - - [05/Aug/2024:09:21:16 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36"
+
+2024-08-05 18:21:30 [info] : Server off

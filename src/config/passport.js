@@ -22,7 +22,13 @@ const jwtStrategyOption = {
 
 async function localVerify(req, user_id, user_pwd, done) {
   try {
-    console.log(req.body.user_browser)
+    const { headers } = req;
+    const realIp = headers['x-real-ip'];
+    const ip = headers['x-forwarded-for'];
+
+    logger.info("headers>>>>>>" + headers)
+    logger.info("realIp>>>>>>" + realIp)
+    logger.info("x-forwarded-for>>>>>>>" + ip)
     const userInfo = await User.signIn(req.body.business_cd, req.body.user_cd, user_id, user_pwd,req.body.user_browser);
     let isAuth = bcrypt.compareSync(user_pwd, userInfo[0].user_pwd);
     const loginBlockYn = userInfo[0].login_block_yn;
