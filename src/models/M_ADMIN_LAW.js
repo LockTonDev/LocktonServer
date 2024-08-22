@@ -3,30 +3,28 @@ const { NotFound, Conflict } = require('../utils/errors');
 const { StatusMessage } = require('../utils/response');
 const db = require('../config/db');
 const knexDB = require('../config/knexDB');
-const LAWAdminMapper = require('../mapper/LAWAdminMapper');
+const LAWVAdminMapper = require('../mapper/LAWAdminMapper');
 const AdminUserMapper = require('../mapper/AdminUserMapper');
 const AdminBoardMapper = require('../mapper/AdminBoardMapper');
 
 module.exports = {
   getLAW: async function (req) {
     const params = req.body.params
-    const queryParams = [params.insurance_uuid];
+    logger.info(params)
+    const queryParams = [
+      params.insurance_uuid
+    ];
 
-    const resultData = await db.query(LAWAdminMapper.INSURANCE_LAW_INFO, queryParams);
-    const applyData = await db.query(LAWAdminMapper.INSURANCE_APPLY_LIST, queryParams);
-
-    let result = {
-      contractInfo : resultData[0][0],
-      applyList :applyData[0]
+    const [rowsInsrInfo] = await db.query(LAWVAdminMapper.INSURANCE_LAW_INFO, queryParams);
+    if (rowsInsrInfo.affectedRows < 1) {
+      throw new NotFound(StatusMessage.SELECT_FAILED);
     }
-
-    return result;
+    return Object.setPrototypeOf(rowsInsrInfo, []);
   },
 
   getLAWS: async function (req) {
     const params = req.body.params
     logger.info(params)
-    
     const queryParams = [
       params.business_cd,
       params.user_cd,
@@ -35,42 +33,17 @@ module.exports = {
       params.insr_year,
       params.status_cd,
       params.status_cd,
-      params.keywords,
-      params.keywords,
-      params.keywords,
-      params.keywords,
-      params.keywords,
-      params.keywords,
-      params.keywords,
-      params.limit,
-      params.offset,
-    ];
-    const totalParams = [
-      params.business_cd,
-      params.user_cd,
-      params.user_cd,
-      params.insr_year,
-      params.insr_year,
-      params.status_cd,
-      params.status_cd,
-      params.keywords,
-      params.keywords,
-      params.keywords,
-      params.keywords,
-      params.keywords,
-      params.keywords,
-      params.keywords,
+      params.user_nm,
+      params.user_nm,
     ];
 
 
-    const resultData = await db.query(LAWAdminMapper.INSURANCE_LAW_LIST, queryParams);
-    const total = await db.query(LAWAdminMapper.INSURANCE_TOTAL, totalParams);
-   // resultData[0].total = total[0][0].total
-    let result = {
-      list : resultData[0],
-      total : total[0][0].total
+    const [rowsInsrInfo] = await db.query(LAWVAdminMapper.INSURANCE_LAW_LIST, queryParams);
+    //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
+    if (rowsInsrInfo.affectedRows < 1) {
+      throw new NotFound(StatusMessage.SELECT_FAILED);
     }
-    return result;
+    return Object.setPrototypeOf(rowsInsrInfo, []);
   },
 
   getLAWRate: async function (req) {
@@ -80,7 +53,7 @@ module.exports = {
       params.user_cd,
       params.business_cd,
     ];
-    const [rowsInsrInfo] = await db.query(LAWAdminMapper.INSURANCE_LAW_RATE_TOP, queryParams);
+    const [rowsInsrInfo] = await db.query(LAWVAdminMapper.INSURANCE_LAW_RATE_TOP, queryParams);
     //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
@@ -94,7 +67,7 @@ module.exports = {
     const queryParams = [
       params.insurance_uuid
     ];
-    const [rowsInsrInfo] = await db.query(LAWAdminMapper.RENEWAL_INSURANCE_LAW_INFO, queryParams);
+    const [rowsInsrInfo] = await db.query(LAWVAdminMapper.RENEWAL_INSURANCE_LAW_INFO, queryParams);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
     }
@@ -114,31 +87,13 @@ module.exports = {
       params.renewal_cd,
       params.user_nm,
       params.user_nm,
-      params.limit,
-      params.offset,
-    ];
-    const totalParams = [
-      params.business_cd,
-      params.user_cd,
-      params.user_cd,
-      params.insr_year,
-      params.insr_year,
-      params.renewal_cd,
-      params.renewal_cd,
-      params.user_nm,
-      params.user_nm,
     ];
 
-    const resultData = await db.query(LAWAdminMapper.RENEWAL_INSURANCE_LAW_LIST, queryParams);
-    const total = await db.query(LAWAdminMapper.RENEWAL_INSURANCE_TOTAL, totalParams);
-    console.log('resultData',resultData)
-    console.log('total',total)
-    resultData[0].total = total[0][0].total
-    let result = {
-      list : resultData[0],
-      total : total[0][0].total
+    const [rowsInsrInfo] = await db.query(LAWVAdminMapper.RENEWAL_INSURANCE_LAW_LIST, queryParams);
+    if (rowsInsrInfo.affectedRows < 1) {
+      throw new NotFound(StatusMessage.SELECT_FAILED);
     }
-    return result;
+    return Object.setPrototypeOf(rowsInsrInfo, []);
   },
   
   getLAWRenewalsExcel: async function (req) {
@@ -154,7 +109,7 @@ module.exports = {
       params.user_nm
     ];
 
-    const [rowsInsrInfo] = await db.query(LAWAdminMapper.INSURANCE_RENEWAL_EXCEL_LIST, queryParams);
+    const [rowsInsrInfo] = await db.query(LAWVAdminMapper.INSURANCE_RENEWAL_EXCEL_LIST, queryParams);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
     }
@@ -221,7 +176,7 @@ module.exports = {
           param.created_id,param.created_ip,param.updated_id,param.updated_ip,
           param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data),param.org_insr_year_clm_lt_amt,param.limited_collateral
         ]
-        querys.push(LAWAdminMapper.INSERT_LAW_INSURANCE)
+        querys.push(LAWVAdminMapper.INSERT_LAW_INSURANCE)
         query_params.push(insert_params)
       }
       else if (param.mode === 'U') {
@@ -236,17 +191,17 @@ module.exports = {
           param.cbr_cnt, JSON.stringify(param.cbr_data), JSON.stringify(param.trx_data), param.spct_join_yn, JSON.stringify(param.spct_data), param.active_yn, 
           param.agr10_yn, param.agr20_yn, param.agr30_yn, param.agr31_yn, param.agr32_yn, param.agr33_yn, param.agr34_yn, param.agr40_yn,
           param.agr41_yn, param.agr50_yn, param.status_cd, param.rmk, param.erp_amt, param.erp_dt, param.erp_st_dt, param.erp_cncls_dt,
-          param.change_rmk, param.change_dt, param.updated_id, param.updated_ip,param.org_insr_year_clm_lt_amt,param.limited_collateral, param.insurance_uuid
+          param.change_rmk, param.change_dt, param.updated_id, param.updated_ip,param.org_insr_year_clm_lt_amt,param.limited_collateral, param.insurance_uuid 
         ]
         //console.log('update_params>>>',update_params)
-        querys.push(LAWAdminMapper.UPDATE_INSURANCE)
+        querys.push(LAWVAdminMapper.UPDATE_INSURANCE)
         query_params.push(update_params)
       }
       else if (param.mode === 'D'){
         const delete_params = [
           param.insurance_uuid, param.user_uuid
         ]
-        querys.push(LAWAdminMapper.DELETE_LAW_INSURANCE)
+        querys.push(LAWVAdminMapper.DELETE_LAW_INSURANCE)
         query_params.push(delete_params)
       }
     }
@@ -286,8 +241,8 @@ module.exports = {
           param.change_dt,param.created_id,param.created_ip,param.updated_id,
           param.updated_ip,param.spct_join_yn,JSON.stringify(param.spct_data),param.cbr_cnt,JSON.stringify(param.cbr_data),JSON.stringify(param.trx_data), param.renewal_cd,param.org_insr_year_clm_lt_amt
         ]
-        // console.log('insert_params>>>',insert_params)
-        querys.push(LAWAdminMapper.INSERT_RENEWAL_LAW_INSURANCE)
+        console.log('insert_params>>>',insert_params)
+        querys.push(LAWVAdminMapper.INSERT_RENEWAL_LAW_INSURANCE)
         query_params.push(insert_params)
       }
       else if (param.mode === 'U') {
@@ -304,14 +259,14 @@ module.exports = {
           param.agr10_yn, param.agr20_yn, param.agr30_yn, param.agr31_yn, param.agr32_yn, param.agr33_yn, param.agr34_yn, param.agr40_yn,
           param.agr41_yn, param.agr50_yn, param.status_cd, param.rmk, param.change_rmk, param.change_dt, param.updated_id, param.updated_ip, param.renewal_cd,param.org_insr_year_clm_lt_amt, param.insurance_uuid 
         ]
-        querys.push(LAWAdminMapper.UPDATE_RENEWAL_LAW_INSURANCE)
+        querys.push(LAWVAdminMapper.UPDATE_RENEWAL_LAW_INSURANCE)
         query_params.push(update_params)
       }
       else if (param.mode === 'D'){
         const delete_params = [
           param.insurance_uuid
         ]
-        querys.push(LAWAdminMapper.DELETE_RENEWAL_LAW_INSURANCE)
+        querys.push(LAWVAdminMapper.DELETE_RENEWAL_LAW_INSURANCE)
         query_params.push(delete_params)
       }
     }
@@ -335,7 +290,7 @@ module.exports = {
       params.proc_cd,
       params.user_nm
     ];
-    const [rowsInsrInfo] = await db.query(LAWAdminMapper.SELECT_APPLY_LAW_INSURANCE_LIST, queryParams);
+    const [rowsInsrInfo] = await db.query(LAWVAdminMapper.SELECT_APPLY_LAW_INSURANCE_LIST, queryParams);
     //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
     if (rowsInsrInfo.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
@@ -353,7 +308,7 @@ module.exports = {
       params.apply_no,
     ];
     
-    const [rows] = await db.query(LAWAdminMapper.UPDATE_APPLY_LAW_INSURANCE, queryParams);
+    const [rows] = await db.query(LAWVAdminMapper.UPDATE_APPLY_LAW_INSURANCE, queryParams);
     //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
     if (rows.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
@@ -374,29 +329,13 @@ module.exports = {
       params.status_cd,
       params.user_nm,
       params.user_nm,
-      params.limit,
-      params.offset,
     ];
-    const totalParams = [
-      params.business_cd,
-      params.user_cd,
-      params.user_cd,
-      params.insr_year,
-      params.insr_year,
-      params.status_cd,
-      params.status_cd,
-      params.user_nm,
-      params.user_nm,
-    ];
-
-    const resultData = await db.query(LAWAdminMapper.SELECT_INSURANCE_LAW_TRX_DATA_LIST, queryParams);
-    const total = await db.query(LAWAdminMapper.INSURANCE_TOTAL, totalParams);
-    // resultData[0].total = total[0][0].total
-    let result = {
-      list : resultData[0],
-      total : total[0][0].total
+    const [rowsInsrInfo] = await db.query(LAWVAdminMapper.SELECT_INSURANCE_LAW_TRX_DATA_LIST, queryParams);
+    //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
+    if (rowsInsrInfo.affectedRows < 1) {
+      throw new NotFound(StatusMessage.SELECT_FAILED);
     }
-    return result;
+    return Object.setPrototypeOf(rowsInsrInfo, []);
   },
 
   setLAW_TRX: async function (req) {
@@ -415,7 +354,7 @@ module.exports = {
         param.updated_ip,
         param.insurance_uuid,
       ];
-      querys.push(LAWAdminMapper.UPDATE_INSURANCE_LAW_TRX_DATA)
+      querys.push(LAWVAdminMapper.UPDATE_INSURANCE_LAW_TRX_DATA)
       query_params.push(updateQueryParams)
       nCnt ++
     }
@@ -441,7 +380,7 @@ module.exports = {
       params.status_cd,
       params.user_nm,
     ];
-    const [rows] = await db.query(LAWAdminMapper.INSURANCE_LAW_EXCEL_LIST, queryParams);
+    const [rows] = await db.query(LAWVAdminMapper.INSURANCE_LAW_EXCEL_LIST, queryParams);
     if (rows.affectedRows < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
     }
