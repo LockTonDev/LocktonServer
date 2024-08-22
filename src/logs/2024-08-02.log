@@ -1,0 +1,90 @@
+2024-08-02 14:12:49 [info] : Server off
+2024-08-02 14:13:04 [info] : Server on port 3000 | run
+2024-08-02 14:14:53 [info] : ::1 - - [02/Aug/2024:05:14:53 +0000] "POST /COMMON/code/all HTTP/1.1" 200 11456 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:14:53 [info] : ::1 - - [02/Aug/2024:05:14:53 +0000] "POST /COMMON/code/all HTTP/1.1" 200 11456 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:14:53 [info] : ::1 - - [02/Aug/2024:05:14:53 +0000] "POST /COMMON/code/all HTTP/1.1" 200 11456 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:14:54 [info] : ::1 - - [02/Aug/2024:05:14:54 +0000] "POST /COMMON/code/all HTTP/1.1" 200 11456 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:15:00 [error] : passport isAuth  : true
+2024-08-02 14:15:00 [error] : 존재하지 않는 유저
+2024-08-02 14:15:00 [error] : >> 
+2024-08-02 14:15:00 [info] : ::1 - - [02/Aug/2024:05:15:00 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:15:02 [error] : passport isAuth  : true
+2024-08-02 14:15:02 [error] : 존재하지 않는 유저
+2024-08-02 14:15:02 [error] : >> 
+2024-08-02 14:15:02 [info] : ::1 - - [02/Aug/2024:05:15:02 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:15:04 [error] : passport isAuth  : true
+2024-08-02 14:15:04 [error] : 존재하지 않는 유저
+2024-08-02 14:15:04 [error] : >> 
+2024-08-02 14:15:04 [info] : ::1 - - [02/Aug/2024:05:15:04 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:15:14 [error] : passport isAuth  : true
+2024-08-02 14:15:14 [error] : 존재하지 않는 유저
+2024-08-02 14:15:14 [error] : >> 
+2024-08-02 14:15:14 [info] : ::1 - - [02/Aug/2024:05:15:14 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:16:49 [error] : passport isAuth  : true
+2024-08-02 14:16:49 [error] : 존재하지 않는 유저
+2024-08-02 14:16:49 [error] : >> 
+2024-08-02 14:16:49 [info] : ::1 - - [02/Aug/2024:05:16:49 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:16:50 [error] : passport isAuth  : true
+2024-08-02 14:16:50 [error] : 존재하지 않는 유저
+2024-08-02 14:16:50 [error] : >> 
+2024-08-02 14:16:50 [info] : ::1 - - [02/Aug/2024:05:16:50 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:16:50 [error] : passport isAuth  : true
+2024-08-02 14:16:50 [error] : 존재하지 않는 유저
+2024-08-02 14:16:50 [error] : >> 
+2024-08-02 14:16:50 [info] : ::1 - - [02/Aug/2024:05:16:50 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:17:00 [info] : Server off
+2024-08-02 14:17:03 [info] : Server on port 3000 | run
+2024-08-02 14:17:12 [error] : passport isAuth  : true
+2024-08-02 14:17:12 [error] : 존재하지 않는 유저
+2024-08-02 14:17:12 [error] : >> 
+2024-08-02 14:17:12 [info] : ::1 - - [02/Aug/2024:05:17:12 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:17:16 [error] : passport isAuth  : true
+2024-08-02 14:17:16 [error] : 존재하지 않는 유저
+2024-08-02 14:17:16 [error] : >> 
+2024-08-02 14:17:16 [info] : ::1 - - [02/Aug/2024:05:17:16 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:17:17 [error] : passport isAuth  : true
+2024-08-02 14:17:17 [error] : 존재하지 않는 유저
+2024-08-02 14:17:17 [error] : >> 
+2024-08-02 14:17:17 [info] : ::1 - - [02/Aug/2024:05:17:17 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:17:18 [error] : passport isAuth  : true
+2024-08-02 14:17:18 [error] : 존재하지 않는 유저
+2024-08-02 14:17:18 [error] : >> 
+2024-08-02 14:17:18 [info] : ::1 - - [02/Aug/2024:05:17:18 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:17:22 [error] : passport isAuth  : true
+2024-08-02 14:17:22 [error] : 존재하지 않는 유저
+2024-08-02 14:17:22 [error] : >> 
+2024-08-02 14:17:22 [info] : ::1 - - [02/Aug/2024:05:17:22 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:18:28 [info] : ::1 - - [02/Aug/2024:05:18:28 +0000] "POST /COMMON/code/all HTTP/1.1" 200 11456 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:18:30 [error] : passport isAuth  : true
+2024-08-02 14:18:30 [error] : 존재하지 않는 유저
+2024-08-02 14:18:30 [error] : >> 
+2024-08-02 14:18:30 [info] : ::1 - - [02/Aug/2024:05:18:30 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:18:31 [error] : passport isAuth  : true
+2024-08-02 14:18:31 [error] : 존재하지 않는 유저
+2024-08-02 14:18:31 [error] : >> 
+2024-08-02 14:18:31 [info] : ::1 - - [02/Aug/2024:05:18:31 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 14:18:32 [error] : passport isAuth  : true
+2024-08-02 14:18:32 [error] : 존재하지 않는 유저
+2024-08-02 14:18:32 [error] : >> 
+2024-08-02 14:18:32 [info] : ::1 - - [02/Aug/2024:05:18:32 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+
+2024-08-02 15:41:59 [info] : Server off
