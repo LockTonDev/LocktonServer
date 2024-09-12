@@ -83,6 +83,7 @@ router.post('/PAT/TRX/get', verifyToken, C_ADMIN.getPAT_TRX);
 router.post('/PAT/APPLY/set', verifyToken, C_ADMIN.setApplyPATInsurance);
 router.post('/PAT/APPLY/get', verifyToken, C_ADMIN.getApplyPATInsurance);
 router.post('/PAT/EXCEL/get', verifyToken, C_ADMIN.getPATExcel);
+router.post('/PAT/downloadIncomeFile', verifyToken, C_ADMIN.downloadIncomeFile);
 
 router.post('/LAW/rate', verifyToken, C_ADMIN.getLAWRate);
 router.post('/LAW/set', verifyToken, C_ADMIN.setLAW);
