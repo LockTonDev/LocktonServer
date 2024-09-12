@@ -9,6 +9,7 @@ const M_ADMIN_LAW = require('../models/M_ADMIN_LAW')
 const M_ADMIN_CAA = require('../models/M_ADMIN_CAA')
 const M_ADMIN_PAT = require('../models/M_ADMIN_PAT')
 const { genPassword } = require('../utils/util');
+const { downloadFile } = require('../utils/saveFile')
 
 module.exports = {
   getSystemInfo: async function (req, res, next) {
@@ -1154,6 +1155,27 @@ module.exports = {
           success: true,
           message: StatusMessage.SELECT,
           data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+  downloadIncomeFile: async function (req, res, next) {
+    try {
+      const [data, message] = downloadFile(req);
+      
+      if (data != null) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: message,
+          data: data
+        });
+      }else {
+        res.status(StatusCode.BADREQUEST).json({
+          success: false,
+          message: message,
+          data: data
         });
       }
     } catch (err) {
