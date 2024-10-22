@@ -165,7 +165,7 @@ module.exports = Object.freeze({
          AND (A.insr_year like CONCAT('%', :insr_year, '%'))
          AND (:status_cd = '%' or A.status_cd = :status_cd)
          AND (A.user_nm like CONCAT('%', :user_nm, '%'))
-      ORDER  BY A.created_at DESC 
+      ORDER  BY A.insr_year DESC ,A.created_at DESC
     `,
   /**
    * [보험DB] 목록 조회
@@ -206,7 +206,7 @@ module.exports = Object.freeze({
          AND (:status_cd = '%' or A.status_cd = :status_cd)
          AND ((A.user_nm like CONCAT('%', :user_nm, '%')) OR a.cbr_data like CONCAT('%', :user_nm, '%') )
         
-      ORDER  BY A.created_at DESC 
+      ORDER  BY A.insr_year DESC ,A.created_at DESC
     `,
 
   /**
@@ -686,7 +686,7 @@ VALUES      ( UUID_V4(),
          AND (:insr_year = '%' or A.insr_year = :insr_year)
          AND (:status_cd = '%' or A.status_cd = :status_cd)
          AND ((A.user_nm like CONCAT('%', :user_nm, '%')) OR a.cbr_data like CONCAT('%', :user_nm, '%') )
-      ORDER  BY A.created_at DESC 
+      ORDER  BY A.insr_year DESC ,A.created_at DESC
     `,
 
   /**
@@ -869,7 +869,7 @@ VALUES      ( UUID_V4(),
          AND (:insr_year = '%' or A.insr_year = :insr_year)
          AND (:renewal_cd = '%' or A.renewal_cd = :renewal_cd) 
          AND ((A.user_nm like CONCAT('%', :user_nm, '%')) OR a.cbr_data like CONCAT('%', :user_nm, '%') )
-      ORDER  BY A.created_at DESC 
+      ORDER  BY A.insr_year DESC ,A.created_at DESC
     `,
     
     /**
@@ -965,7 +965,7 @@ VALUES      ( UUID_V4(),
      /* AND (:status_cd = '%' or A.status_cd = :status_cd) */
       AND (A.user_nm like CONCAT('%', :user_nm, '%'))
       AND (:renewal_cd = '%' or A.renewal_cd = :renewal_cd)
-    ORDER  BY A.created_at DESC 
+    ORDER  BY A.insr_year DESC ,A.created_at DESC
     `,
 
   /**
@@ -1258,5 +1258,5 @@ VALUES      ( UUID_V4(),
            , business_cd
         from tcom0112a
        where use_yn = 'Y';
-      `
+      `,
 });

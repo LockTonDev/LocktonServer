@@ -1,0 +1,669 @@
+2024-09-02 13:02:19 [info] : Server on port 3000 | run
+2024-09-02 13:02:21 [info] : Server off
+2024-09-02 13:03:43 [info] : Server on port 3000 | run
+2024-09-02 13:04:27 [info] : headers>>>>>>[object Object]
+2024-09-02 13:04:27 [info] : realIp>>>>>>undefined
+2024-09-02 13:04:27 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:04:27 [error] : passport isAuth  : true
+2024-09-02 13:04:27 [error] : 존재하지 않는 유저
+2024-09-02 13:04:27 [error] : >> 
+2024-09-02 13:04:27 [info] : ::1 - - [02/Sep/2024:04:04:27 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:04:28 [info] : headers>>>>>>[object Object]
+2024-09-02 13:04:28 [info] : realIp>>>>>>undefined
+2024-09-02 13:04:28 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:04:29 [error] : passport isAuth  : true
+2024-09-02 13:04:29 [error] : 존재하지 않는 유저
+2024-09-02 13:04:29 [error] : >> 
+2024-09-02 13:04:29 [info] : ::1 - - [02/Sep/2024:04:04:29 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:06:09 [info] : Server off
+2024-09-02 13:06:12 [info] : Server on port 3000 | run
+2024-09-02 13:06:15 [info] : headers>>>>>>[object Object]
+2024-09-02 13:06:15 [info] : realIp>>>>>>undefined
+2024-09-02 13:06:15 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:06:15 [error] : passport isAuth  : true
+2024-09-02 13:06:15 [error] : 존재하지 않는 유저
+2024-09-02 13:06:15 [error] : >> 
+2024-09-02 13:06:15 [info] : ::1 - - [02/Sep/2024:04:06:15 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:06:16 [info] : headers>>>>>>[object Object]
+2024-09-02 13:06:16 [info] : realIp>>>>>>undefined
+2024-09-02 13:06:16 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:06:16 [error] : passport isAuth  : true
+2024-09-02 13:06:16 [error] : 존재하지 않는 유저
+2024-09-02 13:06:16 [error] : >> 
+2024-09-02 13:06:16 [info] : ::1 - - [02/Sep/2024:04:06:16 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:07:08 [info] : Server off
+2024-09-02 13:09:12 [info] : Server on port 3000 | run
+2024-09-02 13:09:16 [info] : headers>>>>>>[object Object]
+2024-09-02 13:09:16 [info] : realIp>>>>>>undefined
+2024-09-02 13:09:16 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:09:16 [error] : passport isAuth  : true
+2024-09-02 13:09:16 [error] : 존재하지 않는 유저
+2024-09-02 13:09:16 [error] : >> 
+2024-09-02 13:09:16 [info] : ::1 - - [02/Sep/2024:04:09:16 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:09:19 [info] : headers>>>>>>[object Object]
+2024-09-02 13:09:19 [info] : realIp>>>>>>undefined
+2024-09-02 13:09:19 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:09:19 [error] : passport isAuth  : true
+2024-09-02 13:09:19 [error] : 존재하지 않는 유저
+2024-09-02 13:09:19 [error] : >> 
+2024-09-02 13:09:19 [info] : ::1 - - [02/Sep/2024:04:09:19 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:09:20 [info] : headers>>>>>>[object Object]
+2024-09-02 13:09:20 [info] : realIp>>>>>>undefined
+2024-09-02 13:09:20 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:09:20 [error] : passport isAuth  : true
+2024-09-02 13:09:20 [error] : 존재하지 않는 유저
+2024-09-02 13:09:20 [error] : >> 
+2024-09-02 13:09:20 [info] : ::1 - - [02/Sep/2024:04:09:20 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:09:21 [info] : headers>>>>>>[object Object]
+2024-09-02 13:09:21 [info] : realIp>>>>>>undefined
+2024-09-02 13:09:21 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:09:21 [error] : passport isAuth  : true
+2024-09-02 13:09:21 [error] : 존재하지 않는 유저
+2024-09-02 13:09:21 [error] : >> 
+2024-09-02 13:09:21 [info] : ::1 - - [02/Sep/2024:04:09:21 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:09:26 [info] : headers>>>>>>[object Object]
+2024-09-02 13:09:26 [info] : realIp>>>>>>undefined
+2024-09-02 13:09:26 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:09:26 [error] : passport isAuth  : true
+2024-09-02 13:09:26 [error] : 존재하지 않는 유저
+2024-09-02 13:09:26 [error] : >> 
+2024-09-02 13:09:26 [info] : ::1 - - [02/Sep/2024:04:09:26 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:09:40 [info] : headers>>>>>>[object Object]
+2024-09-02 13:09:40 [info] : realIp>>>>>>undefined
+2024-09-02 13:09:40 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:09:41 [error] : passport isAuth  : true
+2024-09-02 13:09:41 [error] : 존재하지 않는 유저
+2024-09-02 13:09:41 [error] : >> 
+2024-09-02 13:09:41 [info] : ::1 - - [02/Sep/2024:04:09:41 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:21:10 [info] : headers>>>>>>[object Object]
+2024-09-02 13:21:10 [info] : realIp>>>>>>undefined
+2024-09-02 13:21:10 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:21:10 [error] : passport isAuth  : true
+2024-09-02 13:21:10 [error] : 존재하지 않는 유저
+2024-09-02 13:21:10 [error] : >> 
+2024-09-02 13:21:10 [info] : ::1 - - [02/Sep/2024:04:21:10 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:21:11 [info] : headers>>>>>>[object Object]
+2024-09-02 13:21:11 [info] : realIp>>>>>>undefined
+2024-09-02 13:21:11 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:21:11 [error] : passport isAuth  : true
+2024-09-02 13:21:11 [error] : 존재하지 않는 유저
+2024-09-02 13:21:11 [error] : >> 
+2024-09-02 13:21:11 [info] : ::1 - - [02/Sep/2024:04:21:11 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:21:11 [info] : headers>>>>>>[object Object]
+2024-09-02 13:21:11 [info] : realIp>>>>>>undefined
+2024-09-02 13:21:11 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:21:12 [error] : passport isAuth  : true
+2024-09-02 13:21:12 [error] : 존재하지 않는 유저
+2024-09-02 13:21:12 [error] : >> 
+2024-09-02 13:21:12 [info] : ::1 - - [02/Sep/2024:04:21:12 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:21:12 [info] : headers>>>>>>[object Object]
+2024-09-02 13:21:12 [info] : realIp>>>>>>undefined
+2024-09-02 13:21:12 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:21:12 [error] : passport isAuth  : true
+2024-09-02 13:21:12 [error] : 존재하지 않는 유저
+2024-09-02 13:21:12 [error] : >> 
+2024-09-02 13:21:12 [info] : ::1 - - [02/Sep/2024:04:21:12 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:21:12 [info] : headers>>>>>>[object Object]
+2024-09-02 13:21:12 [info] : realIp>>>>>>undefined
+2024-09-02 13:21:12 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:21:12 [error] : passport isAuth  : true
+2024-09-02 13:21:12 [error] : 존재하지 않는 유저
+2024-09-02 13:21:12 [error] : >> 
+2024-09-02 13:21:12 [info] : ::1 - - [02/Sep/2024:04:21:12 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:21:12 [info] : headers>>>>>>[object Object]
+2024-09-02 13:21:12 [info] : realIp>>>>>>undefined
+2024-09-02 13:21:12 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:21:12 [error] : passport isAuth  : true
+2024-09-02 13:21:12 [error] : 존재하지 않는 유저
+2024-09-02 13:21:12 [error] : >> 
+2024-09-02 13:21:12 [info] : ::1 - - [02/Sep/2024:04:21:12 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:21:13 [info] : headers>>>>>>[object Object]
+2024-09-02 13:21:13 [info] : realIp>>>>>>undefined
+2024-09-02 13:21:13 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:21:13 [error] : passport isAuth  : true
+2024-09-02 13:21:13 [error] : 존재하지 않는 유저
+2024-09-02 13:21:13 [error] : >> 
+2024-09-02 13:21:13 [info] : ::1 - - [02/Sep/2024:04:21:13 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:21:13 [info] : headers>>>>>>[object Object]
+2024-09-02 13:21:13 [info] : realIp>>>>>>undefined
+2024-09-02 13:21:13 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:21:13 [error] : passport isAuth  : true
+2024-09-02 13:21:13 [error] : 존재하지 않는 유저
+2024-09-02 13:21:13 [error] : >> 
+2024-09-02 13:21:13 [info] : ::1 - - [02/Sep/2024:04:21:13 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:21:14 [info] : headers>>>>>>[object Object]
+2024-09-02 13:21:14 [info] : realIp>>>>>>undefined
+2024-09-02 13:21:14 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:21:14 [error] : passport isAuth  : true
+2024-09-02 13:21:14 [error] : 존재하지 않는 유저
+2024-09-02 13:21:14 [error] : >> 
+2024-09-02 13:21:14 [info] : ::1 - - [02/Sep/2024:04:21:14 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:24:26 [info] : Server off
+2024-09-02 13:25:40 [info] : Server on port 3000 | run
+2024-09-02 13:25:44 [info] : headers>>>>>>[object Object]
+2024-09-02 13:25:44 [info] : realIp>>>>>>undefined
+2024-09-02 13:25:44 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:25:44 [error] : passport isAuth  : true
+2024-09-02 13:25:44 [error] : 존재하지 않는 유저
+2024-09-02 13:25:44 [error] : >> 
+2024-09-02 13:25:44 [info] : ::1 - - [02/Sep/2024:04:25:44 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:25:45 [info] : headers>>>>>>[object Object]
+2024-09-02 13:25:45 [info] : realIp>>>>>>undefined
+2024-09-02 13:25:45 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:25:45 [error] : passport isAuth  : true
+2024-09-02 13:25:45 [error] : 존재하지 않는 유저
+2024-09-02 13:25:45 [error] : >> 
+2024-09-02 13:25:45 [info] : ::1 - - [02/Sep/2024:04:25:45 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:25:46 [info] : headers>>>>>>[object Object]
+2024-09-02 13:25:46 [info] : realIp>>>>>>undefined
+2024-09-02 13:25:46 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:25:46 [error] : passport isAuth  : true
+2024-09-02 13:25:46 [error] : 존재하지 않는 유저
+2024-09-02 13:25:46 [error] : >> 
+2024-09-02 13:25:46 [info] : ::1 - - [02/Sep/2024:04:25:46 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:34:43 [info] : Server off
+2024-09-02 13:34:50 [info] : Server on port 3000 | run
+2024-09-02 13:34:55 [info] : headers>>>>>>[object Object]
+2024-09-02 13:34:55 [info] : realIp>>>>>>undefined
+2024-09-02 13:34:55 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:34:55 [error] : passport isAuth  : true
+2024-09-02 13:34:55 [error] : 존재하지 않는 유저
+2024-09-02 13:34:55 [error] : >> 
+2024-09-02 13:34:55 [info] : ::1 - - [02/Sep/2024:04:34:55 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:34:57 [info] : headers>>>>>>[object Object]
+2024-09-02 13:34:57 [info] : realIp>>>>>>undefined
+2024-09-02 13:34:57 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:34:57 [error] : passport isAuth  : true
+2024-09-02 13:34:57 [error] : 존재하지 않는 유저
+2024-09-02 13:34:57 [error] : >> 
+2024-09-02 13:34:57 [info] : ::1 - - [02/Sep/2024:04:34:57 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:34:58 [info] : headers>>>>>>[object Object]
+2024-09-02 13:34:58 [info] : realIp>>>>>>undefined
+2024-09-02 13:34:58 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:34:58 [error] : passport isAuth  : true
+2024-09-02 13:34:58 [error] : 존재하지 않는 유저
+2024-09-02 13:34:58 [error] : >> 
+2024-09-02 13:34:58 [info] : ::1 - - [02/Sep/2024:04:34:58 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:34:58 [info] : headers>>>>>>[object Object]
+2024-09-02 13:34:58 [info] : realIp>>>>>>undefined
+2024-09-02 13:34:58 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:34:58 [error] : passport isAuth  : true
+2024-09-02 13:34:59 [error] : 존재하지 않는 유저
+2024-09-02 13:34:59 [error] : >> 
+2024-09-02 13:34:59 [info] : ::1 - - [02/Sep/2024:04:34:59 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:36:00 [info] : headers>>>>>>[object Object]
+2024-09-02 13:36:00 [info] : realIp>>>>>>undefined
+2024-09-02 13:36:00 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:36:00 [error] : passport isAuth  : true
+2024-09-02 13:36:00 [error] : 존재하지 않는 유저
+2024-09-02 13:36:00 [error] : >> 
+2024-09-02 13:36:00 [info] : ::1 - - [02/Sep/2024:04:36:00 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 13:36:00 [info] : headers>>>>>>[object Object]
+2024-09-02 13:36:00 [info] : realIp>>>>>>undefined
+2024-09-02 13:36:00 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 13:36:00 [error] : passport isAuth  : true
+2024-09-02 13:36:00 [error] : 존재하지 않는 유저
+2024-09-02 13:36:00 [error] : >> 
+2024-09-02 13:36:00 [info] : ::1 - - [02/Sep/2024:04:36:00 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:35 [info] : Server on port 3000 | run
+2024-09-02 14:05:40 [info] : ::ffff:127.0.0.1 - - [02/Sep/2024:05:05:40 +0000] "GET / HTTP/1.1" 200 31 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:40 [info] : ::ffff:127.0.0.1 - - [02/Sep/2024:05:05:40 +0000] "GET /favicon.ico HTTP/1.1" 500 1646 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:43 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:43 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:43 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:43 [error] : passport isAuth  : true
+2024-09-02 14:05:43 [error] : 존재하지 않는 유저
+2024-09-02 14:05:43 [error] : >> 
+2024-09-02 14:05:43 [info] : ::1 - - [02/Sep/2024:05:05:43 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:44 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:44 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:44 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:44 [error] : passport isAuth  : true
+2024-09-02 14:05:44 [error] : 존재하지 않는 유저
+2024-09-02 14:05:44 [error] : >> 
+2024-09-02 14:05:44 [info] : ::1 - - [02/Sep/2024:05:05:44 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:45 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:45 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:45 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:45 [error] : passport isAuth  : true
+2024-09-02 14:05:45 [error] : 존재하지 않는 유저
+2024-09-02 14:05:45 [error] : >> 
+2024-09-02 14:05:45 [info] : ::1 - - [02/Sep/2024:05:05:45 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:45 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:45 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:45 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:45 [error] : passport isAuth  : true
+2024-09-02 14:05:45 [error] : 존재하지 않는 유저
+2024-09-02 14:05:45 [error] : >> 
+2024-09-02 14:05:45 [info] : ::1 - - [02/Sep/2024:05:05:45 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:45 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:45 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:45 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:45 [error] : passport isAuth  : true
+2024-09-02 14:05:45 [error] : 존재하지 않는 유저
+2024-09-02 14:05:45 [error] : >> 
+2024-09-02 14:05:45 [info] : ::1 - - [02/Sep/2024:05:05:45 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:46 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:46 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:46 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:46 [error] : passport isAuth  : true
+2024-09-02 14:05:46 [error] : 존재하지 않는 유저
+2024-09-02 14:05:46 [error] : >> 
+2024-09-02 14:05:46 [info] : ::1 - - [02/Sep/2024:05:05:46 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:46 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:46 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:46 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:46 [error] : passport isAuth  : true
+2024-09-02 14:05:46 [error] : 존재하지 않는 유저
+2024-09-02 14:05:46 [error] : >> 
+2024-09-02 14:05:46 [info] : ::1 - - [02/Sep/2024:05:05:46 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:47 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:47 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:47 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:47 [error] : passport isAuth  : true
+2024-09-02 14:05:47 [error] : 존재하지 않는 유저
+2024-09-02 14:05:47 [error] : >> 
+2024-09-02 14:05:47 [info] : ::1 - - [02/Sep/2024:05:05:47 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:47 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:47 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:47 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:47 [error] : passport isAuth  : true
+2024-09-02 14:05:47 [error] : 존재하지 않는 유저
+2024-09-02 14:05:47 [error] : >> 
+2024-09-02 14:05:47 [info] : ::1 - - [02/Sep/2024:05:05:47 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:47 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:47 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:47 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:47 [error] : passport isAuth  : true
+2024-09-02 14:05:47 [error] : 존재하지 않는 유저
+2024-09-02 14:05:47 [error] : >> 
+2024-09-02 14:05:47 [info] : ::1 - - [02/Sep/2024:05:05:47 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:47 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:47 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:47 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:47 [error] : passport isAuth  : true
+2024-09-02 14:05:47 [error] : 존재하지 않는 유저
+2024-09-02 14:05:47 [error] : >> 
+2024-09-02 14:05:47 [info] : ::1 - - [02/Sep/2024:05:05:47 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:48 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:48 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:48 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:48 [error] : passport isAuth  : true
+2024-09-02 14:05:48 [error] : 존재하지 않는 유저
+2024-09-02 14:05:48 [error] : >> 
+2024-09-02 14:05:48 [info] : ::1 - - [02/Sep/2024:05:05:48 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:48 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:48 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:48 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:48 [error] : passport isAuth  : true
+2024-09-02 14:05:48 [error] : 존재하지 않는 유저
+2024-09-02 14:05:48 [error] : >> 
+2024-09-02 14:05:48 [info] : ::1 - - [02/Sep/2024:05:05:48 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:48 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:48 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:48 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:48 [error] : passport isAuth  : true
+2024-09-02 14:05:48 [error] : 존재하지 않는 유저
+2024-09-02 14:05:48 [error] : >> 
+2024-09-02 14:05:48 [info] : ::1 - - [02/Sep/2024:05:05:48 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:48 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:48 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:48 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:49 [error] : passport isAuth  : true
+2024-09-02 14:05:49 [error] : 존재하지 않는 유저
+2024-09-02 14:05:49 [error] : >> 
+2024-09-02 14:05:49 [info] : ::1 - - [02/Sep/2024:05:05:49 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:49 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:49 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:49 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:49 [error] : passport isAuth  : true
+2024-09-02 14:05:49 [error] : 존재하지 않는 유저
+2024-09-02 14:05:49 [error] : >> 
+2024-09-02 14:05:49 [info] : ::1 - - [02/Sep/2024:05:05:49 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:49 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:49 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:49 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:49 [error] : passport isAuth  : true
+2024-09-02 14:05:49 [error] : 존재하지 않는 유저
+2024-09-02 14:05:49 [error] : >> 
+2024-09-02 14:05:49 [info] : ::1 - - [02/Sep/2024:05:05:49 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:49 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:49 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:49 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:49 [error] : passport isAuth  : true
+2024-09-02 14:05:49 [error] : 존재하지 않는 유저
+2024-09-02 14:05:49 [error] : >> 
+2024-09-02 14:05:49 [info] : ::1 - - [02/Sep/2024:05:05:49 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:50 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:50 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:50 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:50 [error] : passport isAuth  : true
+2024-09-02 14:05:50 [error] : 존재하지 않는 유저
+2024-09-02 14:05:50 [error] : >> 
+2024-09-02 14:05:50 [info] : ::1 - - [02/Sep/2024:05:05:50 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:50 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:50 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:50 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:50 [error] : passport isAuth  : true
+2024-09-02 14:05:50 [error] : 존재하지 않는 유저
+2024-09-02 14:05:50 [error] : >> 
+2024-09-02 14:05:50 [info] : ::1 - - [02/Sep/2024:05:05:50 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:50 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:50 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:50 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:50 [error] : passport isAuth  : true
+2024-09-02 14:05:50 [error] : 존재하지 않는 유저
+2024-09-02 14:05:50 [error] : >> 
+2024-09-02 14:05:50 [info] : ::1 - - [02/Sep/2024:05:05:50 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:51 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:51 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:51 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:51 [error] : passport isAuth  : true
+2024-09-02 14:05:51 [error] : 존재하지 않는 유저
+2024-09-02 14:05:51 [error] : >> 
+2024-09-02 14:05:51 [info] : ::1 - - [02/Sep/2024:05:05:51 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:51 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:51 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:51 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:51 [error] : passport isAuth  : true
+2024-09-02 14:05:51 [error] : 존재하지 않는 유저
+2024-09-02 14:05:51 [error] : >> 
+2024-09-02 14:05:51 [info] : ::1 - - [02/Sep/2024:05:05:51 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:51 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:51 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:51 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:51 [error] : passport isAuth  : true
+2024-09-02 14:05:51 [error] : 존재하지 않는 유저
+2024-09-02 14:05:51 [error] : >> 
+2024-09-02 14:05:51 [info] : ::1 - - [02/Sep/2024:05:05:51 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:51 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:51 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:51 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:51 [error] : passport isAuth  : true
+2024-09-02 14:05:51 [error] : 존재하지 않는 유저
+2024-09-02 14:05:51 [error] : >> 
+2024-09-02 14:05:51 [info] : ::1 - - [02/Sep/2024:05:05:51 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:52 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:52 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:52 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:52 [error] : passport isAuth  : true
+2024-09-02 14:05:52 [error] : 존재하지 않는 유저
+2024-09-02 14:05:52 [error] : >> 
+2024-09-02 14:05:52 [info] : ::1 - - [02/Sep/2024:05:05:52 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:52 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:52 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:52 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:52 [error] : passport isAuth  : true
+2024-09-02 14:05:52 [error] : 존재하지 않는 유저
+2024-09-02 14:05:52 [error] : >> 
+2024-09-02 14:05:52 [info] : ::1 - - [02/Sep/2024:05:05:52 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:52 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:52 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:52 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:52 [error] : passport isAuth  : true
+2024-09-02 14:05:52 [error] : 존재하지 않는 유저
+2024-09-02 14:05:52 [error] : >> 
+2024-09-02 14:05:52 [info] : ::1 - - [02/Sep/2024:05:05:52 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:53 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:53 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:53 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:53 [error] : passport isAuth  : true
+2024-09-02 14:05:53 [error] : 존재하지 않는 유저
+2024-09-02 14:05:53 [error] : >> 
+2024-09-02 14:05:53 [info] : ::1 - - [02/Sep/2024:05:05:53 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:53 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:53 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:53 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:53 [error] : passport isAuth  : true
+2024-09-02 14:05:53 [error] : 존재하지 않는 유저
+2024-09-02 14:05:53 [error] : >> 
+2024-09-02 14:05:53 [info] : ::1 - - [02/Sep/2024:05:05:53 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:53 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:53 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:53 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:54 [error] : passport isAuth  : true
+2024-09-02 14:05:54 [error] : 존재하지 않는 유저
+2024-09-02 14:05:54 [error] : >> 
+2024-09-02 14:05:54 [info] : ::1 - - [02/Sep/2024:05:05:54 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:54 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:54 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:54 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:54 [error] : passport isAuth  : true
+2024-09-02 14:05:54 [error] : 존재하지 않는 유저
+2024-09-02 14:05:54 [error] : >> 
+2024-09-02 14:05:54 [info] : ::1 - - [02/Sep/2024:05:05:54 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:54 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:54 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:54 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:54 [error] : passport isAuth  : true
+2024-09-02 14:05:54 [error] : 존재하지 않는 유저
+2024-09-02 14:05:54 [error] : >> 
+2024-09-02 14:05:54 [info] : ::1 - - [02/Sep/2024:05:05:54 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:54 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:54 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:54 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:54 [error] : passport isAuth  : true
+2024-09-02 14:05:54 [error] : 존재하지 않는 유저
+2024-09-02 14:05:54 [error] : >> 
+2024-09-02 14:05:54 [info] : ::1 - - [02/Sep/2024:05:05:54 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:05:54 [info] : headers>>>>>>[object Object]
+2024-09-02 14:05:54 [info] : realIp>>>>>>undefined
+2024-09-02 14:05:54 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:05:55 [error] : passport isAuth  : true
+2024-09-02 14:05:55 [error] : 존재하지 않는 유저
+2024-09-02 14:05:55 [error] : >> 
+2024-09-02 14:05:55 [info] : ::1 - - [02/Sep/2024:05:05:55 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:17:42 [info] : headers>>>>>>[object Object]
+2024-09-02 14:17:42 [info] : realIp>>>>>>undefined
+2024-09-02 14:17:42 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:17:42 [error] : passport isAuth  : true
+2024-09-02 14:17:42 [error] : 존재하지 않는 유저
+2024-09-02 14:17:42 [error] : >> 
+2024-09-02 14:17:42 [info] : ::1 - - [02/Sep/2024:05:17:42 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:57:21 [info] : headers>>>>>>[object Object]
+2024-09-02 14:57:21 [info] : realIp>>>>>>undefined
+2024-09-02 14:57:21 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:57:21 [error] : passport isAuth  : true
+2024-09-02 14:57:21 [error] : 존재하지 않는 유저
+2024-09-02 14:57:21 [error] : >> 
+2024-09-02 14:57:21 [info] : ::1 - - [02/Sep/2024:05:57:21 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:58:22 [info] : Server off
+2024-09-02 14:58:30 [info] : Server on port 3000 | run
+2024-09-02 14:58:37 [info] : headers>>>>>>[object Object]
+2024-09-02 14:58:37 [info] : realIp>>>>>>undefined
+2024-09-02 14:58:37 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:58:38 [error] : passport isAuth  : true
+2024-09-02 14:58:38 [error] : 존재하지 않는 유저
+2024-09-02 14:58:38 [error] : >> 
+2024-09-02 14:58:38 [info] : ::1 - - [02/Sep/2024:05:58:38 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 14:58:39 [info] : headers>>>>>>[object Object]
+2024-09-02 14:58:39 [info] : realIp>>>>>>undefined
+2024-09-02 14:58:39 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 14:58:39 [error] : passport isAuth  : true
+2024-09-02 14:58:39 [error] : 존재하지 않는 유저
+2024-09-02 14:58:39 [error] : >> 
+2024-09-02 14:58:39 [info] : ::1 - - [02/Sep/2024:05:58:39 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 15:01:14 [info] : Server off
+2024-09-02 15:01:16 [info] : Server on port 3000 | run
+2024-09-02 15:01:32 [info] : headers>>>>>>[object Object]
+2024-09-02 15:01:32 [info] : realIp>>>>>>undefined
+2024-09-02 15:01:32 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 15:01:32 [error] : passport isAuth  : true
+2024-09-02 15:01:32 [error] : 존재하지 않는 유저
+2024-09-02 15:01:32 [error] : >> 
+2024-09-02 15:01:32 [info] : ::1 - - [02/Sep/2024:06:01:32 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:23:12 [info] : Server off
+2024-09-02 16:24:14 [info] : Server on port 3000 | run
+2024-09-02 16:24:30 [info] : headers>>>>>>[object Object]
+2024-09-02 16:24:30 [info] : realIp>>>>>>undefined
+2024-09-02 16:24:30 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:24:30 [error] : passport isAuth  : true
+2024-09-02 16:24:30 [error] : 존재하지 않는 유저
+2024-09-02 16:24:30 [error] : >> 
+2024-09-02 16:24:30 [info] : ::1 - - [02/Sep/2024:07:24:30 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:32:43 [info] : headers>>>>>>[object Object]
+2024-09-02 16:32:43 [info] : realIp>>>>>>undefined
+2024-09-02 16:32:43 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:32:44 [error] : passport isAuth  : true
+2024-09-02 16:32:44 [error] : 존재하지 않는 유저
+2024-09-02 16:32:44 [error] : >> 
+2024-09-02 16:32:44 [info] : ::1 - - [02/Sep/2024:07:32:44 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:32:44 [info] : headers>>>>>>[object Object]
+2024-09-02 16:32:44 [info] : realIp>>>>>>undefined
+2024-09-02 16:32:44 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:32:44 [error] : passport isAuth  : true
+2024-09-02 16:32:44 [error] : 존재하지 않는 유저
+2024-09-02 16:32:44 [error] : >> 
+2024-09-02 16:32:44 [info] : ::1 - - [02/Sep/2024:07:32:44 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:32:45 [info] : headers>>>>>>[object Object]
+2024-09-02 16:32:45 [info] : realIp>>>>>>undefined
+2024-09-02 16:32:45 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:32:45 [error] : passport isAuth  : true
+2024-09-02 16:32:45 [error] : 존재하지 않는 유저
+2024-09-02 16:32:45 [error] : >> 
+2024-09-02 16:32:45 [info] : ::1 - - [02/Sep/2024:07:32:45 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:32:45 [info] : headers>>>>>>[object Object]
+2024-09-02 16:32:45 [info] : realIp>>>>>>undefined
+2024-09-02 16:32:45 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:32:45 [error] : passport isAuth  : true
+2024-09-02 16:32:45 [error] : 존재하지 않는 유저
+2024-09-02 16:32:45 [error] : >> 
+2024-09-02 16:32:45 [info] : ::1 - - [02/Sep/2024:07:32:45 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:32:46 [info] : headers>>>>>>[object Object]
+2024-09-02 16:32:46 [info] : realIp>>>>>>undefined
+2024-09-02 16:32:46 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:32:46 [error] : passport isAuth  : true
+2024-09-02 16:32:46 [error] : 존재하지 않는 유저
+2024-09-02 16:32:46 [error] : >> 
+2024-09-02 16:32:46 [info] : ::1 - - [02/Sep/2024:07:32:46 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:32:46 [info] : headers>>>>>>[object Object]
+2024-09-02 16:32:46 [info] : realIp>>>>>>undefined
+2024-09-02 16:32:46 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:32:46 [error] : passport isAuth  : true
+2024-09-02 16:32:46 [error] : 존재하지 않는 유저
+2024-09-02 16:32:46 [error] : >> 
+2024-09-02 16:32:46 [info] : ::1 - - [02/Sep/2024:07:32:46 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:32:50 [info] : Server off
+2024-09-02 16:34:06 [info] : Server on port 3000 | run
+2024-09-02 16:34:26 [info] : headers>>>>>>[object Object]
+2024-09-02 16:34:26 [info] : realIp>>>>>>undefined
+2024-09-02 16:34:26 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:34:26 [error] : passport isAuth  : true
+2024-09-02 16:34:26 [error] : 존재하지 않는 유저
+2024-09-02 16:34:26 [error] : >> 
+2024-09-02 16:34:26 [info] : ::1 - - [02/Sep/2024:07:34:26 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:35:54 [info] : Server off
+2024-09-02 16:35:56 [info] : Server on port 3000 | run
+2024-09-02 16:35:59 [info] : headers>>>>>>[object Object]
+2024-09-02 16:35:59 [info] : realIp>>>>>>undefined
+2024-09-02 16:35:59 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:35:59 [error] : passport isAuth  : true
+2024-09-02 16:35:59 [error] : 존재하지 않는 유저
+2024-09-02 16:35:59 [error] : >> 
+2024-09-02 16:35:59 [info] : ::1 - - [02/Sep/2024:07:35:59 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:51:08 [info] : Server off
+2024-09-02 16:51:10 [info] : Server on port 3000 | run
+2024-09-02 16:51:15 [info] : headers>>>>>>[object Object]
+2024-09-02 16:51:15 [info] : realIp>>>>>>undefined
+2024-09-02 16:51:15 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:51:16 [error] : passport isAuth  : true
+2024-09-02 16:51:16 [error] : 존재하지 않는 유저
+2024-09-02 16:51:16 [error] : >> 
+2024-09-02 16:51:16 [info] : ::1 - - [02/Sep/2024:07:51:16 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:51:58 [info] : Server off
+2024-09-02 16:52:00 [info] : Server on port 3000 | run
+2024-09-02 16:52:05 [info] : headers>>>>>>[object Object]
+2024-09-02 16:52:05 [info] : realIp>>>>>>undefined
+2024-09-02 16:52:05 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:52:05 [error] : passport isAuth  : true
+2024-09-02 16:52:05 [error] : 존재하지 않는 유저
+2024-09-02 16:52:05 [error] : >> 
+2024-09-02 16:52:05 [info] : ::1 - - [02/Sep/2024:07:52:05 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 16:52:58 [info] : headers>>>>>>[object Object]
+2024-09-02 16:52:58 [info] : realIp>>>>>>undefined
+2024-09-02 16:52:58 [info] : x-forwarded-for>>>>>>>undefined
+2024-09-02 16:52:58 [error] : passport isAuth  : true
+2024-09-02 16:52:58 [info] : ::1 - - [02/Sep/2024:07:52:58 +0000] "POST /auth/signin HTTP/1.1" 200 557 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+
+2024-09-02 17:00:41 [info] : Server off

@@ -708,5 +708,38 @@ module.exports = {
    const { params } = req.body;
    const resultData = await knexDB.raw(AdminMapper.SELECT_STOCK_START_DT_LIST, params);
    return resultData[0];
- }
+ },
+
+  /**
+   *
+   * @param {*} req
+   * @returns
+   */
+  getUserExcel: async function (req) {
+    const { params } = req.body;
+    const resultData = await knexDB.raw(AdminUserMapper.SELECT_USER_LIST, params);
+    return resultData[0];
+  },
+  // 임시 함수
+  setUserEncrypt: async function (params) {
+    let transaction;
+    try {
+      transaction = await knexDB.transaction();
+      for (const param of params) {
+        console.log(param)
+        await transaction.raw(AdminUserMapper.UPDATE_USER_ENCRYPT, param);
+
+      }
+
+      await transaction.commit();
+    } catch (error) {
+      console.log(error)
+      if (transaction) {
+        await transaction.rollback();
+      }
+      logger.error(error);
+      throw new NotFound(StatusMessage.INSERT_FAILED);
+    }
+    return true;
+  },
 };

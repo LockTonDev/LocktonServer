@@ -55,7 +55,7 @@ module.exports = Object.freeze({
              and a.user_cd = b.user_cd
              and a.user_uuid = :user_uuid
              and b.use_yn = 'Y'
-      ORDER  BY a.created_at DESC 
+      ORDER  BY a.insr_year DESC ,A.created_at DESC
       LIMIT  1 
     `,
 
@@ -124,7 +124,7 @@ module.exports = Object.freeze({
 		    AND A.business_cd = B.business_cd
       WHERE  A.user_uuid = :user_uuid
              and A.status_cd not in ('40') -- 이력 제외
-      ORDER  BY A.created_at DESC 
+      ORDER  BY A.insr_year DESC ,A.created_at DESC
     `,
 
   /**

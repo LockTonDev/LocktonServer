@@ -161,7 +161,7 @@ module.exports = Object.freeze({
          AND (A.insr_year like CONCAT('%', ?, '%'))
          AND (? = '%' or A.status_cd = ?)
          AND (A.user_nm like CONCAT('%', ?, '%'))
-      ORDER  BY A.created_at DESC 
+      ORDER  BY A.insr_year DESC ,A.created_at DESC
     `,
 
   /**
@@ -200,7 +200,7 @@ module.exports = Object.freeze({
   AND (? = '%' or A.insr_year = ?)
   AND (? = '%' or A.status_cd = ?)
   AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )
-  ORDER  BY A.created_at DESC 
+  ORDER  BY A.insr_year DESC ,A.created_at DESC
   `,
 
   /**
@@ -611,7 +611,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
          AND (? = '%' or A.insr_year = ?)
          AND (? = '%' or A.status_cd = ?)
          AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )
-      ORDER  BY A.created_at DESC 
+      ORDER  BY A.insr_year DESC ,A.created_at DESC
     `,
 
   /**
@@ -784,7 +784,7 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
   AND (? = '%' or A.insr_year = ?)
   AND (? = '%' or A.status_cd = ?)
   AND ((A.user_nm like CONCAT('%', ?, '%')) OR a.cbr_data like CONCAT('%', ?, '%') )
-  ORDER  BY A.created_at DESC 
+  ORDER  BY A.insr_year DESC ,A.created_at DESC
   `,
 
   /**

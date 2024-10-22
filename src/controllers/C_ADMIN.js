@@ -11,6 +11,7 @@ const M_ADMIN_CAA = require('../models/M_ADMIN_CAA')
 const M_ADMIN_PAT = require('../models/M_ADMIN_PAT')
 const { genPassword } = require('../utils/util');
 const { downloadFile } = require('../utils/saveFile')
+const encrypt = require('../config/encrypt')
 
 module.exports = {
   getSystemInfo: async function (req, res, next) {
@@ -236,9 +237,41 @@ module.exports = {
 
   getUserList: async function (req, res, next) {
     try {
+      // console.log(req.body )
+      // req.body.params.user_nm = encrypt.getEncryptData(req.body.params.user_nm)
+      // console.log(req.body.params.user_nm )
+
       const result = await M_ADMIN.getUserList(req);
+      const tempResult = JSON.parse(JSON.stringify(result));
 
       if (result) {
+
+        for(let i = 0 ; i < result.length ; i ++) {
+
+          // tempResult[i].user_nm = encrypt.getEncryptData(result[i].user_nm)
+          // tempResult[i].user_hpno = encrypt.getEncryptData(result[i].user_hpno)
+          // tempResult[i].corp_telno = encrypt.getEncryptData(result[i].corp_telno)
+          // tempResult[i].user_email = encrypt.getEncryptData(result[i].user_email)
+          // tempResult[i].user_birth = encrypt.getEncryptData(result[i].user_birth)
+          // tempResult[i].corp_ceo_nm = encrypt.getEncryptData(result[i].corp_ceo_nm)
+          // tempResult[i].corp_cust_nm = encrypt.getEncryptData(result[i].corp_cust_nm)
+          // tempResult[i].corp_cust_hpno = encrypt.getEncryptData(result[i].corp_cust_hpno)
+          // tempResult[i].corp_cust_email = encrypt.getEncryptData(result[i].corp_cust_email)
+          //
+          // result[i].user_nm = encrypt.getDecryptData(result[i].user_nm)
+          // result[i].user_hpno = encrypt.getDecryptData(result[i].user_hpno)
+          // result[i].corp_telno = encrypt.getDecryptData(result[i].corp_telno)
+          // result[i].user_email = encrypt.getDecryptData(result[i].user_email)
+          // result[i].user_birth = encrypt.getDecryptData(result[i].user_birth)
+          // result[i].corp_ceo_nm = encrypt.getDecryptData(result[i].corp_ceo_nm)
+          // result[i].corp_cust_nm = encrypt.getDecryptData(result[i].corp_cust_nm)
+          // result[i].corp_cust_hpno = encrypt.getDecryptData(result[i].corp_cust_hpno)
+          // result[i].corp_cust_email = encrypt.getDecryptData(result[i].corp_cust_email)
+
+
+        }
+         // await M_ADMIN.setUserEncrypt(tempResult)
+
         res.status(StatusCode.OK).json({
           success: true,
           message: StatusMessage.SELECT,
@@ -1524,4 +1557,34 @@ module.exports = {
       next(err);
     }
   },
+
+
+  getUserExcel: async function (req, res, next) {
+    try {
+      const result = await M_ADMIN.getUserExcel(req);
+
+      // result.map(row => {
+      //   row.user_birth = parseFloat(row.user_birth)
+      //   row.user_regno = parseFloat(row.user_regno)
+      //   row.insr_amt = parseFloat(row.insr_amt)
+      //   row.insr_tot_amt = parseFloat(row.insr_tot_amt)
+      //   row.insr_tot_paid_amt = parseFloat(row.insr_tot_paid_amt)
+      //   row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
+      //   row.insr_base_amt = parseFloat(row.insr_base_amt)
+      //   row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
+      // })
+
+      if (result) {
+        res.status(StatusCode.OK).json({
+          success: true,
+          message: StatusMessage.SELECT,
+          data: result
+        });
+      }
+    } catch (err) {
+      next(err);
+    }
+  },
+
+
 };

@@ -4,6 +4,7 @@ const axios = require('axios');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const encrypt = require('../config/encrypt')
 
 const { StatusCode, StatusMessage } = require('../utils/response');
 const { NotFound, BadRequest, Conflict } = require('../utils/errors');
@@ -76,6 +77,9 @@ module.exports = {
         role: 'user'
       };
 
+       // console.log('암호화 테스트 : ',encrypt.getEncryptData('getdream'))
+       // console.log('복호화 테스트 : ',encrypt.getDecryptData(encrypt.getEncryptData('getdream')))
+
       const accessToken = jwt.sign(payload, process.env.JWT_SECRET_KEY, {
         algorithm: 'HS256',
         expiresIn: expiresInMinutes * 60 // expiresIn은 초 단위로 설정해야 함
@@ -102,7 +106,7 @@ module.exports = {
             accessToken: accessToken,
             refreshToken: refreshToken,
             userId: userInfo.user_id,
-            userNm: userInfo.user_nm,
+            userNm: encrypt.getDecryptData(userInfo.user_nm),
             userCd: userInfo.user_cd,
             businessCd: userInfo.business_cd,
             statusCd: userInfo.status_cd

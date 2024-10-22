@@ -64,6 +64,7 @@ const StatusMessage = {
   requestTokenAgain: '허용되지 않은 접근 입니다.',
   sendMailFailed: '새 비밀번호 지정을 위한 메일 전송 실패',
   unValidateVerificationCode: '유효하지 않은 인증번호.',
+  limitedAdmin : '관리자에 문의에 해주세요.',
 
   /* 공통*/
   BadRequestMeg: '잘못된 요청',

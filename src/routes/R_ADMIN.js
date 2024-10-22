@@ -26,6 +26,7 @@ router.post('/USER/get', verifyToken, C_ADMIN.getUserInfo);
 router.post('/USER/gets', verifyToken, C_ADMIN.getUserList);
 router.post('/USER/set', verifyToken, C_ADMIN.setUserInfo);
 router.post('/USER/setUserPassword', verifyToken, C_ADMIN.setUserPassword);
+router.post('/USER/EXCEL/get', verifyToken, C_ADMIN.getUserExcel);
 
 router.post('/TAX/EXCEL/get', verifyToken, C_ADMIN.getTAXExcel);
 router.post('/TAX/EXCEL/renewal/gets', verifyToken, C_ADMIN.getTAXRenewalExcel);
@@ -104,5 +105,7 @@ router.post('/MASTER/insurance', verifyToken, C_ADMIN_MASTER.getInsuranceMaster)
 router.post('/MASTER/insurance/set', verifyToken, C_ADMIN_MASTER.setInsuranceMaster);
 router.post('/MASTER/insurance/chkDup', verifyToken, C_ADMIN_MASTER.chkDupInsuranceMaster);
 router.post('/MASTER/insurance/chgInsuranceNo', verifyToken, C_ADMIN_MASTER.chgInsuranceNo);
+
+
 
 module.exports = router;

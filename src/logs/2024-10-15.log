@@ -1,0 +1,10 @@
+2024-10-15 12:07:07 [error] : passport isAuth  : true
+2024-10-15 12:07:07 [info] : ::1 - - [15/Oct/2024:03:07:07 +0000] "POST /auth/signin HTTP/1.1" 200 557 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+
+2024-10-15 12:07:11 [info] : ::1 - - [15/Oct/2024:03:07:11 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13551 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+
+2024-10-15 12:07:11 [info] : ::1 - - [15/Oct/2024:03:07:11 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13551 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+
+2024-10-15 12:07:52 [info] : ::1 - - [15/Oct/2024:03:07:52 +0000] "POST /ADM/USER/gets HTTP/1.1" 200 3299381 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
+
+2024-10-15 13:46:20 [info] : Server off

@@ -85,7 +85,9 @@ ORDER BY  business_cd, user_cd, created_at DESC
             FN_GET_CODENM('COM001', business_cd) AS business_cd_nm,
             FN_GET_CODENM('TAX001', corp_region_cd) AS corp_region_cd_nm,
             FN_GET_CODENM('TAX002', user_cd) AS user_cd_nm,
-            FN_GET_CODENM('COM010', status_cd) AS status_cd_nm
+            FN_GET_CODENM('COM010', status_cd) AS status_cd_nm,
+            IFNULL(DATE_FORMAT(login_at, '%Y-%m-%d %H:%i:%s'), DATE_FORMAT(updated_at, '%Y-%m-%d %H:%i:%s'))  as login_at,
+            TIMESTAMPDIFF(DAY, IFNULL(login_at,updated_at), now()) AS last_login
       FROM  tcom0110a
       WHERE  business_cd =  :business_cd
         AND  (:user_cd = '%' or user_cd = :user_cd)
@@ -291,5 +293,24 @@ ORDER BY  business_cd, user_cd, created_at DESC
   DELETE_USER_REG_NO: `
       /* AdminUserMapper.DELETE_USER_REG_NO */
       DELETE FROM tcom0111a WHERE business_cd = :business_cd and nm = :nm and reg_no = :reg_no
-  `
+  `,
+
+  UPDATE_USER_ENCRYPT:`
+/* AdminUserMapper.UPDATE_USER_ENCRYPT */
+  UPDATE TCOM0110A
+  SET
+    user_nm = :user_nm,
+    user_birth = :user_birth,
+    user_hpno = :user_hpno,
+    user_email = :user_email,
+    corp_ceo_nm = :corp_ceo_nm,
+    corp_telno = :corp_telno,
+    corp_cust_nm = :corp_cust_nm,
+    corp_cust_hpno = :corp_cust_hpno,
+    corp_cust_email = :corp_cust_email
+
+WHERE
+user_uuid = :user_uuid
+    `
+
 });

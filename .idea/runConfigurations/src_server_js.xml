@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="src\server.js" type="NodeJSConfigurationType" node-parameters="-r dotenv/config" path-to-js-file="src/server.js" working-dir="$PROJECT_DIR$">
+  <configuration default="false" name="src\server.js" type="NodeJSConfigurationType" application-parameters="dev" node-parameters="-r dotenv/config" path-to-js-file="src/server.js" working-dir="$PROJECT_DIR$">
     <envs>
       <env name="DEBUG" value="backend-nodejs:*" />
     </envs>
