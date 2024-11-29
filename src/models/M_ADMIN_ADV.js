@@ -6,6 +6,7 @@ const knexDB = require('../config/knexDB');
 const ADVAdminMapper = require('../mapper/ADVAdminMapper');
 const AdminUserMapper = require('../mapper/AdminUserMapper');
 const AdminBoardMapper = require('../mapper/AdminBoardMapper');
+const AdminMapper = require("../mapper/AdminMapper");
 
 module.exports = {
   getADV: async function (req) {
@@ -282,33 +283,61 @@ module.exports = {
   },
 
   setADV_TRX: async function (req) {
-    const params = req.body.params
-    logger.info(params)
-    let querys = []
-    let query_params = []
+    const { params } = req.body;
+    //logger.error(params);
     let nCnt = 0;
-    for(const param of params){
-      const updateQueryParams = [
-        JSON.stringify(param.trx_data),
-        param.insr_tot_unpaid_amt,
-        param.insr_tot_paid_amt,
-        param.status_cd,
-        param.updated_id,
-        param.updated_ip,
-        param.insurance_uuid,
-      ];
-      querys.push(ADVAdminMapper.UPDATE_INSURANCE_ADV_TRX_DATA)
-      query_params.push(updateQueryParams)
-      nCnt ++
-    }
-    
-    
-    const rows_results = await db.queryListWithTransaction(querys, query_params);
-    //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
-    for(const rows of rows_results){
-      if (rows.affectedRows < 1) {
-        throw new NotFound(StatusMessage.SELECT_FAILED);
+    // for(const param of params){
+    //   //총입금액이 '' 일경우 오류, null로 변경 2024-07-04
+    //   if(param.insr_tot_paid_amt == '') param.insr_tot_paid_amt = null
+    //   const updateQueryParams = [
+    //     JSON.stringify(param.trx_data),
+    //     param.insr_tot_unpaid_amt,
+    //     param.insr_tot_paid_amt,
+    //     param.status_cd,
+    //     param.updated_id,
+    //     param.updated_ip,
+    //     param.insurance_uuid,
+    //   ];
+    //   querys.push(ADVAdminMapper.UPDATE_INSURANCE_ADV_TRX_DATA)
+    //   query_params.push(updateQueryParams)
+    //   nCnt ++
+    // }
+    // const rows_results = await db.queryListWithTransaction(querys, query_params);
+    // //const resultData = await knexDB.raw(AdminMapper.INSURANCE_LIST, params);
+    // for(const rows of rows_results){
+    //   if (rows.affectedRows < 1) {
+    //     throw new NotFound(StatusMessage.SELECT_FAILED);
+    //   }
+    // }
+
+    let transaction;
+    try {
+      transaction = await knexDB.transaction();
+
+      for (const param of params) {
+
+        //총입금액이 '' 일경우 오류, null로 변경 2024-07-04
+        if(param.insr_tot_paid_amt == '') param.insr_tot_paid_amt = null
+        param.trx_data = JSON.stringify(param.trx_data);
+        logger.info('insr_tot_paid_amt: '+param.insr_tot_paid_amt+ 'insr_tot_unpaid_amt: '+
+            param.insr_tot_unpaid_amt+ ' insr_tot_paid_amt: '+
+            param.insr_tot_paid_amt+ ' status_cd: '+
+            param.status_cd+ ' updated_id: '+
+            param.updated_id+ ' updated_ip: '+
+            param.updated_ip+ ' trx_data: '+
+            param.trx_data+ ' insurance_uuid: '+
+            param.insurance_uuid
+        )
+        await transaction.raw(ADVAdminMapper.UPDATE_INSURANCE_ADV_TRX_DATA, param);
+        nCnt++;
       }
+      await transaction.commit();
+    } catch (error) {
+      if (transaction) {
+        await transaction.rollback();
+      }
+      logger.error(error);
+      throw new NotFound(StatusMessage.UPDATE_FAILED);
     }
     return nCnt;
   },
