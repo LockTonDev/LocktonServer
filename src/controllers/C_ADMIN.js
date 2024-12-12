@@ -221,9 +221,22 @@ module.exports = {
 
   getUserInfo: async function (req, res, next) {
     try {
+      // req.body.params.user_nm = encrypt.getEncryptData(req.body.params.user_nm)
+      // console.log(req.body.params.user_nm )
       const result = await M_ADMIN.getUserInfo(req);
 
       if (result) {
+        result[0] =encrypt.decryptUserInfo(result[0]);
+        // result[0].user_nm = encrypt.getDecryptData(result[0].user_nm)
+        // result[0].user_hpno = encrypt.getDecryptData(result[0].user_hpno)
+        // result[0].corp_telno = encrypt.getDecryptData(result[0].corp_telno)
+        // result[0].user_email = encrypt.getDecryptData(result[0].user_email)
+        // result[0].user_birth = encrypt.getDecryptData(result[0].user_birth)
+        // result[0].corp_ceo_nm = encrypt.getDecryptData(result[0].corp_ceo_nm)
+        // result[0].corp_cust_nm = encrypt.getDecryptData(result[0].corp_cust_nm)
+        // result[0].corp_cust_hpno = encrypt.getDecryptData(result[0].corp_cust_hpno)
+        // result[0].corp_cust_email = encrypt.getDecryptData(result[0].corp_cust_email)
+        // console.log(result)
         res.status(StatusCode.OK).json({
           success: true,
           message: StatusMessage.SELECT,
@@ -238,8 +251,8 @@ module.exports = {
   getUserList: async function (req, res, next) {
     try {
       // console.log(req.body )
-      // req.body.params.user_nm = encrypt.getEncryptData(req.body.params.user_nm)
-      // console.log(req.body.params.user_nm )
+       if(req.body.params.user_nm != "" && !req.body.params.user_nm) req.body.params.user_nm = encrypt.getEncryptData(req.body.params.user_nm)
+       console.log(req.body.params.user_nm )
 
       const result = await M_ADMIN.getUserList(req);
       const tempResult = JSON.parse(JSON.stringify(result));
@@ -247,7 +260,7 @@ module.exports = {
       if (result) {
 
         for(let i = 0 ; i < result.length ; i ++) {
-
+          result[i] = encrypt.decryptUserInfo(result[i]);
           // tempResult[i].user_nm = encrypt.getEncryptData(result[i].user_nm)
           // tempResult[i].user_hpno = encrypt.getEncryptData(result[i].user_hpno)
           // tempResult[i].corp_telno = encrypt.getEncryptData(result[i].corp_telno)
@@ -270,7 +283,7 @@ module.exports = {
 
 
         }
-         // await M_ADMIN.setUserEncrypt(tempResult)
+           await M_ADMIN.setUserEncrypt(tempResult)
 
         res.status(StatusCode.OK).json({
           success: true,
@@ -1043,9 +1056,11 @@ module.exports = {
         row.insr_tot_unpaid_amt = parseFloat(row.insr_tot_unpaid_amt)
         row.insr_base_amt = parseFloat(row.insr_base_amt)
         row.insr_pcnt_sale_rt = parseFloat(row.insr_pcnt_sale_rt)
-        row.trx_data.map(trx=>{
-          trx.trx_amt = parseFloat(trx.trx_amt)
-        })
+        if(row.trx_data) {
+          row.trx_data.map(trx=>{
+            trx.trx_amt = parseFloat(trx.trx_amt)
+          })
+        }
         row.cbr_data.map(cbr=>{
           cbr.insr_amt = parseFloat(cbr.insr_amt)
         })
@@ -1059,6 +1074,7 @@ module.exports = {
         });
       }
     } catch (err) {
+      console.log(err)
       next(err);
     }
   },

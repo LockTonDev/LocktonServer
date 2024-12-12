@@ -47,7 +47,7 @@ const StatusMessage = {
   VERITY_EMAIL_FAILED: '사용 할 수 없는 이메일 입니다.',
 
   VerityUserCustoms_FAILED: '인증실패 : 이름, 생년월일, 등록번호를 확인하세요.',
-
+  lOGIN_SUCCESS : '로그인 성공',
   /* 미사용 - 사용자*/
   userNotFound: '사용자 정보 없음',
   userInfoUpdateNotFound: '수정된 사용자 정보 없음',

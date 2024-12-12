@@ -33,7 +33,7 @@ async function localVerify(req, user_id, user_pwd, done) {
     let isAuth = bcrypt.compareSync(user_pwd, userInfo[0].user_pwd);
     const loginBlockYn = userInfo[0].login_block_yn;
 
-    logger.error('passport isAuth  : ' + isAuth);
+    console.log('passport isAuth  : ' + isAuth);
     //isAuth = true;
     if (!isAuth) {
       await User.updateLoginCnt(req.body.business_cd, req.body.user_cd, user_id);

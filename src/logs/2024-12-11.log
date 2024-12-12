@@ -1,0 +1,796 @@
+2024-12-11 11:48:51 [info] : Server on port 3000 | run
+2024-12-11 11:49:32 [error] : 존재하지 않는 유저
+2024-12-11 11:49:32 [error] : >> 
+2024-12-11 11:49:32 [info] : ::1 - - [11/Dec/2024:02:49:32 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:50:49 [error] : 존재하지 않는 유저
+2024-12-11 11:50:49 [error] : >> 
+2024-12-11 11:50:49 [info] : ::1 - - [11/Dec/2024:02:50:49 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:50:50 [error] : 존재하지 않는 유저
+2024-12-11 11:50:50 [error] : >> 
+2024-12-11 11:50:50 [info] : ::1 - - [11/Dec/2024:02:50:50 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:50:51 [error] : 존재하지 않는 유저
+2024-12-11 11:50:51 [error] : >> 
+2024-12-11 11:50:51 [info] : ::1 - - [11/Dec/2024:02:50:51 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:50:52 [error] : 존재하지 않는 유저
+2024-12-11 11:50:52 [error] : >> 
+2024-12-11 11:50:52 [info] : ::1 - - [11/Dec/2024:02:50:52 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:51:28 [info] : ::1 - - [11/Dec/2024:02:51:28 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:51:42 [info] : ::1 - - [11/Dec/2024:02:51:42 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:51:42 [info] : ::1 - - [11/Dec/2024:02:51:42 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:51:42 [info] : ::1 - - [11/Dec/2024:02:51:42 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:51:59 [info] : {
+   "business_cd": "ADV",
+   "insr_year": "2023",
+   "status_cd": "%",
+   "user_cd": "%",
+   "user_nm": ""
+}
+2024-12-11 11:52:00 [info] : ::1 - - [11/Dec/2024:02:52:00 +0000] "POST /ADM/ADV/gets HTTP/1.1" 200 363275 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:11 [info] : {
+   "insurance_uuid": "1d6e29bc1ec54d5a8350c8508fb9d4e2"
+}
+2024-12-11 11:52:11 [info] : ::1 - - [11/Dec/2024:02:52:11 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2043 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:11 [info] : {
+   "user_cd": "IND",
+   "business_cd": "ADV"
+}
+2024-12-11 11:52:11 [info] : ::1 - - [11/Dec/2024:02:52:11 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:17 [info] : {
+   "insurance_uuid": "c388bfffb30b4d7283b19149f2e79527"
+}
+2024-12-11 11:52:17 [info] : ::1 - - [11/Dec/2024:02:52:17 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2155 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:18 [info] : {
+   "user_cd": "IND",
+   "business_cd": "ADV"
+}
+2024-12-11 11:52:18 [info] : ::1 - - [11/Dec/2024:02:52:18 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:19 [info] : {
+   "insurance_uuid": "f00f7368239a4ce482dff5822e496919"
+}
+2024-12-11 11:52:19 [info] : ::1 - - [11/Dec/2024:02:52:19 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2181 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:19 [info] : {
+   "user_cd": "IND",
+   "business_cd": "ADV"
+}
+2024-12-11 11:52:19 [info] : ::1 - - [11/Dec/2024:02:52:19 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:20 [info] : {
+   "insurance_uuid": "db1a8c6cce7945e5a2f66dd4c975cf80"
+}
+2024-12-11 11:52:20 [info] : ::1 - - [11/Dec/2024:02:52:20 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2820 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:20 [info] : {
+   "user_cd": "JNT",
+   "business_cd": "ADV"
+}
+2024-12-11 11:52:20 [info] : ::1 - - [11/Dec/2024:02:52:20 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:28 [info] : {
+   "business_cd": "ADV",
+   "insr_year": "2023",
+   "status_cd": "%",
+   "user_cd": "%",
+   "user_nm": "윤자영"
+}
+2024-12-11 11:52:28 [info] : ::1 - - [11/Dec/2024:02:52:28 +0000] "POST /ADM/ADV/gets HTTP/1.1" 200 590 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:30 [info] : {
+   "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed"
+}
+2024-12-11 11:52:30 [info] : ::1 - - [11/Dec/2024:02:52:30 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2091 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:30 [info] : {
+   "user_cd": "IND",
+   "business_cd": "ADV"
+}
+2024-12-11 11:52:30 [info] : ::1 - - [11/Dec/2024:02:52:30 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:53 [info] : 8b3a01f1080f4e8aa2343515a219daf8
+2024-12-11 11:52:53 [info] : [
+   {
+      "mode": "U",
+      "index": 0,
+      "renewal": "",
+      "table_name": "",
+      "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed",
+      "insurance_seq": 0,
+      "insurance_no": "120233465721",
+      "user_uuid": "6808694ef0194d94b5ca6f742399eaa0",
+      "user_id": "kirakira42",
+      "user_cd": "IND",
+      "user_nm": "윤자영",
+      "user_birth": "830402",
+      "user_regno": "222222",
+      "user_hpno": "",
+      "user_email": "",
+      "corp_type": "",
+      "corp_region_cd": "010",
+      "corp_region_nm": "서울",
+      "corp_nm": "윤법률사무소",
+      "corp_ceo_nm": "",
+      "corp_bnno": "",
+      "corp_bnno1": "",
+      "corp_bnno2": "",
+      "corp_bnno3": "",
+      "corp_cnno": "222-22-22222",
+      "corp_cnno1": "",
+      "corp_cnno2": "",
+      "corp_cnno3": "",
+      "corp_telno": "02-2011-0300",
+      "corp_telno1": "02",
+      "corp_telno2": "2011",
+      "corp_telno3": "0300",
+      "corp_faxno": "02-2011-0301",
+      "corp_faxno1": "02",
+      "corp_faxno2": "2011",
+      "corp_faxno3": "0301",
+      "corp_cust_nm": "윤자영",
+      "corp_cust_hpno": "010-5342-6977",
+      "corp_cust_hpno1": "",
+      "corp_cust_hpno2": "",
+      "corp_cust_hpno3": "",
+      "corp_cust_email": "jayoung.yoon@lockton.com",
+      "corp_post": "04520",
+      "corp_addr": "서울 중구 세종대로 136",
+      "corp_addr_dtl": "13층",
+      "base_insr_st_dt": "2023-12-01",
+      "base_insr_cncls_dt": "2024-12-01",
+      "insr_year": "2023",
+      "insr_reg_dt": "2023-11-23",
+      "insr_st_dt": "2023-12-01",
+      "insr_cncls_dt": "2024-12-01",
+      "insr_retr_yn": "N",
+      "insr_retr_dt": "2023-12-01",
+      "insr_pblc_brdn_rt": "",
+      "insr_take_amt": "150000000",
+      "insr_take_sec": "1|1억5천이하",
+      "insr_clm_lt_amt": "200000000|2억원",
+      "insr_year_clm_lt_amt": "2억원",
+      "org_insr_year_clm_lt_amt": "",
+      "insr_psnl_brdn_amt": "3000000|3백만원",
+      "insr_program_yn": "N",
+      "insr_program": "",
+      "insr_service": "",
+      "insr_sale_year": 0,
+      "insr_sale_rt": "0",
+      "insr_relief": 0,
+      "insr_pcnt_sale_rt": "0",
+      "insr_base_amt": "292600",
+      "insr_amt": "292600",
+      "insr_premium_amt": 0,
+      "insr_tot_amt": "373600",
+      "insr_tot_unpaid_amt": null,
+      "insr_tot_paid_amt": null,
+      "limited_collateral": "담보한정 상제 정보 수정",
+      "cbr_cnt": 0,
+      "cbr_data": [],
+      "cons_join_yn": "",
+      "cons_data": {
+         "insr_st_dt": "",
+         "insr_cncls_dt": "",
+         "insr_pblc_brdn_rt": "",
+         "insr_year_clm_lt_amt": "",
+         "insr_clm_lt_amt": "",
+         "insr_psnl_brdn_amt": "",
+         "insr_retr_yn": "",
+         "insr_retr_dt": "",
+         "insr_sale_rt": 0,
+         "insr_base_amt": 0,
+         "insr_amt": 0,
+         "cbr_cnt": 0,
+         "cbr_data": []
+      },
+      "spct_join_yn": "Y",
+      "spct_data": {
+         "cbr_cnt": 1,
+         "cbr_data": [],
+         "insr_amt": 81000,
+         "insr_st_dt": "2023-12-01",
+         "insr_retr_dt": "2023-12-01",
+         "insr_retr_yn": "",
+         "insr_sale_rt": 0,
+         "insr_base_amt": 81000,
+         "insr_cncls_dt": "2024-12-01",
+         "insr_clm_lt_amt": "50000000|5천만원",
+         "insr_psnl_brdn_amt": "5000000|5백만원",
+         "insr_year_clm_lt_amt": "5천만원"
+      },
+      "active_yn": "",
+      "agr10_yn": "Y",
+      "agr20_yn": "Y",
+      "agr30_yn": "Y",
+      "agr31_yn": "Y",
+      "agr32_yn": "Y",
+      "agr33_yn": "Y",
+      "agr34_yn": "Y",
+      "agr40_yn": "Y",
+      "agr41_yn": "Y",
+      "agr50_yn": "Y",
+      "trx_data": [],
+      "complete_dt": "",
+      "status_cd": "91",
+      "status_nm": "미가입",
+      "rmk": "",
+      "change_dt": "",
+      "change_rmk": "",
+      "erp_st_dt": null,
+      "erp_cncls_dt": null,
+      "erp_amt": null,
+      "erp_dt": null,
+      "created_id": "",
+      "created_ip": "",
+      "updated_id": "",
+      "updated_ip": "",
+      "renewal_cd": "",
+      "renewal_cd_nm": "",
+      "login_at": "",
+      "last_login": 0,
+      "business_cd": "ADV"
+   }
+]
+2024-12-11 11:52:53 [info] : ::1 - - [11/Dec/2024:02:52:53 +0000] "POST /ADM/ADV/set HTTP/1.1" 200 28 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:53 [info] : {
+   "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed"
+}
+2024-12-11 11:52:53 [info] : ::1 - - [11/Dec/2024:02:52:53 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2122 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:53 [info] : {
+   "user_cd": "IND",
+   "business_cd": "ADV"
+}
+2024-12-11 11:52:53 [info] : ::1 - - [11/Dec/2024:02:52:53 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:58 [info] : ::1 - - [11/Dec/2024:02:52:58 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:58 [info] : ::1 - - [11/Dec/2024:02:52:58 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:52:58 [info] : ::1 - - [11/Dec/2024:02:52:58 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:53:03 [info] : {
+   "business_cd": "ADV",
+   "insr_year": "%",
+   "status_cd": "%",
+   "user_cd": "%",
+   "user_nm": "윤자영"
+}
+2024-12-11 11:53:03 [info] : ::1 - - [11/Dec/2024:02:53:03 +0000] "POST /ADM/ADV/gets HTTP/1.1" 200 1125 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:53:04 [info] : {
+   "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed"
+}
+2024-12-11 11:53:04 [info] : ::1 - - [11/Dec/2024:02:53:04 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2122 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:53:04 [info] : {
+   "user_cd": "IND",
+   "business_cd": "ADV"
+}
+2024-12-11 11:53:04 [info] : ::1 - - [11/Dec/2024:02:53:04 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:53:25 [info] : ::1 - - [11/Dec/2024:02:53:25 +0000] "POST /ADV/ADV0030A/get HTTP/1.1" 200 1947 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:54:43 [info] : 8b3a01f1080f4e8aa2343515a219daf8
+2024-12-11 11:54:43 [info] : [
+   {
+      "mode": "U",
+      "index": 0,
+      "renewal": "",
+      "table_name": "",
+      "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed",
+      "insurance_seq": 0,
+      "insurance_no": "120233465721",
+      "user_uuid": "6808694ef0194d94b5ca6f742399eaa0",
+      "user_id": "kirakira42",
+      "user_cd": "IND",
+      "user_nm": "윤자영",
+      "user_birth": "830402",
+      "user_regno": "222222",
+      "user_hpno": "",
+      "user_email": "",
+      "corp_type": "",
+      "corp_region_cd": "010",
+      "corp_region_nm": "서울",
+      "corp_nm": "윤법률사무소",
+      "corp_ceo_nm": "",
+      "corp_bnno": "",
+      "corp_bnno1": "",
+      "corp_bnno2": "",
+      "corp_bnno3": "",
+      "corp_cnno": "222-22-22222",
+      "corp_cnno1": "",
+      "corp_cnno2": "",
+      "corp_cnno3": "",
+      "corp_telno": "02-2011-0300",
+      "corp_telno1": "02",
+      "corp_telno2": "2011",
+      "corp_telno3": "0300",
+      "corp_faxno": "02-2011-0301",
+      "corp_faxno1": "02",
+      "corp_faxno2": "2011",
+      "corp_faxno3": "0301",
+      "corp_cust_nm": "윤자영",
+      "corp_cust_hpno": "010-5342-6977",
+      "corp_cust_hpno1": "",
+      "corp_cust_hpno2": "",
+      "corp_cust_hpno3": "",
+      "corp_cust_email": "jayoung.yoon@lockton.com",
+      "corp_post": "04520",
+      "corp_addr": "서울 중구 세종대로 136",
+      "corp_addr_dtl": "13층",
+      "base_insr_st_dt": "2023-12-01",
+      "base_insr_cncls_dt": "2024-12-01",
+      "insr_year": "2023",
+      "insr_reg_dt": "2023-11-23",
+      "insr_st_dt": "2023-12-01",
+      "insr_cncls_dt": "2024-12-01",
+      "insr_retr_yn": "N",
+      "insr_retr_dt": "2023-12-01",
+      "insr_pblc_brdn_rt": "",
+      "insr_take_amt": "150000000",
+      "insr_take_sec": "1|1억5천이하",
+      "insr_clm_lt_amt": "200000000|2억원",
+      "insr_year_clm_lt_amt": "2억원",
+      "org_insr_year_clm_lt_amt": "",
+      "insr_psnl_brdn_amt": "3000000|3백만원",
+      "insr_program_yn": "N",
+      "insr_program": "",
+      "insr_service": "",
+      "insr_sale_year": 0,
+      "insr_sale_rt": "0",
+      "insr_relief": 0,
+      "insr_pcnt_sale_rt": "0",
+      "insr_base_amt": "292600",
+      "insr_amt": "292600",
+      "insr_premium_amt": 0,
+      "insr_tot_amt": "373600",
+      "insr_tot_unpaid_amt": null,
+      "insr_tot_paid_amt": null,
+      "limited_collateral": "담보한정 상제 정보 수정1",
+      "cbr_cnt": 0,
+      "cbr_data": [],
+      "cons_join_yn": "",
+      "cons_data": {
+         "insr_st_dt": "",
+         "insr_cncls_dt": "",
+         "insr_pblc_brdn_rt": "",
+         "insr_year_clm_lt_amt": "",
+         "insr_clm_lt_amt": "",
+         "insr_psnl_brdn_amt": "",
+         "insr_retr_yn": "",
+         "insr_retr_dt": "",
+         "insr_sale_rt": 0,
+         "insr_base_amt": 0,
+         "insr_amt": 0,
+         "cbr_cnt": 0,
+         "cbr_data": []
+      },
+      "spct_join_yn": "Y",
+      "spct_data": {
+         "cbr_cnt": 1,
+         "cbr_data": [],
+         "insr_amt": 81000,
+         "insr_st_dt": "2023-12-01",
+         "insr_retr_dt": "2023-12-01",
+         "insr_retr_yn": "",
+         "insr_sale_rt": 0,
+         "insr_base_amt": 81000,
+         "insr_cncls_dt": "2024-12-01",
+         "insr_clm_lt_amt": "50000000|5천만원",
+         "insr_psnl_brdn_amt": "5000000|5백만원",
+         "insr_year_clm_lt_amt": "5천만원"
+      },
+      "active_yn": "",
+      "agr10_yn": "Y",
+      "agr20_yn": "Y",
+      "agr30_yn": "Y",
+      "agr31_yn": "Y",
+      "agr32_yn": "Y",
+      "agr33_yn": "Y",
+      "agr34_yn": "Y",
+      "agr40_yn": "Y",
+      "agr41_yn": "Y",
+      "agr50_yn": "Y",
+      "trx_data": [],
+      "complete_dt": "",
+      "status_cd": "91",
+      "status_nm": "미가입",
+      "rmk": "",
+      "change_dt": "",
+      "change_rmk": "",
+      "erp_st_dt": null,
+      "erp_cncls_dt": null,
+      "erp_amt": null,
+      "erp_dt": null,
+      "created_id": "",
+      "created_ip": "",
+      "updated_id": "",
+      "updated_ip": "",
+      "renewal_cd": "",
+      "renewal_cd_nm": "",
+      "login_at": "",
+      "last_login": 0,
+      "business_cd": "ADV"
+   }
+]
+2024-12-11 11:54:43 [info] : ::1 - - [11/Dec/2024:02:54:43 +0000] "POST /ADM/ADV/set HTTP/1.1" 200 28 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:54:43 [info] : {
+   "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed"
+}
+2024-12-11 11:54:43 [info] : ::1 - - [11/Dec/2024:02:54:43 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2123 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:54:43 [info] : {
+   "user_cd": "IND",
+   "business_cd": "ADV"
+}
+2024-12-11 11:54:43 [info] : ::1 - - [11/Dec/2024:02:54:43 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:54:47 [info] : ::1 - - [11/Dec/2024:02:54:47 +0000] "POST /ADV/ADV0030A/get HTTP/1.1" 200 1948 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:55:11 [info] : 8b3a01f1080f4e8aa2343515a219daf8
+2024-12-11 11:55:11 [info] : [
+   {
+      "mode": "U",
+      "index": 0,
+      "renewal": "",
+      "table_name": "",
+      "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed",
+      "insurance_seq": 0,
+      "insurance_no": "120233465721",
+      "user_uuid": "6808694ef0194d94b5ca6f742399eaa0",
+      "user_id": "kirakira42",
+      "user_cd": "IND",
+      "user_nm": "윤자영",
+      "user_birth": "830402",
+      "user_regno": "222222",
+      "user_hpno": "",
+      "user_email": "",
+      "corp_type": "",
+      "corp_region_cd": "010",
+      "corp_region_nm": "서울",
+      "corp_nm": "윤법률사무소",
+      "corp_ceo_nm": "",
+      "corp_bnno": "",
+      "corp_bnno1": "",
+      "corp_bnno2": "",
+      "corp_bnno3": "",
+      "corp_cnno": "222-22-22222",
+      "corp_cnno1": "",
+      "corp_cnno2": "",
+      "corp_cnno3": "",
+      "corp_telno": "02-2011-0300",
+      "corp_telno1": "02",
+      "corp_telno2": "2011",
+      "corp_telno3": "0300",
+      "corp_faxno": "02-2011-0301",
+      "corp_faxno1": "02",
+      "corp_faxno2": "2011",
+      "corp_faxno3": "0301",
+      "corp_cust_nm": "윤자영",
+      "corp_cust_hpno": "010-5342-6977",
+      "corp_cust_hpno1": "",
+      "corp_cust_hpno2": "",
+      "corp_cust_hpno3": "",
+      "corp_cust_email": "jayoung.yoon@lockton.com",
+      "corp_post": "04520",
+      "corp_addr": "서울 중구 세종대로 136",
+      "corp_addr_dtl": "13층",
+      "base_insr_st_dt": "2023-12-01",
+      "base_insr_cncls_dt": "2024-12-01",
+      "insr_year": "2023",
+      "insr_reg_dt": "2023-11-23",
+      "insr_st_dt": "2023-12-01",
+      "insr_cncls_dt": "2024-12-01",
+      "insr_retr_yn": "N",
+      "insr_retr_dt": "2023-12-01",
+      "insr_pblc_brdn_rt": "",
+      "insr_take_amt": "150000000",
+      "insr_take_sec": "1|1억5천이하",
+      "insr_clm_lt_amt": "200000000|2억원",
+      "insr_year_clm_lt_amt": "2억원",
+      "org_insr_year_clm_lt_amt": "",
+      "insr_psnl_brdn_amt": "3000000|3백만원",
+      "insr_program_yn": "N",
+      "insr_program": "",
+      "insr_service": "",
+      "insr_sale_year": 0,
+      "insr_sale_rt": "0",
+      "insr_relief": 0,
+      "insr_pcnt_sale_rt": "0",
+      "insr_base_amt": "292600",
+      "insr_amt": "292600",
+      "insr_premium_amt": 0,
+      "insr_tot_amt": "373600",
+      "insr_tot_unpaid_amt": null,
+      "insr_tot_paid_amt": null,
+      "limited_collateral": "담보한정 상세 정보 수정1",
+      "cbr_cnt": 0,
+      "cbr_data": [],
+      "cons_join_yn": "",
+      "cons_data": {
+         "insr_st_dt": "",
+         "insr_cncls_dt": "",
+         "insr_pblc_brdn_rt": "",
+         "insr_year_clm_lt_amt": "",
+         "insr_clm_lt_amt": "",
+         "insr_psnl_brdn_amt": "",
+         "insr_retr_yn": "",
+         "insr_retr_dt": "",
+         "insr_sale_rt": 0,
+         "insr_base_amt": 0,
+         "insr_amt": 0,
+         "cbr_cnt": 0,
+         "cbr_data": []
+      },
+      "spct_join_yn": "Y",
+      "spct_data": {
+         "cbr_cnt": 1,
+         "cbr_data": [],
+         "insr_amt": 81000,
+         "insr_st_dt": "2023-12-01",
+         "insr_retr_dt": "2023-12-01",
+         "insr_retr_yn": "",
+         "insr_sale_rt": 0,
+         "insr_base_amt": 81000,
+         "insr_cncls_dt": "2024-12-01",
+         "insr_clm_lt_amt": "50000000|5천만원",
+         "insr_psnl_brdn_amt": "5000000|5백만원",
+         "insr_year_clm_lt_amt": "5천만원"
+      },
+      "active_yn": "",
+      "agr10_yn": "Y",
+      "agr20_yn": "Y",
+      "agr30_yn": "Y",
+      "agr31_yn": "Y",
+      "agr32_yn": "Y",
+      "agr33_yn": "Y",
+      "agr34_yn": "Y",
+      "agr40_yn": "Y",
+      "agr41_yn": "Y",
+      "agr50_yn": "Y",
+      "trx_data": [],
+      "complete_dt": "",
+      "status_cd": "91",
+      "status_nm": "미가입",
+      "rmk": "",
+      "change_dt": "",
+      "change_rmk": "",
+      "erp_st_dt": null,
+      "erp_cncls_dt": null,
+      "erp_amt": null,
+      "erp_dt": null,
+      "created_id": "",
+      "created_ip": "",
+      "updated_id": "",
+      "updated_ip": "",
+      "renewal_cd": "",
+      "renewal_cd_nm": "",
+      "login_at": "",
+      "last_login": 0,
+      "business_cd": "ADV"
+   }
+]
+2024-12-11 11:55:11 [info] : ::1 - - [11/Dec/2024:02:55:11 +0000] "POST /ADM/ADV/set HTTP/1.1" 200 28 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:55:11 [info] : {
+   "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed"
+}
+2024-12-11 11:55:11 [info] : ::1 - - [11/Dec/2024:02:55:11 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2123 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:55:11 [info] : {
+   "user_cd": "IND",
+   "business_cd": "ADV"
+}
+2024-12-11 11:55:11 [info] : ::1 - - [11/Dec/2024:02:55:11 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:55:13 [info] : ::1 - - [11/Dec/2024:02:55:13 +0000] "POST /ADV/ADV0030A/get HTTP/1.1" 200 1948 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:58:44 [info] : 8b3a01f1080f4e8aa2343515a219daf8
+2024-12-11 11:58:44 [info] : [
+   {
+      "mode": "U",
+      "index": 0,
+      "renewal": "",
+      "table_name": "",
+      "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed",
+      "insurance_seq": 0,
+      "insurance_no": "120233465721",
+      "user_uuid": "6808694ef0194d94b5ca6f742399eaa0",
+      "user_id": "kirakira42",
+      "user_cd": "IND",
+      "user_nm": "윤자영",
+      "user_birth": "830402",
+      "user_regno": "222222",
+      "user_hpno": "",
+      "user_email": "",
+      "corp_type": "",
+      "corp_region_cd": "010",
+      "corp_region_nm": "서울",
+      "corp_nm": "윤법률사무소",
+      "corp_ceo_nm": "",
+      "corp_bnno": "",
+      "corp_bnno1": "",
+      "corp_bnno2": "",
+      "corp_bnno3": "",
+      "corp_cnno": "222-22-22222",
+      "corp_cnno1": "",
+      "corp_cnno2": "",
+      "corp_cnno3": "",
+      "corp_telno": "02-2011-0300",
+      "corp_telno1": "02",
+      "corp_telno2": "2011",
+      "corp_telno3": "0300",
+      "corp_faxno": "02-2011-0301",
+      "corp_faxno1": "02",
+      "corp_faxno2": "2011",
+      "corp_faxno3": "0301",
+      "corp_cust_nm": "윤자영",
+      "corp_cust_hpno": "010-5342-6977",
+      "corp_cust_hpno1": "",
+      "corp_cust_hpno2": "",
+      "corp_cust_hpno3": "",
+      "corp_cust_email": "jayoung.yoon@lockton.com",
+      "corp_post": "04520",
+      "corp_addr": "서울 중구 세종대로 136",
+      "corp_addr_dtl": "13층",
+      "base_insr_st_dt": "2023-12-01",
+      "base_insr_cncls_dt": "2024-12-01",
+      "insr_year": "2023",
+      "insr_reg_dt": "2023-11-23",
+      "insr_st_dt": "2023-12-01",
+      "insr_cncls_dt": "2024-12-01",
+      "insr_retr_yn": "N",
+      "insr_retr_dt": "2023-12-01",
+      "insr_pblc_brdn_rt": "",
+      "insr_take_amt": "150000000",
+      "insr_take_sec": "1|1억5천이하",
+      "insr_clm_lt_amt": "200000000|2억원",
+      "insr_year_clm_lt_amt": "2억원",
+      "org_insr_year_clm_lt_amt": "",
+      "insr_psnl_brdn_amt": "3000000|3백만원",
+      "insr_program_yn": "N",
+      "insr_program": "",
+      "insr_service": "",
+      "insr_sale_year": 0,
+      "insr_sale_rt": "0",
+      "insr_relief": 0,
+      "insr_pcnt_sale_rt": "0",
+      "insr_base_amt": "292600",
+      "insr_amt": "292600",
+      "insr_premium_amt": 0,
+      "insr_tot_amt": "373600",
+      "insr_tot_unpaid_amt": null,
+      "insr_tot_paid_amt": null,
+      "limited_collateral": "(주)하나은행을 위하여 행하는 근저당권(신탁등기, 가압류, 압류 포함)의 설정, 변경,이전,말소(선순위 권리자의 등기나 선행(가)압류 업무 포함)등 일체의 등기 업무 한정",
+      "cbr_cnt": 0,
+      "cbr_data": [],
+      "cons_join_yn": "",
+      "cons_data": {
+         "insr_st_dt": "",
+         "insr_cncls_dt": "",
+         "insr_pblc_brdn_rt": "",
+         "insr_year_clm_lt_amt": "",
+         "insr_clm_lt_amt": "",
+         "insr_psnl_brdn_amt": "",
+         "insr_retr_yn": "",
+         "insr_retr_dt": "",
+         "insr_sale_rt": 0,
+         "insr_base_amt": 0,
+         "insr_amt": 0,
+         "cbr_cnt": 0,
+         "cbr_data": []
+      },
+      "spct_join_yn": "Y",
+      "spct_data": {
+         "cbr_cnt": 1,
+         "cbr_data": [],
+         "insr_amt": 81000,
+         "insr_st_dt": "2023-12-01",
+         "insr_retr_dt": "2023-12-01",
+         "insr_retr_yn": "",
+         "insr_sale_rt": 0,
+         "insr_base_amt": 81000,
+         "insr_cncls_dt": "2024-12-01",
+         "insr_clm_lt_amt": "50000000|5천만원",
+         "insr_psnl_brdn_amt": "5000000|5백만원",
+         "insr_year_clm_lt_amt": "5천만원"
+      },
+      "active_yn": "",
+      "agr10_yn": "Y",
+      "agr20_yn": "Y",
+      "agr30_yn": "Y",
+      "agr31_yn": "Y",
+      "agr32_yn": "Y",
+      "agr33_yn": "Y",
+      "agr34_yn": "Y",
+      "agr40_yn": "Y",
+      "agr41_yn": "Y",
+      "agr50_yn": "Y",
+      "trx_data": [],
+      "complete_dt": "",
+      "status_cd": "91",
+      "status_nm": "미가입",
+      "rmk": "",
+      "change_dt": "",
+      "change_rmk": "",
+      "erp_st_dt": null,
+      "erp_cncls_dt": null,
+      "erp_amt": null,
+      "erp_dt": null,
+      "created_id": "",
+      "created_ip": "",
+      "updated_id": "",
+      "updated_ip": "",
+      "renewal_cd": "",
+      "renewal_cd_nm": "",
+      "login_at": "",
+      "last_login": 0,
+      "business_cd": "ADV"
+   }
+]
+2024-12-11 11:58:44 [info] : ::1 - - [11/Dec/2024:02:58:44 +0000] "POST /ADM/ADV/set HTTP/1.1" 200 28 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:58:44 [info] : {
+   "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed"
+}
+2024-12-11 11:58:44 [info] : ::1 - - [11/Dec/2024:02:58:44 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2314 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:58:44 [info] : {
+   "user_cd": "IND",
+   "business_cd": "ADV"
+}
+2024-12-11 11:58:44 [info] : ::1 - - [11/Dec/2024:02:58:44 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 11:58:48 [info] : ::1 - - [11/Dec/2024:02:58:48 +0000] "POST /ADV/ADV0030A/get HTTP/1.1" 200 2139 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 12:59:18 [info] : ::1 - - [11/Dec/2024:03:59:18 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 12:59:21 [info] : ::1 - - [11/Dec/2024:03:59:21 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 12:59:21 [info] : ::1 - - [11/Dec/2024:03:59:21 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 12:59:29 [info] : {
+   "business_cd": "ADV",
+   "insr_year": "%",
+   "status_cd": "%",
+   "user_cd": "%",
+   "user_nm": "윤자영"
+}
+2024-12-11 12:59:29 [info] : ::1 - - [11/Dec/2024:03:59:29 +0000] "POST /ADM/ADV/gets HTTP/1.1" 200 1125 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 12:59:31 [info] : {
+   "insurance_uuid": "89b18f66942649699ac3f472a3d0ffed"
+}
+2024-12-11 12:59:31 [info] : ::1 - - [11/Dec/2024:03:59:31 +0000] "POST /ADM/ADV/get HTTP/1.1" 200 2314 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 12:59:32 [info] : {
+   "user_cd": "IND",
+   "business_cd": "ADV"
+}
+2024-12-11 12:59:32 [info] : ::1 - - [11/Dec/2024:03:59:32 +0000] "POST /ADM/ADV/rate HTTP/1.1" 200 3884 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 16:04:50 [info] : ::1 - - [11/Dec/2024:07:04:50 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 17:07:37 [info] : ::1 - - [11/Dec/2024:08:07:37 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 17:07:49 [info] : ::1 - - [11/Dec/2024:08:07:49 +0000] "POST /auth/signin HTTP/1.1" 200 585 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 17:07:49 [info] : ::1 - - [11/Dec/2024:08:07:49 +0000] "POST /board/popup HTTP/1.1" 200 1546 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-11 17:07:49 [info] : ::1 - - [11/Dec/2024:08:07:49 +0000] "POST /ADV/ADV0030A HTTP/1.1" 200 83 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+

@@ -77,8 +77,8 @@ module.exports = {
         role: 'user'
       };
 
-       // console.log('암호화 테스트 : ',encrypt.getEncryptData('getdream'))
-       // console.log('복호화 테스트 : ',encrypt.getDecryptData(encrypt.getEncryptData('getdream')))
+        // console.log('암호화 테스트 : ',encrypt.getEncryptData('getdream'))
+        // console.log('복호화 테스트 : ',encrypt.getDecryptData(encrypt.getEncryptData('getdream')))
 
       const accessToken = jwt.sign(payload, process.env.JWT_SECRET_KEY, {
         algorithm: 'HS256',
@@ -101,7 +101,7 @@ module.exports = {
       } else {
         return res.status(StatusCode.OK).json({
           success: true,
-          message: StatusMessage.loginSuccess,
+          message: StatusMessage.lOGIN_SUCCESS,
           data: {
             accessToken: accessToken,
             refreshToken: refreshToken,

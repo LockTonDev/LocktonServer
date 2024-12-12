@@ -1,0 +1,11 @@
+2024-10-25 12:44:04 [error] : PASSPORT localVerify Error :  Cannot read properties of undefined (reading 'user_pwd')
+2024-10-25 12:44:04 [error] : >> 
+2024-10-25 12:44:07 [error] : passport isAuth  : false
+2024-10-25 12:47:03 [error] : PASSPORT localVerify Error :  Cannot read properties of undefined (reading 'user_pwd')
+2024-10-25 12:47:03 [error] : >> 
+2024-10-25 12:47:08 [error] : passport isAuth  : false
+2024-10-25 12:47:14 [error] : passport isAuth  : true
+2024-10-25 14:51:12 [error] : jwt expired
+2024-10-25 14:51:21 [error] : passport isAuth  : false
+2024-10-25 14:51:26 [error] : passport isAuth  : true
+2024-10-25 15:17:20 [error] : >> 

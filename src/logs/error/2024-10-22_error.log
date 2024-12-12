@@ -24,3 +24,14 @@
 2024-10-22 14:56:05 [error] : >> 
 2024-10-22 14:56:41 [error] : passport isAuth  : true
 2024-10-22 18:14:11 [error] : passport isAuth  : true
+2024-10-22 18:56:24 [error] : passport isAuth  : false
+2024-10-22 18:56:25 [error] : passport isAuth  : false
+2024-10-22 18:56:26 [error] : passport isAuth  : false
+2024-10-22 18:56:26 [error] : passport isAuth  : false
+2024-10-22 18:56:27 [error] : passport isAuth  : false
+2024-10-22 18:57:00 [error] : passport isAuth  : false
+2024-10-22 18:57:02 [error] : passport isAuth  : true
+2024-10-22 19:02:09 [error] : passport isAuth  : true
+2024-10-22 19:02:16 [error] : passport isAuth  : true
+2024-10-22 19:02:17 [error] : passport isAuth  : true
+2024-10-22 19:03:22 [error] : passport isAuth  : true

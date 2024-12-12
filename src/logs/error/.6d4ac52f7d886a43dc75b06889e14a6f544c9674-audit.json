@@ -54,6 +54,56 @@
             "date": 1729576041725,
             "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-10-22_error.log",
             "hash": "50f292a3d4c00b68b1ecbcec740f77e8d9ea733aa1d199fc401f090f07b0c63c"
+        },
+        {
+            "date": 1729677039071,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-10-23_error.log",
+            "hash": "5ce9bf9192ed1a01a501ee2cc64d7cdf6d5663e892e947eb777be63c917c91e6"
+        },
+        {
+            "date": 1729827781730,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-10-25_error.log",
+            "hash": "a632d47a27ddfbd2b845ea2167d0df87057eb722baafccf9fa0d19307ae9b9dd"
+        },
+        {
+            "date": 1729920394742,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-10-26_error.log",
+            "hash": "bb150debb3e90aaf51fbb9da588400209ca1b4ade0c173882178a1fe4e5459a3"
+        },
+        {
+            "date": 1731993903710,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-11-19_error.log",
+            "hash": "294b30322e2fa1a8fca0b544d317c6fd137c70cbb29c3e5cb7ef107e5997a5b7"
+        },
+        {
+            "date": 1732258947780,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-11-22_error.log",
+            "hash": "c4966e58c5375247626793400401cc1ac371f4121c6427f2c640423bc1b7eca9"
+        },
+        {
+            "date": 1732693966613,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-11-27_error.log",
+            "hash": "29b2fd4ac2ba959e933f61d546299407ee2e6603ab42be593aab1e5bd990d1c5"
+        },
+        {
+            "date": 1732763692433,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-11-28_error.log",
+            "hash": "e2fa0cfe9fa54bbc56ed43fbc9c77229830443045b420a767107e0c1d8d7245f"
+        },
+        {
+            "date": 1732857774345,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-11-29_error.log",
+            "hash": "8507e59b709d63b9f5359f16e1c1f01cce4f23187d7bfdda7faa8f8177ddc6c3"
+        },
+        {
+            "date": 1733885324595,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-12-11_error.log",
+            "hash": "b91cfb72f6d98b51f59381003104337d0f740d1128fd51fd35fcccf106f5be33"
+        },
+        {
+            "date": 1733965440996,
+            "name": "D:\\Dev\\lockton\\backend_nodejs\\src\\logs\\error\\2024-12-12_error.log",
+            "hash": "b3977e59df0d4f17bfd8bcbd49862d2adab445815424851a7383c68d0fa2be4f"
         }
     ],
     "hashType": "sha256"

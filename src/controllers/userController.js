@@ -6,8 +6,13 @@ const { sendSMS } = require('../config/aligosms');
 const { sendMail } = require('../config/smtpTransport');
 const User = require('../models/user');
 const M_TTAX0030A = require('../models/M_TTAX0030A');
+const M_TCAA0030A = require('../models/M_TCAA0030A');
+const M_TADV0030A = require('../models/M_TADV0030A');
+const M_TPAT0030A = require('../models/M_TPAT0030A');
+const M_TLAW0030A = require('../models/M_TLAW0030A');
 const TemplateController = require('../controllers/templateController');
 const dayjs = require('dayjs');
+const encrypt = require("../config/encrypt");
 
 module.exports = {
   insert: async function (req, res, next) {
@@ -78,7 +83,20 @@ module.exports = {
       if (isVerifyPassword) {
         const result = await User.update(req);
 
-        await M_TTAX0030A.updateFromUserInfo(req);
+        console.log("직업 : ",req.body.params.business_cd)
+        const businessCd = req.body.params.business_cd
+        if(businessCd == 'ADV') {
+          await M_TADV0030A.updateFromUserInfo(req);
+        } else if(businessCd == 'PAT') {
+          await M_TPAT0030A.updateFromUserInfo(req);
+        } else if(businessCd == 'CAA') {
+          await M_TCAA0030A.updateFromUserInfo(req);
+        } else if(businessCd == 'LAW') {
+          await M_TLAW0030A.updateFromUserInfo(req);
+        } else {
+          await M_TTAX0030A.updateFromUserInfo(req);
+        }
+        // await M_TTAX0030A.updateFromUserInfo(req);
 
         // const templateParams = {
         //   t_id: 'CM0100',
@@ -111,6 +129,15 @@ module.exports = {
   select: async function (req, res, next) {
     await User.select(req)
       .then(result => {
+        result[0].user_nm = encrypt.getDecryptData(result[0].user_nm)
+        result[0].user_hpno = encrypt.getDecryptData(result[0].user_hpno)
+        result[0].corp_telno = encrypt.getDecryptData(result[0].corp_telno)
+        result[0].user_email = encrypt.getDecryptData(result[0].user_email)
+        result[0].user_birth = encrypt.getDecryptData(result[0].user_birth)
+        result[0].corp_ceo_nm = encrypt.getDecryptData(result[0].corp_ceo_nm)
+        result[0].corp_cust_nm = encrypt.getDecryptData(result[0].corp_cust_nm)
+        result[0].corp_cust_hpno = encrypt.getDecryptData(result[0].corp_cust_hpno)
+        result[0].corp_cust_email = encrypt.getDecryptData(result[0].corp_cust_email)
         res.status(StatusCode.OK).json(result);
       })
       .catch(err => {
@@ -234,6 +261,8 @@ module.exports = {
    */
   isVerifyUserEMail: async function (req, res, next) {
     try {
+      req.body.params.user_email = encrypt.getEncryptData(req.body.params.user_email)
+      console.log(req.body.params.user_email)
       const result = await User.isVerifyUserEMail(req);
 
       res.status(StatusCode.OK).json({
@@ -247,6 +276,7 @@ module.exports = {
 
   isVerifyPassword: async function (req, res, next) {
     try {
+
       const result = await User.isVerifyPassword(req);
 
       res.status(StatusCode.OK).json({

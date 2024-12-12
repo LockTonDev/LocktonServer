@@ -1,0 +1,331 @@
+2024-11-29 14:23:00 [info] : Server on port 3000 | run
+2024-11-29 14:23:38 [error] : jwt expired
+2024-11-29 14:23:38 [info] : ::1 - - [29/Nov/2024:05:23:38 +0000] "POST /ADV/ADV0030A HTTP/1.1" 401 49 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:23:38 [error] : jwt expired
+2024-11-29 14:23:38 [info] : ::1 - - [29/Nov/2024:05:23:38 +0000] "POST /ADV/ADV0030A HTTP/1.1" 401 49 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:23:38 [info] : ::1 - - [29/Nov/2024:05:23:38 +0000] "POST /board/popup HTTP/1.1" 200 1546 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:23:38 [info] : ::1 - - [29/Nov/2024:05:23:38 +0000] "POST /board/popup HTTP/1.1" 200 1546 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:23:38 [error] : 존재하지 않는 유저
+2024-11-29 14:23:38 [error] : >> 
+2024-11-29 14:23:38 [info] : ::1 - - [29/Nov/2024:05:23:38 +0000] "POST /auth/signin HTTP/1.1" 500 56 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:24:02 [info] : ::1 - - [29/Nov/2024:05:24:02 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:24:08 [info] : ::1 - - [29/Nov/2024:05:24:08 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:24:08 [info] : ::1 - - [29/Nov/2024:05:24:08 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:24:12 [info] : ::1 - - [29/Nov/2024:05:24:12 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 26 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:24:27 [info] : ::1 - - [29/Nov/2024:05:24:27 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 26 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:24:33 [info] : ::1 - - [29/Nov/2024:05:24:33 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1354898 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:37:25 [info] : ::1 - - [29/Nov/2024:05:37:25 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:37:26 [info] : ::1 - - [29/Nov/2024:05:37:26 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:37:29 [info] : ::1 - - [29/Nov/2024:05:37:29 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:37:29 [info] : ::1 - - [29/Nov/2024:05:37:29 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 14:37:52 [info] : ::1 - - [29/Nov/2024:05:37:52 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1354898 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:30:21 [info] : ::1 - - [29/Nov/2024:06:30:21 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:30:25 [info] : ::1 - - [29/Nov/2024:06:30:25 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:30:33 [info] : ::1 - - [29/Nov/2024:06:30:33 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:32:44 [info] : ::1 - - [29/Nov/2024:06:32:44 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:32:44 [info] : ::1 - - [29/Nov/2024:06:32:44 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:32:59 [info] : ::1 - - [29/Nov/2024:06:32:59 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:33:57 [info] : ::1 - - [29/Nov/2024:06:33:57 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:33:57 [info] : ::1 - - [29/Nov/2024:06:33:57 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:34:08 [info] : ::1 - - [29/Nov/2024:06:34:08 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:35:05 [info] : ::1 - - [29/Nov/2024:06:35:05 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:35:05 [info] : ::1 - - [29/Nov/2024:06:35:05 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:35:16 [info] : ::1 - - [29/Nov/2024:06:35:16 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:37:14 [info] : ::1 - - [29/Nov/2024:06:37:14 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:38:05 [info] : ::1 - - [29/Nov/2024:06:38:05 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:38:05 [info] : ::1 - - [29/Nov/2024:06:38:05 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:38:15 [info] : ::1 - - [29/Nov/2024:06:38:15 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:40:08 [info] : ::1 - - [29/Nov/2024:06:40:08 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:40:08 [info] : ::1 - - [29/Nov/2024:06:40:08 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:40:19 [info] : ::1 - - [29/Nov/2024:06:40:19 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:41:15 [info] : ::1 - - [29/Nov/2024:06:41:15 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:41:15 [info] : ::1 - - [29/Nov/2024:06:41:15 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:45:00 [info] : ::1 - - [29/Nov/2024:06:45:00 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:45:00 [info] : ::1 - - [29/Nov/2024:06:45:00 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:45:09 [info] : ::1 - - [29/Nov/2024:06:45:09 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:45:48 [info] : ::1 - - [29/Nov/2024:06:45:48 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:46:11 [info] : ::1 - - [29/Nov/2024:06:46:11 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:46:11 [info] : ::1 - - [29/Nov/2024:06:46:11 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:46:18 [info] : ::1 - - [29/Nov/2024:06:46:18 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:46:18 [info] : ::1 - - [29/Nov/2024:06:46:18 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:46:26 [info] : ::1 - - [29/Nov/2024:06:46:26 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1152419 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:49:24 [info] : ::1 - - [29/Nov/2024:06:49:24 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:49:24 [info] : ::1 - - [29/Nov/2024:06:49:24 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:49:40 [info] : ::1 - - [29/Nov/2024:06:49:40 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:50:43 [info] : ::1 - - [29/Nov/2024:06:50:43 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:50:43 [info] : ::1 - - [29/Nov/2024:06:50:43 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:52:36 [info] : ::1 - - [29/Nov/2024:06:52:36 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:52:36 [info] : ::1 - - [29/Nov/2024:06:52:36 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:53:31 [info] : ::1 - - [29/Nov/2024:06:53:31 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:54:18 [info] : ::1 - - [29/Nov/2024:06:54:18 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:54:18 [info] : ::1 - - [29/Nov/2024:06:54:18 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:54:30 [info] : ::1 - - [29/Nov/2024:06:54:30 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:55:04 [info] : {
+   "business_cd": "CAA",
+   "insr_year": "2024",
+   "user_cd": "IND",
+   "status_cd": "%",
+   "user_nm": "박순정",
+   "excel_filenm": "2024_관세사_개인"
+}
+2024-11-29 15:55:04 [info] : ::1 - - [29/Nov/2024:06:55:04 +0000] "POST /ADM/CAA/TRX/get HTTP/1.1" 200 697 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:55:13 [info] : ::1 - - [29/Nov/2024:06:55:13 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:55:13 [info] : ::1 - - [29/Nov/2024:06:55:13 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:55:19 [info] : {
+   "business_cd": "CAA",
+   "insr_year": "%",
+   "status_cd": "%",
+   "user_cd": "%",
+   "user_nm": "박순정"
+}
+2024-11-29 15:55:19 [info] : CAAAdminMapper.INSURANCE_CAA_LIST
+2024-11-29 15:55:19 [info] : ::1 - - [29/Nov/2024:06:55:19 +0000] "POST /ADM/CAA/gets HTTP/1.1" 200 579 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:55:20 [info] : {
+   "insurance_uuid": "f666aad1d67943ce896dca344881c4ad"
+}
+2024-11-29 15:55:20 [info] : CAAAdminMapper.result>>> 
+2024-11-29 15:55:20 [info] : [
+   {
+      "insurance_uuid": "f666aad1d67943ce896dca344881c4ad",
+      "user_uuid": "256486f4268446cc83891c5e9d4dcc9e",
+      "insurance_no": "140907489",
+      "business_cd": "CAA",
+      "user_cd": "IND",
+      "user_id": "sanny87",
+      "user_nm": "박순정",
+      "user_birth": "870216",
+      "user_regno": "33333",
+      "corp_type": "",
+      "corp_nm": "순정관세사무소",
+      "corp_ceo_nm": "",
+      "corp_bnno": "",
+      "corp_cnno": "333-33-33333",
+      "corp_telno": "02-2011-0356",
+      "corp_faxno": "02-2011-0301",
+      "corp_cust_nm": "순정",
+      "corp_cust_hpno": "010-2857-4575",
+      "corp_cust_email": "sanny87@naver.com",
+      "corp_post": "04520",
+      "corp_addr": "서울 중구 세종대로 136",
+      "corp_addr_dtl": "13",
+      "corp_region_cd": "",
+      "insr_year": "2024",
+      "insr_reg_dt": "2023-12-26",
+      "insr_st_dt": "2024-01-01",
+      "insr_cncls_dt": "2025-01-01",
+      "insr_retr_yn": "",
+      "insr_retr_dt": "2024-01-01",
+      "insr_pblc_brdn_rt": "3|공동부담비율30%",
+      "insr_clm_lt_amt": "20000000|2천만원",
+      "insr_year_clm_lt_amt": "2천만원",
+      "insr_psnl_brdn_amt": "2000000|2백만원",
+      "insr_sale_year": 0,
+      "insr_sale_rt": "0",
+      "insr_pcnt_sale_rt": "0",
+      "insr_base_amt": "300000",
+      "insr_amt": "300000",
+      "insr_tot_amt": "380000",
+      "insr_tot_paid_amt": "380000",
+      "insr_tot_unpaid_amt": "0",
+      "cons_join_yn": "",
+      "cons_data": {
+         "cbr_cnt": 0,
+         "cbr_data": [],
+         "insr_amt": 0,
+         "insr_st_dt": "",
+         "insr_retr_dt": "2024-01-01",
+         "insr_retr_yn": "",
+         "insr_sale_rt": 0,
+         "insr_base_amt": 0,
+         "insr_cncls_dt": "",
+         "insr_clm_lt_amt": "",
+         "insr_pblc_brdn_rt": "",
+         "insr_psnl_brdn_amt": "",
+         "insr_year_clm_lt_amt": ""
+      },
+      "spct_join_yn": "Y",
+      "spct_data": {
+         "cbr_cnt": "1",
+         "insr_amt": 80000,
+         "insr_retr_dt": "2021-12-05",
+         "insr_base_amt": 0,
+         "insr_clm_lt_amt": "10000000|1천만원",
+         "insr_psnl_brdn_amt": "500000|50만원",
+         "insr_year_clm_lt_amt": ""
+      },
+      "cbr_cnt": 1,
+      "cbr_data": [],
+      "trx_data": [
+         {
+            "rmk": "",
+            "trx_cd": "WT",
+            "trx_dt": "2024-11-13",
+            "trx_nm": "",
+            "acct_nm": "박순정33333",
+            "trx_amt": "380000"
+         }
+      ],
+      "erp_rmk": null,
+      "erp_amt": null,
+      "erp_dt": null,
+      "active_yn": "",
+      "agr10_yn": "Y",
+      "agr20_yn": "Y",
+      "agr30_yn": "Y",
+      "agr31_yn": "Y",
+      "agr32_yn": "Y",
+      "agr33_yn": "Y",
+      "agr34_yn": "Y",
+      "agr40_yn": "Y",
+      "agr41_yn": "Y",
+      "agr50_yn": "Y",
+      "status_cd": "80",
+      "rmk": "",
+      "change_rmk": "",
+      "change_dt": "",
+      "created_at": "2023-12-26T05:22:57.000Z",
+      "created_id": "",
+      "created_ip": "",
+      "updated_at": "2024-11-13T02:11:51.000Z",
+      "updated_id": "",
+      "updated_ip": "",
+      "erp_st_dt": null,
+      "erp_cncls_dt": null,
+      "status_nm": "정상",
+      "corp_region_nm": null,
+      "corp_telno1": "02",
+      "corp_telno2": "2011",
+      "corp_telno3": "0356",
+      "corp_faxno1": "02",
+      "corp_faxno2": "2011",
+      "corp_faxno3": "0301",
+      "base_insr_st_dt": "2024-01-01",
+      "base_insr_cncls_dt": "2025-01-01"
+   }
+]
+2024-11-29 15:55:20 [info] : ::1 - - [29/Nov/2024:06:55:20 +0000] "POST /ADM/CAA/get HTTP/1.1" 200 2453 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:55:20 [info] : {
+   "user_cd": "IND",
+   "business_cd": "CAA"
+}
+2024-11-29 15:55:20 [info] : ::1 - - [29/Nov/2024:06:55:20 +0000] "POST /ADM/CAA/rate HTTP/1.1" 200 3838 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:02 [info] : ::1 - - [29/Nov/2024:06:57:02 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:02 [info] : ::1 - - [29/Nov/2024:06:57:02 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:02 [info] : ::1 - - [29/Nov/2024:06:57:02 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:02 [info] : ::1 - - [29/Nov/2024:06:57:02 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:38 [info] : ::1 - - [29/Nov/2024:06:57:38 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:38 [info] : ::1 - - [29/Nov/2024:06:57:38 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:39 [info] : ::1 - - [29/Nov/2024:06:57:39 +0000] "POST /auth/refresh HTTP/1.1" 200 466 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:41 [info] : ::1 - - [29/Nov/2024:06:57:41 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:41 [info] : ::1 - - [29/Nov/2024:06:57:41 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:45 [info] : {
+   "business_cd": "CAA",
+   "insr_year": "2024",
+   "status_cd": "%",
+   "user_cd": "IND",
+   "user_nm": ""
+}
+2024-11-29 15:57:46 [info] : CAAAdminMapper.INSURANCE_CAA_LIST
+2024-11-29 15:57:46 [info] : ::1 - - [29/Nov/2024:06:57:46 +0000] "POST /ADM/CAA/gets HTTP/1.1" 200 396066 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:57:58 [info] : ::1 - - [29/Nov/2024:06:57:58 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:58:24 [info] : ::1 - - [29/Nov/2024:06:58:24 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:58:24 [info] : ::1 - - [29/Nov/2024:06:58:24 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:58:31 [info] : ::1 - - [29/Nov/2024:06:58:31 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 15:58:59 [info] : ::1 - - [29/Nov/2024:06:58:59 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 16:00:18 [info] : ::1 - - [29/Nov/2024:07:00:18 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 16:00:18 [info] : ::1 - - [29/Nov/2024:07:00:18 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 16:01:05 [info] : ::1 - - [29/Nov/2024:07:01:05 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1371270 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 16:01:49 [info] : ::1 - - [29/Nov/2024:07:01:49 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 1369207 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+
+2024-11-29 17:45:24 [info] : Server off
+2024-11-29 17:50:54 [info] : Server on port 3000 | run
+2024-11-29 17:52:05 [info] : Server off
+2024-11-29 17:52:33 [info] : Server on port 3000 | run
+2024-11-29 18:01:58 [info] : Server off
+2024-11-29 18:05:47 [info] : Server on port 3000 | run
+2024-11-29 18:07:19 [info] : Server off
+2024-11-29 18:07:38 [info] : Server on port 3000 | run
+2024-11-29 18:08:05 [info] : Server off
+2024-11-29 18:08:51 [info] : Server on port 3000 | run
+2024-11-29 18:11:13 [info] : Server off

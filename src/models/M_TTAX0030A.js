@@ -4,6 +4,7 @@ const { StatusMessage } = require('../utils/response');
 const db = require('../config/db');
 const knexDB = require('../config/knexDB');
 const TTAX0030AMapper = require('../mapper/TTAX0030AMapper');
+const encrypt = require("../config/encrypt");
 
 /**
  * 보험계약
@@ -83,8 +84,10 @@ module.exports = {
     }  
     let params;
     let queryList;
+    user[0].user_nm = encrypt.getDecryptData(user[0].user_nm)
     if(user[0].user_cd == 'IND'){
       queryList = queryListIND;
+      user[0].user_birth = encrypt.getDecryptData(user[0].user_birth)
       params = [user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].business_cd, user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].business_cd];
     }else {
       queryList = queryListCOR;

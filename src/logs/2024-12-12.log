@@ -1,0 +1,84 @@
+2024-12-12 10:04:07 [info] : Server on port 3000 | run
+2024-12-12 10:05:13 [info] : ::1 - - [12/Dec/2024:01:05:13 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:05:23 [info] : ::1 - - [12/Dec/2024:01:05:23 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:05:23 [info] : ::1 - - [12/Dec/2024:01:05:23 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:05:31 [error] : >> 
+2024-12-12 10:05:31 [info] : ::1 - - [12/Dec/2024:01:05:31 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 500 76 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:05:49 [error] : >> 
+2024-12-12 10:05:49 [info] : ::1 - - [12/Dec/2024:01:05:49 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 500 76 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:06:38 [info] : Server off
+2024-12-12 10:06:41 [info] : Server on port 3000 | run
+2024-12-12 10:06:54 [error] : >> 
+2024-12-12 10:06:54 [info] : ::1 - - [12/Dec/2024:01:06:54 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 500 76 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:11:46 [info] : Server off
+2024-12-12 10:11:48 [info] : Server on port 3000 | run
+2024-12-12 10:12:05 [info] : ::1 - - [12/Dec/2024:01:12:05 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:12:27 [info] : ::1 - - [12/Dec/2024:01:12:27 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:12:27 [info] : ::1 - - [12/Dec/2024:01:12:27 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:12:40 [info] : ::1 - - [12/Dec/2024:01:12:40 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:15:54 [info] : ::1 - - [12/Dec/2024:01:15:54 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:15:54 [info] : ::1 - - [12/Dec/2024:01:15:54 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:16:20 [info] : ::1 - - [12/Dec/2024:01:16:20 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:19:59 [info] : ::1 - - [12/Dec/2024:01:19:59 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:19:59 [info] : ::1 - - [12/Dec/2024:01:19:59 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:20:17 [info] : ::1 - - [12/Dec/2024:01:20:17 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:21:25 [info] : ::1 - - [12/Dec/2024:01:21:25 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:21:25 [info] : ::1 - - [12/Dec/2024:01:21:25 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:21:31 [info] : ::1 - - [12/Dec/2024:01:21:31 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:22:16 [info] : ::1 - - [12/Dec/2024:01:22:16 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:23:27 [info] : ::1 - - [12/Dec/2024:01:23:27 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:23:27 [info] : ::1 - - [12/Dec/2024:01:23:27 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:23:45 [info] : ::1 - - [12/Dec/2024:01:23:45 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:32:36 [info] : ::1 - - [12/Dec/2024:01:32:36 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:32:36 [info] : ::1 - - [12/Dec/2024:01:32:36 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:32:47 [info] : ::1 - - [12/Dec/2024:01:32:47 +0000] "POST /auth/refresh HTTP/1.1" 200 466 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:32:59 [info] : ::1 - - [12/Dec/2024:01:32:59 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:33:36 [info] : Server off
+2024-12-12 10:33:38 [info] : Server on port 3000 | run
+2024-12-12 10:44:57 [info] : ::1 - - [12/Dec/2024:01:44:57 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:44:57 [info] : ::1 - - [12/Dec/2024:01:44:57 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:46:11 [error] : >> 
+2024-12-12 10:46:11 [info] : ::1 - - [12/Dec/2024:01:46:11 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 500 76 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:46:17 [info] : {
+   "business_cd": "CAA",
+   "insr_year": "2023",
+   "user_cd": "COR",
+   "status_cd": "%",
+   "user_nm": ""
+}
+2024-12-12 10:46:17 [info] : ::1 - - [12/Dec/2024:01:46:17 +0000] "POST /ADM/CAA/TRX/get HTTP/1.1" 200 87423 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:46:21 [error] : >> 
+2024-12-12 10:46:21 [info] : ::1 - - [12/Dec/2024:01:46:21 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 500 76 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:47:00 [info] : Server off
