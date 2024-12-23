@@ -619,15 +619,15 @@ VALUES      ( UUID_V4(), ?, ?, ?, ?,
    */
   UPDATE_INSURANCE_ADV_TRX_DATA: `
     UPDATE tadv0030a
-    SET    
-          trx_data = ?,
-          insr_tot_unpaid_amt = ?,
-          insr_tot_paid_amt = ?,
-          status_cd = ?,
-          updated_at = Now(),
-          updated_id = ?,
-          updated_ip = ?
-    WHERE  insurance_uuid = ?
+    SET
+      trx_data = :trx_data,
+      status_cd = :status_cd,
+      insr_tot_paid_amt = :insr_tot_paid_amt,
+      insr_tot_unpaid_amt = :insr_tot_unpaid_amt,
+      updated_at = Now(),
+      updated_id = :updated_id,
+      updated_ip = :updated_ip
+    WHERE  insurance_uuid = :insurance_uuid
     `,
 
   /**

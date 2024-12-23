@@ -9,7 +9,7 @@ exports.verifyToken = (req, res, next) => {
     const jwtSecret = process.env.JWT_SECRET_KEY;
 
     req.decoded = jwt.verify(accessToken, jwtSecret);
-    if(blockAdmUUID.includes(req.decoded.uuid) && req.originalUrl.indexOf("ADM") > -1 && (req.originalUrl.indexOf("set") > -1 || req.originalUrl.indexOf("EXCEL") > -1)) {
+    if(blockAdmUUID.includes(req.decoded.uuid) && req.originalUrl.indexOf("ADM") > -1 && (req.originalUrl.indexOf("set") > -1 || (req.originalUrl.indexOf("EXCEL") > -1 && req.originalUrl.indexOf("USER/EXCEL") < 0))) {
       return res.status(StatusCode.OK).json({ success: false, message: StatusMessage.limitedAdmin,errorCode : StatusCode.UNAUTHORIZED });
     }
     return next();

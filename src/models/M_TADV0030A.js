@@ -2,7 +2,7 @@ const logger = require('../config/winston');
 const { NotFound, Conflict } = require('../utils/errors');
 const { StatusMessage } = require('../utils/response');
 const db = require('../config/db');
-//const encrypt = require("../config/encrypt");
+// const encrypt = require("../config/encrypt");
 
 /**
  * 회계사_보험계약
@@ -1107,5 +1107,43 @@ module.exports = {
     // }
 
     return true;
-  }
+  },
+  updateFromUserInfo: async function (req) {
+    const user_uuid = req.decoded.uuid;
+    const params = req.body.params;
+    console.log(user_uuid)
+    const query = `UPDATE TADV0030A SET corp_type=?, corp_nm=?, corp_ceo_nm=?, corp_bnno=?, corp_cnno=?, corp_telno=?, corp_faxno=?
+                  , corp_cust_nm=?, corp_cust_hpno=?, corp_cust_email=?, corp_post=?, corp_addr=?, corp_addr_dtl=?, corp_region_cd=?
+                  , updated_at=now(), updated_ip=?
+                  WHERE status_cd in ('10','80') and user_uuid = ?`;
+
+    const queryParams = [
+      params.corp_type,
+      params.corp_nm,
+      params.corp_ceo_nm,
+      params.corp_bnno,
+      params.corp_cnno,
+      params.corp_telno1 + '-' + params.corp_telno2 + '-' + params.corp_telno3,
+      params.corp_faxno1 + '-' + params.corp_faxno2 + '-' + params.corp_faxno3,
+      params.corp_cust_nm,
+      params.user_hpno,
+      params.user_email,
+      params.corp_post,
+      params.corp_addr,
+      params.corp_addr_dtl,
+      params.corp_region_cd,
+      params.updated_ip,
+      user_uuid
+    ];
+
+    console.log(queryParams);
+    logger.debug(query);
+    const [rows] = await db.queryWithTransaction(query, queryParams);
+    logger.debug(rows);
+    // if (rows.affectedRows < 1) {
+    //   throw new NotFound(StatusMessage.UPDATE_FAILED);
+    // }
+
+    return true;
+  },
 };

@@ -8,6 +8,7 @@ const knexDB = require('../config/knexDB');
 
 const M_TTAX0030A = require('./M_TTAX0030A');
 const UserMapper = require('../mapper/UserMapper');
+const encrypt = require("../config/encrypt");
 
 module.exports = {
   /**
@@ -225,18 +226,18 @@ module.exports = {
 
     const queryParams = [
       hash_password,
-      params.user_hpno,
-      params.user_email,
+      encrypt.getEncryptData(params.user_hpno),
+      encrypt.getEncryptData(params.user_email),
       params.corp_type,
       params.corp_nm,
-      params.corp_ceo_nm,
+      encrypt.getEncryptData(params.corp_ceo_nm),
       params.corp_bnno,
       params.corp_cnno,
-      params.corp_telno1 + '-' + params.corp_telno2 + '-' + params.corp_telno3,
+      encrypt.getEncryptData(params.corp_telno1 + '-' + params.corp_telno2 + '-' + params.corp_telno3),
       params.corp_faxno1 + '-' + params.corp_faxno2 + '-' + params.corp_faxno3,
-      params.corp_cust_nm,
-      params.corp_cust_hpno,
-      params.corp_cust_email,
+      encrypt.getEncryptData(params.corp_cust_nm),
+      encrypt.getEncryptData(params.corp_cust_hpno),
+      encrypt.getEncryptData(params.corp_cust_email),
       params.corp_post,
       params.corp_addr,
       params.corp_addr_dtl,

@@ -640,7 +640,7 @@ VALUES      ( UUID_V4(),
           trx_data = :trx_data,
           status_cd = :status_cd,
           insr_tot_paid_amt = :insr_tot_paid_amt,
-          insr_tot_unpaid_amt = :insr_tot_unpaid_amtf,
+          insr_tot_unpaid_amt = :insr_tot_unpaid_amt,
           updated_at = Now(),
           updated_id = :updated_id,
           updated_ip = :updated_ip
