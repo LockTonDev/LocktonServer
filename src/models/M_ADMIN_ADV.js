@@ -83,7 +83,7 @@ module.exports = {
       params.user_cd,
       params.insr_year,
       params.insr_year,
-      params.status_cd,
+      params.renewal_yn,
       params.status_cd,
       params.user_nm,
       params.user_nm,

@@ -136,6 +136,7 @@ module.exports = {
             where
               C.user_cd = D.user_cd
               and C.business_cd = D.business_cd
+              and now() between CONCAT (C.rn_st_dt,' 00:00:00') and CONCAT(C.rn_en_dt,' 23:59:59')
               and C.use_yn = 'Y'
               and D.user_uuid = ?
             order by

@@ -2,6 +2,7 @@ const logger = require('../config/winston');
 const { NotFound, Conflict } = require('../utils/errors');
 const { StatusMessage } = require('../utils/response');
 const db = require('../config/db');
+//const encrypt = require("../config/encrypt");
 
 /**
  * 회계사_보험계약
@@ -68,34 +69,46 @@ module.exports = {
   selectList: async function (req) {
     const user_uuid = req.decoded.uuid;
 
-    const queryListIND = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
-                  , insr_year, insr_st_dt, insr_cncls_dt
-                  , insr_tot_amt, status_cd, cbr_cnt, cbr_data
-                  , FN_GET_CODENM('COM030', status_cd) AS status_nm
-                    FROM TADV0030A
-                   WHERE (user_nm = ? and user_birth = ? and user_regno = ?)
-                   OR (JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_nm'), JSON_ARRAY(?))
-                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(?))
-                   AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY(?)))
-                   order by created_at desc`;
+    const queryListIND = `SELECT A.insurance_uuid, A.user_uuid, A.insurance_no, A.user_nm, A.user_cd
+                               , A.insr_year, A.insr_st_dt, A.insr_cncls_dt
+                               , A.insr_tot_amt, A.status_cd, A.cbr_cnt, A.cbr_data
+                               , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
+                               , B.use_yn, B.rn_st_dt , B.rn_en_dt
+                          FROM TADV0030A A
+                                   LEFT JOIN TCOM0030A B
+                                             ON A.insr_year = B.base_year
+                                                 AND A.user_cd = B.user_cd
+                                                 AND A.business_cd = B.business_cd
+                          WHERE (A.user_nm = ? and A.user_birth = ? and A.user_regno = ?)
+                             OR (JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(?))
+                              AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(?))
+                              AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(?)))
+                          order by A.created_at desc`;
 
-    const queryListJNT = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
-                   , insr_year, insr_st_dt, insr_cncls_dt
-                   , insr_tot_amt, status_cd, cbr_cnt, cbr_data
-                   , FN_GET_CODENM('COM030', status_cd) AS status_nm
-                     FROM TADV0030A
-                    WHERE user_nm = ? and corp_cnno = ?
-                    order by created_at desc`;
+    const queryListJNT = `SELECT A.insurance_uuid, A.user_uuid, A.insurance_no, A.user_nm, A.user_cd
+                               , A.insr_year, A.insr_st_dt, A.insr_cncls_dt
+                               , A.insr_tot_amt, A.status_cd, A.cbr_cnt, A.cbr_data
+                               , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
+                               , B.use_yn, B.rn_st_dt , B.rn_en_dt
+                          FROM TADV0030A A
+                                   LEFT JOIN TCOM0030A B
+                                             ON A.insr_year = B.base_year
+                                                 AND A.user_cd = B.user_cd
+                                                 AND A.business_cd = B.business_cd
+                          WHERE A.user_nm = ? and A.corp_cnno = ?
+                          order by A.created_at desc`;
 
 
     const userQuery = `SELECT * from tcom0110a where user_uuid = ?`
-    const [user] = await db.query(userQuery, user_uuid);  
+    const [user] = await db.query(userQuery, user_uuid);
 
+    logger.info('test11>>>'+user.length)
     if (user.length < 1) {
       throw new NotFound(StatusMessage.SELECT_FAILED);
-    }  
+    }
     let params;
     let queryList;
+    //user[0] = encrypt.decryptUserInfo(user[0])
     if(user[0].user_cd == 'IND'){
       queryList = queryListIND;
       params = [user[0].user_nm, user[0].user_birth, user[0].user_regno, user[0].user_nm, user[0].user_birth, user[0].user_regno];
@@ -103,36 +116,35 @@ module.exports = {
       queryList = queryListJNT;
       params = [user[0].user_nm, user[0].corp_cnno];
     }
-
+    logger.info('params>>>'+params[0])
     const [listData] = await db.query(queryList, params);
-    
 
     const queryNewInsr = `
-      select
-          CASE
-            WHEN COUNT(a.insurance_uuid) >= 1 THEN 'N'
-            ELSE 'Y'
-          END AS data
-      from
-        tadv0030a a
-      where
-        a.user_uuid = ?
-        and a.status_cd not in ('20', '40') -- 해지, 기간종료
-        and a.insr_year in (
+        select
+            CASE
+                WHEN COUNT(a.insurance_uuid) >= 1 THEN 'N'
+                ELSE 'Y'
+                END AS data
+        from
+            tadv0030a a
+        where
+            a.user_uuid = ?
+          and a.status_cd not in ('20', '40') -- 해지, 기간종료
+          and a.insr_year in (
             select
-              max(C.base_year)
+                max(C.base_year)
             from
-              TCOM0030A C,
-              tcom0110a D
+                TCOM0030A C,
+                tcom0110a D
             where
-              C.user_cd = D.user_cd
+                C.user_cd = D.user_cd
               and C.business_cd = D.business_cd
               and C.use_yn = 'Y'
               and D.user_uuid = ?
             order by
-              C.base_year desc,
-              C.ver desc
-           
+                C.base_year desc,
+                C.ver desc
+
         )
     `;
 
@@ -140,47 +152,64 @@ module.exports = {
     const newInsrData = await db.query(queryNewInsr, queryNewInsrParams);
 
     const queryRenewalInsr = `
-      select
-        A.insurance_uuid as data, A.insr_year
-      from
-        tadv0031a A,
-        tcom0110a B
-      where
-        A.business_cd = B.business_cd
-        and (
-                (A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
-             or (A.user_cd = 'JNT' AND A.corp_cnno = B.corp_cnno )
-             or (A.user_cd = 'JNT' AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
-             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(B.user_birth))
-             AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(b.user_regno)))
-            )
-        and B.user_uuid = ?
-        and a.insr_year in (
-            select
-              max(C.base_year)
-            from
-              TCOM0030A C,
-              tcom0110a D
-            where
-              C.user_cd = D.user_cd
-              and C.business_cd = D.business_cd
-              and C.use_yn = 'Y'
-              and D.user_uuid = ?
-            order by
-              C.base_year desc,
-              C.ver desc
-           
-        ) limit 1;
+        select
+            A.insurance_uuid as data, A.insr_year
+        from
+            tadv0031a A
+                join tcom0030a ta
+                     on A.business_cd = ta.business_cd
+                         and A.user_cd = ta.USER_CD
+                         and a.insr_year = ta.base_year
+                         and now() between CONCAT (ta.rn_st_dt,' 00:00:00') and CONCAT(ta.rn_en_dt,' 23:59:59')
+                JOIN tcom0110a B
+                     on A.business_cd = B.business_cd
+                         and (
+                            (A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno)
+                                or (A.user_cd = 'JNT' AND A.corp_cnno = B.corp_cnno )
+                                or (A.user_cd = 'JNT' AND JSON_CONTAINS(JSON_EXTRACT(a.cbr_data, '$[*].cbr_nm'), JSON_ARRAY(B.USER_NM))
+                                AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_brdt'), JSON_ARRAY(B.user_birth))
+                                AND JSON_CONTAINS(JSON_EXTRACT(A.cbr_data, '$[*].cbr_regno'), JSON_ARRAY(b.user_regno)))
+                            )
+                         and B.user_uuid = ?
+                         and a.insr_year in (
+                             select
+                                 max(C.base_year)
+                             from
+                                 TCOM0030A C,
+                                 tcom0110a D
+                             where
+                                 C.user_cd = D.user_cd
+                               and C.business_cd = D.business_cd
+                               and C.use_yn = 'Y'
+                               and D.user_uuid = ?
+                             order by
+                                 C.base_year desc,
+                                 C.ver desc
+
+                         ) limit 1;
     `;
 
     const queryRenewalInsrParams = [user_uuid, user_uuid];
     const renewalInsrData = await db.query(queryRenewalInsr, queryRenewalInsrParams);
 
+    const queryBaseYear = `
+    select BASE_YEAR
+      from tcom0030a ta
+     WHERE business_cd = ?
+       and USER_CD =?
+      order by base_year desc, ver desc
+      limit 1
+      ;
+  `;
+    const queryBaseYearParams = [user[0].business_cd, user[0].user_cd];
+    const baseYear = await db.query(queryBaseYear,queryBaseYearParams);
+
     //return Object.setPrototypeOf(listData, [])
     const result = {
       list: Object.setPrototypeOf(listData, []),
       newInsrYN: Object.setPrototypeOf(newInsrData[0], Object),
-      renewalInsrUUID: Object.setPrototypeOf(renewalInsrData[0], Object)
+      renewalInsrUUID: Object.setPrototypeOf(renewalInsrData[0], Object),
+      baseYear: Object.setPrototypeOf(baseYear[0], Object)
     };
 
     return result;
