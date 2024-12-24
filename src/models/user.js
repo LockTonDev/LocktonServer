@@ -45,7 +45,7 @@ module.exports = {
     }
 
     const [rows] = await db.query(sqlSelect, params);
-    console.log("=================>",rows.affectedRows)
+    console.log("=================>",rows.affectedlRows)
     if (rows.affectedRows < 1) {
       throw new NotFound(StatusMessage.unValidateUser);
     }
