@@ -134,7 +134,6 @@ module.exports = {
             order by
               C.base_year desc,
               C.ver desc
-           
         )
     `;
 

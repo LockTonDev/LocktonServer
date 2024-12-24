@@ -528,8 +528,15 @@ module.exports = {
 
     //console.log('params.corp_cnno',params.corp_cnno)
     //console.log('params.user_regno',params.user_regno)
-    let query = 'update '+tableName+' set user_uuid = ? where user_regno = ? ';
-    const queryParams = [params.user_uuid, params.user_regno];
+    let query = ''
+    let queryParams =[]
+    if(params.user_cd=='IND'){
+      query = 'update '+tableName+' set user_uuid = ?, user_id = ? where user_regno = ? ';
+      queryParams = [params.user_uuid, params.user_id, params.user_regno];
+    }else{
+      query = 'update '+tableName+' set user_uuid = ?, user_id = ? where corp_cnno = ? ';
+      queryParams = [params.user_uuid, params.user_id, params.corp_cnno];
+    }
 
     // if (typeof user_uuid !== 'undefined') {
     //   query += ' and user_uuid != ?';
