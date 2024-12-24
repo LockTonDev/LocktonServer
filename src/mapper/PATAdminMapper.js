@@ -70,7 +70,7 @@ module.exports = Object.freeze({
             , insurance_no
             , user_nm
             , insr_year
-            , insr_st_dt
+            , insr_st_dt  
             , insr_cncls_dt
             , insr_tot_amt
             , status_cd

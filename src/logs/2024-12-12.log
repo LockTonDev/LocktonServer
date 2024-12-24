@@ -1,0 +1,1176 @@
+2024-12-12 10:04:07 [info] : Server on port 3000 | run
+2024-12-12 10:05:13 [info] : ::1 - - [12/Dec/2024:01:05:13 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:05:23 [info] : ::1 - - [12/Dec/2024:01:05:23 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:05:23 [info] : ::1 - - [12/Dec/2024:01:05:23 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:05:31 [error] : >> 
+2024-12-12 10:05:31 [info] : ::1 - - [12/Dec/2024:01:05:31 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 500 76 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:05:49 [error] : >> 
+2024-12-12 10:05:49 [info] : ::1 - - [12/Dec/2024:01:05:49 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 500 76 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:06:38 [info] : Server off
+2024-12-12 10:06:41 [info] : Server on port 3000 | run
+2024-12-12 10:06:54 [error] : >> 
+2024-12-12 10:06:54 [info] : ::1 - - [12/Dec/2024:01:06:54 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 500 76 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:11:46 [info] : Server off
+2024-12-12 10:11:48 [info] : Server on port 3000 | run
+2024-12-12 10:12:05 [info] : ::1 - - [12/Dec/2024:01:12:05 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:12:27 [info] : ::1 - - [12/Dec/2024:01:12:27 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:12:27 [info] : ::1 - - [12/Dec/2024:01:12:27 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:12:40 [info] : ::1 - - [12/Dec/2024:01:12:40 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:15:54 [info] : ::1 - - [12/Dec/2024:01:15:54 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:15:54 [info] : ::1 - - [12/Dec/2024:01:15:54 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:16:20 [info] : ::1 - - [12/Dec/2024:01:16:20 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:19:59 [info] : ::1 - - [12/Dec/2024:01:19:59 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:19:59 [info] : ::1 - - [12/Dec/2024:01:19:59 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:20:17 [info] : ::1 - - [12/Dec/2024:01:20:17 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:21:25 [info] : ::1 - - [12/Dec/2024:01:21:25 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:21:25 [info] : ::1 - - [12/Dec/2024:01:21:25 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:21:31 [info] : ::1 - - [12/Dec/2024:01:21:31 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:22:16 [info] : ::1 - - [12/Dec/2024:01:22:16 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:23:27 [info] : ::1 - - [12/Dec/2024:01:23:27 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:23:27 [info] : ::1 - - [12/Dec/2024:01:23:27 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:23:45 [info] : ::1 - - [12/Dec/2024:01:23:45 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:32:36 [info] : ::1 - - [12/Dec/2024:01:32:36 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:32:36 [info] : ::1 - - [12/Dec/2024:01:32:36 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:32:47 [info] : ::1 - - [12/Dec/2024:01:32:47 +0000] "POST /auth/refresh HTTP/1.1" 200 466 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:32:59 [info] : ::1 - - [12/Dec/2024:01:32:59 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 199536 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:33:36 [info] : Server off
+2024-12-12 10:33:38 [info] : Server on port 3000 | run
+2024-12-12 10:44:57 [info] : ::1 - - [12/Dec/2024:01:44:57 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:44:57 [info] : ::1 - - [12/Dec/2024:01:44:57 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:46:11 [error] : >> 
+2024-12-12 10:46:11 [info] : ::1 - - [12/Dec/2024:01:46:11 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 500 76 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:46:17 [info] : {
+   "business_cd": "CAA",
+   "insr_year": "2023",
+   "user_cd": "COR",
+   "status_cd": "%",
+   "user_nm": ""
+}
+2024-12-12 10:46:17 [info] : ::1 - - [12/Dec/2024:01:46:17 +0000] "POST /ADM/CAA/TRX/get HTTP/1.1" 200 87423 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:46:21 [error] : >> 
+2024-12-12 10:46:21 [info] : ::1 - - [12/Dec/2024:01:46:21 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 500 76 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:47:00 [info] : Server off
+2024-12-12 10:47:02 [info] : Server on port 3000 | run
+2024-12-12 10:47:19 [info] : ::1 - - [12/Dec/2024:01:47:19 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 632894 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:48:23 [info] : ::1 - - [12/Dec/2024:01:48:23 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 632894 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:50:16 [info] : ::1 - - [12/Dec/2024:01:50:16 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:50:39 [info] : {
+   "business_cd": "CAA",
+   "insr_year": "2023",
+   "user_cd": "COR",
+   "status_cd": "%",
+   "user_nm": ""
+}
+2024-12-12 10:50:39 [info] : ::1 - - [12/Dec/2024:01:50:39 +0000] "POST /ADM/CAA/TRX/get HTTP/1.1" 200 87423 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:50:42 [info] : ::1 - - [12/Dec/2024:01:50:42 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 632894 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:51:29 [info] : ::1 - - [12/Dec/2024:01:51:29 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:51:29 [info] : ::1 - - [12/Dec/2024:01:51:29 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:52:35 [info] : ::1 - - [12/Dec/2024:01:52:35 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:52:35 [info] : ::1 - - [12/Dec/2024:01:52:35 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:53:00 [info] : {
+   "business_cd": "CAA",
+   "insr_year": "2024",
+   "user_cd": "COR",
+   "status_cd": "%",
+   "user_nm": ""
+}
+2024-12-12 10:53:00 [info] : ::1 - - [12/Dec/2024:01:53:00 +0000] "POST /ADM/CAA/TRX/get HTTP/1.1" 200 137995 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:53:03 [info] : ::1 - - [12/Dec/2024:01:53:03 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 744341 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 10:58:15 [info] : ::1 - - [12/Dec/2024:01:58:15 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 632894 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:02:32 [info] : ::1 - - [12/Dec/2024:02:02:32 +0000] "POST /auth/refresh HTTP/1.1" 200 466 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:39:19 [info] : ::1 - - [12/Dec/2024:02:39:19 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:39:27 [info] : ::1 - - [12/Dec/2024:02:39:27 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:39:28 [info] : ::1 - - [12/Dec/2024:02:39:28 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:39:28 [info] : ::1 - - [12/Dec/2024:02:39:28 +0000] "POST /ADM/COM/getStockStartDtInfo HTTP/1.1" 200 163 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:39:30 [info] : {
+   "business_cd": "CAA",
+   "insr_year": "%",
+   "status_cd": "%",
+   "user_cd": "%",
+   "user_nm": "딜로이트"
+}
+2024-12-12 11:39:30 [info] : CAAAdminMapper.INSURANCE_CAA_LIST
+2024-12-12 11:39:30 [info] : ::1 - - [12/Dec/2024:02:39:30 +0000] "POST /ADM/CAA/gets HTTP/1.1" 200 1130 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:42:18 [info] : {
+   "insurance_uuid": "4405145981297529cc6409491dcb3dd8"
+}
+2024-12-12 11:42:18 [info] : CAAAdminMapper.result>>> 
+2024-12-12 11:42:18 [info] : [
+   {
+      "insurance_uuid": "4405145981297529cc6409491dcb3dd8",
+      "user_uuid": null,
+      "insurance_no": "20221010",
+      "business_cd": "CAA",
+      "user_cd": "COR",
+      "user_id": null,
+      "user_nm": "딜로이트관세법인",
+      "user_birth": null,
+      "user_regno": null,
+      "corp_type": null,
+      "corp_nm": null,
+      "corp_ceo_nm": null,
+      "corp_bnno": "254171-0017397",
+      "corp_cnno": "107-87-53513",
+      "corp_telno": "02-6676-2300",
+      "corp_faxno": "02-6674-2530",
+      "corp_cust_nm": "방슬기",
+      "corp_cust_hpno": "0",
+      "corp_cust_email": "",
+      "corp_post": "07326",
+      "corp_addr": "서울특별시 영등포구 국제금융로 10, 5층 (여의도동, 원아이에프씨빌딩)",
+      "corp_addr_dtl": null,
+      "corp_region_cd": null,
+      "insr_year": "2023",
+      "insr_reg_dt": null,
+      "insr_st_dt": "2023-01-01",
+      "insr_cncls_dt": "2024-01-01",
+      "insr_retr_yn": null,
+      "insr_retr_dt": "2011-07-07",
+      "insr_pblc_brdn_rt": "3|공동부담비율30%",
+      "insr_clm_lt_amt": "10000000|1천만원",
+      "insr_year_clm_lt_amt": "1억천만원",
+      "insr_psnl_brdn_amt": "15000000|1천5백만원",
+      "insr_sale_year": 12,
+      "insr_sale_rt": "-10",
+      "insr_pcnt_sale_rt": null,
+      "insr_base_amt": "146000",
+      "insr_amt": "1435320",
+      "insr_tot_amt": "1462680",
+      "insr_tot_paid_amt": "0",
+      "insr_tot_unpaid_amt": "0",
+      "cons_join_yn": "N",
+      "cons_data": {},
+      "spct_join_yn": "N",
+      "spct_data": {},
+      "cbr_cnt": 11,
+      "cbr_data": [
+         {
+            "cbr_nm": "유정곤",
+            "isCheck": true,
+            "cbr_brdt": "740724",
+            "cbr_type": "",
+            "cbr_regno": "2607",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2012-10-31",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "정인영",
+            "isCheck": true,
+            "cbr_brdt": "620920",
+            "cbr_type": "",
+            "cbr_regno": "2738",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2013-09-04",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "조재호",
+            "isCheck": true,
+            "cbr_brdt": "831209",
+            "cbr_type": "",
+            "cbr_regno": "3054",
+            "status_cd": "30",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2016-09-22",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2023-10-17",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "이상룡",
+            "isCheck": true,
+            "cbr_brdt": "731224",
+            "cbr_type": "",
+            "cbr_regno": "3200",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2015-04-23",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "김원영",
+            "isCheck": true,
+            "cbr_brdt": "911215",
+            "cbr_type": "",
+            "cbr_regno": "3542",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2017-05-31",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "정석현",
+            "isCheck": true,
+            "cbr_brdt": "880531",
+            "cbr_type": "",
+            "cbr_regno": "3852",
+            "status_cd": "30",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2019-01-01",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2023-10-17",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "홍모윤",
+            "isCheck": true,
+            "cbr_brdt": "901217",
+            "cbr_type": "",
+            "cbr_regno": "3598",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2019-04-17",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "공도윤",
+            "isCheck": true,
+            "cbr_brdt": "900801",
+            "cbr_type": "",
+            "cbr_regno": "4461",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2022-04-01",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "장정솔",
+            "isCheck": true,
+            "cbr_brdt": "911020",
+            "cbr_type": "",
+            "cbr_regno": "4485",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2022-06-29",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "이민구",
+            "isCheck": true,
+            "cbr_brdt": "911128",
+            "cbr_type": "",
+            "cbr_regno": "4484",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2022-06-29",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "김태영",
+            "isCheck": true,
+            "cbr_brdt": "910818",
+            "cbr_type": "",
+            "cbr_regno": "4686",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-09-05",
+            "insr_retr_dt": "2023-09-05",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "이규성",
+            "isCheck": true,
+            "cbr_brdt": "900730",
+            "cbr_type": "",
+            "cbr_regno": "4068",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-11-13",
+            "insr_retr_dt": "2023-11-13",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "정승은",
+            "isCheck": true,
+            "cbr_brdt": "980130",
+            "cbr_type": "",
+            "cbr_regno": "4543",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-12-05",
+            "insr_retr_dt": "2023-12-05",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "김종윤",
+            "isCheck": true,
+            "cbr_brdt": "890422",
+            "cbr_type": "",
+            "cbr_regno": "3543",
+            "status_cd": "30",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2017-05-31",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2023-04-10",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "나기철",
+            "isCheck": true,
+            "cbr_brdt": "760713",
+            "cbr_type": "",
+            "cbr_regno": "4462",
+            "status_cd": "30",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-01-01",
+            "insr_retr_dt": "2022-04-01",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2023-04-30",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "박병우",
+            "isCheck": true,
+            "cbr_brdt": "940810",
+            "cbr_type": "",
+            "cbr_regno": "4600",
+            "status_cd": "30",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-03-03",
+            "insr_retr_dt": "2023-03-03",
+            "insr_retr_yn": "",
+            "insr_sale_rt": -10,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2023-05-19",
+            "insr_sale_year": ""
+         }
+      ],
+      "trx_data": [],
+      "erp_rmk": null,
+      "erp_amt": null,
+      "erp_dt": null,
+      "active_yn": null,
+      "agr10_yn": null,
+      "agr20_yn": null,
+      "agr30_yn": null,
+      "agr31_yn": null,
+      "agr32_yn": null,
+      "agr33_yn": null,
+      "agr34_yn": null,
+      "agr40_yn": null,
+      "agr41_yn": null,
+      "agr50_yn": null,
+      "status_cd": "90",
+      "rmk": null,
+      "change_rmk": null,
+      "change_dt": null,
+      "created_at": "2023-12-21T06:17:30.000Z",
+      "created_id": null,
+      "created_ip": null,
+      "updated_at": "2023-12-21T06:17:30.000Z",
+      "updated_id": null,
+      "updated_ip": null,
+      "erp_st_dt": null,
+      "erp_cncls_dt": null,
+      "status_nm": "기간종료",
+      "corp_region_nm": null,
+      "corp_telno1": "02",
+      "corp_telno2": "6676",
+      "corp_telno3": "2300",
+      "corp_faxno1": "02",
+      "corp_faxno2": "6674",
+      "corp_faxno3": "2530",
+      "base_insr_st_dt": "2023-01-01",
+      "base_insr_cncls_dt": "2024-01-01"
+   }
+]
+2024-12-12 11:42:18 [info] : ::1 - - [12/Dec/2024:02:42:18 +0000] "POST /ADM/CAA/get HTTP/1.1" 200 6495 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:42:18 [info] : {
+   "user_cd": "COR",
+   "business_cd": "CAA"
+}
+2024-12-12 11:42:18 [info] : ::1 - - [12/Dec/2024:02:42:18 +0000] "POST /ADM/CAA/rate HTTP/1.1" 200 3838 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:48:14 [info] : {
+   "insurance_uuid": "382979b2c193467d8ba5e2307004c8d5"
+}
+2024-12-12 11:48:14 [info] : CAAAdminMapper.result>>> 
+2024-12-12 11:48:14 [info] : [
+   {
+      "insurance_uuid": "382979b2c193467d8ba5e2307004c8d5",
+      "user_uuid": "555d8e706aee435e8fb9f7977aa1e543",
+      "insurance_no": "140907489",
+      "business_cd": "CAA",
+      "user_cd": "COR",
+      "user_id": "107-87-53513",
+      "user_nm": "딜로이트관세법인",
+      "user_birth": null,
+      "user_regno": null,
+      "corp_type": "001",
+      "corp_nm": null,
+      "corp_ceo_nm": "유정곤",
+      "corp_bnno": "",
+      "corp_cnno": "107-87-53513",
+      "corp_telno": "02-6676-1000",
+      "corp_faxno": "02-6674-2530",
+      "corp_cust_nm": "방슬기",
+      "corp_cust_hpno": "010-5069-8729",
+      "corp_cust_email": "seubang@deloitte.com",
+      "corp_post": "07326",
+      "corp_addr": "서울 영등포구 국제금융로 10",
+      "corp_addr_dtl": "One IFC 빌딩 5층",
+      "corp_region_cd": null,
+      "insr_year": "2024",
+      "insr_reg_dt": "2023-12-22",
+      "insr_st_dt": "2024-01-01",
+      "insr_cncls_dt": "2025-01-01",
+      "insr_retr_yn": null,
+      "insr_retr_dt": "2011-07-07",
+      "insr_pblc_brdn_rt": "3|공동부담비율30%",
+      "insr_clm_lt_amt": "10000000|1천만원",
+      "insr_year_clm_lt_amt": "1억원",
+      "insr_psnl_brdn_amt": "15000000|1천5백만원",
+      "insr_sale_year": 12,
+      "insr_sale_rt": "-10",
+      "insr_pcnt_sale_rt": null,
+      "insr_base_amt": "143000",
+      "insr_amt": "1269770",
+      "insr_tot_amt": "1269770",
+      "insr_tot_paid_amt": "1269770",
+      "insr_tot_unpaid_amt": "0",
+      "cons_join_yn": "N",
+      "cons_data": {
+         "cbr_cnt": 0,
+         "cbr_data": [],
+         "insr_amt": 0,
+         "insr_retr_dt": "2024-01-01",
+         "insr_sale_rt": "-10",
+         "insr_base_amt": 0,
+         "insr_year_clm_lt_amt": ""
+      },
+      "spct_join_yn": "N",
+      "spct_data": {
+         "insr_amt": 0,
+         "insr_base_amt": 0,
+         "insr_year_clm_lt_amt": ""
+      },
+      "cbr_cnt": 10,
+      "cbr_data": [
+         {
+            "cbr_nm": "유정곤",
+            "isCheck": true,
+            "cbr_brdt": "740724",
+            "cbr_type": "",
+            "insr_amt": 128700,
+            "cbr_regno": "2607",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2012-10-31",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": -10,
+            "insr_base_amt": 143000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "김원영",
+            "isCheck": true,
+            "cbr_brdt": "911215",
+            "cbr_type": "",
+            "insr_amt": 128700,
+            "cbr_regno": "3542",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2017-05-31",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": -10,
+            "insr_base_amt": 143000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "홍모윤",
+            "isCheck": true,
+            "cbr_brdt": "901217",
+            "cbr_type": "",
+            "insr_amt": 128700,
+            "cbr_regno": "3598",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2019-04-17",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": -10,
+            "insr_base_amt": 143000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "공도윤",
+            "isCheck": true,
+            "cbr_brdt": "900801",
+            "cbr_type": "",
+            "insr_amt": 128700,
+            "cbr_regno": "4461",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2022-04-01",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": -10,
+            "insr_base_amt": 143000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "장정솔",
+            "isCheck": true,
+            "cbr_brdt": "911020",
+            "cbr_type": "",
+            "insr_amt": 128700,
+            "cbr_regno": "4485",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2022-06-29",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": -10,
+            "insr_base_amt": 143000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "이민구",
+            "isCheck": true,
+            "cbr_brdt": "911128",
+            "cbr_type": "",
+            "insr_amt": 128700,
+            "cbr_regno": "4484",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2022-06-29",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": -10,
+            "insr_base_amt": 143000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "김태영",
+            "isCheck": true,
+            "cbr_brdt": "910818",
+            "cbr_type": "",
+            "insr_amt": 128700,
+            "cbr_regno": "4686",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2023-09-05",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": -10,
+            "insr_base_amt": 143000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "이규성",
+            "isCheck": true,
+            "cbr_brdt": "900730",
+            "cbr_type": "",
+            "insr_amt": 128700,
+            "cbr_regno": "4068",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2023-11-13",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": -10,
+            "insr_base_amt": 143000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "정승은",
+            "isCheck": true,
+            "cbr_brdt": "980130",
+            "cbr_type": "",
+            "insr_amt": 128700,
+            "cbr_regno": "4543",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2023-12-05",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": -10,
+            "insr_base_amt": 143000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "이창환",
+            "isCheck": false,
+            "cbr_brdt": "960618",
+            "cbr_type": "",
+            "insr_amt": "11600",
+            "cbr_regno": "5336",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-11-11",
+            "insr_relief": 0,
+            "insr_retr_dt": "2024-11-11",
+            "insr_retr_yn": "",
+            "insr_sale_rt": "-10",
+            "insr_base_amt": 0,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": 0
+         },
+         {
+            "cbr_nm": "이상룡",
+            "isCheck": true,
+            "cbr_brdt": "731224",
+            "cbr_type": "",
+            "insr_amt": "99870",
+            "cbr_regno": "3200",
+            "status_cd": "30",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2015-04-23",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": -10,
+            "insr_base_amt": 143000,
+            "insr_cncls_dt": "2024-10-11",
+            "insr_sale_year": ""
+         }
+      ],
+      "trx_data": [
+         {
+            "rmk": null,
+            "trx_cd": "WT",
+            "trx_dt": "2023-12-28",
+            "trx_nm": "계좌이체",
+            "acct_nm": "딜로이트관세법인",
+            "trx_amt": 1287000
+         },
+         {
+            "rmk": "241011기준 이상룡 해지 환급액",
+            "trx_cd": "WT",
+            "trx_dt": "2024-10-18",
+            "trx_nm": "",
+            "acct_nm": "",
+            "trx_amt": "-28830"
+         },
+         {
+            "rmk": "241111기준 이창환 관세사 추가 보험료 (무사고확인서 요청완료)",
+            "trx_cd": "WT",
+            "trx_dt": "2024-11-29",
+            "trx_nm": "",
+            "acct_nm": "딜로이트관세법",
+            "trx_amt": "11600"
+         }
+      ],
+      "erp_rmk": null,
+      "erp_amt": null,
+      "erp_dt": null,
+      "active_yn": null,
+      "agr10_yn": "Y",
+      "agr20_yn": "Y",
+      "agr30_yn": "Y",
+      "agr31_yn": "Y",
+      "agr32_yn": "Y",
+      "agr33_yn": "Y",
+      "agr34_yn": "Y",
+      "agr40_yn": "Y",
+      "agr41_yn": "Y",
+      "agr50_yn": "Y",
+      "status_cd": "80",
+      "rmk": null,
+      "change_rmk": null,
+      "change_dt": null,
+      "created_at": "2023-12-22T05:08:04.000Z",
+      "created_id": "",
+      "created_ip": "",
+      "updated_at": "2024-11-29T02:33:39.000Z",
+      "updated_id": "",
+      "updated_ip": "",
+      "erp_st_dt": null,
+      "erp_cncls_dt": null,
+      "status_nm": "정상",
+      "corp_region_nm": null,
+      "corp_telno1": "02",
+      "corp_telno2": "6676",
+      "corp_telno3": "1000",
+      "corp_faxno1": "02",
+      "corp_faxno2": "6674",
+      "corp_faxno3": "2530",
+      "base_insr_st_dt": "2024-01-01",
+      "base_insr_cncls_dt": "2025-01-01"
+   }
+]
+2024-12-12 11:48:14 [info] : ::1 - - [12/Dec/2024:02:48:14 +0000] "POST /ADM/CAA/get HTTP/1.1" 200 5997 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:48:14 [info] : {
+   "user_cd": "COR",
+   "business_cd": "CAA"
+}
+2024-12-12 11:48:14 [info] : ::1 - - [12/Dec/2024:02:48:14 +0000] "POST /ADM/CAA/rate HTTP/1.1" 200 3838 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:48:49 [info] : {
+   "business_cd": "CAA",
+   "insr_year": "%",
+   "status_cd": "%",
+   "user_cd": "%",
+   "user_nm": "아인"
+}
+2024-12-12 11:48:49 [info] : CAAAdminMapper.INSURANCE_CAA_LIST
+2024-12-12 11:48:49 [info] : ::1 - - [12/Dec/2024:02:48:49 +0000] "POST /ADM/CAA/gets HTTP/1.1" 200 1132 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:48:52 [info] : {
+   "insurance_uuid": "5eee230f5dbb4762b542b71123d475de"
+}
+2024-12-12 11:48:52 [info] : CAAAdminMapper.result>>> 
+2024-12-12 11:48:52 [info] : [
+   {
+      "insurance_uuid": "5eee230f5dbb4762b542b71123d475de",
+      "user_uuid": "8a6c40ff50d744a7a5af46811fb55e5f",
+      "insurance_no": "140907489",
+      "business_cd": "CAA",
+      "user_cd": "JNT",
+      "user_id": "440-33-01317",
+      "user_nm": "아인합동관세사무소",
+      "user_birth": null,
+      "user_regno": null,
+      "corp_type": "002",
+      "corp_nm": null,
+      "corp_ceo_nm": "조재호, 정석현",
+      "corp_bnno": "",
+      "corp_cnno": "440-33-01317",
+      "corp_telno": "02-518-5434",
+      "corp_faxno": "02-518-5436",
+      "corp_cust_nm": "조재호",
+      "corp_cust_hpno": "010-6705-9777",
+      "corp_cust_email": "jhcho@aincustoms.com",
+      "corp_post": "06059",
+      "corp_addr": "서울 강남구 학동로43길 38",
+      "corp_addr_dtl": "1층 145호",
+      "corp_region_cd": null,
+      "insr_year": "2024",
+      "insr_reg_dt": "2024-01-09",
+      "insr_st_dt": "2024-01-01",
+      "insr_cncls_dt": "2025-01-01",
+      "insr_retr_yn": null,
+      "insr_retr_dt": "2023-11-09",
+      "insr_pblc_brdn_rt": "3|공동부담비율30%",
+      "insr_clm_lt_amt": "10000000|1천만원",
+      "insr_year_clm_lt_amt": "3천만원",
+      "insr_psnl_brdn_amt": "2000000|2백만원",
+      "insr_sale_year": 0,
+      "insr_sale_rt": "0",
+      "insr_pcnt_sale_rt": null,
+      "insr_base_amt": "193000",
+      "insr_amt": "541560",
+      "insr_tot_amt": "541560",
+      "insr_tot_paid_amt": "541560",
+      "insr_tot_unpaid_amt": "0",
+      "cons_join_yn": "N",
+      "cons_data": {
+         "cbr_cnt": 0,
+         "cbr_data": [],
+         "insr_amt": 0,
+         "insr_retr_dt": "2023-11-09",
+         "insr_sale_rt": "0",
+         "insr_base_amt": 0,
+         "insr_year_clm_lt_amt": ""
+      },
+      "spct_join_yn": "N",
+      "spct_data": {
+         "insr_amt": 0,
+         "insr_base_amt": 0,
+         "insr_year_clm_lt_amt": ""
+      },
+      "cbr_cnt": 2,
+      "cbr_data": [
+         {
+            "cbr_nm": "조재호",
+            "isCheck": true,
+            "cbr_brdt": "831209",
+            "cbr_type": "",
+            "insr_amt": 193000,
+            "cbr_regno": "3054",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2023-11-09",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": 0,
+            "insr_base_amt": 193000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "정석현",
+            "isCheck": true,
+            "cbr_brdt": "880531",
+            "cbr_type": "",
+            "insr_amt": 193000,
+            "cbr_regno": "3852",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-01-01",
+            "insr_retr_dt": "2023-11-09",
+            "insr_retr_yn": "Y",
+            "insr_sale_rt": 0,
+            "insr_base_amt": 193000,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "김로언",
+            "isCheck": false,
+            "cbr_brdt": "920818",
+            "cbr_type": "",
+            "insr_amt": "155560",
+            "cbr_regno": "4782",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2024-03-12",
+            "insr_relief": 0,
+            "insr_retr_dt": "2024-03-12",
+            "insr_retr_yn": "",
+            "insr_sale_rt": 0,
+            "insr_base_amt": 0,
+            "insr_cncls_dt": "2025-01-01",
+            "insr_sale_year": 0
+         }
+      ],
+      "trx_data": [
+         {
+            "rmk": "",
+            "trx_cd": "WT",
+            "trx_dt": "2024-01-05",
+            "trx_nm": "",
+            "acct_nm": "조재호3054",
+            "trx_amt": "193000"
+         },
+         {
+            "rmk": "",
+            "trx_cd": "WT",
+            "trx_dt": "2024-01-09",
+            "trx_nm": "",
+            "acct_nm": "보험료",
+            "trx_amt": "193000"
+         },
+         {
+            "rmk": "240312 김로언추가",
+            "trx_cd": "WT",
+            "trx_dt": "2024-03-12",
+            "trx_nm": "",
+            "acct_nm": "아인_김로언",
+            "trx_amt": "155560"
+         }
+      ],
+      "erp_rmk": null,
+      "erp_amt": null,
+      "erp_dt": null,
+      "active_yn": null,
+      "agr10_yn": "Y",
+      "agr20_yn": "Y",
+      "agr30_yn": "Y",
+      "agr31_yn": "Y",
+      "agr32_yn": "Y",
+      "agr33_yn": "Y",
+      "agr34_yn": "Y",
+      "agr40_yn": "Y",
+      "agr41_yn": "Y",
+      "agr50_yn": "Y",
+      "status_cd": "80",
+      "rmk": null,
+      "change_rmk": null,
+      "change_dt": null,
+      "created_at": "2024-01-09T01:12:33.000Z",
+      "created_id": "",
+      "created_ip": "",
+      "updated_at": "2024-03-13T01:20:55.000Z",
+      "updated_id": "",
+      "updated_ip": "",
+      "erp_st_dt": null,
+      "erp_cncls_dt": null,
+      "status_nm": "정상",
+      "corp_region_nm": null,
+      "corp_telno1": "02",
+      "corp_telno2": "518",
+      "corp_telno3": "5434",
+      "corp_faxno1": "02",
+      "corp_faxno2": "518",
+      "corp_faxno3": "5436",
+      "base_insr_st_dt": "2024-01-01",
+      "base_insr_cncls_dt": "2025-01-01"
+   }
+]
+2024-12-12 11:48:52 [info] : ::1 - - [12/Dec/2024:02:48:52 +0000] "POST /ADM/CAA/get HTTP/1.1" 200 3409 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:48:52 [info] : {
+   "user_cd": "JNT",
+   "business_cd": "CAA"
+}
+2024-12-12 11:48:52 [info] : ::1 - - [12/Dec/2024:02:48:52 +0000] "POST /ADM/CAA/rate HTTP/1.1" 200 3838 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:49:20 [info] : {
+   "insurance_uuid": "5e5d5f0c015e0fd872616fb33b9dcddd"
+}
+2024-12-12 11:49:20 [info] : CAAAdminMapper.result>>> 
+2024-12-12 11:49:20 [info] : [
+   {
+      "insurance_uuid": "5e5d5f0c015e0fd872616fb33b9dcddd",
+      "user_uuid": null,
+      "insurance_no": "20221010",
+      "business_cd": "CAA",
+      "user_cd": "JNT",
+      "user_id": null,
+      "user_nm": "아인합동관세사무소",
+      "user_birth": null,
+      "user_regno": null,
+      "corp_type": null,
+      "corp_nm": null,
+      "corp_ceo_nm": null,
+      "corp_bnno": null,
+      "corp_cnno": "440-33-01317",
+      "corp_telno": "02-518-5434",
+      "corp_faxno": "02-518-5436",
+      "corp_cust_nm": "0",
+      "corp_cust_hpno": "0",
+      "corp_cust_email": "",
+      "corp_post": "0",
+      "corp_addr": "서울시 강남구 학동로 43길 38, 1층 145호",
+      "corp_addr_dtl": null,
+      "corp_region_cd": null,
+      "insr_year": "2023",
+      "insr_reg_dt": null,
+      "insr_st_dt": "2023-11-09",
+      "insr_cncls_dt": "2024-01-01",
+      "insr_retr_yn": null,
+      "insr_retr_dt": "2023-11-09",
+      "insr_pblc_brdn_rt": "3|공동부담비율30%",
+      "insr_clm_lt_amt": "10000000|1천만원",
+      "insr_year_clm_lt_amt": "2천만원",
+      "insr_psnl_brdn_amt": "3000000|3백만원",
+      "insr_sale_year": 0,
+      "insr_sale_rt": "0",
+      "insr_pcnt_sale_rt": null,
+      "insr_base_amt": "184000",
+      "insr_amt": "53420",
+      "insr_tot_amt": "53420",
+      "insr_tot_paid_amt": "0",
+      "insr_tot_unpaid_amt": "0",
+      "cons_join_yn": "N",
+      "cons_data": {},
+      "spct_join_yn": "N",
+      "spct_data": {},
+      "cbr_cnt": 2,
+      "cbr_data": [
+         {
+            "cbr_nm": "조재호",
+            "isCheck": true,
+            "cbr_brdt": "831209",
+            "cbr_type": "",
+            "cbr_regno": "3054",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-11-09",
+            "insr_retr_dt": "2023-11-09",
+            "insr_retr_yn": "",
+            "insr_sale_rt": 0,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         },
+         {
+            "cbr_nm": "정석현",
+            "isCheck": true,
+            "cbr_brdt": "880531",
+            "cbr_type": "",
+            "cbr_regno": "3852",
+            "status_cd": "80",
+            "cbr_reg_dt": "",
+            "insr_st_dt": "2023-11-09",
+            "insr_retr_dt": "2023-11-09",
+            "insr_retr_yn": "",
+            "insr_sale_rt": 0,
+            "insr_base_amt": "",
+            "insr_cncls_dt": "2024-01-01",
+            "insr_sale_year": ""
+         }
+      ],
+      "trx_data": [],
+      "erp_rmk": null,
+      "erp_amt": null,
+      "erp_dt": null,
+      "active_yn": null,
+      "agr10_yn": null,
+      "agr20_yn": null,
+      "agr30_yn": null,
+      "agr31_yn": null,
+      "agr32_yn": null,
+      "agr33_yn": null,
+      "agr34_yn": null,
+      "agr40_yn": null,
+      "agr41_yn": null,
+      "agr50_yn": null,
+      "status_cd": "90",
+      "rmk": null,
+      "change_rmk": null,
+      "change_dt": null,
+      "created_at": "2023-12-21T08:50:20.000Z",
+      "created_id": null,
+      "created_ip": null,
+      "updated_at": "2023-12-21T08:50:20.000Z",
+      "updated_id": null,
+      "updated_ip": null,
+      "erp_st_dt": null,
+      "erp_cncls_dt": null,
+      "status_nm": "기간종료",
+      "corp_region_nm": null,
+      "corp_telno1": "02",
+      "corp_telno2": "518",
+      "corp_telno3": "5434",
+      "corp_faxno1": "02",
+      "corp_faxno2": "518",
+      "corp_faxno3": "5436",
+      "base_insr_st_dt": "2023-01-01",
+      "base_insr_cncls_dt": "2024-01-01"
+   }
+]
+2024-12-12 11:49:20 [info] : ::1 - - [12/Dec/2024:02:49:20 +0000] "POST /ADM/CAA/get HTTP/1.1" 200 2445 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 11:49:20 [info] : {
+   "user_cd": "JNT",
+   "business_cd": "CAA"
+}
+2024-12-12 11:49:20 [info] : ::1 - - [12/Dec/2024:02:49:20 +0000] "POST /ADM/CAA/rate HTTP/1.1" 200 3838 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 12:07:27 [info] : ::1 - - [12/Dec/2024:03:07:27 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 12:09:44 [info] : ::1 - - [12/Dec/2024:03:09:44 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 12:09:48 [info] : ::1 - - [12/Dec/2024:03:09:48 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 12:25:38 [info] : ::1 - - [12/Dec/2024:03:25:38 +0000] "POST /ADM/CAA/EXCEL/get HTTP/1.1" 200 632894 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 12:34:16 [info] : ::1 - - [12/Dec/2024:03:34:16 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 12:34:16 [info] : ::1 - - [12/Dec/2024:03:34:16 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 12:35:48 [info] : ::1 - - [12/Dec/2024:03:35:48 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 12:35:48 [info] : ::1 - - [12/Dec/2024:03:35:48 +0000] "POST /COMMON/code/all HTTP/1.1" 200 13673 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2024-12-12 18:51:35 [info] : Server off

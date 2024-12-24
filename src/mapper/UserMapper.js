@@ -42,6 +42,9 @@ module.exports = Object.freeze({
             AND user_nm = :user_nm
             AND user_birth = :user_birth
             AND user_hpno = :user_hpno
+            AND business_cd = :business_cd
+            AND user_cd = :user_cd
+      LIMIT 1
   `,
   SELECT_USER_CD: `
       /* UserMapper.SELECT_USER_HP_AUTH_USER_UUID_IND */  
