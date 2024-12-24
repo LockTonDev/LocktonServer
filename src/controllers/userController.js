@@ -96,6 +96,37 @@ module.exports = {
         } else {
           await M_TTAX0030A.updateFromUserInfo(req);
         }
+        if (req.body.params.ignore_chk_pw) {
+          const user_uuid = await User.getUserUUID(req.body.params);
+          req.body.params.user_uuid = user_uuid;
+          let contractTable = "";
+          let renewalTable = "";
+          if (req.body.params.business_cd == 'TAX'
+              || req.body.params.business_cd == 'ACC') {
+            contractTable = "ttax0030a";
+            renewalTable = "ttax0031a";
+          } else if (req.body.params.business_cd == 'ADV') {
+            contractTable = "tadv0030a";
+            renewalTable = "tadv0031a";
+          } else if (req.body.params.business_cd == 'CAA') {
+            contractTable = "tcaa0030a";
+            renewalTable = "tcaa0031a";
+          } else if (req.body.params.business_cd == 'LAW') {
+            contractTable = "tlaw0030a";
+            renewalTable = "tlaw0031a";
+          } else if (req.body.params.business_cd == 'PAT') {
+            contractTable = "tpat0030a";
+            renewalTable = "tpat0031a";
+          }
+
+          //계약관리 테이블 업데이트
+          const res0030 = await User.updateContract0030a(req.body.params,
+              contractTable);
+
+          //갱신 테이블 업데이트
+          const res0031 = await User.updateRenewal0031a(req.body.params,
+              renewalTable);
+        }
         // await M_TTAX0030A.updateFromUserInfo(req);
 
         // const templateParams = {
