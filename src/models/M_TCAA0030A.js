@@ -223,32 +223,32 @@ module.exports = {
     const newInsrData = await db.query(queryNewInsr, queryNewInsrParams);
 
 
-    const queryRenewalInsrIND = `
-      select
-        A.insurance_uuid as data, A.insr_year
-      from
-        tcaa0031a A,
-        tcom0110a B
-      where
-        A.business_cd = B.business_cd
-        and A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno
-        and B.user_uuid = ?
-        and a.insr_year in (
-            select
-              max(C.base_year)
-            from
-              TCOM0030A C,
-              tcom0110a D
-            where
-              C.user_cd = D.user_cd
-              and C.business_cd = D.business_cd
-              and C.use_yn = 'Y'
-              and D.user_uuid = ?
-            order by
-              C.base_year desc,
-              C.ver desc
-        ) limit 1;
-    `;
+    // const queryRenewalInsrIND = `
+    //   select
+    //     A.insurance_uuid as data, A.insr_year
+    //   from
+    //     tcaa0031a A,
+    //     tcom0110a B
+    //   where
+    //     A.business_cd = B.business_cd
+    //     and A.user_cd = 'IND' AND A.USER_NM = B.USER_NM and A.user_birth = B.user_birth and a.user_regno  = b.user_regno
+    //     and B.user_uuid = ?
+    //     and a.insr_year in (
+    //         select
+    //           max(C.base_year)
+    //         from
+    //           TCOM0030A C,
+    //           tcom0110a D
+    //         where
+    //           C.user_cd = D.user_cd
+    //           and C.business_cd = D.business_cd
+    //           and C.use_yn = 'Y'
+    //           and D.user_uuid = ?
+    //         order by
+    //           C.base_year desc,
+    //           C.ver desc
+    //     ) limit 1;
+    // `;
 
     const queryRenewalInsrJNT = `
       select
@@ -282,12 +282,12 @@ module.exports = {
         ) limit 1;
     `;
 
-    let queryRenewalInsr;
-    if(user[0].user_cd == 'IND'){
-      queryRenewalInsr = queryRenewalInsrIND;
-    }else {
-      queryRenewalInsr = queryRenewalInsrJNT;
-    }
+    let queryRenewalInsr = queryRenewalInsrJNT;
+    // if(user[0].user_cd == 'IND'){
+    //   queryRenewalInsr = queryRenewalInsrIND;
+    // }else {
+    //   queryRenewalInsr = queryRenewalInsrJNT;
+    // }
 
     const queryRenewalInsrParams = [user_uuid, user_uuid];
     const renewalInsrData = await db.query(queryRenewalInsr, queryRenewalInsrParams);
