@@ -73,13 +73,19 @@ module.exports = {
               , ta.insr_year, ta.insr_st_dt, ta.insr_cncls_dt
               , ta.insr_tot_amt, ta.status_cd, ta.cbr_cnt, ta.cbr_data
               , FN_GET_CODENM('COM030', ta.status_cd) AS status_nm
+              , B.use_yn, B.rn_st_dt , B.rn_en_dt
               from TCAA0030A ta
-              where ta.user_nm = ? and ta.user_birth = ? and ta.user_regno = ?
+             LEFT JOIN TCOM0030A B
+               ON ta.insr_year = B.base_year
+              AND ta.user_cd = B.user_cd
+              AND ta.business_cd = B.business_cd
+            where ta.user_nm = ? and ta.user_birth = ? and ta.user_regno = ?
         union all
             SELECT t.insurance_uuid, t.user_uuid, t.insurance_no, t.user_nm, t.user_cd 
                   , t.insr_year, t.insr_st_dt, t.insr_cncls_dt
                   , t.insr_tot_amt, t.status_cd, t.cbr_cnt, t.cbr_data
                   , FN_GET_CODENM('COM030', t.status_cd) AS status_nm
+                  , 'N' as use_yn, '' as rn_st_dt , '' as rn_en_dt
                     FROM TCAA0030A t,
                     json_table(t.cbr_data,
 					    '$[*]' columns (
@@ -105,13 +111,17 @@ module.exports = {
     //                AND JSON_CONTAINS(JSON_EXTRACT(cbr_data, '$[*].cbr_regno'), JSON_ARRAY(?)))
     //                order by insr_year desc`;
 
-    const queryListJNT = `SELECT insurance_uuid, user_uuid, insurance_no, user_nm, user_cd 
-                   , insr_year, insr_st_dt, insr_cncls_dt
-                   , insr_tot_amt, status_cd, cbr_cnt, cbr_data, cons_data
-                   , FN_GET_CODENM('COM030', status_cd) AS status_nm
-                     FROM TCAA0030A
-                    WHERE user_nm = ? and corp_cnno = ?
-                    order by insr_year desc`;
+    const queryListJNT = `SELECT A.insurance_uuid, A.user_uuid, A.insurance_no, A.user_nm, A.user_cd 
+                   , A.insr_year, A.insr_st_dt, A.insr_cncls_dt
+                   , A.insr_tot_amt, A.status_cd, A.cbr_cnt, A.cbr_data, A.cons_data
+                   , FN_GET_CODENM('COM030', A.status_cd) AS status_nm
+                     FROM TCAA0030A A
+                    LEFT JOIN TCOM0030A B
+                      ON A.insr_year = B.base_year
+                    AND A.user_cd = B.user_cd
+                    AND A.business_cd = B.business_cd
+                    WHERE A.user_nm = ? and A.corp_cnno = ?
+                    order by A.insr_year desc`;
 
 
     const userQuery = `SELECT * from tcom0110a where user_uuid = ?`
