@@ -526,66 +526,28 @@ module.exports = {
   },
 
   chkDup: async function (req) {
-    const cbr_data = req.body.params.cbr_data + req.body.params.cons_data.cbr_data;
-    const insr_year = req.body.params.insr_year;
-    const business_cd = req.body.params.business_cd;
-    logger.info(cbr_data)
-    // [명단DB] 가입여부 조회
-    // 배열의 각 요소에 대해 가입여부 조회
-    for (const rowData of cbr_data) {
-      const params = [
-        business_cd,
-        rowData.cbr_nm,
-        rowData.cbr_brdt,
-        rowData.cbr_regno,
-        insr_year,
-        business_cd,
-        rowData.cbr_nm,
-        rowData.cbr_brdt,
-        rowData.cbr_regno,
-        insr_year
-      ]
+    const params = req.body.params;
+    let query = '';
+    let queryparam ;
 
-      query = `SELECT COUNT(*) AS cnt
-      FROM (
-          SELECT 1
-          FROM TCAA0030A
-          WHERE business_cd = ?
-            AND user_cd = 'IND'
-            AND user_nm = ?
-            AND user_birth = ?
-            AND user_regno = ?
-            AND insr_year = ?
-            AND status_cd in ('10', '20', '80') -- 신청중, 처리중, 정상
-          UNION ALL
-          SELECT 1
-          FROM TCAA0030A t,
-          json_table(t.cbr_data,
-          '$[*]' columns (
-            cbr_nm VARCHAR(50) path '$.cbr_nm',
-            cbr_brdt VARCHAR(8) path '$.cbr_brdt',
-            cbr_regno VARCHAR(50) path '$.cbr_regno',
-            status_cd VARCHAR(3) path '$.status_cd'
-          )) j
-          WHERE t.business_cd = ?
-            AND (t.user_cd = 'JNT' OR t.user_cd = 'COR')
-            AND j.cbr_nm = ?
-            AND j.cbr_brdt = ?
-            AND j.cbr_regno = ?
-            AND j.status_cd in ('10', '20', '80') -- 신청중, 처리중, 정상
-            AND t.insr_year = ?
-      ) AS cnt`
-      logger.debug(params);
-      const [rows] = await db.query(query, params);
-
-      if (rows.length < 1) {
-        throw new NotFound(StatusMessage.SELECT_FAILED);
-      }
-      logger.debug(rows[0].cnt);
-      if (rows[0].cnt > 0) {
-        return true;
-      }
+    if(params.user_cd=='IND'){
+      query = `select COUNT(*) cnt from tcaa0030a where user_regno = ? and user_nm = ? and insr_year = ? and user_cd = ?`
+      queryparam = [params.user_regno, params.user_nm, params.insr_year, params.user_cd ];
+    }else{
+      query = `select COUNT(*) cnt from tcaa0030a where corp_cnno = ? and user_nm = ? and insr_year = ? and user_cd = ?`
+      queryparam = [params.corp_cnno, params.user_nm, params.insr_year, params.user_cd ];
     }
+
+    const [rows] = await db.query(query, queryparam);
+
+    if (rows.length < 1) {
+      throw new NotFound(StatusMessage.SELECT_FAILED);
+    }
+    logger.debug(rows[0].cnt);
+    if (rows[0].cnt > 0) {
+      return true;
+    }
+
     return false;
   },
 
