@@ -1,0 +1,4 @@
+2025-01-10 13:34:23 [info] : Server on port 3000 | run
+2025-01-10 13:35:10 [info] : ::1 - - [10/Jan/2025:04:35:10 +0000] "POST /auth/signin HTTP/1.1" 200 586 "http://localhost:4000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+
+2025-01-10 13:59:30 [info] : Server off

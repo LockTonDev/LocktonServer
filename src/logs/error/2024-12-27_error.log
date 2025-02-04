@@ -1,0 +1,17 @@
+2024-12-27 11:04:22 [error] : PASSPORT localVerify Error :  Cannot read properties of undefined (reading 'user_pwd')
+2024-12-27 11:04:22 [error] : >> 
+2024-12-27 11:04:26 [error] : PASSPORT localVerify Error :  Cannot read properties of undefined (reading 'user_pwd')
+2024-12-27 11:04:26 [error] : >> 
+2024-12-27 11:05:30 [error] : TypeError: source.on is not a function
+2024-12-27 11:05:30 [error] : sendSMSFromTemplate 실패 :  TypeError: source.on is not a function
+2024-12-27 11:05:52 [error] : 존재하지 않는 유저
+2024-12-27 11:05:52 [error] : >> 
+2024-12-27 11:05:53 [error] : 존재하지 않는 유저
+2024-12-27 11:05:53 [error] : >> 
+2024-12-27 11:39:00 [error] : jwt expired
+2024-12-27 11:40:57 [error] : PASSPORT localVerify Error :  Cannot read properties of undefined (reading 'user_pwd')
+2024-12-27 11:40:57 [error] : >> 
+2024-12-27 11:40:58 [error] : PASSPORT localVerify Error :  Cannot read properties of undefined (reading 'user_pwd')
+2024-12-27 11:40:58 [error] : >> 
+2024-12-27 11:46:26 [error] : PASSPORT localVerify Error :  Cannot read properties of undefined (reading 'user_pwd')
+2024-12-27 11:46:26 [error] : >> 

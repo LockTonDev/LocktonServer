@@ -83,7 +83,7 @@ ORDER BY  business_cd, user_cd, created_at DESC
             corp_cust_email,
             corp_region_cd,
             FN_GET_CODENM('COM001', business_cd) AS business_cd_nm,
-            FN_GET_CODENM('TAX001', corp_region_cd) AS corp_region_cd_nm,
+            FN_GET_CODENM(CONCAT(:business_cd,'001'), corp_region_cd) AS corp_region_cd_nm,
             FN_GET_CODENM('TAX002', user_cd) AS user_cd_nm,
             FN_GET_CODENM('COM010', status_cd) AS status_cd_nm,
             IFNULL(DATE_FORMAT(login_at, '%Y-%m-%d %H:%i:%s'), DATE_FORMAT(updated_at, '%Y-%m-%d %H:%i:%s'))  as login_at,
